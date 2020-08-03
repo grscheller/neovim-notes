@@ -1,14 +1,14 @@
 # Basic text editing by example
 This should be enough to enable you to be productive with vim.
 For many years, this is basically all I knew.  Vim, like EMACS,
-is a very power editor.  These examples barely scratch the surface
-of what it can do.
-
-(TL;DR) Vim is actually a Turing complete language.  It can be turned
-into a complete IDE with full Unix Shell support.
+is a very powerful editor.  These examples barely scratch the
+surface of what it can do.
 
 I think with a few weeks of practice, the material covered here
 can be internalized and eventually become part of your "muscle memory."
+
+(TL;DR) Vim is actually a Turing complete language.  It can be turned
+into a complete IDE with full Unix Shell support.
 
 ## Vim has 4 main modes:
 * _Normal Mode_
@@ -20,7 +20,7 @@ can be internalized and eventually become part of your "muscle memory."
 
 | Command        | Description                                      |
 |:--------------:|:------------------------------------------------ |
-| `h,i,j,k`      | move cursor one character (also arrow keys)      |
+| `h,j,k,l`      | move cursor one character (also arrow keys)      |
 | `w, W`         | move forward to beginning next word              |
 | `b, B`         | move back to beginning word                      |
 | `e, E`         | move forward to end of word                      |
@@ -33,9 +33,9 @@ can be internalized and eventually become part of your "muscle memory."
 | `F<char>`      | move backward to next <char> on current line     |
 | `t<char>`      | move forward before next <char> on current line  |
 | `T<char>`      | move backward after next <char> on current line  |
-| `;`            | move forward to target of last f command         |
-| `,`            | move backward to target of last f command        |
-| `3fw     `     | move forward to 3rd w on current line            |
+| `;`            | next target for last f,F,t,T command             |
+| `,`            | prev target for last f,F,t,T command             |
+| `3fw     `     | move forward to 3rd word on current line         |
 | `/RegExp<ret>` | forward search for regular expression pattern    |
 | `?RegExp<ret>` | backward search for regular expression pattern   |
 | `/<ret>`       | search forward for last pattern                  |
@@ -49,10 +49,13 @@ default register in vim.
 
 | Command       | Description                                      |
 |:-------------:|:------------------------------------------------ |
-| `yy`          | yank line to buffer (copy)                       |
 | `dd`          | delete line and put in buffer (cut)              |
-| `5dd  `       | delete 5 lines and put in buffer                 |
-| `x`           | delete character under cursor to buffer          |
+| `D`           | delete to end of line and put in buffer (cut)    |
+| `yy`          | yank line to buffer (copy)                       |
+| `Y`           | yank line to buffer (copy)                       |
+| `5dd`         | delete 5 lines and put in buffer                 |
+| `x`           | delete character under cursor, put in buffer     |
+| `X`           | delete character before cursor, put in buffer    |
 | `~`           | change case of current char and advance one char | 
 | `r<char>`     | change current char to <char>                    |
 | `p`           | paste buffer contents "after"                    |
@@ -95,36 +98,35 @@ To return to _Normal Mode_, type either `<esc>` or `<ctrl-[>` .
 | Command | Description                                                |
 |:-------:|:---------------------------------------------------------- |
 | `i`     | insert text before cursor                                  |
-| `a`     | insert text after cursor                                   |
 | `I`     | insert text at beginning of line after initial white space |
-| `0i`    | insert text beginning of line                              |
+| `a`     | insert text after cursor                                   |
 | `A`     | insert text at end of line                                 |
+| `0i`    | insert text beginning of line                              |
 | `o`     | open new line after current line to insert text            |
 | `O`     | open new line before current line to insert text           |
+| `s`     | delete current character and enter Normal Mode             |
 | `S`     | delete line contents and enter Normal Mode                 |
 | `3cw`   | change next three words                                    |
 | `c3w`   | change next three words                                    |
 | `5cc`   | change next 5 lines                                        |
-| `2cb    | change previous 3 words                                    |
-| `c$     | change to end of line                                      |
+| `3cb`   | change previous 3 words                                    |
+| `c$`    | change to end of line                                      |
 | `c^`    | change text before cursor, excluding initial white space   |
 | `c0`    | change text before cursor to beginning of line             |
-| `s`     | delete current character and enter Normal Mode             |
 | `"a3S`  | delete 3 lines into `"a` and enter Normal Mode on new line |
 
 
 While in _Insert Mode_, the file can be navigated via with the arrow keys.
 Text can also be deleted with the backspace key.  In _Normal Mode_, the
-backspace key is just another navigation key.
+backspace and space keys are just navigation keys.
 
 ### _Command Mode_ (line editor) commands:
 (TL;DR) Vim is an open source version of the Unix editor vi,
 which is a CLI visual version of the Berkeley Unix
 line editor ex, which itself is a re-implementation of
-the AT&T Unix line editor ed.
-On really old terminals, essentially line printers with
-keyboards, the descendants of teletypes, you edited files
-one line at a time.
+the AT&T Unix line editor ed.  On really old terminals,
+essentially line printers with keyboards, the descendants
+of teletypes, you edited files one line at a time.
 
 _Command Mode_ commands developed from the original
 line editing commands.
@@ -141,6 +143,7 @@ and prompts you with `: `.
 | `:wq`               | write to disk, then quit                                      |
 | `:q!`               | quit without saving unsaved changes                           |
 | `:n`                | edit next buffer (typically next file given on command line   |
+| `:next`             | edit next buffer (typically next file given on command line   |
 | `:prev`             | edit previous buffer                                          |
 | `:wn`               | write to disk and move on to next file to edit                |
 | `:42`               | move cursor to beginning of line 42                           |
@@ -162,7 +165,7 @@ line.  Press `<esc>` to return to _Normal Mode_ without issuing a command.
 This repeats the last _Normal Mode_ command used which changed text.  It
 does not repeat _Command Mode_ commands.
 
-This is frequently used in conjunction with the `n` _Normal Mode_ command.
+This is frequently used with the `n` or `;` _Normal Mode_ commands.
 For example, `n.n.nn.n` keeps moving to the beginning of the next match for
 the last search pattern and you can either decide to repeat, or not, the
 change at each location.  
@@ -247,8 +250,8 @@ To get started, from within vim, type
 * `:help help`
 * `:help tutorial`
 
-Vim built in help is very powerful, but not too beginner friendly.  To get the most out of it,
-
+Vim built in help is very powerful, but not beginner friendly.
+To get the most out of it,
 * familiarize yourself with how to use [multiple vim windows](multipleVimWindows.md)
 * configure the [mouse](vimFactoids.md#using-the-mouse)
 * setting up the [wildmenu](vimFactoids.md#configuring-wildmenu)
