@@ -62,3 +62,11 @@ the terminal or by typing into gvim.
 |:----------------------------:|:---------------------- |
 |  `<ctrl-shift-u>u03b2<ret>`  | enter the character β  |
 |  `<ctrl-shift-u>u3bb<ret>`   | enter the character λ  |
+
+---
+
+| [Vim Specific Features][1] | [Top][2] | [Regular Expressions][3] |
+
+[1]: <vimSpecificFeatures.md>
+[2]: <README.md>
+[3]: <regExp.md>
