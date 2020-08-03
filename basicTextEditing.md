@@ -18,30 +18,30 @@ into a complete IDE with full Unix Shell support.
 
 ### Cursor movement in _Normal Mode_:
 
-| Command        | Description                                      |
-|:--------------:|:------------------------------------------------ |
-| `h,j,k,l`      | move cursor one character (also arrow keys)      |
-| `w, W`         | move forward to beginning next word              |
-| `b, B`         | move back to beginning word                      |
-| `e, E`         | move forward to end of word                      |
-| `$`            | move to end of line                              |
-| `^`            | move to first non-whitespace character on line   |
-| `0`            | move to beginning of line                        |
-| `G`            | move to last line in file                        |
-| `gg`           | move to first line in file                       |
-| `f<char>`      | move forward to next <char> on current line      |
-| `F<char>`      | move backward to next <char> on current line     |
-| `t<char>`      | move forward before next <char> on current line  |
-| `T<char>`      | move backward after next <char> on current line  |
-| `;`            | next target for last f,F,t,T command             |
-| `,`            | prev target for last f,F,t,T command             |
-| `3fw     `     | move forward to 3rd word on current line         |
-| `/RegExp<ret>` | forward search for regular expression pattern    |
-| `?RegExp<ret>` | backward search for regular expression pattern   |
-| `/<ret>`       | search forward for last pattern                  |
-| `?<ret>`       | search backward for last pattern                 |
-| `n`            | search forward or backward for last pattern      |
-| `N`            | search for last pattern in reverse sense to `n`  |
+| Command        | Description                                       |
+|:--------------:|:------------------------------------------------- |
+| `h,j,k,l`      | move cursor one character (also arrow keys)       |
+| `w, W`         | move forward to beginning next word               |
+| `b, B`         | move back to beginning word                       |
+| `e, E`         | move forward to end of word                       |
+| `$`            | move to end of line                               |
+| `^`            | move to first non-whitespace character on line    |
+| `0`            | move to beginning of line                         |
+| `G`            | move to last line in file                         |
+| `gg`           | move to first line in file                        |
+| `f<char>`      | move forward to next `<char>` on current line     |
+| `F<char>`      | move backward to next `<char>` on current line    |
+| `t<char>`      | move forward before next `<char>` on current line |
+| `T<char>`      | move backward after next `<char>` on current line |
+| `;`            | next target for last f,F,t,T command              |
+| `,`            | prev target for last f,F,t,T command              |
+| `3fw     `     | move forward to 3rd word on current line          |
+| `/RegExp<ret>` | forward search for regular expression pattern     |
+| `?RegExp<ret>` | backward search for regular expression pattern    |
+| `/<ret>`       | search forward for last pattern                   |
+| `?<ret>`       | search backward for last pattern                  |
+| `n`            | search forward or backward for last pattern       |
+| `N`            | search for last pattern in reverse sense to `n`   |
 
 ### Interacting with "the buffer" in _Normal Mode_:
 Buffer is older vi jargon for what is now called the
@@ -57,7 +57,7 @@ default register in vim.
 | `x`           | delete character under cursor, put in buffer     |
 | `X`           | delete character before cursor, put in buffer    |
 | `~`           | change case of current char and advance one char | 
-| `r<char>`     | change current char to <char>                    |
+| `r<char>`     | change current char to `<char>`                  |
 | `p`           | paste buffer contents "after"                    |
 | `P`           | paste buffer contents "before"                   |
 
