@@ -65,7 +65,7 @@ the terminal or by typing into gvim.
 
 ---
 
-| [Vim Specific Features][1] | [Top][2] | [Regular Expressions][3] |
+| prev: [Vim Specific Features][1] | [Home][2] | next: [Regular Expressions][3] |
 
 [1]: <vimSpecificFeatures.md>
 [2]: <README.md>

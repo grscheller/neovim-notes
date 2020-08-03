@@ -1,14 +1,8 @@
-# Basic text editing by example
+# Basic Text Editing
 This should be enough to enable you to be productive with vim.
-For many years, this is basically all I knew.  Vim, like EMACS,
-is a very powerful editor.  These examples barely scratch the
-surface of what it can do.
 
 I think with a few weeks of practice, the material covered here
 can be internalized and eventually become part of your "muscle memory."
-
-(TL;DR) Vim is actually a Turing complete language.  It can be turned
-into a complete IDE with full Unix Shell support.
 
 ## Vim has 4 main modes:
 * _Normal Mode_
@@ -258,3 +252,10 @@ To get the most out of it,
 * double clicking is needed to follow vim "hyperlinks"
 * Use `<ctrl-o>` to jump back to previous location
 * Use `<ctrl-i>` or `<tab>` to jump forward again
+
+---
+
+| [Home][1] | next: [Vim Factoids][2] |
+
+[1]: <README.md>
+[2]: <vimFactoids.md>

@@ -1,4 +1,4 @@
-# Using multiple windows within a terminal 
+# Multiple Vim Windows
 Within a single vim terminal editing session, using multiple
 CLI ncurses windows can be very useful.  For example,
 using the help facility `:help <command>` can be confusing
@@ -111,3 +111,10 @@ Vim allows you to open a shell in a separate Vim Window
 | `:term`      | open a shell in a new horizontal Vim window |
 | `:vert term` | open a shell in a new vertical Vim window   |
 
+---
+
+| prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Vim Specific Features ][3] |
+
+[1]: <advTradViCommands.md>
+[2]: <README.md>
+[3]: <vimSpecificFeatures.md>

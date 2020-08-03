@@ -1,4 +1,4 @@
-# Advanced vim specific features
+# Vim Specific Features
 Vim commands not in your grandfather's Vi.
 
 ## Jump Lists:
@@ -128,3 +128,11 @@ the macro, for instance you don't want to change "Unix is perfect".
     qbl~~~fp~q
     nn@bn@bnnn2@b
 ```
+
+---
+
+| prev: [Multiple Vim Windows][1] | [Home][2] | next: [Encodings and Unicode][3] |
+
+[1]: <multipleVimWindows.md>
+[2]: <README.md>
+[3]: <encodingsUnicode.md>

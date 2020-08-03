@@ -3,7 +3,7 @@ Regular expressions, also called RegExps, are used in
 in Unix/Posix like environments to match textual patterns.
 They are not to be confused with shell globbing pattern matching.
 
-## History (TL;DR):
+## History:
 The concept of regular expressions arose in the 1950s from
 the work of mathematitian/logician Stephen Kleen in his study of
 [regular languages](https://en.wikipedia.org/wiki/Regular_language).
@@ -169,3 +169,11 @@ as "_ed regular expressions_."
 For "_simple regular expressions_" the characters `|+?` have no
 special meta-meaning.  This type of regular expressions are in the
 POSIX.2 standard for backward compatibility, but are considered a wart.
+
+---
+
+| prev: [Encodings and Unicode][1] | [Home][2] | next: [Configuring Vim][3] |
+
+[1]: <encodingsUnicode.md>
+[2]: <README.md>
+[3]: <vimrcConfigFile.md>

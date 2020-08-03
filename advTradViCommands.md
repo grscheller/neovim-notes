@@ -1,4 +1,4 @@
-# More advanced traditional vi commands
+# Advanced Traditional Vi Commands
 Many of the following commands existed in the original vi.
 A good vi cheatsheet for traditional vi can be found here: 
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
@@ -180,3 +180,10 @@ before the cursor in the file, the selection does not contain the
 highlighted character.  Just like the behavior of the `yb` _Normal Mode_
 command.
 
+---
+
+| prev: [Vim Factoids][1] | [Home][2] | next: [Multiple Vim Windows][3] |
+
+[1]: <vimFactoids.md>
+[2]: <README.md>
+[3]: <multipleVimWindows.md>

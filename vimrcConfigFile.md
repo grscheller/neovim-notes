@@ -1,4 +1,4 @@
-# Vim Configuration Files
+# Configuring Vim
 
 ## Vim startup files
 Without this information, it can be very frustrating
@@ -13,7 +13,7 @@ Now a days, this file has a command that sources your Linux
 distribution's vim-package related configuration changes.
 For Arch Linux this file
 is `/usr/share/vim/vimfiles/archlinux.vim`, but the command
-only uses the file's base name, its location compiled into
+only uses the file's base name, its location is compiled into
 the vim executable.
 
 Your linux system admins may also have added other "helpful"
@@ -205,3 +205,10 @@ as if in vim command mode.  Comments begin with `"`.
    set splitbelow
    set splitright
 ```
+
+---
+
+| prev: [Regular Expresions][1] | [Home][2] |
+
+[1]: <regExp.md>
+[2]: <README.md>

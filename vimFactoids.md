@@ -1,8 +1,8 @@
-# Useful and/or essential Vim factoids
+# Vim Factoids
 
 ## Buffers and registers in Vim
-These are areas that can store text.  The three most important ones
-for now are:
+These are areas that can store text.  The three most important ones,
+for now, are:
 * default register
 * named registers
 * file buffers
@@ -96,3 +96,11 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
 * In vi, you cannot navigate around file in _Insert Mode_ or _Replace Mode_
   with the arrow keys.  Hitting `<ins>` while in these modes
   does not swap you between them.
+
+---
+
+| prev: [Basic Text Editing][1] | [Home][2] | next: [Adv Trad Vi Commands][3] |
+
+[1]: <basicTextEditing.md>
+[2]: <README.md>
+[3]: <advTradViCommands.md>
