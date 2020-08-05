@@ -124,20 +124,20 @@ compatibility with vi.
 ## Extended Regexp examples:
 It is usually easiest to learn regular expressions using simple examples.
 
-| RegExp              | Description                                    |
-|:------------------- |:---------------------------------------------- |
-| `foo.*`             | match foo followed by zero or more characters  |
-| `fooba+r`           | match foobar, foobaar, foobaaar, ...           |
-| `foo(bar`\|`baz)`   | match either foobar or foobaz                  |
-| `fo{2,4}bar`        | match foobar, fooobar, or foooobar             |
-| `(fo){2,}bar`       | match fofobar, fofofobar, fofofobar, ...       |
-| `(fo){2}bar`        | match fofobar                                  |
-| `(fo){,3}bar`       | match bar, fobar, fofobar, fofofobar           |
-| `^foobar`           | match foobar at beginning of a line            |
-| `foobar$`           | match foobar at end of a line                  |
-| `^foo(bar`\|`baz)$` | match line containing only foobar or foobaz    |
-| `fooba[rz]`         | match foobar or foobaz                         |
-| `foob[^ui]r`        | matches fobar or fobqz but not fobur nor fobir |
+| RegExp               | Description                                     |
+|:-------------------- |:----------------------------------------------- |
+| `foo.*`              | match`foo`followed by zero or more characters   |
+| `fooba+r`            | match`foobar, foobaar, foobaaar, ...`           |
+| `foo(bar\|baz)`      | match either`foobar`or`foobaz`                  |
+| `fo{2,4}bar`         | match`foobar, fooobar,`or`foooobar`             |
+| `(fo){2,}bar`        | match`fofobar, fofofobar, fofofobar, ...`       |
+| `(fo){2}bar`         | match`fofobar`                                  |
+| `(fo){,3}bar`        | match`bar, fobar, fofobar,`or`fofofobar`        |
+| `^foobar`            | match`foobar`at beginning of a line             |
+| `foobar$`            | match`foobar`at end of a line                   |
+| `^foo(bar\|baz)$`    | match line containing only`foobar`or`foobaz`    |
+| `fooba[rz]`          | match`foobar`or`foobaz`                         |
+| `foob[^ui]r`         | matches`fobar`or`fobqz`but not`fobur`nor`fobir` |
 
 ## Using Regular Expressions in Vim:
 I like to think of all my regular expressions as extended regular
