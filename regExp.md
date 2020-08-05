@@ -94,17 +94,17 @@ expression engine.
    * reference subexpression later in RE via `\n` where n`in range 1-9
    * multiple groupings hierarchical, ordered by left paren
 
-Let `S` and `T` represent regular expressions
-* `ST` concats `S` and `T`
-* `(ST)` concat `S` and `T`but treat as single subexpression
-* `S|T` matches either `S` or `T`
-* `S`\* matches 0 or more instances of S
-* `S+` matches 1 or more instances of S
-* `S{n,m}` matches at least n but not more than m of S
-* `S{n,}` matches at least n of S
-* `S{,m}` matches not more than m of S
-* `S{m}` matches exactly m of S
-* `S?` matches 0 or 1 of S
+Let`S`and`T`represent regular expressions
+* `ST`concats`S`and`T`
+* `(ST)`concat`S`and`T`but treat as single subexpression
+* `S|T`matches either`S`or`T`
+* `S*`matches 0 or more instances of`S`
+* `S+`matches 1 or more instances of`S`
+* `S{n,m}`matches at least`n`but not more than`m`of`S`
+* `S{n,}`matches at least`n`of`S`
+* `S{,m}`matches not more than m of S`
+* `S{m}`matches exactly`m`of`S`
+* `S?`matches 0 or 1 of`S`
 
 Note, \*, +, ?, and {m,n} all bind more closely than concatenation.
 
@@ -121,7 +121,7 @@ Due to the common use of `(){}|+` in programming languages, makes
 sense that vim uses BREs.  Probably more likely done for backward
 compatibility with vi.
 
-## Extended Regexp examples:
+## Extended Regexp Examples:
 It is usually easiest to learn regular expressions using simple examples.
 
 | RegExp               | Description                                     |
