@@ -25,31 +25,35 @@ For `<ctrl-z>`, in bash usage `fg %1` will usually work to
 unsuspend vim.  If you have other things suspended, hunt for it
 using `$ jobs`.
 
-### Commands to move cursor
-| Command    | Description                                |
-|:----------:|:------------------------------------------ |
-| `+`        | move to first nonspace character next line |
-| `-`        | move to first nonspace character prev line |
-| `nG`       | move to nth line in file                   |
-| `G`        | move to last line in file                  |
-| `ngg`      | move to nth line in file                   |
-| `gg`       | move to first line in file                 |
-| `n\|`      | move to nth column in line                 |
-| `\|`       | move to beginning of line                  |
-| `0`        | move to beginning of line                  |
-| `H`        | move to top of screen                      |
-| `M`        | move to middle of screen                   |
-| `L`        | move to bottom of screen                   |
-| `nH`       | move to nth line from top of screen        |
-| `nL`       | move to nth line from bottom of screen     |
-| `<ctrl-u>` | move cursor/view up half a screen          |
-| `<ctrl-d>` | move cursor/view down half a screen        |
-| `<ctrl-b>` | move cursor/view up a full screen          |
-| `<ctrl-f>` | move cursor/view down a full screen        |
-| `%`        | move between matching ( ), [ ], { }, < >   |
+### Commands to move cursor in __normal mode__
+| Command    | Description                                 |
+|:----------:|:------------------------------------------- |
+| `+`        | move to first nonspace character next line  |
+| `-`        | move to first nonspace character prev line  |
+| `nG`       | move to nth line in file                    |
+| `G`        | move to last line in file                   |
+| `ngg`      | move to nth line in file                    |
+| `gg`       | move to first line in file                  |
+| `n\|`      | move to nth column in line                  |
+| `\|`       | move to beginning of line                   |
+| `0`        | move to beginning of line                   |
+| `H`        | move to top of screen                       |
+| `M`        | move to middle of screen                    |
+| `L`        | move to bottom of screen                    |
+| `nH`       | move to nth line from top of screen         |
+| `nL`       | move to nth line from bottom of screen      |
+| `<ctrl-u>` | move cursor/view up half a screen           |
+| `<ctrl-d>` | move cursor/view down half a screen         |
+| `<ctrl-b>` | move cursor/view up a full screen           |
+| `<ctrl-f>` | move cursor/view down a full screen         |
+| `%`        | move between matching ( ), [ ], { }, or < > |
+
+With`%`, if you are not currently on a grouping symbol, move
+to the first one on the current line and jump to its matching
+partner.  Plugs-ins like Syntastic can change the meaning of
+what is a matching symbol for different file types.
 
 When scrolloff is set, some of these commands get modified.
-
 In my .vim/vimrc file, I use
 ```
    set scrolloff=3
@@ -114,6 +118,12 @@ defining "sections."
 | `<backspace>`    | delete previous character                         |
 | `<ctrl-v> <chr>` | take <chr> literally                              |
 | `<ctrl-w>`       | delete previous word                              |
+| `<ctrl-o>`       | go to normal mode for just one command            |
+| `<ctrl-o> n`     | go to next search item, remain in insert mode     |
+| `<ctrl-o> D`     | delete everything to right of cursor              |
+| `<ctrl-u>`       | delete everything to left of cursor               |
+| `<ctrl-t>`       | indent current line one tab stop                  |
+| `<ctrl-d>`       | un-indent current line one tab stop               |
 | `<ctrl-c>`       | break out of _Insert Mode_, punt on any auto cmds |
 | `<ctrl-x>`       | enter _Insert Mode_ completion submode            |
 

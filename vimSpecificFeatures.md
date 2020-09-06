@@ -34,7 +34,7 @@ Your current location in the jump list is allways 0.
 
 ## Types of registers:
 ### Default register
-The default register has a name `""`
+The default register has a name`""`, that is double-quote double-quote.
 
 ### Numbered registers
 These contain only multiline (one or more whole lines) data.
@@ -86,6 +86,11 @@ which use registers.
 | `"+`      | copy/paste from/to clipboard             |
 | `"~`      | paste from last drag-and-drop operation  |
 
+On Arch, the first two only seem to work in vim when the gvim
+package is installed.  I've never gotten the last one to work
+at all. but this may have to do with how tightly I have the
+mouse locked down.
+
 ### Black hole register
 The black hole register `"_` allows deleting text without affecting
 other registers.  Reading from it returns nothing.
@@ -97,7 +102,7 @@ You can assign values to it in _Command Mode_ via
    :let @/ = "Some String"
 ```
 ## Vim Macros:
-A useful _Normal Mode_ feature of vim is the `.` command which
+A useful _Normal Mode_ feature of vim is the`.`command which
 repeats the last _Normal Mode_ command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
 
@@ -107,11 +112,11 @@ vim macro feature comes to the rescue.
 This feature allows you to repeat a sequence of _Normal Mode_ and
 _Command Mode_ commands.  Macros are stored in vim registers.
 
-To create a macro, issue the _Normal Mode_ `q` command followed by a
-vim register name, say `a`.  At the bottom of the screen you see the
+To create a macro, issue the _Normal Mode_`q`command followed by a
+vim register name, say`a`.  At the bottom of the screen you see the
 text `recording @a`.  Issue both _Normal Mode_ and _Command Mode_
 commands and edit as usual.  To finish, issue another
-_Normal Mode_ `q` command.  At a later time, to execute this macro
+_Normal Mode_`q`command.  At a later time, to execute this macro
 and repeat the sequence of commands, type `@a`.
 
 As an example, say you want to change instances of "Unix programming"
