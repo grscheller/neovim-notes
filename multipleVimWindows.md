@@ -41,6 +41,15 @@ I configure these in my `~/.vim/vimrc
    set splitright
 ```
 
+## Navigating between Windows _Normal Mode_
+
+| Command      | Description           |
+|:------------:|:--------------------- |
+| `<ctrl-w> h` | move one window left  |
+| `<ctrl-w> l` | move one window right |
+| `<ctrl-w> k` | move one window up    |
+| `<ctrl-w> j` | move one window down  |
+
 ## Adjusting windows size (without mouse support):
 
 ### Equalize window size
@@ -111,10 +120,23 @@ Vim allows you to open a shell in a separate Vim Window
 | `:term`      | open a shell in a new horizontal Vim window |
 | `:vert term` | open a shell in a new vertical Vim window   |
 
+This terminal window is essentually a read only vim session that
+displays the shell session interactions.  You are put into
+_Insert Mode_ and input is passed to the shell.  You can copy
+text by jumping to _Normal Mode_ using the usual vim buffers.
+Entering _Insert Mode_ will return you to the terminal session.
+You can only paste into the shell session itself while in _Insert Mode_.
+
+| Command        | Description                                      |
+|:--------------:|:------------------------------------------------ |
+| `<ctrl-w> ""`  | Paste contents default buffer into shell session |
+| `<ctrl-w> "a`  | Paste contents buffer`"a`into shell session      |
+| `<ctrl-w> N`   | Put vim terminal window into _Normal Mode_       |
+
 ---
 
-| prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Vim Specific Features ][3] |
+| prev: [Vim Specific Features][1] | [Home][2] | next: [Encodings and Unicode][3] |
 
-[1]: <advTradViCommands.md>
+[1]: <vimSpecificFeatures.md>
 [2]: <README.md>
-[3]: <vimSpecificFeatures.md>
+[3]: <encodingsUnicode.md>

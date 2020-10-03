@@ -136,8 +136,8 @@ the macro, for instance you don't want to change "Unix is perfect".
 
 ---
 
-| prev: [Multiple Vim Windows][1] | [Home][2] | next: [Encodings and Unicode][3] |
+| prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Multiple Vim Windows][3] |
 
-[1]: <multipleVimWindows.md>
+[1]: <advTradViCommands.md>
 [2]: <README.md>
-[3]: <encodingsUnicode.md>
+[3]: <multipleVimWindows.md>
