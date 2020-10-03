@@ -192,8 +192,8 @@ command.
 
 ---
 
-| prev: [Vim Factoids][1] | [Home][2] | next: [Multiple Vim Windows][3] |
+| prev: [Vim Factoids][1] | [Home][2] | next: [Vim SpecificFeatures][3] |
 
 [1]: <vimFactoids.md>
 [2]: <README.md>
-[3]: <multipleVimWindows.md>
+[3]: <vimSpecificFeatures.md>
