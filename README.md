@@ -1,4 +1,4 @@
-# Intermediate Level Vim notes
+# Intermediate Level Vim Notes
 These notes are aimed at the beginning level Vim
 user desiring to "up their game" to become
 an intermediate level Vim user.
@@ -19,7 +19,7 @@ information in ones above it.
 I have found the act of creating/maintaining these
 notes invaluable in my journey to master Vim.
 
-Vim is actually a Turing complete language.  It can be turned
-into a complete IDE with full Unix Shell support.  Like EMACS,
-Vim is a very powerful editor.  These notes barely scratch the
-surface of what Vim can do.
+Vim is actually a Turing complete language.  It can
+be turned into a complete IDE with full computer
+language syntax highlighting and UNIX shell support.
+Like EMACS, Vim is a very powerful editor.
