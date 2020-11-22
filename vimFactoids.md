@@ -1,8 +1,10 @@
 # Vim Factoids
 
 ## Buffers and registers in Vim
+
 These are areas that can store text.  The three most important ones,
 for now, are:
+
 * default register
 * named registers
 * file buffers
@@ -15,10 +17,12 @@ Note: In older vi documentation and jargon, registers are refered
 to as buffers.
 
 ### The default register
+
 The default register is just the area which `y` and `c` commands
 write to and `p` and `c` commands read from by "default."
 
 ### Named registers
+
 Illustrated in [Basic text editing](basicTextEditing.md#you-can-use-named-registers-to-store-text),
 Named registers are areas where you can store snippets of text.
 They are named `"a` thru `"z` and are essentially 26
@@ -26,9 +30,10 @@ independent "clip boards" that are shared between all the
 file buffers.
 
 ### File buffers
+
 These are the in memory text associated with a file.  To list
 them, use the `:buffers` command.  Among other things, vim
-gives a unique buffer number and associates a filename (if any) 
+gives a unique buffer number and associates a filename (if any)
 with that buffer.
 
 | Command       | Description                                 |
@@ -50,6 +55,7 @@ with that buffer.
 | `:q!`         | quit window, abandon any changes if last view            |
 
 ## Using the mouse
+
 When configured to use the mouse, vim will steal the mouse
 events from the terminal emulator.  To enable full vim mouse
 support, `:set mouse=a` and to disable the mouse and let the
@@ -77,30 +83,36 @@ In _Normal Mode_ I don't like a click-drag throwing me into
 character _Visual Mode_.
 
 ## Configuring wildmenu
+
 To make tab completion in command mode more efficient, put the
 following lines in your ~/.vim/vimrc or ~/.vimrc file.
+
 ```
    set wildmenu
    set wildmode=longest:full,full
 ```
-   
-## Vi and Vim differences:
+
+## Vi and Vim differences
+
 * Vi only has one level of undo/redo, `u` undo the
   last change and, if hit again, will redo the change.
-  `<ctrl-r>` has no effect.
-* On modern Linuxes, the vi "executable" is either a
+  `<ctrl-r>`has no effect.
+* On modern Linux systems, the vi "executable" is either a
   symlink to ex, traditional BSD based vi, or a symlink
   to vim.  If vim is started with the name vi, it launches
   itself in vi compatibility mode.  Vim in compatibility
-  mode is neither POSIX compliant nor a Vi clone.
-* In vi, you cannot navigate around file in _Insert Mode_ or _Replace Mode_
-  with the arrow keys.  Hitting `<ins>` while in these modes
-  does not swap you between them.
+  mode is neither POSIX compliant nor an AT&T System V vi clone.
+* In vi, you cannot navigate around file in _Insert Mode_ or
+  _Replace Mode_ with the arrow keys.
+* Hitting`<ins>`while in _Insert Mode_ or _Replace Mode_ does
+  not swap you between them.
+* `<ctrl-o>` vi does not let you execute a _Normal Mode_ command
+  while in _Insert Mode_.
 
 ---
 
 | prev: [Basic Text Editing][1] | [Home][2] | next: [Adv Trad Vi Commands][3] |
 
-[1]: <basicTextEditing.md>
-[2]: <README.md>
-[3]: <advTradViCommands.md>
+[1]: basicTextEditing.md
+[2]: README.md
+[3]: advTradViCommands.md

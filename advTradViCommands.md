@@ -1,6 +1,7 @@
 # Advanced Traditional Vi Commands
+
 Many of the following commands existed in the original vi.
-A good vi cheatsheet for traditional vi can be found here: 
+A good vi cheatsheet for traditional vi can be found here:
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
 
 (TL;DR) The original vi was often called "bimodal" where
@@ -12,8 +13,10 @@ introduced multiple windows.
 Where the behavior differs from the original Vi, I will indicate
 the Vim behavior.
 
-## _Normal Mode_ Commands:
+## _Normal Mode_ Commands
+
 ### Misc commands
+
 | Command    | Description                                |
 |:----------:|:------------------------------------------ |
 | `<ctrl-g>` | show filename and other useful status info |
@@ -26,27 +29,28 @@ unsuspend vim.  If you have other things suspended, hunt for it
 using `$ jobs`.
 
 ### Commands to move cursor in __normal mode__
-| Command    | Description                                 |
-|:----------:|:------------------------------------------- |
-| `+`        | move to first nonspace character next line  |
-| `-`        | move to first nonspace character prev line  |
-| `nG`       | move to nth line in file                    |
-| `G`        | move to last line in file                   |
-| `ngg`      | move to nth line in file                    |
-| `gg`       | move to first line in file                  |
-| `n\|`      | move to nth column in line                  |
-| `\|`       | move to beginning of line                   |
-| `0`        | move to beginning of line                   |
-| `H`        | move to top of screen                       |
-| `M`        | move to middle of screen                    |
-| `L`        | move to bottom of screen                    |
-| `nH`       | move to nth line from top of screen         |
-| `nL`       | move to nth line from bottom of screen      |
-| `<ctrl-u>` | move cursor/view up half a screen           |
-| `<ctrl-d>` | move cursor/view down half a screen         |
-| `<ctrl-b>` | move cursor/view up a full screen           |
-| `<ctrl-f>` | move cursor/view down a full screen         |
-| `%`        | move between matching ( ), [ ], { }, or < > |
+
+| Command    | Description                                   |
+|:----------:|:--------------------------------------------- |
+| `+`        | move to first nonspace character next line    |
+| `-`        | move to first nonspace character prev line    |
+| `nG`       | move to nth line in file                      |
+| `G`        | move to last line in file                     |
+| `ngg`      | move to nth line in file                      |
+| `gg`       | move to first line in file                    |
+| `n\|`      | move to nth column in line                    |
+| `\|`       | move to beginning of line                     |
+| `0`        | move to beginning of line                     |
+| `H`        | move to top of screen                         |
+| `M`        | move to middle of screen                      |
+| `L`        | move to bottom of screen                      |
+| `nH`       | move to nth line from top of screen           |
+| `nL`       | move to nth line from bottom of screen        |
+| `<ctrl-u>` | move cursor/view up half a screen             |
+| `<ctrl-d>` | move cursor/view down half a screen           |
+| `<ctrl-b>` | move cursor/view up a full screen             |
+| `<ctrl-f>` | move cursor/view down a full screen           |
+| `%`        | move between matching`( )`,`[ ]`,`{ }`or`< >` |
 
 With`%`, if you are not currently on a grouping symbol, move
 to the first one on the current line and jump to its matching
@@ -55,12 +59,15 @@ what is a matching symbol for different file types.
 
 When scrolloff is set, some of these commands get modified.
 In my .vim/vimrc file, I use
+
 ```
    set scrolloff=3
 ```
+
 to keep the cursor 3 lines from the edge of the screen.
 
 ### Commands to move screen view
+
 | Command    | Description                            |
 |:----------:|:-------------------------------------- |
 | `<ctrl-e>` | move view down one line                |
@@ -76,6 +83,7 @@ Where applicable, you can type a number before these commands
 to repeat them that many times.
 
 ### Cursor commands useful for written text
+
 | Command | Description                                 |
 |:-------:|:------------------------------------------- |
 | `(`     | move cursor to beginning of sentence        |
@@ -97,6 +105,7 @@ For troff files various constructs were understood as
 defining "sections."
 
 ### Commands to change text
+
 | Command    | Description                                               |
 |:----------:|:--------------------------------------------------------- |
 | `C`        | change from cursor to end of line (enter _Insert Mode_)   |
@@ -111,12 +120,13 @@ defining "sections."
 | `>>`       | move entire line 1 tabstop right, stay in _Normal Mode_   |
 | `<<`       | move entire line 1 tabstop left, stay in _Normal Mode_    |
 
-## _Insert Mode_ Commands:
+## _Insert Mode_ Commands
+
 | Command          | Description                                       |
 |:----------------:|:------------------------------------------------- |
 | `<ctrl-h>`       | delete previous character                         |
 | `<backspace>`    | delete previous character                         |
-| `<ctrl-v> <chr>` | take <chr> literally                              |
+| `<ctrl-v><chr>` | take`<chr>`literally                              |
 | `<ctrl-w>`       | delete previous word                              |
 | `<ctrl-o>`       | go to normal mode for just one command            |
 | `<ctrl-o> n`     | go to next search item, remain in insert mode     |
@@ -128,28 +138,32 @@ defining "sections."
 | `<ctrl-x>`       | enter _Insert Mode_ completion submode            |
 
 For more information on `<ctrl-x>` see,
+
 ```
    :help ins-completion
 ```
+
 If you accidentally typed `<ctrl-x>` while in insert mode, typing any
 non-control character will get you back.  If you have terminal flow
 control turned on, and you hit the unfortunate key combination
-`<ctrl-x> <ctrl-s>`, something EMACS users are likely to do, you will
+`<ctrl-x><ctrl-s>`, something EMACS users are likely to do, you will
 find your vim editting session frozen.  Type `<ctrl-q>` to unlock.
 
-### _Insert Mode_ vs _Replace Mode_:
+### _Insert Mode_ vs _Replace Mode_
+
 * _Replace Mode_ is similar to _Insert Mode_ but
   characters are overwritten instead of inserted.
 * You can toggle between them via the terminal
-  `<insert>` key. 
+  `<insert>` key.
 * You can enter _Replace Mode_ directly from _Normal Mode_
   via the `R` command.
 * Like in _Insert Mode_ you can naviagte around the text
   via the arrow keys creating multiple undo events.
-* In _Replace Mode_, the `<backspace>` and `<ctrl-h>` act
+* In _Replace Mode_, the`<backspace>`and`<ctrl-h>`act
   like a back arrow key but undoes (only) last set of replacements.
 
-## _Command Mode_ Commands:
+## _Command Mode_ Commands
+
 | Command        | Description                                          |
 |:-------------- |:---------------------------------------------------- |
 | `:r file`      | read file and insert it after current line           |
@@ -164,7 +178,8 @@ find your vim editting session frozen.  Type `<ctrl-q>` to unlock.
 | `:=`           | show number of lines in buffer                       |
 | `:n,md`        | delete lines n thru m
 
-## Marks:
+## Marks
+
 Marks allow you to set locations to either be able to jump to
 or use with _Normal Mode_ editing commands.
 
@@ -184,7 +199,7 @@ between the cursor and the preceding character.
 | `` y`B `` | yank from cursor to mark `B`, fails if not in current buffer |
 | `d'w`     | deletes current line thru line with mark `w`                 |
 
-Like a mark, the cursor is also a "zero-width" entity between the 
+Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceeding character.  If the mark is
 before the cursor in the file, the selection does not contain the
 highlighted character.  Just like the behavior of the `yb` _Normal Mode_
@@ -194,6 +209,6 @@ command.
 
 | prev: [Vim Factoids][1] | [Home][2] | next: [Vim SpecificFeatures][3] |
 
-[1]: <vimFactoids.md>
-[2]: <README.md>
-[3]: <vimSpecificFeatures.md>
+[1]: vimFactoids.md
+[2]: README.md
+[3]: vimSpecificFeatures.md

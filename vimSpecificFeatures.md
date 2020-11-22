@@ -1,7 +1,9 @@
 # Vim Specific Features
+
 Vim commands not in your grandfather's Vi.
 
-## Jump Lists:
+## Jump Lists
+
 Associated with each vim window (not buffer!) is a list of
 past locations "jumped" to.  Jumps are remembered in a jump
 list.  Just navigating via the `hjkl` keys will not create
@@ -32,11 +34,14 @@ Your current location in the jump list is allways 0.
 | `3 <ctrl-o>` | go back 3 jumps in jump list                |
 | `2 <ctrl-i>` | go forward 2 jumps in jump list             |
 
-## Types of registers:
+## Types of registers
+
 ### Default register
+
 The default register has a name`""`, that is double-quote double-quote.
 
 ### Numbered registers
+
 These contain only multiline (one or more whole lines) data.
 
 | Register       | Purpose                                        |
@@ -70,11 +75,13 @@ These can be written to in Command Mode via `:let @5 = "foobar"`
 
 Use `:@:` to repeat last _Command Mode_ command.
 
-### Alternate file register 
+### Alternate file register
+
 The alternate file register `"#` is an assignable name, useful when jumping
 between 2 buffers via <ctrl-^>.
 
 ### Expression register
+
 The expression register `"=` is used for expressions in commands
 which use registers.
 
@@ -83,7 +90,7 @@ which use registers.
 | Register  | Purpose                                  |
 |:---------:|:---------------------------------------- |
 | `"*`      | copy/paste from/to the X11 clipboard     |
-| `"+`      | copy/paste from/to clipboard             |
+| `"+`      | copy/paste from/to desktop clipboard     |
 | `"~`      | paste from last drag-and-drop operation  |
 
 On Arch, the first two only seem to work in vim when the gvim
@@ -92,16 +99,21 @@ at all. but this may have to do with how tightly I have the
 mouse locked down.
 
 ### Black hole register
+
 The black hole register `"_` allows deleting text without affecting
 other registers.  Reading from it returns nothing.
 
 ### Last search pattern register
+
 The last search pattern register `"/` is readable from _Normal Mode_.
 You can assign values to it in _Command Mode_ via
+
 ```
    :let @/ = "Some String"
 ```
-## Vim Macros:
+
+## Vim Macros
+
 A useful _Normal Mode_ feature of vim is the`.`command which
 repeats the last _Normal Mode_ command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
@@ -122,12 +134,15 @@ and repeat the sequence of commands, type `@a`.
 As an example, say you want to change instances of "Unix programming"
 or "Unix System programming" in similar ways.  You want "Unix" replaced
 by "UNIX" and the "p" capitalized:
+
 ```
     qa/Unix<ret>l~~~fp~q
     @a@a@a@a
 ```
+
 If you what to be able to choose whether or not to perform
 the macro, for instance you don't want to change "Unix is perfect".
+
 ```
     /Unix<ret>
     qbl~~~fp~q

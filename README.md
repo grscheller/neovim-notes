@@ -1,4 +1,5 @@
 # Intermediate Level Vim Notes
+
 These notes are aimed at the beginning level Vim
 user desiring to "up their game" to become
 an intermediate level Vim user.
