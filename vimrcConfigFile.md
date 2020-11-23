@@ -6,30 +6,31 @@ Without this information, it can be very frustrating
 reverse engineer Vim behavior.  A number of files are
 sourced before your editing session starts, where
 "sourced" means the commands in these files are entered
-as if in _Command Mode_, but without the initial `:`.
+as if in *Command Mode*, but without the initial`:`.
 
-First sourced is /etc/vimrc.  Historically on Unix, this
+First sourced is`/etc/vimrc`.  Historically on Unix, this
 was the location for system-wide vim configuration changes.
-Now a days, this file has a command that sources your Linux
-distribution's vim-package related configuration changes.
-For Arch Linux this file
-is `/usr/share/vim/vimfiles/archlinux.vim`, but the command
-only uses the file's base name, its location is compiled into
-the vim executable.
+Now-a-days, this file has a command that causes vim to source
+your Linux distribution's vim-package related configuration
+changes.  For Arch Linux this command is
 
-Your linux system admins may also have added other "helpful"
-system-wide configuration changes into either of these files.
-possibly even creating other files in the compiled in
-location.
+```
+   runtime! archlinux.vim
+```
+
+Vim looks for this file at this location:`/usr/share/vim/vimfiles/`,
+which is compiled into the vim executable.
 
 Vim next looks for user configuration changes in `~/.vimrc`,
 if it does not exist, it then looks in `~/.vim/vimrc`.
 
-__Warning:__ If neither `~/.vimrc` nor `~/.vim/vimrc` exist,
-vim will source the `defaults.vim` file.  This can
-very well overide behavior in `/etc/vimrc` itself!  Not
-knowing about the existence of this mechanism can be very
-confusing to new and intermediate vim users.  Simply
+**Warning:** If neither`~/.vimrc`nor`~/.vim/vimrc`exist,
+vim will source the`defaults.vim`file.  This has the
+currently compiled in of location:`/usr/share/vim/vim82/`.
+This can very well overide behavior in
+both`/etc/vimrc`and`/usr/share/vim/vimfiles/archlinux.vim`.
+Not knowing about the existence of these mechanisms can be
+very confusing to new and intermediate vim users.  Simply
 creating an empty ~/.vimrc file can radically change
 vim behavior and the user has no clue how to recover
 previous desirable features.  Putting the line
@@ -40,8 +41,10 @@ previous desirable features.  Putting the line
 
 in `/etc/vimrc` will stop this "feature."
 
-In Arch Linux, the location of this default file is
-`/usr/share/vim/vim80/defaults.vim`.
+Your linux system admins may also have added other "helpful"
+system-wide configuration changes into any of these files,
+possibly even creating other files in the compiled in
+locations.
 
 ## Sample vimrc files
 
@@ -53,12 +56,10 @@ as if in vim command mode.  Comments begin with `"`.
 ```
    " ~/.vimrc
    "
-   " A very simplistic .vimrc file.  Prevents default.vim
-   " on random linux distributions from giving vim surprising
-   " behavior, like overriding /etc/vimrc changes!
+   " A very simplistic .vimrc file I first
+   " used after being a life long vi user.
 
-   " Turn off ugly colors on systems for which
-   " I have not had time to tweak the environment.
+   " Turn off ugly colors
    syntax off
 
    " use utf-8
@@ -72,116 +73,36 @@ as if in vim command mode.  Comments begin with `"`.
    set expandtab
 ```
 
-### Intermediate vim user's vimrc file
+### The vimrc file I currently use
 
 ```
+   " Vim configuration file
+   "
    " ~/.vim/vimrc
    "
-   "   The commands in the file are
-   "   run as if in vim command mode.
-   "
-   "   First /etc/vimrc is sourced, which should first source
-   "   your distribution's vim-package related configuration
-   "   files and then your system admins "helpful" system-wide
-   "   configuration changes.  Then this file is sourced.
-   "
-   "   Warning: If neither ~/.vimrc nor ~/.vim/vimrc exist,
-   "   vim will source a "defaults.vim" file (unless the SAs
-   "   put "let skip_defaults_vim=1" in /etc/vimrc).  This can
-   "   very well overide behavior in /etc/vimrc!  Not knowing
-   "   about the existence of this mechanism can be very
-   "   confusing to new and intermediate vim users.  Simply
-   "   creating an empty ~/.vimrc file can radically change
-   "   vim behavior and the user has no clue how to recover
-   "   previous desirable features.
 
-   " Setup the Vundle plugin manager
-   "
-   " Initially you will need to bootstrap the Vundle infrastructure
-   " by manually cloning it into the right place:
-   "
-   "   $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-   "
-   " and then from within vim run
-   "
-   "   :PluginInstall
-   "
-   set nocompatible    " be iMproved, required by Vundle
-   filetype off        " required by Vundle
+   " Enter the 21st Century
+   if &compatible
+     set nocompatible
+   endif
+   syntax enable
+   filetype plugin on
 
-   " Set the runtime path to include Vundle
-   set rtp+=~/.vim/bundle/Vundle.vim
-
-   " Initialize Vundle
-   call vundle#begin()
-   " Let Vundle manage Vundle, required by Vundle
-   Plugin 'VundleVim/Vundle.vim'
-
-   " GitHub plugins for Vundle to manage:
-
-   "   Extend */# functionality while in visual mode
-   Plugin 'nelstrom/vim-visual-star-search'
-
-   "   Provide syntax checking for a variety of languages
-   Plugin 'vim-syntastic/syntastic'
-
-   "   Provide Rust file detection, syntax highlighting,
-   "   formatting, syntastic integration, and more.
-   Plugin 'rust-lang/rust.vim'
-
-   call vundle#end()
-   filetype plugin indent on   " required by Vundle
-   " End setup for the Vundle plugin manager
-
-   " Configure new user settings for Syntastic
-   set statusline+=%#warningmsg#
-   set statusline+=%{SyntasticStatuslineFlag()}
-   set statusline+=%*
-
-   let g:syntastic_always_populate_loc_list = 1
-   let g:syntastic_auto_loc_list = 1
-   let g:syntastic_check_on_open = 0
-   let g:syntastic_check_on_wq = 0
-
-   " Turn on and configure syntaxic color highlighting
-   syntax on
-   " To turn off colors, use ":syntax off"
-   "
-   " Set the default color scheme
-   colorscheme elflord
-   "
-   " To select a different color scheme while in vim,
-   " tab through
-   "
-   "   :colorscheme blue
-   "
-   " first to get the command, then to get the color scheme.
-   "
-   " Example of a color scheme that does not come with Vim,
-   "
-   "   From https://github.com/tomasr/molokai, put the
-   "   colorscheme file here: ~/.vim/color/molokai.vim
-   "
-   "   Customizations come before :colorscheme command.
-   "
-   " let g:molokai_original = 1
-   " colorscheme molokai
-   "
-   " Force all files ending in .md, besides just README.md,
-   " to be intepreted as MarkDown and not Modula-2.
-   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-   " Set default encoding
-   "
-   " Use utf-8 (I am a utf-8 fanboy)
+   " Set default encoding and localizations
    set encoding=utf-8
    set fileencoding=utf-8
-
-   " Set the default language to US English for spell checking.
    set spelllang=en_us
-   "
-   " To turn on spellcheck         :set spell
-   " To turn it off spellchecking  :set nospell
+
+   " Allow :find and gf to use recursive sub-folders
+   set path+=**
+   set hidden
+
+   " More powerful backspacing
+   set backspace=indent,eol,start
+
+   " Make tab completion in command mode more efficient
+   set wildmenu
+   set wildmode=longest:full,full
 
    " Set default tabstops and replace tabs with spaces
    set tabstop=4
@@ -189,28 +110,90 @@ as if in vim command mode.  Comments begin with `"`.
    set softtabstop=4
    set expandtab
 
-   " Configure vim to use mouse in normal mode only
-   set mouse=n
-   "
-   " See `:help mouse-using' to configure the mouse
-   "
-   " When enabled, use <shift>-clicks to send mouse
-   " events to the terminal emulator instead of vim.
-   "
-   " To enable full mouse support from within vim,
-   "   :set mouse=a
-
-   set history=500   " Number lines of command history to keep
+   " Misc. configurations
+   set history=5000  " Number lines of command history to keep
+   set mouse=n       " Enable mouse for normal mode only
    set scrolloff=3   " Keep cursor away from edge of window
-   set backspace=indent,eol,start  " More powerful backspacing
+   set nowrap        " Don't wrap lines
+   set sidescroll=1  " Horizontally scroll nicely
+   set splitbelow    " Horizontally split below
+   set splitright    " Vertically split to right
+   set ruler         " Show line/column info
 
-   " Make tab completion in command mode more efficient
-   set wildmenu
-   set wildmode=longest:full,full
+   " Setup the Plug plugin manager
+   "
+   " Bootstrap manually by installing it into the right place:
+   "
+   "   $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+   "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   "
+   " and then from within vim run
+   "
+   "   :PlugInstall
+   "
+   " Plug Commands:
+   "   :PlugInstall [name ...] [#threads] Install plugins
+   "   :PlugUpdate [name ...] [#threads]  Install or update plugins
+   "   :PlugClean[!]           Remove unlisted plugins
+   "   :PlugUpgrade            Upgrade Plug itself
+   "   :PlugStatus             Check the status of plugins
+   "   :PlugDiff               Diff previous update and pending changes
+   "   :PlugSnapshot[!] [path] Generate script to restore current plugin state
+   "
+   call plug#begin('~/.vim/plugged')
 
-   " Open new Vim windows below/right of active window
-   set splitbelow
-   set splitright
+   " Provide syntax checking for a variety of languages
+   Plug 'vim-syntastic/syntastic'
+
+   " Provide Rust file detection, syntax highlighting,
+   " formatting, syntastic integration, and more
+   Plug 'rust-lang/rust.vim'
+
+   " Extend */# functionality while in visual mode
+   Plug 'nelstrom/vim-visual-star-search'
+
+   " Surrond text objects with matching (). {}. '', etc
+   Plug 'tpope/vim-surround'
+
+   " Enable repeating supported plugin maps with "."
+   Plug 'tpope/vim-repeat'
+
+   " Indent text objects; defines 2 new text objects
+   " based on indentation levels, i and I
+   Plug 'michaeljsmith/vim-indent-object'
+
+   " Visualizes undo history; switch between undo branches
+   Plug 'mbbill/undotree'
+
+   " Shows what is in registers
+   " extends " and @ in normal mode and <CTRL-R> in insert mode
+   Plug 'junegunn/vim-peekaboo'
+
+   " Extend <ctrl>-A <ctrl>-X to work with dates and not just numbers
+   Plug 'tpope/vim-speeddating'
+
+   call plug#end()
+
+   " Configure user settings for Syntastic
+   let g:syntastic_always_populate_loc_list = 1
+   let g:syntastic_auto_loc_list = 1
+   let g:syntastic_check_on_open = 1
+   let g:syntastic_check_on_wq = 0
+   let g:syntastic_cursor_column = 0
+   let g:syntastic_enable_balloons = 0
+
+   " Force all files ending in .md, besides just README.md,
+   " to be intepreted as MarkDown and not Modula-2
+   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+   " Define <Leader> explicitly as \
+   let mapleader = "\\"
+
+   " Clear search highlighting with \\
+   nnoremap <leader>\ :nohlsearch<return>
+
+   " Toggle Synastic into and out of passive mode
+   nnoremap <leader>st :SyntasticToggleMode<return>
 ```
 
 ---
