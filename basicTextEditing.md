@@ -7,10 +7,10 @@ can be internalized and eventually become part of your "muscle memory."
 
 ## Vim has 4 main modes
 
-* [Normal Mode](normal-mode)
-* [Command Mode](command-mode)
-* [Insert Mode](insert-mode)
-* [Visual Mode](visual-mode) (not in original vi)
+* [Normal Mode](#normal-mode)
+* [Command Mode](#command-mode)
+* [Insert Mode](#insert-mode)
+* [Visual Mode](#visual-mode) (not in original vi)
 
 ---
 
