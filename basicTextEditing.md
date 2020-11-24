@@ -11,6 +11,7 @@ can be internalized and eventually become part of your "muscle memory."
 * [Command Mode](#command-mode)
 * [Insert Mode](#insert-mode)
 * [Visual Mode](#visual-mode) (not in original vi)
+* [Useful Vim Information](#useful-vim-information)
 
 ---
 
@@ -179,9 +180,9 @@ It is also possible to perform any one *normal mode* action within
 
 ---
 
-## Command Mode (line editor) commands
+## Command Mode
 
-(TL;DR) Vim is an open source version of the Unix editor vi,
+Vim is an open source version of the Unix editor vi,
 which is a CLI visual interface of the Berkeley Unix
 line editor ex, which itself is a re-implementation of
 the AT&T Unix line editor ed.  On really old terminals,
@@ -258,7 +259,7 @@ support for *Normal Mode* only.
 
 ---
 
-## Other useful Vim Information
+## Useful Vim Information
 
 ### Undo/redo commands
 
