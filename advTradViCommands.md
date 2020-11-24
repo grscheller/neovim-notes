@@ -5,15 +5,15 @@ A good vi cheatsheet for traditional vi can be found here:
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
 
 (TL;DR) The original vi was often called "bimodal" where
-_Normal Mode_ and _Command Mode_ where conflated together
-and called "_Command Mode_."  _Insert Mode_ was the second
+*Normal Mode* and *Command Mode* where conflated together
+and called "*Command Mode*."  *Insert Mode* was the second
 mode.  It was the Berkley Unix nvi (for new vi) which first
 introduced multiple windows.
 
 Where the behavior differs from the original Vi, I will indicate
 the Vim behavior.
 
-## _Normal Mode_ Commands
+## *Normal Mode* Commands
 
 ### Misc commands
 
@@ -28,7 +28,7 @@ For `<ctrl-z>`, in bash usage `fg %1` will usually work to
 unsuspend vim.  If you have other things suspended, hunt for it
 using `$ jobs`.
 
-### Commands to move cursor in __normal mode__
+### Commands to move cursor in *normal mode*
 
 | Command    | Description                                   |
 |:----------:|:--------------------------------------------- |
@@ -108,19 +108,19 @@ defining "sections."
 
 | Command    | Description                                               |
 |:----------:|:--------------------------------------------------------- |
-| `C`        | change from cursor to end of line (enter _Insert Mode_)   |
-| `R`        | from cursor, overwriting text (enter _Replace Mode_)      |
-| `S`        | change entire line (enter _Insert Mode_)                  |
+| `C`        | change from cursor to end of line (enter *Insert Mode*)   |
+| `R`        | from cursor, overwriting text (enter *Replace Mode*)      |
+| `S`        | change entire line (enter *Insert Mode*)                  |
 | `I`        | insert text at beginning of line after initial whitespace |
-| `i`        | enter _Insert Mode_                                       |
-| `a`        | advance cursor one char and enter _Insert Mode_           |
-| `A`        | advance cursor to end of line and enter _Insert Mode_     |
-| `x`        | delete char at cursor, stay in _Normal Mode_              |
-| `X`        | delete char before cursor, stay in _Normal Mode_          |
-| `>>`       | move entire line 1 tabstop right, stay in _Normal Mode_   |
-| `<<`       | move entire line 1 tabstop left, stay in _Normal Mode_    |
+| `i`        | enter *Insert Mode*                                       |
+| `a`        | advance cursor one char and enter *Insert Mode*           |
+| `A`        | advance cursor to end of line and enter *Insert Mode*     |
+| `x`        | delete char at cursor, stay in *Normal Mode*              |
+| `X`        | delete char before cursor, stay in *Normal Mode*          |
+| `>>`       | move entire line 1 tabstop right, stay in *Normal Mode*   |
+| `<<`       | move entire line 1 tabstop left, stay in *Normal Mode*    |
 
-## _Insert Mode_ Commands
+## *Insert Mode* Commands
 
 | Command          | Description                                       |
 |:----------------:|:------------------------------------------------- |
@@ -134,8 +134,8 @@ defining "sections."
 | `<ctrl-u>`       | delete everything to left of cursor               |
 | `<ctrl-t>`       | indent current line one tab stop                  |
 | `<ctrl-d>`       | un-indent current line one tab stop               |
-| `<ctrl-c>`       | break out of _Insert Mode_, punt on any auto cmds |
-| `<ctrl-x>`       | enter _Insert Mode_ completion submode            |
+| `<ctrl-c>`       | break out of *Insert Mode*, punt on any auto cmds |
+| `<ctrl-x>`       | enter *Insert Mode* completion submode            |
 
 For more information on `<ctrl-x>` see,
 
@@ -149,20 +149,20 @@ control turned on, and you hit the unfortunate key combination
 `<ctrl-x><ctrl-s>`, something EMACS users are likely to do, you will
 find your vim editting session frozen.  Type `<ctrl-q>` to unlock.
 
-### _Insert Mode_ vs _Replace Mode_
+### *Insert Mode* vs *Replace Mode*
 
-* _Replace Mode_ is similar to _Insert Mode_ but
+* *Replace Mode* is similar to *Insert Mode* but
   characters are overwritten instead of inserted.
 * You can toggle between them via the terminal
-  `<insert>` key.
-* You can enter _Replace Mode_ directly from _Normal Mode_
+  `<insert>`key.
+* You can enter *Replace Mode* directly from *Normal Mode*
   via the `R` command.
-* Like in _Insert Mode_ you can naviagte around the text
+* Like in *Insert Mode* you can naviagte around the text
   via the arrow keys creating multiple undo events.
-* In _Replace Mode_, the`<backspace>`and`<ctrl-h>`act
+* In *Replace Mode*, the`<backspace>`and`<ctrl-h>`act
   like a back arrow key but undoes (only) last set of replacements.
 
-## _Command Mode_ Commands
+## *Command Mode* Commands
 
 | Command        | Description                                          |
 |:-------------- |:---------------------------------------------------- |
@@ -181,7 +181,7 @@ find your vim editting session frozen.  Type `<ctrl-q>` to unlock.
 ## Marks
 
 Marks allow you to set locations to either be able to jump to
-or use with _Normal Mode_ editing commands.
+or use with *Normal Mode* editing commands.
 
 Marks within a given buffer are denoted via leters `a-z`.  For marks between
 different buffers, use letters `A-Z`.  The mark is a "zero-width" entity
@@ -202,7 +202,7 @@ between the cursor and the preceding character.
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceeding character.  If the mark is
 before the cursor in the file, the selection does not contain the
-highlighted character.  Just like the behavior of the `yb` _Normal Mode_
+highlighted character.  Just like the behavior of the `yb` *Normal Mode*
 command.
 
 ---

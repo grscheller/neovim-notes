@@ -7,12 +7,12 @@ if you don't know how to navigate multiple vim windows.
 
 ## Basic concepts
 
-* A _file buffer_ is the in memory text associated with a file
-* A _window_ is a viewport on a buffer
-* A _tab page_ is a collection of windows
-* A _terminal window_ is a window that displays a Shell
+* A *file buffer* is the in memory text associated with a file
+* A *window* is a viewport on a buffer
+* A *tab page* is a collection of windows
+* A *terminal window* is a window that displays a Shell
 
-## Creating new windows _Command Mode_
+## Creating new windows *Command Mode*
 
 | Command | Description                             |
 |:------- |:--------------------------------------- |
@@ -21,7 +21,7 @@ if you don't know how to navigate multiple vim windows.
 | `:spl`  | new window new view same buffer above   |
 | `:vspl` | new window new view same buffer to left |
 
-## Creating new windows _Normal Mode_
+## Creating new windows *Normal Mode*
 
 | Command     | Description                             |
 |:-----------:|:--------------------------------------- |
@@ -44,7 +44,7 @@ I configure these in my`~/.vim/vimrc`
    set splitright
 ```
 
-## Navigating between Windows _Normal Mode_
+## Navigating between Windows *Normal Mode*
 
 | Command     | Description           |
 |:-----------:|:--------------------- |
@@ -129,16 +129,16 @@ Vim allows you to open a shell in a separate Vim Window
 
 This terminal window is essentually a read only vim session that
 displays the shell session interactions.  You are put into
-_Insert Mode_ and input is passed to the shell.  You can copy
-text by jumping to _Normal Mode_ using the usual vim buffers.
-Entering _Insert Mode_ will return you to the terminal session.
-You can only paste into the shell session itself while in _Insert Mode_.
+*Insert Mode* and input is passed to the shell.  You can copy
+text by jumping to *Normal Mode* using the usual vim buffers.
+Entering *Insert Mode* will return you to the terminal session.
+You can only paste into the shell session itself while in *Insert Mode*.
 
 | Command      | Description                                      |
 |:------------:|:------------------------------------------------ |
 | `<ctrl-w>""` | Paste contents default buffer into shell session |
 | `<ctrl-w>"a` | Paste contents buffer`"a`into shell session      |
-| `<ctrl-w>N`  | Put vim terminal window into _Normal Mode_       |
+| `<ctrl-w>N`  | Put vim terminal window into *Normal Mode*       |
 
 ---
 

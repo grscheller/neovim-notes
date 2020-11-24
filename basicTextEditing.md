@@ -8,8 +8,8 @@ can be internalized and eventually become part of your "muscle memory."
 ## Vim has 4 main modes
 
 * [Normal Mode](#normal-mode)
-* [Command Mode](#command-mode)
 * [Insert Mode](#insert-mode)
+* [Command Mode](#command-mode)
 * [Visual Mode](#visual-mode) (not in original vi)
 * [Useful Vim Information](#useful-vim-information)
 
@@ -183,7 +183,7 @@ It is also possible to perform any one *normal mode* action within
 ## Command Mode
 
 Vim is an open source version of the Unix editor vi,
-which is a CLI visual interface of the Berkeley Unix
+which is the visual interface of the Berkeley Unix
 line editor ex, which itself is a re-implementation of
 the AT&T Unix line editor ed.  On really old terminals,
 essentially line printers with keyboards, the descendants
@@ -217,7 +217,7 @@ and prompts you with`:`.
 
 While in *Command Mode*, up & down arrow keys cycle through previous
 *Command Mode* commands.  The left & right arrow keys help you
-re-edit the line.  Press`<esc>`to return to *Normal Mode* without
+re-edit the line.  Press`<esc>`or`<ctrl-[>`to return to *Normal Mode* without
 issuing a command.
 
 ---

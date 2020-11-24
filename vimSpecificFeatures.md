@@ -71,9 +71,9 @@ These can be written to in Command Mode via `:let @5 = "foobar"`
 |:---------:|:-------------------------------------------- |
 | `".`      | contains last inserted text                  |
 | `"%`      | contains the name of the current file        |
-| `":`      | contains most recent _Command Mode_ command  |
+| `":`      | contains most recent *Command Mode* command  |
 
-Use `:@:` to repeat last _Command Mode_ command.
+Use `:@:` to repeat last *Command Mode* command.
 
 ### Alternate file register
 
@@ -105,8 +105,8 @@ other registers.  Reading from it returns nothing.
 
 ### Last search pattern register
 
-The last search pattern register `"/` is readable from _Normal Mode_.
-You can assign values to it in _Command Mode_ via
+The last search pattern register `"/` is readable from *Normal Mode*.
+You can assign values to it in *Command Mode* via
 
 ```
    :let @/ = "Some String"
@@ -114,21 +114,21 @@ You can assign values to it in _Command Mode_ via
 
 ## Vim Macros
 
-A useful _Normal Mode_ feature of vim is the`.`command which
-repeats the last _Normal Mode_ command which changed text.  Combining
+A useful *Normal Mode* feature of vim is the`.`command which
+repeats the last *Normal Mode* command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
 
 But what if you want to do a series of commands between searches?  The
 vim macro feature comes to the rescue.
 
-This feature allows you to repeat a sequence of _Normal Mode_ and
-_Command Mode_ commands.  Macros are stored in vim registers.
+This feature allows you to repeat a sequence of *Normal Mode* and
+*Command Mode* commands.  Macros are stored in vim registers.
 
-To create a macro, issue the _Normal Mode_`q`command followed by a
+To create a macro, issue the *Normal Mode*`q`command followed by a
 vim register name, say`a`.  At the bottom of the screen you see the
-text `recording @a`.  Issue both _Normal Mode_ and _Command Mode_
+text `recording @a`.  Issue both *Normal Mode* and *Command Mode*
 commands and edit as usual.  To finish, issue another
-_Normal Mode_`q`command.  At a later time, to execute this macro
+*Normal Mode*`q`command.  At a later time, to execute this macro
 and repeat the sequence of commands, type `@a`.
 
 As an example, say you want to change instances of "Unix programming"

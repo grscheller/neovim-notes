@@ -65,10 +65,10 @@ Available mouse options are:
 
 | Option | Mode                                 |
 |:------:|:------------------------------------:|
-| `n`    | _Normal Mode_                        |
-| `v`    | _Visual Mode_                        |
-| `i`    | _Insert Mode_                        |
-| `c`    | _Command Mode_                       |
+| `n`    | *Normal Mode*                        |
+| `v`    | *Visual Mode*                        |
+| `i`    | *Insert Mode*                        |
+| `c`    | *Command Mode*                       |
 | `a`    | All previous modes                   |
 | `h`    | All previous modes only when in help |
 
@@ -76,11 +76,11 @@ As a workaround, you can send mouse events directly to the
 terminal emulator instead of Vim by holding down the SHIFT
 key.
 
-I find that configuring the mouse for anything but _Normal Mode_
-pretty useless and counter intuitive.  In _Insert Mode_ I
+I find that configuring the mouse for anything but *Normal Mode*
+pretty useless and counter intuitive.  In *Insert Mode* I
 don't like the middle mouse button repositioning a paste.
-In _Normal Mode_ I don't like a click-drag throwing me into
-character _Visual Mode_.
+In *Normal Mode* I don't like a click-drag throwing me into
+character *Visual Mode*.
 
 ## Configuring wildmenu
 
@@ -102,12 +102,12 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   to vim.  If vim is started with the name vi, it launches
   itself in vi compatibility mode.  Vim in compatibility
   mode is neither POSIX compliant nor an AT&T System V vi clone.
-* In vi, you cannot navigate around file in _Insert Mode_ or
-  _Replace Mode_ with the arrow keys.
-* Hitting`<ins>`while in _Insert Mode_ or _Replace Mode_ does
+* In vi, you cannot navigate around file in *Insert Mode* or
+  *Replace Mode* with the arrow keys.
+* Hitting`<ins>`while in *Insert Mode* or *Replace Mode* does
   not swap you between them.
-* `<ctrl-o>` vi does not let you execute a _Normal Mode_ command
-  while in _Insert Mode_.
+* `<ctrl-o>` vi does not let you execute a *Normal Mode* command
+  while in *Insert Mode*.
 
 ---
 

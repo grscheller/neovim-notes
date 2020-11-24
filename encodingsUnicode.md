@@ -41,7 +41,7 @@ FTP files in text mode to convert format between different OS's.
 Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
-are using via 2 character "diagraph" sequences.  While in _Insert Mode_,
+are using via 2 character "diagraph" sequences.  While in *Insert Mode*,
 type`<ctrl-k>`followed by a two character sequence.
 
 |  Command      | Description                                   |
@@ -61,7 +61,7 @@ In modern Unix terminal emulators and Libre Office, input and display
 of Unicode code points just works.  Terminals are fixed width font
 beasts, but Libre Office handles the variable width code points just fine.
 
-While in _Insert Mode_, code points can be entered into vim either from
+While in *Insert Mode*, code points can be entered into vim either from
 the terminal or by typing into gvim.
 
 |  Command                     | Description            |
