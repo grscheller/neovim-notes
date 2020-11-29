@@ -6,9 +6,9 @@ Without this information, it can be very frustrating
 reverse engineer Vim behavior.  A number of files are
 sourced before your editing session starts, where
 "sourced" means the commands in these files are entered
-as if in *Command Mode*, but without the initial`:`.
+as if in *Command Mode*, but without the initial `:`.
 
-First sourced is`/etc/vimrc`.  Historically on Unix, this
+First sourced is `/etc/vimrc`.  Historically on Unix, this
 was the location for system-wide vim configuration changes.
 Now-a-days, this file has a command that causes vim to source
 your Linux distribution's vim-package related configuration
@@ -18,17 +18,17 @@ changes.  For Arch Linux this command is
    runtime! archlinux.vim
 ```
 
-Vim looks for this file at this location:`/usr/share/vim/vimfiles/`,
+Vim looks for this file at this location: `/usr/share/vim/vimfiles/`,
 which is compiled into the vim executable.
 
 Vim next looks for user configuration changes in `~/.vimrc`,
 if it does not exist, it then looks in `~/.vim/vimrc`.
 
-**Warning:** If neither`~/.vimrc`nor`~/.vim/vimrc`exist,
-vim will source the`defaults.vim`file.  This has the
-currently compiled in of location:`/usr/share/vim/vim82/`.
+**Warning:** If neither `~/.vimrc` nor `~/.vim/vimrc` exist,
+vim will source the `defaults.vim` file.  This has the
+currently compiled in of location: `/usr/share/vim/vim82/`.
 This can very well overide behavior in
-both`/etc/vimrc`and`/usr/share/vim/vimfiles/archlinux.vim`.
+both `/etc/vimrc` and `/usr/share/vim/vimfiles/archlinux.vim`.
 Not knowing about the existence of these mechanisms can be
 very confusing to new and intermediate vim users.  Simply
 creating an empty ~/.vimrc file can radically change

@@ -28,12 +28,12 @@ On my linux systems I put
    set fileencoding=utf-8
 ```
 
-in my`~/.vim/vimrc`file.  Now a days vim automatically figures out
-whether the file being editted in UTF-8 or UTF-16LE with`\r\n`line
+in my `~/.vim/vimrc` file.  Now a days vim automatically figures out
+whether the file being editted in UTF-8 or UTF-16LE with `\r\n` line
 endings.
 
 (TL;DR): GIT, for text files, does the conversion to the correct format
-depending on the system you checkout to.  In the olde day, we use to
+depending on the system you checkout to.  In the olde days, we use to
 FTP files in text mode to convert format between different OS's.
 
 ## Vim Digraphs
@@ -42,7 +42,7 @@ Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
 are using via 2 character "diagraph" sequences.  While in *Insert Mode*,
-type`<ctrl-k>`followed by a two character sequence.
+type `<ctrl-k>` followed by a two character sequence.
 
 |  Command      | Description                                   |
 |:-------------:|:--------------------------------------------- |

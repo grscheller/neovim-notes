@@ -38,7 +38,7 @@ Your current location in the jump list is allways 0.
 
 ### Default register
 
-The default register has a name`""`, that is double-quote double-quote.
+The default register has a name `""`, that is double-quote double-quote.
 
 ### Numbered registers
 
@@ -114,7 +114,7 @@ You can assign values to it in *Command Mode* via
 
 ## Vim Macros
 
-A useful *Normal Mode* feature of vim is the`.`command which
+A useful *Normal Mode* feature of vim is the `.` command which
 repeats the last *Normal Mode* command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
 
@@ -124,11 +124,11 @@ vim macro feature comes to the rescue.
 This feature allows you to repeat a sequence of *Normal Mode* and
 *Command Mode* commands.  Macros are stored in vim registers.
 
-To create a macro, issue the *Normal Mode*`q`command followed by a
-vim register name, say`a`.  At the bottom of the screen you see the
+To create a macro, issue the *Normal Mode* `q` command followed by a
+vim register name, say `a`.  At the bottom of the screen you see the
 text `recording @a`.  Issue both *Normal Mode* and *Command Mode*
 commands and edit as usual.  To finish, issue another
-*Normal Mode*`q`command.  At a later time, to execute this macro
+*Normal Mode* `q` command.  At a later time, to execute this macro
 and repeat the sequence of commands, type `@a`.
 
 As an example, say you want to change instances of "Unix programming"

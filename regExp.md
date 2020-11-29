@@ -101,23 +101,23 @@ expression engine.
   * match `-` as itself if first or last enclosed character
 * `( )` define subexpression
   * groups concatenated RegExps together as single unit
-  * reference subexpression later in RE via `\n` where n`in range 1-9
+  * reference subexpression later in RE via `\n` where n` in range 1-9
   * multiple groupings hierarchical, ordered by left paren
 
-Let`S`and`T`represent regular expressions
+Let `S` and `T` represent regular expressions
 
-* `ST`concats`S`and`T`
-* `(ST)`concat`S`and`T`but treat as single subexpression
-* `S|T`matches either`S`or`T`
-* `S*`matches 0 or more instances of`S`
-* `S+`matches 1 or more instances of`S`
-* `S{n,m}`matches at least`n`but not more than`m`of`S`
-* `S{n,}`matches at least`n`of`S`
-* `S{,m}`matches not more than m of S`
-* `S{m}`matches exactly`m`of`S`
-* `S?`matches 0 or 1 of`S`
+* `ST` concats `S` and `T`
+* `(ST)` concat `S`and `T` but treat as single subexpression
+* `S|T` matches either `S` or `T`
+* `S*` matches `0` or more instances of `S`
+* `S+` matches `1` or more instances of `S`
+* `S{n,m}` matches at least `n`but not more than `m` of `S`
+* `S{n,}` matches at least `n` of `S`
+* `S{,m}` matches not more than `m` of  S`
+* `S{m}` matches exactly `m` of `S`
+* `S?` matches `0` or `1` of `S`
 
-Note,`*, +, ?, and {m,n}`all bind more closely than concatenation.
+Note, `*`, `+`, `?`, and `{m,n}` all bind more closely than concatenation.
 
 ## Basic Regular Expressions(BRE)
 
@@ -138,20 +138,20 @@ compatibility with vi.
 
 It is usually easiest to learn regular expressions using simple examples.
 
-| RegExp               | Description                                     |
-|:-------------------- |:----------------------------------------------- |
-| `foo.*`              | match`foo`followed by zero or more characters   |
-| `fooba+r`            | match`foobar, foobaar, foobaaar, ...`           |
-| `foo(bar\|baz)`      | match either`foobar`or`foobaz`                  |
-| `fo{2,4}bar`         | match`foobar, fooobar,`or`foooobar`             |
-| `(fo){2,}bar`        | match`fofobar, fofofobar, fofofobar, ...`       |
-| `(fo){2}bar`         | match`fofobar`                                  |
-| `(fo){,3}bar`        | match`bar, fobar, fofobar,`or`fofofobar`        |
-| `^foobar`            | match`foobar`at beginning of a line             |
-| `foobar$`            | match`foobar`at end of a line                   |
-| `^foo(bar\|baz)$`    | match line containing only`foobar`or`foobaz`    |
-| `fooba[rz]`          | match`foobar`or`foobaz`                         |
-| `foob[^ui]r`         | matches`fobar`or`fobqz`but not`fobur`nor`fobir` |
+| RegExp               | Description                                            |
+|:-------------------- |:------------------------------------------------------ |
+| `foo.*`              | match `foo` followed by zero or more characters        |
+| `fooba+r`            | match `foobar`, `foobaar`, `foobaaar`, ...             |
+| `foo(bar\|baz)`      | match either `foobar` or `foobaz`                      |
+| `fo{2,4}bar`         | match `foobar`, `fooobar`, or `foooobar`               |
+| `(fo){2,}bar`        | match `fofobar`, `fofofobar`, `fofofobar`, ...         |
+| `(fo){2}bar`         | match `fofobar`                                        |
+| `(fo){,3}bar`        | match `bar`, `fobar`, `fofobar`, or `fofofobar`        |
+| `^foobar`            | match `foobar` at beginning of a line                  |
+| `foobar$`            | match `foobar` at end of a line                        |
+| `^foo(bar\|baz)$`    | match line containing only`foobar` or `foobaz`         |
+| `fooba[rz]`          | match `foobar` or `foobaz`                             |
+| `foob[^ui]r`         | matches `fobar` or `fobqz` but not `fobur` nor `fobir` |
 
 ## Using Regular Expressions in Vim
 
@@ -159,7 +159,7 @@ I like to think of all my regular expressions as extended regular
 expressions.  When working with basic regular expressions I still
 think in terms of extended regular expressions but with the need
 to escape the `(){}|+?` characters with a backslash to turn on their
-meta-meaning.  The character `.` is meta without escaping.
+meta-meaning.  The characters `.`, `[`, `]` are meta without escaping.
 
 ### Examples
 
@@ -178,7 +178,7 @@ For a description of POSIX.2 regular expressions see
 ```
 
 According to this Linux man page,
-POSIX.2 refers to "*extended regular expresions*" as
+POSIX.2 refers to "*extended regular expresions*" as both
 "*modern regular expresions*" and "*egrep regular expressions*."
 It also refers to "*simple regular expressions*" as
 "*obsolete regular expressions*" and "*basic regular expressions*"

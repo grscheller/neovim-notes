@@ -2,7 +2,7 @@
 
 Within a single vim terminal editing session, using multiple
 CLI ncurses windows can be very useful.  For example,
-using the help facility`:help <command>`can be confusing
+using the help facility `:help <command>` can be confusing
 if you don't know how to navigate multiple vim windows.
 
 ## Basic concepts
@@ -99,13 +99,13 @@ can switch between windows via clicking the "tab".
 | `:tabn`           | move to next tab               |
 | `:tabp`           | move to previous tab           |
 | `:tabnew`         | open new tab with empty buffer |
-| `:tabedit <file>` | open new tab to edit`<file>`   |
+| `:tabedit <file>` | open new tab to edit `<file>`  |
 | `gt`              | move to next tab               |
 | `gT`              | move to previous tab           |
 
 ## Starting Vim with multiple windows/tabs
 
-```t
+```
    $ vim -p[n]    # Open n tab pages (default: one for each file)
    $ vim -o[n]    # Open n windows (default: one for each file)
    $ vim -O[n]    # Like -o but split vertically
@@ -115,10 +115,10 @@ can switch between windows via clicking the "tab".
 
 Traditionally in vi one could interact with the Unix shell via
 
-| Command   | Description                              |
-|:--------- |:---------------------------------------- |
-| `:!<cmd>` | display output of shell command`<cmd>`   |
-| `:sh`     | replace editing session with a new shell |
+| Command   | Description                                              |
+|:--------- |:----------------------------------------                 |
+| `:!<cmd>` | display output of shell command `<cmd>`                  |
+| `:sh`     | replace editing session with a new shell (not in Neovim) |
 
 Vim allows you to open a shell in a separate Vim Window
 
@@ -137,7 +137,7 @@ You can only paste into the shell session itself while in *Insert Mode*.
 | Command      | Description                                      |
 |:------------:|:------------------------------------------------ |
 | `<ctrl-w>""` | Paste contents default buffer into shell session |
-| `<ctrl-w>"a` | Paste contents buffer`"a`into shell session      |
+| `<ctrl-w>"a` | Paste contents buffer `"a` into shell session    |
 | `<ctrl-w>N`  | Put vim terminal window into *Normal Mode*       |
 
 ---

@@ -30,12 +30,12 @@ can be internalized and eventually become part of your "muscle memory."
 | `0`            | move to beginning of line                         |
 | `G`            | move to last line in file                         |
 | `gg`           | move to first line in file                        |
-| `f<char>`      | move forward to next`<char>`on current line       |
-| `F<char>`      | move backward to next`<char>`on current line      |
-| `t<char>`      | move forward before next`<char>`on current line   |
-| `T<char>`      | move backward after next`<char>`on current line   |
-| `;`            | next target for last f,F,t,T command              |
-| `,`            | prev target for last f,F,t,T command              |
+| `f<char>`      | move forward to next `<char>` on current line     |
+| `F<char>`      | move backward to next `<char>` on current line    |
+| `t<char>`      | move forward before next `<char>` on current line |
+| `T<char>`      | move backward after next `<char>` on current line |
+| `;`            | next target for last `f`, `F` ,`t` ,`T` command   |
+| `,`            | prev target for last `f`, `F`, `t`, `T` command   |
 | `3fw`          | move forward to 3rd word on current line          |
 | `/RegExp<ret>` | forward search for regular expression pattern     |
 | `?RegExp<ret>` | backward search for regular expression pattern    |
@@ -64,7 +64,7 @@ default register in vim.
 | `P`           | paste buffer contents "before"                   |
 
 What "before" or "after" mean depends on what is
-in the buffer.  Both`y`and`d`can be used with all
+in the buffer.  Both `y` and `d` can be used with all
 the *normal mode* cursor positioning commands.
 
 | Command | Description                                                |
@@ -83,13 +83,13 @@ the *normal mode* cursor positioning commands.
 
 In vim these now are refered to as named registers.
 
-| Command | Description                                 |
-|:-------:|:------------------------------------------- |
-| `"adw`  | delete word and put in buffer`"a`           |
-| `"B2yy` | yank 2 lines and append to buffer`"b`       |
-| `"sd$`  | delete to end of line and put in buffer`"s` |
-| `"sp`   | paste contents of buffer`"s`after cursor    |
-| `"aP`   | paste contents of buffer`"a`before cursor   |
+| Command | Description                                  |
+|:-------:|:-------------------------------------------- |
+| `"adw`  | delete word and put in buffer `"a`           |
+| `"B2yy` | yank 2 lines and append to buffer `"b`       |
+| `"sd$`  | delete to end of line and put in buffer `"s` |
+| `"sp`   | paste contents of buffer `"s` after cursor   |
+| `"aP`   | paste contents of buffer `"a` before cursor  |
 
 One use case for named registers is copying multiple items
 from multiple files and pasting them into other files.
@@ -97,7 +97,7 @@ from multiple files and pasting them into other files.
 ### Commands to insert or manipulate text
 
 These *Normal Mode* commands take vim to *Insert Mode*.
-To return to *Normal Mode*, type either`<esc>`or`<ctrl-[>`.
+To return to *Normal Mode*, type either `<esc>` or `<ctrl-[>`.
 
 | Command | Description                                                |
 |:-------:|:---------------------------------------------------------- |
@@ -117,7 +117,7 @@ To return to *Normal Mode*, type either`<esc>`or`<ctrl-[>`.
 | `c$`    | change to end of line                                      |
 | `c^`    | change text before cursor, excluding initial white space   |
 | `c0`    | change text before cursor to beginning of line             |
-| `"a3S`  | delete 3 lines into`"a`and enter Normal Mode on new line   |
+| `"a3S`  | delete 3 lines into `"a` and enter Normal Mode on new line |
 
 ### Repeating commands in *Normal Mode*
 
@@ -128,8 +128,8 @@ To return to *Normal Mode*, type either`<esc>`or`<ctrl-[>`.
 This repeats the last *Normal Mode* command used which changed text.
 It does not repeat *Command Mode* commands.
 
-This is frequently used with the`n`or`;`*Normal Mode* commands.
-For example,`n.n.nn.n`keeps moving to the beginning of the next match
+This is frequently used with the `n` or `;` *Normal Mode* commands.
+For example, `n.n.nn.n` keeps moving to the beginning of the next match
 for the last search pattern and you can either decide to repeat, or
 not, the change at each location.
 
@@ -139,7 +139,7 @@ not, the change at each location.
 
 The whole vi paradigm is that you do all your navigating in normal
 mode and type text in *instert mode*.  You return to *normal mode*
-by pressing the`<esc>`key.
+by pressing the `<esc>` key.
 
 ### Navigating in *Insert Mode*
 
@@ -168,15 +168,15 @@ It is also possible to perform any one *normal mode* action within
 
 ### Other *Insert Mode* commands
 
-| Command         | Description                                    |
-|:---------------:|:---------------------------------------------- |
-| `<ctrl-w>`      | delete word to left of cursor                  |
-| `<ctrl-u>`      | delete everything to left of cursor            |
-| `<ctrl-h>`      | delete charater to left of cursor              |
-| `<ctrl-j>`      | insert newline - why not just press`<return>`? |
-| `<ctrl-t>`      | indent current line one tabstop                |
-| `<ctrl-d>`      | un-indent current line one tabstop             |
-| `<ctrl-v><chr>` | insert litteral character                      |
+| Command         | Description                                     |
+|:---------------:|:----------------------------------------------- |
+| `<ctrl-w>`      | delete word to left of cursor                   |
+| `<ctrl-u>`      | delete everything to left of cursor             |
+| `<ctrl-h>`      | delete charater to left of cursor               |
+| `<ctrl-j>`      | insert newline - why not just press `<return>`? |
+| `<ctrl-t>`      | indent current line one tabstop                 |
+| `<ctrl-d>`      | un-indent current line one tabstop              |
+| `<ctrl-v><chr>` | insert litteral character                       |
 
 ---
 
@@ -192,9 +192,9 @@ of teletypes, you edited files one line at a time.
 *Command Mode* commands developed from the original
 line editing commands.
 
-Use the`:`command to enter *Command Mode*.  The
+Use the `:` command to enter *Command Mode*.  The
 cursor jumps down to the bottom of the terminal window
-and prompts you with`:`.
+and prompts you with `:`.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
@@ -217,7 +217,7 @@ and prompts you with`:`.
 
 While in *Command Mode*, up & down arrow keys cycle through previous
 *Command Mode* commands.  The left & right arrow keys help you
-re-edit the line.  Press`<esc>`or`<ctrl-[>`to return to *Normal Mode* without
+re-edit the line.  Press `<esc>`or`<ctrl-[>` to return to *Normal Mode* without
 issuing a command.
 
 ---
@@ -237,11 +237,11 @@ To enter *Visual Mode* from *Normal Mode*
 | `gv`       | to reselect last selection |
 
 Highlight text with *Normal Mode* cursor navigation commands
-like`h, j, k, l, w, e, W, B, f`or the arrow keys.
+like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
 Once selected, you can issue either *Normal Mode* or
 *Command Mode* commands.
 
-*Normal Mode* commands such as`d, y, c, I, A, >>, <<`
+*Normal Mode* commands such as`d`, `y`, `c`, `I`, `A`, `>>`, `<<`
 act on the highlighted region.  The behavior of some
 commands, like indenting commands`>>`or`<<`, vary
 depending on which *Visual Mode* (character, line or block)
@@ -251,7 +251,7 @@ you are in.
 that contain the selected region.
 
 To punt out of *Visual Mode* without doing anything,
-press the `<esc>`key.
+press the `<esc>` key.
 
 If you have enabled mouse support, mouse actions can cause you
 to enter *Visual Mode*.  That is one reason I enable mouse
@@ -315,9 +315,9 @@ To get started, from within vim, type
 Vim built in help is very powerful, but not beginner friendly.
 To get the most out of it,
 
-* Use`<ctrl-]>`or`<double-click>`to follow vim "hyperlinks"
-* Use`<ctrl-o>`to jump back to previous location
-* Use`<ctrl-i>`or`<tab>`to jump forward again
+* Use `<ctrl-]>` or `<double-click>` to follow vim "hyperlinks"
+* Use `<ctrl-o>` to jump back to previous location
+* Use `<ctrl-i>` or `<tab>` to jump forward again
 * familiarize yourself with how to use [multiple vim windows](multipleVimWindows.md)
 * configure the [mouse](vimFactoids.md#using-the-mouse)
 * setting up the [wildmenu](vimFactoids.md#configuring-wildmenu)

@@ -104,7 +104,7 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   mode is neither POSIX compliant nor an AT&T System V vi clone.
 * In vi, you cannot navigate around file in *Insert Mode* or
   *Replace Mode* with the arrow keys.
-* Hitting`<ins>`while in *Insert Mode* or *Replace Mode* does
+* Hitting `<ins>` while in *Insert Mode* or *Replace Mode* does
   not swap you between them.
 * `<ctrl-o>` vi does not let you execute a *Normal Mode* command
   while in *Insert Mode*.
