@@ -1,17 +1,17 @@
 # Advanced Traditional Vi Commands
 
-Many of the following commands existed in the original vi.
-A good vi cheatsheet for traditional vi can be found here:
+Much of the information here I obtained from
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
+This site no longer seems to be active.  These commands
+existed in the original ex version of vi.  Where the behavior
+differs from the original vi, I will indicate the vim behavior.
 
-(TL;DR) The original vi was often called "bimodal" where
-*Normal Mode* and *Command Mode* where conflated together
-and called "*Command Mode*."  *Insert Mode* was the second
-mode.  It was the Berkley Unix nvi (for new vi) which first
-introduced multiple windows.
+The name vi comes from the "visual interface" for the ex
+line editor.
 
-Where the behavior differs from the original Vi, I will indicate
-the Vim behavior.
+Vi was often called "bimodal" where *Normal Mode* and
+*Command Mode* where conflated together and called
+"*Command Mode*."  *Insert Mode* was the second mode.
 
 ## *Normal Mode* Commands
 

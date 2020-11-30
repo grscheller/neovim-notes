@@ -1,8 +1,8 @@
 # Intermediate Level Vim Notes
 
-These notes are aimed at the beginning level Vim
-user desiring to "up their game" to become
-an intermediate level Vim user.
+These notes are where I document the information
+I learn about vi/vim/neovim.  They probably will
+be most useful to intermediate level Vim users.
 
 I tried to put the MarkDown files linked below in
 an order that only relies on the gist of the

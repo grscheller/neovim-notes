@@ -101,7 +101,7 @@ expression engine.
   * match `-` as itself if first or last enclosed character
 * `( )` define subexpression
   * groups concatenated RegExps together as single unit
-  * reference subexpression later in RE via `\n` where n` in range 1-9
+  * reference subexpression later in RE via `\n` where `n` in range `1`-`9`
   * multiple groupings hierarchical, ordered by left paren
 
 Let `S` and `T` represent regular expressions
@@ -113,7 +113,7 @@ Let `S` and `T` represent regular expressions
 * `S+` matches `1` or more instances of `S`
 * `S{n,m}` matches at least `n`but not more than `m` of `S`
 * `S{n,}` matches at least `n` of `S`
-* `S{,m}` matches not more than `m` of  S`
+* `S{,m}` matches not more than `m` of `S`
 * `S{m}` matches exactly `m` of `S`
 * `S?` matches `0` or `1` of `S`
 

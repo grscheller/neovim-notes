@@ -1,5 +1,8 @@
 # Multiple Vim Windows
 
+It was the Berkley Unix nvi (for new vi) which first
+introduced multiple windows.
+
 Within a single vim terminal editing session, using multiple
 CLI ncurses windows can be very useful.  For example,
 using the help facility `:help <command>` can be confusing
