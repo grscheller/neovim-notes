@@ -3,16 +3,16 @@
 ## Vim startup files
 
 Without this information, it can be very frustrating
-reverse engineer Vim behavior.  A number of files are
-sourced before your editing session starts, where
-"sourced" means the commands in these files are entered
-as if in *Command Mode*, but without the initial `:`.
+reverse engineer Vim behavior.  Vim sources a number
+of files before your editing session starts.  These files
+are examples of what is known as vimscript.  Vimscript
+is a scripting language based *Command Mode*.
 
-First sourced is `/etc/vimrc`.  Historically on Unix, this
+First sourced is `/etc/vimrc`.  Historically on UNIX, this
 was the location for system-wide vim configuration changes.
 Now-a-days, this file has a command that causes vim to source
 your Linux distribution's vim-package related configuration
-changes.  For Arch Linux this command is
+changes.  For Arch Linux this command is,
 
 ```
    runtime! archlinux.vim
@@ -27,12 +27,12 @@ if it does not exist, it then looks in `~/.vim/vimrc`.
 **Warning:** If neither `~/.vimrc` nor `~/.vim/vimrc` exist,
 vim will source the `defaults.vim` file.  This has the
 currently compiled in of location: `/usr/share/vim/vim82/`.
-This can very well overide behavior in
+This can very well override behavior in
 both `/etc/vimrc` and `/usr/share/vim/vimfiles/archlinux.vim`.
 Not knowing about the existence of these mechanisms can be
 very confusing to new and intermediate vim users.  Simply
 creating an empty ~/.vimrc file can radically change
-vim behavior and the user has no clue how to recover
+vim behavior, and the user has no clue how to recover
 previous desirable features.  Putting the line
 
 ```
@@ -48,8 +48,8 @@ locations.
 
 ## Sample vimrc files
 
-The commands in these .vimrc example files are run
-as if in vim command mode.  Comments begin with `"`.
+The commands in these .vimrc example files run
+as if in vim *command mode*.  Comments begin with `"`.
 
 ### Simplistic .vimrc
 
@@ -198,7 +198,7 @@ as if in vim command mode.  Comments begin with `"`.
 
 ---
 
-| prev: [Regular Expresions][1] | [Home][2] |
+| prev: [Regular Expressions][1] | [Home][2] |
 
 [1]: regExp.md
 [2]: README.md

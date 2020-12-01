@@ -2,7 +2,7 @@
 
 This should be enough to enable you to be productive with vim.
 
-I think with a few weeks of practice, the material covered here
+I think with a few months of practice, the material covered here
 can be internalized and eventually become part of your "muscle memory."
 
 ## Vim has 4 main modes
@@ -10,14 +10,17 @@ can be internalized and eventually become part of your "muscle memory."
 * [Normal Mode](#normal-mode)
 * [Insert Mode](#insert-mode)
 * [Command Mode](#command-mode)
-* [Visual Mode](#visual-mode) (not in original vi)
-* [Useful Vim Information](#useful-vim-information)
+* [Visual Mode](#visual-mode)
+
+---
+
+* [Other Useful Vim Information](#useful-vim-information)
 
 ---
 
 ## Normal Mode
 
-### Cursor movement in *Normal Mode*
+### Cursor movement in Normal Mode
 
 | Command        | Description                                       |
 |:--------------:|:------------------------------------------------- |
@@ -44,52 +47,52 @@ can be internalized and eventually become part of your "muscle memory."
 | `n`            | search forward or backward for last pattern       |
 | `N`            | search for last pattern in reverse sense of above |
 
-### Interacting with "the buffer" in *Normal Mode*
+### Interacting with "the buffer" in Normal Mode
 
 Buffer is older vi jargon for what is now called the
 default register in vim.
 
-| Command       | Description                                      |
-|:-------------:|:------------------------------------------------ |
-| `dd`          | delete line and put in buffer (cut)              |
-| `D`           | delete to end of line and put in buffer (cut)    |
-| `yy`          | yank line to buffer (copy)                       |
-| `Y`           | yank line to buffer (copy)                       |
-| `5dd`         | delete 5 lines and put in buffer                 |
-| `x`           | delete character under cursor, put in buffer     |
-| `X`           | delete character before cursor, put in buffer    |
-| `~`           | change case of current char and advance one char |
-| `r<char>`     | change current char to `<char>`                  |
-| `p`           | paste buffer contents "after"                    |
-| `P`           | paste buffer contents "before"                   |
+| Command       | Description                                             |
+|:-------------:|:------------------------------------------------------- |
+| `dd`          | delete line and put in default register (cut)           |
+| `D`           | delete to end of line and put in default register       |
+| `yy`          | yank line to default register (copy)                    |
+| `Y`           | yank line to default register (copy)                    |
+| `5dd`         | delete 5 lines and put in default register              |
+| `x`           | delete character under cursor, put in default register  |
+| `X`           | delete character before cursor, put in default register |
+| `~`           | change case of current char and advance one char        |
+| `r<char>`     | change current char to `<char>`                         |
+| `p`           | paste default register contents "after"                 |
+| `P`           | paste default register contents "before"                |
 
-What "before" or "after" mean depends on what is
-in the buffer.  Both `y` and `d` can be used with all
+What "before" or "after" mean depends on what is in the
+default register.  Both `y` and `d` can be used with all
 the *normal mode* cursor positioning commands.
 
-| Command | Description                                                |
-|:-------:|:---------------------------------------------------------- |
-| `d$`    | delete to end of line and put in buffer                    |
-| `d0`    | delete everything before cursor on line and put in buffer  |
-| `3yw`   | yank three words to buffer, starting at cursor             |
-| `y^`    | yank everything before cursor to first non-whitespace char |
-| `d2fz`  | delete from cursor to 2nd z on current line                |
-| `2db`   | delete 2 previous words starting from cursor               |
-| `2y3w`  | ends up yanking 6 words                                    |
-| `5x`    | delete next 5 characters on current line                   |
-| `5X`    | delete previous 5 characters on current line               |
+| Command | Description                                                 |
+|:-------:|:----------------------------------------------------------  |
+| `d$`    | delete to end of line and put in default register           |
+| `d0`    | delete everything before cursor and put in default register |
+| `3yw`   | yank three words to default register, starting at cursor    |
+| `y^`    | yank everything before cursor to first non-whitespace char  |
+| `d2fz`  | delete from cursor to 2nd z on current line                 |
+| `2db`   | delete 2 previous words starting from cursor                |
+| `2y3w`  | ends up yanking 6 words                                     |
+| `5x`    | delete next 5 characters on current line                    |
+| `5X`    | delete previous 5 characters on current line                |
 
-### You can use named "buffers" to store text
+### You can use named registers to store text
 
-In vim these now are refered to as named registers.
+In vi these were referred to as named buffers.
 
-| Command | Description                                  |
-|:-------:|:-------------------------------------------- |
-| `"adw`  | delete word and put in buffer `"a`           |
-| `"B2yy` | yank 2 lines and append to buffer `"b`       |
-| `"sd$`  | delete to end of line and put in buffer `"s` |
-| `"sp`   | paste contents of buffer `"s` after cursor   |
-| `"aP`   | paste contents of buffer `"a` before cursor  |
+| Command | Description                                    |
+|:-------:|:---------------------------------------------- |
+| `"adw`  | delete word and put in register `"a`           |
+| `"B2yy` | yank 2 lines and append to register `"b`       |
+| `"sd$`  | delete to end of line and put in register `"s` |
+| `"sp`   | paste contents of register `"s` after cursor   |
+| `"aP`   | paste contents of register `"a` before cursor  |
 
 One use case for named registers is copying multiple items
 from multiple files and pasting them into other files.
@@ -108,8 +111,8 @@ To return to *Normal Mode*, type either `<esc>` or `<ctrl-[>`.
 | `0i`    | insert text beginning of line                              |
 | `o`     | open new line after current line to insert text            |
 | `O`     | open new line before current line to insert text           |
-| `s`     | delete current character and enter Normal Mode             |
-| `S`     | delete line contents and enter Normal Mode                 |
+| `s`     | delete current character and enter *Normal Mode*           |
+| `S`     | delete line contents and enter *Normal Mode*               |
 | `3cw`   | change next three words                                    |
 | `c3w`   | change next three words                                    |
 | `5cc`   | change next 5 lines                                        |
@@ -117,9 +120,9 @@ To return to *Normal Mode*, type either `<esc>` or `<ctrl-[>`.
 | `c$`    | change to end of line                                      |
 | `c^`    | change text before cursor, excluding initial white space   |
 | `c0`    | change text before cursor to beginning of line             |
-| `"a3S`  | delete 3 lines into `"a` and enter Normal Mode on new line |
+| `"a3S`  | delete 3 lines into `"a`, enter *Normal Mode* on new line  |
 
-### Repeating commands in *Normal Mode*
+### Repeating commands in Normal Mode
 
 | Command | Description                                |
 |:-------:|:------------------------------------------ |
@@ -130,29 +133,29 @@ It does not repeat *Command Mode* commands.
 
 This is frequently used with the `n` or `;` *Normal Mode* commands.
 For example, `n.n.nn.n` keeps moving to the beginning of the next match
-for the last search pattern and you can either decide to repeat, or
+for the last search pattern where you can either decide to repeat, or
 not, the change at each location.
 
 ---
 
 ## Insert Mode
 
-The whole vi paradigm is that you do all your navigating in normal
-mode and type text in *instert mode*.  You return to *normal mode*
+The whole vi paradigm is that you do all navigation in *normal mode*
+and type text in *insert mode*.  You return to *normal mode*
 by pressing the `<esc>` key.
 
-### Navigating in *Insert Mode*
+### Navigating in Insert Mode
 
 Sometimes it is convenient to be able to navigate while
 in *insert mode*.  I tend to do this only to navigate near
 where the cursor is.
 
-Most "out of the box" vim configurations allow you to navigated
+Most "out of the box" vim configurations allow you to navigate
 with the arrow keys while in *Insert Mode*.  Usually text can also
 be deleted with the backspace key.  In *Normal Mode*, the backspace
 and space keys are just extra navigation keys.
 
-It is also possible to perform any one *normal mode* action within
+It is also possible to perform a single *normal mode* action within
 *insert mode* by using`<ctrl-o>` key sequences.
 
 | Command      | Description                              |
@@ -166,17 +169,17 @@ It is also possible to perform any one *normal mode* action within
 | `<ctrl-o>J`  | join current line with the next line     |
 | `<ctrl-o>D`  | delete everything to the right of cursor |
 
-### Other *Insert Mode* commands
+### Other Insert Mode commands
 
 | Command         | Description                                     |
 |:---------------:|:----------------------------------------------- |
 | `<ctrl-w>`      | delete word to left of cursor                   |
 | `<ctrl-u>`      | delete everything to left of cursor             |
-| `<ctrl-h>`      | delete charater to left of cursor               |
+| `<ctrl-h>`      | delete character to left of cursor              |
 | `<ctrl-j>`      | insert newline - why not just press `<return>`? |
-| `<ctrl-t>`      | indent current line one tabstop                 |
-| `<ctrl-d>`      | un-indent current line one tabstop              |
-| `<ctrl-v><chr>` | insert litteral character                       |
+| `<ctrl-t>`      | indent current line one tab stop                |
+| `<ctrl-d>`      | un-indent current line one tab stop             |
+| `<ctrl-v><chr>` | insert literal character                        |
 
 ---
 
@@ -213,7 +216,7 @@ and prompts you with `:`.
 | `:s/foo/bar/g`      | substitute all instances of foo with bar             |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 
-### Navigating the *Command Mode* line
+### Navigating the Command Mode line
 
 While in *Command Mode*, up & down arrow keys cycle through previous
 *Command Mode* commands.  The left & right arrow keys help you
@@ -224,8 +227,8 @@ issuing a command.
 
 ## Visual Mode
 
-This mode allows you to select region of text by visually highlighting
-regions that can then be modified.
+This mode allows you to select region of text by visually highlighting,
+and then modify as a unit.
 
 To enter *Visual Mode* from *Normal Mode*
 
@@ -241,7 +244,7 @@ like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
 Once selected, you can issue either *Normal Mode* or
 *Command Mode* commands.
 
-*Normal Mode* commands such as`d`, `y`, `c`, `I`, `A`, `>>`, `<<`
+*Normal Mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
 act on the highlighted region.  The behavior of some
 commands, like indenting commands`>>`or`<<`, vary
 depending on which *Visual Mode* (character, line or block)
@@ -271,7 +274,7 @@ support for *Normal Mode* only.
 These can be used to linearly undo and redo edits,
 like the arrow buttons in a web browser.
 Navigating with the arrow keys while in *Insert Mode*
-will result in multiple entries in the undo/redo buffers.
+will result in multiple entries undo/redo levels.
 
 ### Some Vim command line option examples
 

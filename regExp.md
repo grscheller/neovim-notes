@@ -1,7 +1,7 @@
 # Regular Expressions
 
 Regular expressions, also called RegExps, are used in
-in Unix/Posix like environments to match textual patterns.
+Unix/Posix like environments to match textual patterns.
 They are not to be confused with shell globbing pattern matching.
 
 ## History
@@ -12,24 +12,24 @@ the work of mathematitian/logician Stephen Kleen in his study of
 A regular language, also called a Type-3 grammar, is at the
 bottom of what is called the
 [Chomsky Hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy).
-Regular languages have the property that they can be recongnized
+Regular languages have the property that they can be recognized
 by a
 [Finite State Machine](https://en.wikipedia.org/wiki/Finite-state_machine).
 This property has nice computational space and time implications when using
 RegExps to search for text patterns.
 
 Before he invented Unix, computer engineer Ken Thompson built Kleen's
-notation for regular expresions into the editor QED.  The editor used a RegExp
+notation for regular expressions into the editor QED.  The editor used a RegExp
 to construct a finite state machine, in machine code, to search for the
 text patterns represented by the RegExp.  This was an early example
 of just-in-time complication!  He later added this capability to the
 Unix text editor ed.
 
-From ed, vi inherrited them.  They are used in many Unix based
-untilities; lex, sed, AWK, Emacs, Perl, Vim, and Ruby have built in
+From ed, vi inherited them.  They are used in many UNIX based
+utilities; lex, sed, AWK, Emacs, Perl, Vim, and Ruby have built in
 regular expression support.  Many computer languages, like Python and
 C/C++, have standard library support for them.  Note that many of these
-"regular expression" implementations contain features that can not be
+"regular expression" implementations contain features that cannot be
 described in the sense of the formal language theory concept of a regular
 grammar.
 
@@ -38,7 +38,7 @@ grammar.
 A **formal language** `L` over an alphabet `Σ` is a subset of `Σ*`,
 where `Σ*` is the set of *words* over `Σ`.
 
-By **word** I mean a justiposition of symbols from an alphabet.
+By **word** I mean a juxtaposition of symbols from an alphabet.
 
 Let `A` and `B` be collections of words,
 
@@ -71,7 +71,7 @@ defined by
 * no other languages over `Σ` are regular
 
 From *formal language theory* it can be shown that a *regular language* is
-a formal language which can be expressed using a *regular exprssion*.  Vim uses
+a formal language which can be expressed using a *regular expression*.  Vim uses
 a regular expression pattern to search the text document for strings that match
 the pattern (are contained in the formal language defined by the RE).  It does
 this via "compiling" the RE down to a finite state machine which scans the
@@ -79,8 +79,8 @@ documents for strings contained in the RE's formal language.
 
 ## Extended Regular Expressions(ERE)
 
-Regular expresions (REs) are patterns used to match strings.  These
-days, "strings" means a data structure repesenting an ordered sequence
+Regular expressions (REs) are patterns used to match strings.  These
+days, "strings" means a data structure representing an ordered sequence
 of Unicode code points.  We'll assume we are using a "string-based" regular
 expression engine.
 
@@ -159,15 +159,27 @@ I like to think of all my regular expressions as extended regular
 expressions.  When working with basic regular expressions I still
 think in terms of extended regular expressions but with the need
 to escape the `(){}|+?` characters with a backslash to turn on their
-meta-meaning.  The characters `.`, `[`, `]` are meta without escaping.
+meta-meaning.  The characters `[].` are meta without escaping.
 
-### Examples
+### Examples of Vim Regular Expressions
 
-| RegExp                         | Description                           |
-|:------------------------------ |:------------------------------------- |
-| `:1,$s/U\(nix\\|NIX\)/Linux/g` | Replace "Unix" & "UNIX" with "Linux"  |
-| `/re\(f\\|g\)`                 | Find next "ref" or "reg"              |
-| `/re[fg]`                      | Find next "ref" or "reg"              |
+Find next "buf" or "bug"
+
+```
+   /bu[fg]
+```
+
+Find next "buf" or "bug"
+
+```
+   /bu\(f\|g\)
+```
+
+Replace "Unix" & "UNIX" with "Linux" on lines 5 thru end of file
+
+```
+   :5,$s/U\(nix\|NIX\)/Linux/g
+```
 
 ## POSIX.2 Regular Expressions
 

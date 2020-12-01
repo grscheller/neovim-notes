@@ -13,7 +13,7 @@ For more in depth information see the section on all the different
 types of registers in
 [vimSpecificFeatures](vimSpecificFeatures.md#types-of-registers).
 
-Note: In older vi documentation and jargon, registers are refered
+Note: In older vi documentation and jargon, registers are referred
 to as buffers.
 
 ### The default register
@@ -50,7 +50,7 @@ with that buffer.
 | `:split`      | open new window but use the same buffer                  |
 | `:spl`        | same as above, basically 2 views of same buffer          |
 | `:w`          | write buffer to file associated with buffer              |
-| `:w file`     | write buffer to file, buffer file association unchange   |
+| `:w file`     | write buffer to file, buffer file association unchanged  |
 | `:q`          | quit window, fails if last view & changes not saved      |
 | `:q!`         | quit window, abandon any changes if last view            |
 
@@ -77,10 +77,10 @@ terminal emulator instead of Vim by holding down the SHIFT
 key.
 
 I find that configuring the mouse for anything but *Normal Mode*
-pretty useless and counter intuitive.  In *Insert Mode* I
-don't like the middle mouse button repositioning a paste.
-In *Normal Mode* I don't like a click-drag throwing me into
-character *Visual Mode*.
+pretty useless and counter-intuitive.  In *Insert Mode* I
+don't like the middle mouse button repositioning the cursor for
+a paste. In *Normal Mode* I don't like a click-drag throwing me
+into character *Visual Mode*.
 
 ## Configuring wildmenu
 
@@ -99,15 +99,15 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   `<ctrl-r>`has no effect.
 * On modern Linux systems, the vi "executable" is either a
   symlink to ex, traditional BSD based vi, or a symlink
-  to vim.  If vim is started with the name vi, it launches
-  itself in vi compatibility mode.  Vim in compatibility
-  mode is neither POSIX compliant nor an AT&T System V vi clone.
+  to vim.  If the vim executable starts with the name vi,
+  it launches in vi compatibility mode.  Vim in compatibility
+  mode is neither POSIX compliant nor an ex clone.
 * In vi, you cannot navigate around file in *Insert Mode* or
   *Replace Mode* with the arrow keys.
 * Hitting `<ins>` while in *Insert Mode* or *Replace Mode* does
   not swap you between them.
-* `<ctrl-o>` vi does not let you execute a *Normal Mode* command
-  while in *Insert Mode*.
+* In vi, `<ctrl-o>` does not let you execute a *Normal Mode*
+  command while in *Insert Mode*.
 
 ---
 

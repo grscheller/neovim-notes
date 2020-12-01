@@ -25,7 +25,7 @@ The `:jumps` command will list a table consisting like this:
 |  1   | 5    | 10  | text on line 5            |
 |  2   | 3    | 5   | moreRecentFile.txt        |
 
-Your current location in the jump list is allways 0.
+Your current location in the jump list is always 0.
 
 | Command      | Description                                 |
 |:------------:|:------------------------------------------- |
@@ -95,7 +95,7 @@ which use registers.
 
 On Arch, the first two only seem to work in vim when the gvim
 package is installed.  I've never gotten the last one to work
-at all. but this may have to do with how tightly I have the
+at all, but this may have to do with how tightly I have the
 mouse locked down.
 
 ### Black hole register
@@ -118,7 +118,7 @@ A useful *Normal Mode* feature of vim is the `.` command which
 repeats the last *Normal Mode* command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
 
-But what if you want to do a series of commands between searches?  The
+But, what if you want to do a series of commands between searches?  The
 vim macro feature comes to the rescue.
 
 This feature allows you to repeat a sequence of *Normal Mode* and
@@ -140,8 +140,8 @@ by "UNIX" and the "p" capitalized:
     @a@a@a@a
 ```
 
-If you what to be able to choose whether or not to perform
-the macro, for instance you don't want to change "Unix is perfect".
+You may want to be able to choose whether to perform the macro or not.
+For instance, you don't want to change "Unix is perfect".
 
 ```
     /Unix<ret>

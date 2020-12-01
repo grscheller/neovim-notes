@@ -66,30 +66,30 @@ I configure these in my`~/.vim/vimrc`
 
 ### Setting/adjusting window sizes
 
-| Command         | Description                             |
-|:---------------:|:--------------------------------------- |
-| `20 <ctrl-w>`   | set active window height 20 lines       |
-| `72 <ctrl-w>\|` | set active window width 72 chars        |
-| `10 <ctrl-w>+`  | increaces active window height 10 lines |
-| `15 <ctrl-w>-`  | decreaces active window height 15 lines |
-| `10 <ctrl-w>>`  | increaces active window width 10 char   |
-| `15 <ctrl-w><`  | decreaces active window width 15 char   |
+| Command                | Description                            |
+|:----------------------:|:-------------------------------------- |
+| `20 <ctrl-w>_`         | set active window height 20 lines      |
+| `72 <ctrl-w><pipebar>` | set active window width 72 chars       |
+| `10 <ctrl-w>+`         | increase active window height 10 lines |
+| `15 <ctrl-w>-`         | decrease active window height 15 lines |
+| `10 <ctrl-w>>`         | increase active window width 10 char   |
+| `15 <ctrl-w><`         | decrease active window width 15 char   |
 
 Also, note that
 
-| Command      | Description                   |
-|:------------:|:----------------------------- |
-| `<ctrl-w>`   | maximize active window height |
-| `<ctrl-w>\|` | maximize active window width  |
+| Command             | Description                   |
+|:-------------------:|:----------------------------- |
+| `<ctrl-w>_`         | maximize active window height |
+| `<ctrl-w><pipebar>` | maximize active window width  |
 
 but
 
 | Command      | Description                            |
 |:------------:|:-------------------------------------- |
-| `<ctrl-w>+` | increaces active window height 1 lines |
-| `<ctrl-w>-` | decreaces active window height 1 lines |
-| `<ctrl-w>>` | increaces active window width 1 char   |
-| `<ctrl-w><` | decreaces active window width 1 char   |
+| `<ctrl-w>+` | increase active window height 1 lines   |
+| `<ctrl-w>-` | decrease active window height 1 lines   |
+| `<ctrl-w>>` | increase active window width 1 char     |
+| `<ctrl-w><` | decrease active window width 1 char     |
 
 ## Tab pages
 
@@ -130,7 +130,7 @@ Vim allows you to open a shell in a separate Vim Window
 | `:term`      | open a shell in a new horizontal Vim window |
 | `:vert term` | open a shell in a new vertical Vim window   |
 
-This terminal window is essentually a read only vim session that
+This terminal window is essentially a read only vim session that
 displays the shell session interactions.  You are put into
 *Insert Mode* and input is passed to the shell.  You can copy
 text by jumping to *Normal Mode* using the usual vim buffers.
