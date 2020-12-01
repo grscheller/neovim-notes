@@ -1,6 +1,6 @@
 # Vim Specific Features
 
-Vim commands not in your grandfather's Vi.
+Vim commands and features not in your grandfather's vi.
 
 ## Jump Lists
 

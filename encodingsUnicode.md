@@ -17,8 +17,8 @@ Vim is capable of working with different character encodings.
 | :set fileencoding=latin1 | save files with LATIN-1 encoding             |
 | :set fileencodings       | list encodings to try when loading a file    |
 
-The two main ones are UTF-8 for UNIX, MAC-OS, and HTML/Web and UTF-16
-for Microsoft Windows.  More recently, Windows uses a mix of UTF-16,
+The two main encodings are UTF-8 for UNIX, MAC-OS and HTML/Web, and UTF-16
+for Microsoft Windows.  Windows tends to use a mix of UTF-16,
 UTF-8, and legacy encodings.
 
 On my POSIX systems I put
@@ -28,9 +28,10 @@ On my POSIX systems I put
    set fileencoding=utf-8
 ```
 
-in my `~/.vim/vimrc`.  When I go native on Windows, vim automatically
-figures out whether the edited file is in UTF-8 or UTF-16LE
-with `\r\n` line endings.
+in my `~/.vim/vimrc`.
+
+When I go native on Windows, vim automatically figures out whether
+the edited file is in UTF-8 or UTF-16LE with `\r\n` line endings.
 
 (TL;DR): GIT, for text files, does the conversion to the
 correct format depending on the OS.  In the olde days, we used to
