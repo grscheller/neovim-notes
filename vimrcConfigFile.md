@@ -81,7 +81,7 @@ as if in vim *command mode*.  Comments begin with `"`.
    " ~/.vim/vimrc
    "
 
-   " Enter the 21st Century
+   "" Enter the 21st Century
    if &compatible
      set nocompatible
    endif
@@ -92,6 +92,8 @@ as if in vim *command mode*.  Comments begin with `"`.
    set encoding=utf-8
    set fileencoding=utf-8
    set spelllang=en_us
+
+   "" Personnal preferences
 
    " Allow :find and gf to use recursive sub-folders
    set path+=**
@@ -111,14 +113,29 @@ as if in vim *command mode*.  Comments begin with `"`.
    set expandtab
 
    " Misc. configurations
-   set history=5000  " Number lines of command history to keep
-   set mouse=n       " Enable mouse for normal mode only
-   set scrolloff=3   " Keep cursor away from edge of window
-   set nowrap        " Don't wrap lines
-   set sidescroll=1  " Horizontally scroll nicely
-   set splitbelow    " Horizontally split below
-   set splitright    " Vertically split to right
-   set ruler         " Show line/column info
+   set history=10000   " Number lines of command history to keep
+   set mouse=n         " Enable mouse for normal mode only
+   set scrolloff=3     " Keep cursor away from top/bottom of window
+   set nowrap          " Don't wrap lines
+   set sidescroll=1    " Horizontally scroll nicely
+   set sidescrolloff=5 " Keep cursor away from side of window
+   set splitbelow      " Horizontally split below
+   set splitright      " Vertically split to right
+   set ruler           " Show line/column info
+   set laststatus=2    " Allows show the status line
+   set hlsearch        " Highlight / search results after <return>
+   set incsearch       " Highlight / search matches as you type
+   set ignorecase      " Case insensitive search, unless
+   set smartcase       " ... unless query has caps
+
+   " Duplicate neovim cursor behavior on xterm/urxvt family of terminals
+   if &term =~ "xterm\\|rxvt"
+     let &t_SI = "\<esc>[6 q"
+     let &t_SR = "\<esc>[4 q"
+     let &t_EI = "\<esc>[2 q"
+   endif
+
+   "" Setup plugins
 
    " Setup the Plug plugin manager
    "
@@ -166,10 +183,11 @@ as if in vim *command mode*.  Comments begin with `"`.
    Plug 'mbbill/undotree'
 
    " Shows what is in registers
-   " extends " and @ in normal mode and <CTRL-R> in insert mode
+   " extends " and @ in normal mode and <ctrl-r> in insert mode
    Plug 'junegunn/vim-peekaboo'
 
-   " Extend <ctrl>-A <ctrl>-X to work with dates and not just numbers
+   " Extend <ctrl-a> and <ctrl-x> to work
+   " with dates and not just numbers.
    Plug 'tpope/vim-speeddating'
 
    call plug#end()
@@ -186,14 +204,43 @@ as if in vim *command mode*.  Comments begin with `"`.
    " to be intepreted as MarkDown and not Modula-2
    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-   " Define <Leader> explicitly as \
-   let mapleader = "\\"
+   "" Set up key mappings
 
-   " Clear search highlighting with \\
-   nnoremap <leader>\ :nohlsearch<return>
+   " Define <Leader> explicitly as a space
+   nnoremap <space> <nop>
+   let mapleader = "\<space>"
+
+   " Clear search highlighting
+   nnoremap <leader><space> :nohlsearch<return>
 
    " Toggle Synastic into and out of passive mode
    nnoremap <leader>st :SyntasticToggleMode<return>
+
+   " Reassign Q in normal mode to apply macro stored in register q
+   " note: in vi and neovim, Q causes EX-mode
+   nnoremap Q @q
+
+   " Get rid of all trailing spaces for entire buffer
+   nnoremap <leader>w :%s/ \+$//<return>
+
+   " Toggle between 3 line numbering states via <leader>n
+   set nonumber
+   set norelativenumber
+
+   function! MyLineNumberToggle()
+     if(&relativenumber == 1)
+       set nonumber
+       set norelativenumber
+     elseif(&number == 1)
+       set nonumber
+       set relativenumber
+     else
+       set number
+       set norelativenumber
+     endif
+   endfunction
+
+   nnoremap <leader>n :call MyLineNumberToggle()<return>
 ```
 
 ---
