@@ -62,13 +62,25 @@ In modern Unix terminal emulators and Libre Office, input and display
 of Unicode code points just works.  Terminals are fixed width font
 beasts, but Libre Office handles the variable width code points just fine.
 
-While in *Insert Mode*, code points can be entered into vim either from
-the terminal or by typing into gvim.
+When using vim with a unicode aware terminal emulator like rxvt-unicode
+or gnome-terminal, code points can be entered while in *Insert Mode* via
 
 |  Command                     | Description            |
 |:----------------------------:|:---------------------- |
 |  `<ctrl-shift-u>u03b2<ret>`  | enter the character β  |
 |  `<ctrl-shift-u>u3bb<ret>`   | enter the character λ  |
+
+This will also work while in gvim.
+
+(TL;DR): Be aware that in both the cases of gvim and a terminal emulator, you
+are not interacting with a "terminal" but the underlying GUI application.
+As far as the emulated terminal is concerned, `<ctrl-u>` and `<ctrl-U>` are
+the same control character, octal 025.  The Graphical User Interface (GUI) is
+seeing all your keystrokes and can distinguish `<ctrl-u>` from `<ctrl-shift-u>`.
+
+For instance `<ctrl-shift-u>` will not work while on the linux console.
+Defining key mappings involving `<ctrl-shift-u>` do not work, either as the
+key mapping or what is mapped to.
 
 ---
 
