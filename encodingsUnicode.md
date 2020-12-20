@@ -45,13 +45,13 @@ vim allows users to enter characters within whatever encodings they
 are using via 2 character "diagraph" sequences.  While in *Insert Mode*,
 type `<ctrl-k>` followed by a two character sequence.
 
-|  Command      | Description                                   |
-|:-------------:|:--------------------------------------------- |
-|  `:dig`       | list diagraphs available for current encoding |
-|  `<ctrl-k>a^` | enter the character â                         |
-|  `<ctrl-k>o:` | enter the character ö                         |
-|  `<ctrl-k>i'` | enter the character í                         |
-|  `<ctrl-k>l*` | enter the character λ                         |
+|  Command   | Description                                   |
+|:----------:|:--------------------------------------------- |
+|  `:dig`    | list diagraphs available for current encoding |
+|  `<C-k>a^` | enter the character â                         |
+|  `<C-k>o:` | enter the character ö                         |
+|  `<C-k>i'` | enter the character í                         |
+|  `<C-k>l*` | enter the character λ                         |
 
 The choice of characters you can enter this way depends on the
 encoding you are using.
@@ -62,25 +62,34 @@ In modern Unix terminal emulators and Libre Office, input and display
 of Unicode code points just works.  Terminals are fixed width font
 beasts, but Libre Office handles the variable width code points just fine.
 
-When using vim with a unicode aware terminal emulator like rxvt-unicode
-or gnome-terminal, code points can be entered while in *Insert Mode* via
+When using gvim or vim with a unicode aware terminal emulator like
+rxvt-unicode or gnome-terminal, code points can be entered while
+in *Insert Mode* via
 
-|  Command                     | Description            |
-|:----------------------------:|:---------------------- |
-|  `<ctrl-shift-u>u03b2<ret>`  | enter the character β  |
-|  `<ctrl-shift-u>u3bb<ret>`   | enter the character λ  |
+|  Command            | Description            |
+|:-------------------:|:---------------------- |
+|  `<C-S-u>u03b2<CR>` | enter the character β  |
+|  `<C-S-u>u3bb<CR>`  | enter the character λ  |
 
-This will also work while in gvim.
+Where `<C-S-u>` means holding down CTRL+SHIFT+u.
 
-(TL;DR): Be aware that in both the cases of gvim and a terminal emulator, you
-are not interacting with a "terminal" but the underlying GUI application.
-As far as the emulated terminal is concerned, `<ctrl-u>` and `<ctrl-U>` are
-the same control character, octal 025.  The Graphical User Interface (GUI) is
-seeing all your keystrokes and can distinguish `<ctrl-u>` from `<ctrl-shift-u>`.
+(TL;DR): Be aware that in both the cases of gvim
+and a terminal emulator, you are not interacting
+with the "terminal" being emulated, but the
+underlying GUI application.  As far as a real
+terminal is concerned, `CTRL+u` and `CTRL+U` are
+the same control character, octal 025.  That is
+what is coming down the RS-232 cable.  The
+Graphical User Interface (GUI) is seeing all your
+keystrokes and can distinguish whether you pressed
+`<C-u>` or `<C-S-u>`.
 
-For instance `<ctrl-shift-u>` will not work while on the linux console.
-Defining key mappings involving `<ctrl-shift-u>` do not work, either as the
-key mapping or what is mapped to.
+Note: Using `<S-C-u>` will not work.
+
+Note: `<C-S-u>` does not work while on the linux console.
+
+Note: Defining key mappings involving `<C-S-u>` does not work,
+either as the key mapping or in whatever is mapped to.
 
 ---
 

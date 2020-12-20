@@ -76,12 +76,6 @@ As a workaround, you can send mouse events directly to the
 terminal emulator instead of Vim by holding down the SHIFT
 key.
 
-I find that configuring the mouse for anything but *Normal Mode*
-pretty useless and counter-intuitive.  In *Insert Mode* I
-don't like the middle mouse button repositioning the cursor for
-a paste. In *Normal Mode* I don't like a click-drag throwing me
-into character *Visual Mode*.
-
 ## Configuring wildmenu
 
 To make tab completion in command mode more efficient, put the
@@ -104,9 +98,9 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   mode is neither POSIX compliant nor an ex clone.
 * In vi, you cannot navigate around file in *Insert Mode* or
   *Replace Mode* with the arrow keys.
-* Hitting `<ins>` while in *Insert Mode* or *Replace Mode* does
+* Hitting `<Insert>` while in *Insert Mode* or *Replace Mode* does
   not swap you between them.
-* In vi, `<ctrl-o>` does not let you execute a *Normal Mode*
+* In vi, `<C-o>` does not let you execute a *Normal Mode*
   command while in *Insert Mode*.
 
 ---

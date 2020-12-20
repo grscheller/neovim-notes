@@ -22,30 +22,30 @@ can be internalized and eventually become part of your "muscle memory."
 
 ### Cursor movement in Normal Mode
 
-| Command        | Description                                       |
-|:--------------:|:------------------------------------------------- |
-| `h,j,k,l`      | move cursor one character (also arrow keys)       |
-| `w, W`         | move forward to beginning next word               |
-| `b, B`         | move back to beginning word                       |
-| `e, E`         | move forward to end of word                       |
-| `$`            | move to end of line                               |
-| `^`            | move to first non-whitespace character on line    |
-| `0`            | move to beginning of line                         |
-| `G`            | move to last line in file                         |
-| `gg`           | move to first line in file                        |
-| `f<char>`      | move forward to next `<char>` on current line     |
-| `F<char>`      | move backward to next `<char>` on current line    |
-| `t<char>`      | move forward before next `<char>` on current line |
-| `T<char>`      | move backward after next `<char>` on current line |
-| `;`            | next target for last `f`, `F` ,`t` ,`T` command   |
-| `,`            | prev target for last `f`, `F`, `t`, `T` command   |
-| `3fw`          | move forward to 3rd word on current line          |
-| `/RegExp<ret>` | forward search for regular expression pattern     |
-| `?RegExp<ret>` | backward search for regular expression pattern    |
-| `/<ret>`       | search forward for last pattern                   |
-| `?<ret>`       | search backward for last pattern                  |
-| `n`            | search forward or backward for last pattern       |
-| `N`            | search for last pattern in reverse sense of above |
+| Command       | Description                                       |
+|:-------------:|:------------------------------------------------- |
+| `h,j,k,l`     | move cursor one character (also arrow keys)       |
+| `w, W`        | move forward to beginning next word               |
+| `b, B`        | move back to beginning word                       |
+| `e, E`        | move forward to end of word                       |
+| `$`           | move to end of line                               |
+| `^`           | move to first non-whitespace character on line    |
+| `0`           | move to beginning of line                         |
+| `G`           | move to last line in file                         |
+| `gg`          | move to first line in file                        |
+| `f<char>`     | move forward to next `<char>` on current line     |
+| `F<char>`     | move backward to next `<char>` on current line    |
+| `t<char>`     | move forward before next `<char>` on current line |
+| `T<char>`     | move backward after next `<char>` on current line |
+| `;`           | next target for last `f`, `F` ,`t` ,`T` command   |
+| `,`           | prev target for last `f`, `F`, `t`, `T` command   |
+| `3fw`         | move forward to 3rd word on current line          |
+| `/RegExp<CR>` | forward search for regular expression pattern     |
+| `?RegExp<CR>` | backward search for regular expression pattern    |
+| `/<CR>`       | search forward for last pattern                   |
+| `?<CR>`       | search backward for last pattern                  |
+| `n`           | search forward or backward for last pattern       |
+| `N`           | search for last pattern in reverse sense of above |
 
 ### Interacting with "the buffer" in Normal Mode
 
@@ -158,28 +158,28 @@ and space keys are just extra navigation keys.
 It is also possible to perform a single *normal mode* action within
 *insert mode* by using`<ctrl-o>` key sequences.
 
-| Command      | Description                              |
-|:------------:|:---------------------------------------- |
-| `<ctrl-o>h`  | move cursor left one character           |
-| `<ctrl-o>l`  | move cursor right one character          |
-| `<ctrl-o>k`  | move cursor up one line                  |
-| `<ctrl-o>j`  | move cursor down one line                |
-| `<ctrl-o>3w` | move cursor three words left             |
-| `<ctrl-o>2j` | move down two lines                      |
-| `<ctrl-o>J`  | join current line with the next line     |
-| `<ctrl-o>D`  | delete everything to the right of cursor |
+| Command   | Description                              |
+|:---------:|:---------------------------------------- |
+| `<C-o>h`  | move cursor left one character           |
+| `<C-o>l`  | move cursor right one character          |
+| `<C-o>k`  | move cursor up one line                  |
+| `<C-o>j`  | move cursor down one line                |
+| `<C-o>3w` | move cursor three words left             |
+| `<C-o>2j` | move down two lines                      |
+| `<C-o>J`  | join current line with the next line     |
+| `<C-o>D`  | delete everything to the right of cursor |
 
 ### Other Insert Mode commands
 
-| Command         | Description                                     |
-|:---------------:|:----------------------------------------------- |
-| `<ctrl-w>`      | delete word to left of cursor                   |
-| `<ctrl-u>`      | delete everything to left of cursor             |
-| `<ctrl-h>`      | delete character to left of cursor              |
-| `<ctrl-j>`      | insert newline - why not just press `<return>`? |
-| `<ctrl-t>`      | indent current line one tab stop                |
-| `<ctrl-d>`      | un-indent current line one tab stop             |
-| `<ctrl-v><chr>` | insert literal character                        |
+| Command       | Description                                     |
+|:-------------:|:----------------------------------------------- |
+| `<C-w>`       | delete word to left of cursor                   |
+| `<C-u>`       | delete everything to left of cursor             |
+| `<C-h>`       | delete character to left of cursor              |
+| `<C-j>`       | insert newline - why not just press `<return>`? |
+| `<C-t>`       | indent current line one tab stop                |
+| `<C-d>`       | un-indent current line one tab stop             |
+| `<C-v><char>` | insert literal character                        |
 
 ---
 
@@ -232,12 +232,12 @@ and then modify as a unit.
 
 To enter *Visual Mode* from *Normal Mode*
 
-| Command    | Description                |
-|:----------:|:-------------------------- |
-| `v`        | for character based        |
-| `V`        | for line based             |
-| `<ctrl-v>` | for block visual mode      |
-| `gv`       | to reselect last selection |
+| Command | Description                |
+|:-------:|:-------------------------- |
+| `v`     | for character based        |
+| `V`     | for line based             |
+| `<C-v>` | for block visual mode      |
+| `gv`    | to reselect last selection |
 
 Highlight text with *Normal Mode* cursor navigation commands
 like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
@@ -246,7 +246,7 @@ Once selected, you can issue either *Normal Mode* or
 
 *Normal Mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
 act on the highlighted region.  The behavior of some
-commands, like indenting commands`>>`or`<<`, vary
+commands, like indenting commands `>>` or `<<`, vary
 depending on which *Visual Mode* (character, line or block)
 you are in.
 
@@ -266,10 +266,10 @@ support for *Normal Mode* only.
 
 ### Undo/redo commands
 
-| Command    | Description        |
-|:----------:|:------------------ |
-| `u`        | undo previous edit |
-| `<ctrl-r>` | redo edit undone   |
+| Command | Description        |
+|:-------:|:------------------ |
+| `u`     | undo previous edit |
+| `<C-r>` | redo edit undone   |
 
 These can be used to linearly undo and redo edits,
 like the arrow buttons in a web browser.
@@ -318,9 +318,9 @@ To get started, from within vim, type
 Vim built in help is very powerful, but not beginner friendly.
 To get the most out of it,
 
-* Use `<ctrl-]>` or `<double-click>` to follow vim "hyperlinks"
-* Use `<ctrl-o>` to jump back to previous location
-* Use `<ctrl-i>` or `<tab>` to jump forward again
+* Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
+* Use `<C-o>` to jump back to previous location
+* Use `<C-i>` or `<tab>` to jump forward again
 * familiarize yourself with how to use [multiple vim windows](multipleVimWindows.md)
 * configure the [mouse](vimFactoids.md#using-the-mouse)
 * setting up the [wildmenu](vimFactoids.md#configuring-wildmenu)

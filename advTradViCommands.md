@@ -17,12 +17,12 @@ Vi was often called "bimodal" where *Normal Mode* and
 
 ### Misc commands
 
-| Command    | Description                                |
-|:----------:|:------------------------------------------ |
-| `<ctrl-g>` | show filename and other useful status info |
-| `<ctrl-l>` | redraw view                                |
-| `ZZ`       | save changes and exit vim                  |
-| `<ctrl-z>` | suspend vim to shell background            |
+| Command | Description                                |
+|:-------:|:------------------------------------------ |
+| `<C-g>` | show filename and other useful status info |
+| `<C-l>` | redraw view                                |
+| `ZZ`    | save changes and exit vim                  |
+| `<C-z>` | suspend vim to shell background            |
 
 For `<ctrl-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
@@ -30,29 +30,29 @@ via the `jobs` shell command.
 
 ### Commands to move cursor in *normal mode*
 
-| Command       | Description                                        |
-|:-------------:|:-------------------------------------------------- |
-| `+`           | move to first non-space character next line        |
-| `-`           | move to first non-space character prev line        |
-| `nG`          | move to nth line in file                           |
-| `G`           | move to last line in file                          |
-| `ngg`         | move to nth line in file                           |
-| `gg`          | move to first line in file                         |
-| `n\<pipebar>` | move to nth column in line                         |
-| `<pipebar>`   | move to beginning of line                          |
-| `0`           | move to beginning of line                          |
-| `H`           | move to top of screen                              |
-| `M`           | move to middle of screen                           |
-| `L`           | move to bottom of screen                           |
-| `nH`          | move to nth line from top of screen                |
-| `nL`          | move to nth line from bottom of screen             |
-| `<ctrl-u>`    | move cursor/view up half a screen                  |
-| `<ctrl-d>`    | move cursor/view down half a screen                |
-| `<ctrl-b>`    | move cursor/view up a full screen                  |
-| `<ctrl-f>`    | move cursor/view down a full screen                |
-| `%`           | move between matching `( )`, `[ ]`, `{ }` or `< >` |
+| Command   | Description                                        |
+|:---------:|:-------------------------------------------------- |
+| `+`       | move to first non-space character next line        |
+| `-`       | move to first non-space character prev line        |
+| `nG`      | move to nth line in file                           |
+| `G`       | move to last line in file                          |
+| `ngg`     | move to nth line in file                           |
+| `gg`      | move to first line in file                         |
+| `n\<Bar>` | move to nth column in line                         |
+| `<Bar>`   | move to beginning of line                          |
+| `0`       | move to beginning of line                          |
+| `H`       | move to top of screen                              |
+| `M`       | move to middle of screen                           |
+| `L`       | move to bottom of screen                           |
+| `nH`      | move to nth line from top of screen                |
+| `nL`      | move to nth line from bottom of screen             |
+| `<C-u>`   | move cursor/view up half a screen                  |
+| `<C-d>`   | move cursor/view down half a screen                |
+| `<C-b>`   | move cursor/view up a full screen                  |
+| `<C-f>`   | move cursor/view down a full screen                |
+| `%`       | move between matching `( )`, `[ ]`, `{ }` or `< >` |
 
-Where `<pipebar>` = `|`
+Where `<Bar>` = `|`
 
 With `%`, if you are not currently on a grouping symbol, move
 to the first one on the current line and jump to its matching
@@ -70,16 +70,16 @@ to keep the cursor 3 lines from the edge of the screen.
 
 ### Commands to move screen view
 
-| Command    | Description                            |
-|:----------:|:-------------------------------------- |
-| `<ctrl-e>` | move view down one line                |
-| `<ctrl-y>` | move view up one line                  |
-| `zt`       | make current line top line of view     |
-| `zz`       | make current line middle line of view  |
-| `zb`       | make current line bottom line of view  |
-| `<nn>zt`   | make line `<nn>` top line of view      |
-| `<nn>zz`   | make line `<nn>` middle line of view   |
-| `<nn>zb`   | make line `<nn>` bottom line of view   |
+| Command  | Description                            |
+|:--------:|:-------------------------------------- |
+| `<C-e>`  | move view down one line                |
+| `<C-y>`  | move view up one line                  |
+| `zt`     | make current line top line of view     |
+| `zz`     | make current line middle line of view  |
+| `zb`     | make current line bottom line of view  |
+| `<nn>zt` | make line `<nn>` top line of view      |
+| `<nn>zz` | make line `<nn>` middle line of view   |
+| `<nn>zb` | make line `<nn>` bottom line of view   |
 
 Where applicable, you can type a number before these commands
 to repeat them that many times.
@@ -124,22 +124,22 @@ defining "sections."
 
 ## *Insert Mode* Commands
 
-| Command          | Description                                         |
-|:----------------:|:--------------------------------------------------- |
-| `<ctrl-h>`       | delete previous character                           |
-| `<backspace>`    | delete previous character                           |
-| `<ctrl-v><chr>`  | take `<chr>` literally                              |
-| `<ctrl-w>`       | delete previous word                                |
-| `<ctrl-o>`       | go to normal mode for just one command              |
-| `<ctrl-o> n`     | go to next search item, remain in insert mode       |
-| `<ctrl-o> D`     | delete everything to right of cursor                |
-| `<ctrl-u>`       | delete everything to left of cursor                 |
-| `<ctrl-t>`       | indent current line one tab stop                    |
-| `<ctrl-d>`       | un-indent current line one tab stop                 |
-| `<ctrl-c>`       | break out of *Insert Mode*, punt on any auto cmds   |
-| `<ctrl-x>`       | enter *Insert Mode* completion submode (vim not vi) |
+| Command       | Description                                         |
+|:-------------:|:--------------------------------------------------- |
+| `<C-h>`       | delete previous character                           |
+| `<backspace>` | delete previous character                           |
+| `<C-v><char>` | take `<char>` literally                             |
+| `<C-w>`       | delete previous word                                |
+| `<C-o>`       | go to normal mode for just one command              |
+| `<C-o> n`     | go to next search item, remain in insert mode       |
+| `<C-o> D`     | delete everything to right of cursor                |
+| `<C-u>`       | delete everything to left of cursor                 |
+| `<C-t>`       | indent current line one tab stop                    |
+| `<C-d>`       | un-indent current line one tab stop                 |
+| `<C-c>`       | break out of *Insert Mode*, punt on any auto cmds   |
+| `<C-x>`       | enter *Insert Mode* completion submode (vim not vi) |
 
-For more information on `<ctrl-x>` see,
+For more information on `<C-x>` see,
 
 ```
    :help ins-completion

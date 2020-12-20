@@ -85,8 +85,12 @@ as if in vim *command mode*.  Comments begin with `"`.
    if &compatible
      set nocompatible
    endif
+   filetype plugin indent on
    syntax enable
-   filetype plugin on
+
+   " Force all files ending in .md, besides just README.md,
+   " to be intepreted as MarkDown and not Modula-2
+   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
    " Set default encoding and localizations
    set encoding=utf-8
@@ -95,6 +99,9 @@ as if in vim *command mode*.  Comments begin with `"`.
 
    "" Personnal preferences
 
+   " Setup color scheme
+   colorscheme ron
+
    " Allow :find and gf to use recursive sub-folders
    set path+=**
    set hidden
@@ -102,7 +109,7 @@ as if in vim *command mode*.  Comments begin with `"`.
    " More powerful backspacing
    set backspace=indent,eol,start
 
-   " Make tab completion in command mode more efficient
+   " Make tab completion in command mode more useful
    set wildmenu
    set wildmode=longest:full,full
 
@@ -114,7 +121,7 @@ as if in vim *command mode*.  Comments begin with `"`.
 
    " Misc. configurations
    set history=10000   " Number lines of command history to keep
-   set mouse=n         " Enable mouse for normal mode only
+   set mouse=a         " Enable mouse for all modes
    set scrolloff=3     " Keep cursor away from top/bottom of window
    set nowrap          " Don't wrap lines
    set sidescroll=1    " Horizontally scroll nicely
@@ -123,28 +130,34 @@ as if in vim *command mode*.  Comments begin with `"`.
    set splitright      " Vertically split to right
    set ruler           " Show line/column info
    set laststatus=2    " Allows show the status line
-   set hlsearch        " Highlight / search results after <return>
+   set hlsearch        " Highlight / search results after <CR>
    set incsearch       " Highlight / search matches as you type
-   set ignorecase      " Case insensitive search, unless
+   set ignorecase      " Case insensitive search,
    set smartcase       " ... unless query has caps
+   set nrformats=bin,hex,octal " bases used for <C-a> & <C-x>,
+   set nrformats+=alpha        " ... also single letters too
+   set showcmd  " Show partial normal mode commands in lower right corner
 
    " Duplicate neovim cursor behavior on xterm/urxvt family of terminals
    if &term =~ "xterm\\|rxvt"
-     let &t_SI = "\<esc>[6 q"
-     let &t_SR = "\<esc>[4 q"
-     let &t_EI = "\<esc>[2 q"
+     let &t_SI = "\<Esc>[6 q"
+     let &t_SR = "\<Esc>[4 q"
+     let &t_EI = "\<Esc>[2 q"
    endif
+
+   "" Add optional plugins bundled with nvim
+   packadd! matchit    " Add additional matching functionality to %
 
    "" Setup plugins
 
    " Setup the Plug plugin manager
    "
-   " Bootstrap manually by installing it into the right place:
+   " Bootstrap manually by installing plug.vim into the right place:
    "
    "   $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    "
-   " and then from within vim run
+   " and then from command mode run
    "
    "   :PlugInstall
    "
@@ -172,6 +185,10 @@ as if in vim *command mode*.  Comments begin with `"`.
    " Surrond text objects with matching (). {}. '', etc
    Plug 'tpope/vim-surround'
 
+   " Extend <C-a> and <C-x> to work
+   " with dates and not just numbers.
+   Plug 'tpope/vim-speeddating'
+
    " Enable repeating supported plugin maps with "."
    Plug 'tpope/vim-repeat'
 
@@ -179,16 +196,9 @@ as if in vim *command mode*.  Comments begin with `"`.
    " based on indentation levels, i and I
    Plug 'michaeljsmith/vim-indent-object'
 
-   " Visualizes undo history; switch between undo branches
-   Plug 'mbbill/undotree'
-
    " Shows what is in registers
-   " extends " and @ in normal mode and <ctrl-r> in insert mode
+   " extends " and @ in normal mode and <C-r> in insert mode
    Plug 'junegunn/vim-peekaboo'
-
-   " Extend <ctrl-a> and <ctrl-x> to work
-   " with dates and not just numbers.
-   Plug 'tpope/vim-speeddating'
 
    call plug#end()
 
@@ -200,30 +210,22 @@ as if in vim *command mode*.  Comments begin with `"`.
    let g:syntastic_cursor_column = 0
    let g:syntastic_enable_balloons = 0
 
-   " Force all files ending in .md, besides just README.md,
-   " to be intepreted as MarkDown and not Modula-2
-   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-   "" Set up key mappings
+   "" Setup key mappings
 
    " Define <Leader> explicitly as a space
-   nnoremap <space> <nop>
-   let mapleader = "\<space>"
+   nnoremap <Space> <Nop>
+   let mapleader = "\<Space>"
 
    " Clear search highlighting
-   nnoremap <leader><space> :nohlsearch<return>
+   nnoremap <Leader><Space> :nohlsearch<CR>
 
    " Toggle Synastic into and out of passive mode
-   nnoremap <leader>st :SyntasticToggleMode<return>
-
-   " Reassign Q in normal mode to apply macro stored in register q
-   " note: in vi and neovim, Q causes EX-mode
-   nnoremap Q @q
+   nnoremap <Leader>st :SyntasticToggleMode<CR>
 
    " Get rid of all trailing spaces for entire buffer
-   nnoremap <leader>w :%s/ \+$//<return>
+   nnoremap <Leader>w :%s/ \+$//<CR>
 
-   " Toggle between 3 line numbering states via <leader>n
+   " Toggle between 3 line numbering states via <Leader>n
    set nonumber
    set norelativenumber
 
@@ -240,7 +242,7 @@ as if in vim *command mode*.  Comments begin with `"`.
      endif
    endfunction
 
-   nnoremap <leader>n :call MyLineNumberToggle()<return>
+   nnoremap <Leader>n :call MyLineNumberToggle()<CR>
 ```
 
 ---

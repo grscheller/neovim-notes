@@ -27,12 +27,12 @@ The `:jumps` command will list a table consisting like this:
 
 Your current location in the jump list is always 0.
 
-| Command      | Description                                 |
-|:------------:|:------------------------------------------- |
-| `<ctrl-o>`   | go back to previous location in jump list   |
-| `<ctrl-i>`   | go forward to next location in jump list    |
-| `3 <ctrl-o>` | go back 3 jumps in jump list                |
-| `2 <ctrl-i>` | go forward 2 jumps in jump list             |
+| Command   | Description                                 |
+|:---------:|:------------------------------------------- |
+| `<C-o>`   | go back to previous location in jump list   |
+| `<C-i>`   | go forward to next location in jump list    |
+| `3 <C-o>` | go back 3 jumps in jump list                |
+| `2 <C-i>` | go forward 2 jumps in jump list             |
 
 ## Types of registers
 
@@ -78,7 +78,7 @@ Use `:@:` to repeat last *Command Mode* command.
 ### Alternate file register
 
 The alternate file register `"#` is an assignable name, useful when jumping
-between 2 buffers via <ctrl-^>.
+between 2 buffers via <C-^>.
 
 ### Expression register
 
@@ -136,7 +136,7 @@ or "Unix System programming" in similar ways.  You want "Unix" replaced
 by "UNIX" and the "p" capitalized:
 
 ```
-    qa/Unix<ret>l~~~fp~q
+    qa/Unix<CR>l~~~fp~q
     @a@a@a@a
 ```
 

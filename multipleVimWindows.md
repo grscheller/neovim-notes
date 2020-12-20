@@ -26,12 +26,12 @@ if you don't know how to navigate multiple vim windows.
 
 ## Creating new windows *Normal Mode*
 
-| Command     | Description                             |
-|:-----------:|:--------------------------------------- |
-| `<ctrl-w>n` | new window with empty buffer above      |
-| `<ctrl-w>s` | new window new view same buffer above   |
-| `<ctrl-w>v` | new window new view same buffer to left |
-| `<ctrl-w>T` | break current window out in new tab     |
+| Command  | Description                             |
+|:--------:|:--------------------------------------- |
+| `<C-w>n` | new window with empty buffer above      |
+| `<C-w>s` | new window new view same buffer above   |
+| `<C-w>v` | new window new view same buffer to left |
+| `<C-w>T` | break current window out in new tab     |
 
 The directional sense of these commands can be adjusted via
 
@@ -51,10 +51,10 @@ I configure these in my`~/.vim/vimrc`
 
 | Command     | Description           |
 |:-----------:|:--------------------- |
-| `<ctrl-w>h` | move one window left  |
-| `<ctrl-w>l` | move one window right |
-| `<ctrl-w>k` | move one window up    |
-| `<ctrl-w>j` | move one window down  |
+| `<C-w>h`    | move one window left  |
+| `<C-w>l`    | move one window right |
+| `<C-w>k`    | move one window up    |
+| `<C-w>j`    | move one window down  |
 
 ## Adjusting windows size (without mouse support)
 
@@ -62,34 +62,34 @@ I configure these in my`~/.vim/vimrc`
 
 | Command     | Description                            |
 |:-----------:|:-------------------------------------- |
-| `<ctrl-w>=` | equalize heights/widths of all windows |
+| `<C-w>=`    | equalize heights/widths of all windows |
 
 ### Setting/adjusting window sizes
 
-| Command                | Description                            |
-|:----------------------:|:-------------------------------------- |
-| `20 <ctrl-w>_`         | set active window height 20 lines      |
-| `72 <ctrl-w><pipebar>` | set active window width 72 chars       |
-| `10 <ctrl-w>+`         | increase active window height 10 lines |
-| `15 <ctrl-w>-`         | decrease active window height 15 lines |
-| `10 <ctrl-w>>`         | increase active window width 10 char   |
-| `15 <ctrl-w><`         | decrease active window width 15 char   |
+| Command        | Description                            |
+|:--------------:|:-------------------------------------- |
+| `20<C-w>_`     | set active window height 20 lines      |
+| `72<C-w><Bar>` | set active window width 72 chars       |
+| `10<C-w>+`     | increase active window height 10 lines |
+| `15<C-w>-`     | decrease active window height 15 lines |
+| `10<C-w>>`     | increase active window width 10 char   |
+| `15<C-w><`     | decrease active window width 15 char   |
 
 Also, note that
 
-| Command             | Description                   |
-|:-------------------:|:----------------------------- |
-| `<ctrl-w>_`         | maximize active window height |
-| `<ctrl-w><pipebar>` | maximize active window width  |
+| Command      | Description                   |
+|:------------:|:----------------------------- |
+| `<C-w>_`     | maximize active window height |
+| `<C-w><Bar>` | maximize active window width  |
 
 but
 
-| Command      | Description                            |
-|:------------:|:-------------------------------------- |
-| `<ctrl-w>+` | increase active window height 1 lines   |
-| `<ctrl-w>-` | decrease active window height 1 lines   |
-| `<ctrl-w>>` | increase active window width 1 char     |
-| `<ctrl-w><` | decrease active window width 1 char     |
+| Command  | Description                            |
+|:--------:|:-------------------------------------- |
+| `<C-w>+` | increase active window height 1 lines  |
+| `<C-w>-` | decrease active window height 1 lines  |
+| `<C-w>>` | increase active window width 1 char    |
+| `<C-w><` | decrease active window width 1 char    |
 
 ## Tab pages
 
@@ -137,11 +137,11 @@ text by jumping to *Normal Mode* using the usual vim buffers.
 Entering *Insert Mode* will return you to the terminal session.
 You can only paste into the shell session itself while in *Insert Mode*.
 
-| Command      | Description                                      |
-|:------------:|:------------------------------------------------ |
-| `<ctrl-w>""` | Paste contents default buffer into shell session |
-| `<ctrl-w>"a` | Paste contents buffer `"a` into shell session    |
-| `<ctrl-w>N`  | Put vim terminal window into *Normal Mode*       |
+| Command   | Description                                      |
+|:---------:|:------------------------------------------------ |
+| `<C-w>""` | Paste contents default buffer into shell session |
+| `<C-w>"a` | Paste contents buffer `"a` into shell session    |
+| `<C-w>N`  | Put vim terminal window into *Normal Mode*       |
 
 ---
 
