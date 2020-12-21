@@ -1,8 +1,7 @@
-# Intermediate Level Vim Notes
+# My Neovim Notes
 
 These notes are where I document the information
-I learn about vi/vim/neovim.  They probably will
-be most useful to intermediate level Vim users.
+I learn about vi/vim/nvim.
 
 I tried to put the MarkDown files linked below in
 an order that only relies on the gist of the
@@ -17,10 +16,10 @@ information in ones above it.
 * [Regular Expressions](regExp.md)
 * [Configuring Vim](vimrcConfigFile.md)
 
-I have found the act of creating/maintaining these
-notes invaluable in my journey to master Vim.
-
-Vim is actually a Turing complete language.  It can
-be turned into a complete IDE with full computer
-language syntax highlighting and UNIX shell support.
-Like EMACS, Vim is a very powerful editor.
+As Neovim goes to version 0.5 and Vim goes to 9.0, I
+feel that they are diverging to the point that I need
+to target one or the other.  It is not the purpose of
+these notes to document the differences.  I chose Neovim
+over Vim because of Neovim's active community-driven
+development and the refactoring efforts which went into
+the codebase.

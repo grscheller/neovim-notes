@@ -1,5 +1,8 @@
 # Advanced Traditional Vi Commands
 
+The problem a lot of people have with Vim is
+[that they don't grok vi] [4].
+
 Much of the information here I obtained from
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
 This site no longer seems to be active.  These commands
@@ -214,3 +217,4 @@ command.
 [1]: vimFactoids.md
 [2]: README.md
 [3]: vimSpecificFeatures.md
+[4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
