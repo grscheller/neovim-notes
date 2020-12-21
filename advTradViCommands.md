@@ -27,7 +27,7 @@ Vi was often called "bimodal" where *Normal Mode* and
 | `ZZ`    | save changes and exit vim                  |
 | `<C-z>` | suspend vim to shell background            |
 
-For `<ctrl-z>`, the shell command `fg %1` will usually work to
+For `<C-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
 via the `jobs` shell command.
 
@@ -73,16 +73,16 @@ to keep the cursor 3 lines from the edge of the screen.
 
 ### Commands to move screen view
 
-| Command  | Description                            |
-|:--------:|:-------------------------------------- |
-| `<C-e>`  | move view down one line                |
-| `<C-y>`  | move view up one line                  |
-| `zt`     | make current line top line of view     |
-| `zz`     | make current line middle line of view  |
-| `zb`     | make current line bottom line of view  |
-| `<nn>zt` | make line `<nn>` top line of view      |
-| `<nn>zz` | make line `<nn>` middle line of view   |
-| `<nn>zb` | make line `<nn>` bottom line of view   |
+| Command | Description                            |
+|:-------:|:-------------------------------------- |
+| `<C-e>` | move view down one line                |
+| `<C-y>` | move view up one line                  |
+| `zt`    | make current line top line of view     |
+| `zz`    | make current line middle line of view  |
+| `zb`    | make current line bottom line of view  |
+| `[n]zt` | make line `n` top line of view      |
+| `[n]zz` | make line `n` middle line of view   |
+| `[n]zb` | make line `n` bottom line of view   |
 
 Where applicable, you can type a number before these commands
 to repeat them that many times.
@@ -130,12 +130,13 @@ defining "sections."
 | Command       | Description                                         |
 |:-------------:|:--------------------------------------------------- |
 | `<C-h>`       | delete previous character                           |
-| `<backspace>` | delete previous character                           |
-| `<C-v><char>` | take `<char>` literally                             |
+| `<BS>`        | delete previous character                           |
+| `<C-v>{char}` | insert character `{char}` literally                 |
+| `<C-v><Tab>`  | insert literal `<Tab>` (handy for makefiles)        |
 | `<C-w>`       | delete previous word                                |
 | `<C-o>`       | go to normal mode for just one command              |
-| `<C-o> n`     | go to next search item, remain in insert mode       |
-| `<C-o> D`     | delete everything to right of cursor                |
+| `<C-o>n`      | go to next search item, remain in insert mode       |
+| `<C-o>D`      | delete everything to right of cursor                |
 | `<C-u>`       | delete everything to left of cursor                 |
 | `<C-t>`       | indent current line one tab stop                    |
 | `<C-d>`       | un-indent current line one tab stop                 |
@@ -148,24 +149,25 @@ For more information on `<C-x>` see,
    :help ins-completion
 ```
 
-If you accidentally typed `<ctrl-x>` while in insert mode, typing any
+If you accidentally typed `<C-x>` while in insert mode, typing any
 non-control character will get you back.  If you have terminal flow
 control turned on, and you hit the unfortunate key combination
-`<ctrl-x><ctrl-s>`, something EMACS users are likely to do, you will
-find your vim editing session frozen.  Type `<ctrl-q>` to unlock.
+`<C-x><C-s>`, something EMACS users are likely to do, you will
+find your vim editing session frozen.  Type `<C-q>` to unlock.
 
 ### *Insert Mode* vs *Replace Mode*
 
 * *Replace Mode* is similar to *Insert Mode* but
   characters are overwritten instead of inserted.
 * You can toggle between them via the terminal
-  `<insert>`key.
+  `<Insert>` key.
 * You can enter *Replace Mode* directly from *Normal Mode*
   via the `R` command.
 * Like in *Insert Mode* you can navigate around the text
   via the arrow keys creating multiple undo events.
-* In *Replace Mode*, the `<backspace>` and `<ctrl-h>` act
-  like a back arrow key but undoes (only) last set of replacements.
+* In *Replace Mode*, the `<BS>` and `<C-h>` keys undo
+  only current set of replacements, otherwise they
+  act like the `<Left>` arrow key.
 
 ## *Command Mode* Commands
 

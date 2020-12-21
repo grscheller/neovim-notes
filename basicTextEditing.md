@@ -100,7 +100,7 @@ from multiple files and pasting them into other files.
 ### Commands to insert or manipulate text
 
 These *Normal Mode* commands take vim to *Insert Mode*.
-To return to *Normal Mode*, type either `<esc>` or `<ctrl-[>`.
+To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description                                                |
 |:-------:|:---------------------------------------------------------- |
@@ -142,7 +142,7 @@ not, the change at each location.
 
 The whole vi paradigm is that you do all navigation in *normal mode*
 and type text in *insert mode*.  You return to *normal mode*
-by pressing the `<esc>` key.
+by pressing the `<Esc>` key.
 
 ### Navigating in Insert Mode
 
@@ -156,7 +156,7 @@ be deleted with the backspace key.  In *Normal Mode*, the backspace
 and space keys are just extra navigation keys.
 
 It is also possible to perform a single *normal mode* action within
-*insert mode* by using`<ctrl-o>` key sequences.
+*insert mode* by using`<C-o>` key sequences.
 
 | Command   | Description                              |
 |:---------:|:---------------------------------------- |
@@ -220,7 +220,7 @@ and prompts you with `:`.
 
 While in *Command Mode*, up & down arrow keys cycle through previous
 *Command Mode* commands.  The left & right arrow keys help you
-re-edit the line.  Press `<esc>`or`<ctrl-[>` to return to *Normal Mode* without
+re-edit the line.  Press `<Esc>`or`<C-[>` to return to *Normal Mode* without
 issuing a command.
 
 ---
@@ -320,7 +320,7 @@ To get the most out of it,
 
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
 * Use `<C-o>` to jump back to previous location
-* Use `<C-i>` or `<tab>` to jump forward again
+* Use `<C-i>` or `<Tab>` to jump forward again
 * familiarize yourself with how to use [multiple vim windows](multipleVimWindows.md)
 * configure the [mouse](vimFactoids.md#using-the-mouse)
 * setting up the [wildmenu](vimFactoids.md#configuring-wildmenu)

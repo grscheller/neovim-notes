@@ -43,7 +43,7 @@ Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
 are using via 2 character "diagraph" sequences.  While in *Insert Mode*,
-type `<ctrl-k>` followed by a two character sequence.
+type `<C-k>` followed by a two character sequence.
 
 |  Command   | Description                                   |
 |:----------:|:--------------------------------------------- |
@@ -58,13 +58,14 @@ encoding you are using.
 
 ## Using Unicode Code Points
 
-In modern Unix terminal emulators and Libre Office, input and display
-of Unicode code points just works.  Terminals are fixed width font
-beasts, but Libre Office handles the variable width code points just fine.
+In modern Unix terminal emulators and Libre Office, input
+and display of Unicode code points just works.  Terminals
+are fixed width font beasts, but Libre Office handles the
+variable width code points just fine.
 
-When using gvim or vim with a unicode aware terminal emulator like
-rxvt-unicode or gnome-terminal, code points can be entered while
-in *Insert Mode* via
+When using gvim, vim or nvi, with a unicode aware terminal
+emulator like rxvt-unicode or gnome-terminal, code points
+can be entered while in *Insert Mode* via
 
 |  Command            | Description            |
 |:-------------------:|:---------------------- |
@@ -73,23 +74,22 @@ in *Insert Mode* via
 
 Where `<C-S-u>` means holding down CTRL+SHIFT+u.
 
-(TL;DR): Be aware that in both the cases of gvim
-and a terminal emulator, you are not interacting
-with the "terminal" being emulated, but the
-underlying GUI application.  As far as a real
-terminal is concerned, `CTRL+u` and `CTRL+U` are
-the same control character, octal 025.  That is
-what is coming down the RS-232 cable.  The
-Graphical User Interface (GUI) is seeing all your
-keystrokes and can distinguish whether you pressed
-`<C-u>` or `<C-S-u>`.
+(TL;DR): Be aware that in both the cases of gvim and a
+terminal emulator, you are not interacting with the
+"terminal" being emulated, but the underlying GUI
+application.  As far as a real terminal is concerned,
+`CTRL+u` and `CTRL+U` are the same control character,
+octal 025.  That is what is coming down the RS-232 cable.
+The Graphical User Interface (GUI) is seeing all your
+keystrokes and can distinguish whether you pressed `<C-u>`
+or `<C-S-u>`.
 
 Note: Using `<S-C-u>` will not work.
 
 Note: `<C-S-u>` does not work while on the linux console.
 
-Note: Defining key mappings involving `<C-S-u>` does not work,
-either as the key mapping or in whatever is mapped to.
+Note: Defining a key mapping involving `<C-S-u>` does not
+work, either as the key mapping or in whatever is mapped to.
 
 ---
 

@@ -90,7 +90,7 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
 
 * Vi only has one level of undo/redo, `u` undo the
   last change and, if hit again, will redo the change.
-  `<ctrl-r>`has no effect.
+  `<C-r>`has no effect.
 * On modern Linux systems, the vi "executable" is either a
   symlink to ex, traditional BSD based vi, or a symlink
   to vim.  If the vim executable starts with the name vi,
