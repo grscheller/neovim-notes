@@ -204,6 +204,6 @@ POSIX.2 standard for backward compatibility, but are considered a wart.
 
 | prev: [Encodings and Unicode][1] | [Home][2] | next: [Configuring Vim][3] |
 
-[1]: encodingsUnicode.md
+[1]: EncodingsUnicode.md
 [2]: README.md
-[3]: vimrcConfigFile.md
+[3]: VimrcConfigFile.md

@@ -11,7 +11,7 @@ for now, are:
 
 For more in depth information see the section on all the different
 types of registers in
-[vimSpecificFeatures](vimSpecificFeatures.md#types-of-registers).
+[Vim Specific Features](VimSpecificFeatures.md#types-of-registers).
 
 Note: In older vi documentation and jargon, registers are referred
 to as buffers.
@@ -23,7 +23,7 @@ write to and `p` and `c` commands read from by "default."
 
 ### Named registers
 
-Illustrated in [Basic text editing](basicTextEditing.md#you-can-use-named-registers-to-store-text),
+Illustrated in [Basic text editing](BasicTextEditing.md#you-can-use-named-registers-to-store-text),
 Named registers are areas where you can store snippets of text.
 They are named `"a` thru `"z` and are essentially 26
 independent "clip boards" that are shared between all the
