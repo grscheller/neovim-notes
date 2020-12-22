@@ -44,8 +44,8 @@ can be internalized and eventually become part of your "muscle memory."
 | `5l`          | move forward 5 characters on current line         |
 | `(`           | move to start of "sentence" (file type dependant) |
 | `)`           | move to start of next "sentence"                  |
-| `{`           | move to start of "section" (file type dependant)  |
-| `}`           | move to start of next "section"                   |
+| `{`           | move to start of "paragraph"                      |
+| `}`           | move to start of next "paragraph"                 |
 | `/RegExp<CR>` | forward search for regular expression pattern     |
 | `?RegExp<CR>` | backward search for regular expression pattern    |
 | `/<CR>`       | search forward for last pattern                   |

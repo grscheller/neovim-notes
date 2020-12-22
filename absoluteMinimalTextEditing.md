@@ -1,4 +1,4 @@
-# Absolute Minium One Needs to Know
+# Absolute Minimum One Needs to Know
 
 Let's say you have ssh to some server that only has vi or vim
 installed.  No emacs, no nano.  You only have one quick

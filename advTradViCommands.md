@@ -1,20 +1,20 @@
 # Advanced Traditional Vi Commands
 
 The problem a lot of people have with Vim is
-[that they don't grok vi] [4].
+[that they don't grok vi][4].
 
 Much of the information here I obtained from
 [Lagmonster](http://www.lagmonster.org/docs/vi2.html).
 This site no longer seems to be active.  These commands
 existed in the original ex version of vi.  Where the behavior
-differs from the original vi, I will indicate the vim behavior.
+differs from the original vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex
 line editor.
 
 Vi was often called "bimodal" where *Normal Mode* and
-*Command Mode* where conflated together and called
-"*Command Mode*."  *Insert Mode* was the second mode.
+*Command Mode* were conflated together and called
+"command mode" and "insert mode" was the second mode.
 
 ## *Normal Mode* Commands
 
