@@ -107,6 +107,6 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
 
 | prev: [Basic Text Editing][1] | [Home][2] | next: [Adv Trad Vi Commands][3] |
 
-[1]: basicTextEditing.md
+[1]: BasicTextEditing.md
 [2]: README.md
-[3]: advTradViCommands.md
+[3]: AdvTradViCommands.md

@@ -155,4 +155,4 @@ enable vi editing mode.
 | [Home][1] | next: [Basic Text Editing][2] |
 
 [1]: README.md
-[2]: basicTextEditing.md
+[2]: BasicTextEditing.md

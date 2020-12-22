@@ -216,7 +216,7 @@ command.
 
 | prev: [Vim Factoids][1] | [Home][2] | next: [Vim SpecificFeatures][3] |
 
-[1]: vimFactoids.md
+[1]: VimFactoids.md
 [2]: README.md
-[3]: vimSpecificFeatures.md
+[3]: VimSpecificFeatures.md
 [4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118

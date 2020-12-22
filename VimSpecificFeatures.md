@@ -153,6 +153,6 @@ For instance, you don't want to change "Unix is perfect".
 
 | prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Multiple Vim Windows][3] |
 
-[1]: <advTradViCommands.md>
+[1]: <AdvTradViCommands.md>
 [2]: <README.md>
-[3]: <multipleVimWindows.md>
+[3]: <MultipleVimWindows.md>

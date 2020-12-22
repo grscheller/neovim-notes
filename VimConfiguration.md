@@ -249,5 +249,5 @@ as if in vim *command mode*.  Comments begin with `"`.
 
 | prev: [Regular Expressions][1] | [Home][2] |
 
-[1]: regExp.md
+[1]: RegularExpressions.md
 [2]: README.md

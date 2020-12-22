@@ -335,5 +335,5 @@ To get the most out of it,
 
 | [Absolute Minimal Text Editing][1] | next: [Vim Factoids][2] |
 
-[1]: absoluteMinimalTextEditing.md
-[2]: vimFactoids.md
+[1]: AbsoluteMinimalTextEditing.md
+[2]: VimFactoids.md

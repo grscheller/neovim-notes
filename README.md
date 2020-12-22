@@ -7,15 +7,15 @@ I tried to put the MarkDown files linked below in
 an order that only relies on the gist of the
 information in ones above it.
 
-* [Absolute Minimal Text Editing](absoluteMinimalTextEditing.md)
-* [Basic Text Editing](basicTextEditing.md)
-* [Vim Factoids](vimFactoids.md)
-* [Advanced Traditional Vi Commands](advTradViCommands.md)
-* [Vim Specific Features](vimSpecificFeatures.md)
-* [Multiple Vim Windows](multipleVimWindows.md)
-* [Encodings and Unicode](encodingsUnicode.md)
-* [Regular Expressions](regExp.md)
-* [Configuring Vim](vimrcConfigFile.md)
+* [Absolute Minimal Text Editing](AbsoluteMinimalTextEditing.md)
+* [Basic Text Editing](BasicTextEditing.md)
+* [Vim Factoids](VimFactoids.md)
+* [Advanced Traditional Vi Commands](AdvTradViCommands.md)
+* [Vim Specific Features](VimSpecificFeatures.md)
+* [Multiple Vim Windows](MultipleVimWindows.md)
+* [Encodings and Unicode](EncodingsUnicode.md)
+* [Regular Expressions](RegularExpressions.md)
+* [Configuring Vim](VimConfiguration.md)
 
 As Neovim goes to version 0.5 and Vim goes to 9.0, I
 feel that they are diverging to the point that I need

@@ -147,6 +147,6 @@ You can only paste into the shell session itself while in *Insert Mode*.
 
 | prev: [Vim Specific Features][1] | [Home][2] | next: [Encodings & Unicode][3] |
 
-[1]: vimSpecificFeatures.md
+[1]: VimSpecificFeatures.md
 [2]: README.md
-[3]: encodingsUnicode.md
+[3]: EncodingsUnicode.md
