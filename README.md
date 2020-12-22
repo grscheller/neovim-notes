@@ -7,6 +7,7 @@ I tried to put the MarkDown files linked below in
 an order that only relies on the gist of the
 information in ones above it.
 
+* [Absolute Minimal Text Editing](absoluteMinimalTextEditing.md)
 * [Basic Text Editing](basicTextEditing.md)
 * [Vim Factoids](vimFactoids.md)
 * [Advanced Traditional Vi Commands](advTradViCommands.md)

@@ -1,6 +1,7 @@
 # Basic Text Editing
 
-This should be enough to enable you to be productive with vim.
+This should be enough to enable you to be productive with nvim/vim
+as a text editor.
 
 I think with a few months of practice, the material covered here
 can be internalized and eventually become part of your "muscle memory."
@@ -39,7 +40,12 @@ can be internalized and eventually become part of your "muscle memory."
 | `T<char>`     | move backward after next `<char>` on current line |
 | `;`           | next target for last `f`, `F` ,`t` ,`T` command   |
 | `,`           | prev target for last `f`, `F`, `t`, `T` command   |
-| `3fw`         | move forward to 3rd word on current line          |
+| `3w`          | move forward 3 words on current line              |
+| `5l`          | move forward 5 characters on current line         |
+| `(`           | move to start of "sentence" (file type dependant) |
+| `)`           | move to start of next "sentence"                  |
+| `{`           | move to start of "section" (file type dependant)  |
+| `}`           | move to start of next "section"                   |
 | `/RegExp<CR>` | forward search for regular expression pattern     |
 | `?RegExp<CR>` | backward search for regular expression pattern    |
 | `/<CR>`       | search forward for last pattern                   |
@@ -47,24 +53,22 @@ can be internalized and eventually become part of your "muscle memory."
 | `n`           | search forward or backward for last pattern       |
 | `N`           | search for last pattern in reverse sense of above |
 
-### Interacting with "the buffer" in Normal Mode
+### Changing text and/or interacting with the default register
 
-Buffer is older vi jargon for what is now called the
-default register in vim.
-
-| Command       | Description                                             |
-|:-------------:|:------------------------------------------------------- |
-| `dd`          | delete line and put in default register (cut)           |
-| `D`           | delete to end of line and put in default register       |
-| `yy`          | yank line to default register (copy)                    |
-| `Y`           | yank line to default register (copy)                    |
-| `5dd`         | delete 5 lines and put in default register              |
-| `x`           | delete character under cursor, put in default register  |
-| `X`           | delete character before cursor, put in default register |
-| `~`           | change case of current char and advance one char        |
-| `r<char>`     | change current char to `<char>`                         |
-| `p`           | paste default register contents "after"                 |
-| `P`           | paste default register contents "before"                |
+| Command   | Description                                             |
+|:---------:|:------------------------------------------------------- |
+| `dd`      | delete line and put in default register (cut)           |
+| `3dd`     | delete 3 lines and put in default register              |
+| `D`       | delete to end of line and put in default register       |
+| `yy`      | yank line to default register (copy)                    |
+| `Y`       | yank line to default register (copy)                    |
+| `x`       | delete character under cursor, put in default register  |
+| `X`       | delete character before cursor, put in default register |
+| `~`       | change case of current char and advance one char        |
+| `r<char>` | change current char to `<char>`                         |
+| `p`       | paste default register contents "after"                 |
+| `P`       | paste default register contents "before"                |
+| `J`       | join curent & next line, insert spaces as needed        |
 
 What "before" or "after" mean depends on what is in the
 default register.  Both `y` and `d` can be used with all
@@ -102,25 +106,29 @@ from multiple files and pasting them into other files.
 These *Normal Mode* commands take vim to *Insert Mode*.
 To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
 
-| Command | Description                                                |
-|:-------:|:---------------------------------------------------------- |
-| `i`     | insert text before character cursor is on                  |
-| `I`     | insert text at beginning of line after initial white space |
-| `a`     | insert text after character cursor is on                   |
-| `A`     | insert text at end of line                                 |
-| `0i`    | insert text beginning of line                              |
-| `o`     | open new line after current line to insert text            |
-| `O`     | open new line before current line to insert text           |
-| `s`     | delete current character and enter *Normal Mode*           |
-| `S`     | delete line contents and enter *Normal Mode*               |
-| `3cw`   | change next three words                                    |
-| `c3w`   | change next three words                                    |
-| `5cc`   | change next 5 lines                                        |
-| `3cb`   | change previous 3 words                                    |
-| `c$`    | change to end of line                                      |
-| `c^`    | change text before cursor, excluding initial white space   |
-| `c0`    | change text before cursor to beginning of line             |
-| `"a3S`  | delete 3 lines into `"a`, enter *Normal Mode* on new line  |
+| Command | Description                                                     |
+|:-------:|:--------------------------------------------------------------- |
+| `i`     | insert text before character cursor is on                       |
+| `I`     | insert text at beginning of line after initial white space      |
+| `0i`    | insert text beginning of line                                   |
+| `a`     | insert text after character cursor is on                        |
+| `A`     | insert text at end of line                                      |
+| `o`     | open new line after current line in insert text                 |
+| `O`     | open new line before current line in insert text                |
+| `s`     | delete current character and enter *Insert Mode*                |
+| `S`     | delete line contents and enter *Insert Mode*                    |
+| `C`     | change to end of line                                           |
+| `3cw`   | change next three words starting at cursor                      |
+| `c3w`   | change next three words starting at cursor                      |
+| `5cc`   | change next 5 lines                                             |
+| `3cb`   | change previous 3 words                                         |
+| `c$`    | change to end of line                                           |
+| `c^`    | change text before cursor, excluding initial white space        |
+| `c0`    | change text before cursor to beginning of line                  |
+| `ciw`   | change inner word (change word cursor is on)                    |
+| `cis`   | change inner sentence (works best for prose)                    |
+| `"a3S`  | delete 3 lines into `"a`, enter *Normal Mode* on new line       |
+| `"b3C`  | delete rest of line & next 2 two into `"b`, enter *Normal Mode* |
 
 ### Repeating commands in Normal Mode
 
@@ -192,7 +200,7 @@ the AT&T Unix line editor ed.  On really old terminals,
 essentially line printers with keyboards, the descendants
 of teletypes, you edited files one line at a time.
 
-*Command Mode* commands developed from the original
+*Command Mode* commands developed from the original ex
 line editing commands.
 
 Use the `:` command to enter *Command Mode*.  The
@@ -204,8 +212,11 @@ and prompts you with `:`.
 | `:w`                | write to disk file being edited                      |
 | `:w file`           | write to file, still editing original file           |
 | `:q`                | quit editing, will warn if unsaved changes           |
-| `:wq`               | write to disk, then quit                             |
-| `:q!`               | quit without saving unsaved changes                  |
+| `:wq`               | write current buffer to disk, then quit current view |
+| `:wa`               | write all buffers to disk                            |
+| `:q!`               | quit current view without saving unsaved changes     |
+| `:qa`               | quit program if there are no unsaved changes         |
+| `:qa!`              | quit program without saving unsaved changes          |
 | `:n`                | edit next buffer typically next file on command line |
 | `:next`             | edit next buffer typically next file on command line |
 | `:prev`             | edit previous buffer                                 |
@@ -276,18 +287,18 @@ like the arrow buttons in a web browser.
 Navigating with the arrow keys while in *Insert Mode*
 will result in multiple entries undo/redo levels.
 
-### Some Vim command line option examples
+### Some Vim/Neovim command line option examples
 
 ```
-   $ vim file1 file2 file3  # Open/create 3 files for editting
-   $ vim +[n] file          # Open file for editing on line n,
-                            # defaults to last line of file
-   $ vim +/pattern file     # Open file for editing at first reg-exp pattern match
-   $ vim -R file            # Open file read only, can still write via :w!
-   $ vim -g file            # Run as gvim GUI
-   $ vim -r                 # List swap files, then exit
-   $ vim -r file            # Recover crashed vim session, uses swap file
-   $ vim -h                 # List help message for command-line options and exit
+   $ nvim file1 file2 file3  # Open/create 3 files for editting
+   $ nvim +[n] file     # Open file for editing on line n,
+                        # defaults to last line of file
+   $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match
+   $ nvim -R file         # Open file read only, can still write via :w!
+   $ vim -g file  # Run as gvim GUI
+   $ nvim -r       # List swap files, then exit
+   $ nvim -r file  # Recover crashed vim session, uses swap file
+   $ nvim -h       # List help message for command-line options and exit
 ```
 
 ### Dealing with whitespace characters
@@ -313,9 +324,8 @@ To get started, from within vim, type
 
 * `:help`
 * `:help help`
-* `:help tutorial`
 
-Vim built in help is very powerful, but not beginner friendly.
+Vim/Neovim built in help is very powerful, but not beginner friendly.
 To get the most out of it,
 
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
@@ -327,7 +337,7 @@ To get the most out of it,
 
 ---
 
-| [Home][1] | next: [Vim Factoids][2] |
+| [Absolute Minimal Text Editing][1] | next: [Vim Factoids][2] |
 
-[1]: README.md
+[1]: absoluteMinimalTextEditing.md
 [2]: vimFactoids.md
