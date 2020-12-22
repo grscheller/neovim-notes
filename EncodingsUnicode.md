@@ -97,4 +97,4 @@ work, either as the key mapping or in whatever is mapped to.
 
 [1]: VimSpecificFeatures.md
 [2]: README.md
-[3]: regExp.md
+[3]: RegularExpressions.md
