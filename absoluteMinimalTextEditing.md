@@ -109,20 +109,22 @@ Use the `:` command to enter *Command Mode*.  The
 cursor jumps down to the bottom of the terminal window
 and prompts you with `:`.
 
-| Command             | Description                                          |
-|:------------------- |:---------------------------------------------------- |
-| `:w`                | write to disk file being edited                      |
-| `:w file`           | write to file, still editing original file           |
-| `:q`                | quit editing, will warn if unsaved changes           |
-| `:wq`               | write to disk, then quit                             |
-| `:q!`               | quit without saving unsaved changes                  |
-| `:n`                | edit next buffer typically next file on command line |
-| `:prev`             | edit previous buffer                                 |
-| `:42`               | move cursor to beginning of line 42                  |
-| `:#`                | give line number of current line cursor is on        |
-| `:s/foo/bar/`       | substitute first instance of foo with bar            |
-| `:s/foo/bar/g`      | substitute all instances of foo with bar             |
-| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
+| Command             | Description                                            |
+|:------------------- |:------------------------------------------------------ |
+| `:w`                | write to disk file being edited                        |
+| `:w file`           | write to file, still editing original file             |
+| `:q`                | quit editing, will warn about unsaved changes          |
+| `:wq`               | write to disk, then quit                               |
+| `:q!`               | quit without saving unsaved changes                    |
+| `:n`                | edit next buffer typically next file on command line   |
+| `:prev`             | edit previous buffer                                   |
+| `:42`               | move cursor to beginning of line 42                    |
+| `:#`                | give line number of current line cursor is on          |
+| `:s/foo/bar/`       | substitute first instance of foo with bar              |
+| `:s/foo/bar/g`      | substitute all instances of foo with bar               |
+| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42            |
+| `:/dog/`            | jump next line with `dog` in it (first non-whitespace) |
+| `/dog`              | jump to next instance of `dog` in file                 |
 
 ### Repeating commands in Normal Mode
 
@@ -135,15 +137,18 @@ It does not repeat *Command Mode* commands.
 
 ## POSIX command  line editing mode
 
-The above editing commands also apply to POSIX shells,
-like Bash, when in vi cmdline editing mode.  By default
-Bash uses emacs editing mode.  Put `set -o vi` in your
-`~/.bashrc` file to enable vi editing mode.
+The non-multiline *Normal Mode* commands above
+also apply to POSIX shell when in vi cmdline
+editing mode.  By default, Bash uses emacs editing
+mode.  Put `set -o vi` in your `~/.bashrc` file to
+enable vi editing mode.
 
-When the prompt is printed you are in *Insert Mode*.
-Pressing `<Esc>` puts you in *Normal Mode* with a one line view.
-Pressing `k` takes you back through your command line history.
-Pressing `j` takes you forward through your command line history.
+* When the prompt is printed you are in *Insert Mode*
+* Pressing `<Esc>` puts you in *Normal Mode* with a one line view
+* Pressing `k` takes you back through your command line history
+* Pressing `j` takes you forward through your command line history
+* Pressing `h` and `l` moves you forward and back on the command line
+* The `f`, `t`, `F`, `T`, `;`, `,` commands, covered later, are useful
 
 ---
 
