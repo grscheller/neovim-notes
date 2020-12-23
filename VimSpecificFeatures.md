@@ -50,7 +50,7 @@ These contain only multiline (one or more whole lines) data.
 | `"1`           | contains most recent delete/substitution       |
 | `"2` thru `"9` | contents shift downward when `"1` is updated   |
 
-These can be written to in Command Mode via `:let @5 = "foobar"`
+These can be written to in *command mode* via `:let @5 = "foobar"`
 
 ### Small delete register
 
@@ -71,9 +71,9 @@ These can be written to in Command Mode via `:let @5 = "foobar"`
 |:---------:|:-------------------------------------------- |
 | `".`      | contains last inserted text                  |
 | `"%`      | contains the name of the current file        |
-| `":`      | contains most recent *Command Mode* command  |
+| `":`      | contains most recent *command mode* command  |
 
-Use `:@:` to repeat last *Command Mode* command.
+Use `:@:` to repeat last *command mode* command.
 
 ### Alternate file register
 
@@ -95,8 +95,7 @@ which use registers.
 
 On Arch, the first two only seem to work in vim when the gvim
 package is installed.  I've never gotten the last one to work
-at all, but this may have to do with how tightly I have the
-mouse locked down.
+at all.
 
 ### Black hole register
 
@@ -105,8 +104,8 @@ other registers.  Reading from it returns nothing.
 
 ### Last search pattern register
 
-The last search pattern register `"/` is readable from *Normal Mode*.
-You can assign values to it in *Command Mode* via
+The last search pattern register `"/` is readable from *normal mode*.
+You can assign values to it in *command mode* via
 
 ```
    :let @/ = "Some String"
@@ -114,21 +113,21 @@ You can assign values to it in *Command Mode* via
 
 ## Vim Macros
 
-A useful *Normal Mode* feature of vim is the `.` command which
-repeats the last *Normal Mode* command which changed text.  Combining
+A useful *normal mode* feature of vim is the `.` command which
+repeats the last *normal mode* command which changed text.  Combining
 with the `n` command is an extremely useful and powerful paradigm.
 
 But, what if you want to do a series of commands between searches?  The
 vim macro feature comes to the rescue.
 
-This feature allows you to repeat a sequence of *Normal Mode* and
-*Command Mode* commands.  Macros are stored in vim registers.
+This feature allows you to repeat a sequence of *normal mode* and
+*command mode* commands.  Macros are stored in vim registers.
 
-To create a macro, issue the *Normal Mode* `q` command followed by a
+To create a macro, issue the *normal mode* `q` command followed by a
 vim register name, say `a`.  At the bottom of the screen you see the
-text `recording @a`.  Issue both *Normal Mode* and *Command Mode*
+text `recording @a`.  Issue both *normal mode* and *command mode*
 commands and edit as usual.  To finish, issue another
-*Normal Mode* `q` command.  At a later time, to execute this macro
+*normal mode* `q` command.  At a later time, to execute this macro
 and repeat the sequence of commands, type `@a`.
 
 As an example, say you want to change instances of "Unix programming"

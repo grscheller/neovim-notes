@@ -12,8 +12,8 @@ differs from the original vi, I will indicate the nvim behavior.
 The name vi comes from the "visual interface" for the ex
 line editor.
 
-Vi was often called "bimodal" where *Normal Mode* and
-*Command Mode* were conflated together and called
+Vi was often called "bimodal" where *normal mode* and
+*command mode* were conflated together and called
 "command mode" and "insert mode" was the second mode.
 
 ## *Normal Mode* Commands
@@ -31,7 +31,7 @@ For `<C-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
 via the `jobs` shell command.
 
-### Commands to move cursor in *normal mode*
+### Commands to move cursor in *Normal Mode*
 
 | Command   | Description                                        |
 |:---------:|:-------------------------------------------------- |
@@ -113,17 +113,17 @@ defining "sections."
 
 | Command    | Description                                               |
 |:----------:|:--------------------------------------------------------- |
-| `C`        | change from cursor to end of line (enter *Insert Mode*)   |
-| `R`        | from cursor, overwriting text (enter *Replace Mode*)      |
-| `S`        | change entire line (enter *Insert Mode*)                  |
+| `C`        | change from cursor to end of line (enter *insert mode*)   |
+| `R`        | from cursor, overwriting text (enter *replace mode*)      |
+| `S`        | change entire line (enter *insert mode*)                  |
 | `I`        | insert text at beginning of line after initial whitespace |
-| `i`        | enter *Insert Mode*                                       |
-| `a`        | advance cursor one char and enter *Insert Mode*           |
-| `A`        | advance cursor to end of line and enter *Insert Mode*     |
-| `x`        | delete char at cursor, stay in *Normal Mode*              |
-| `X`        | delete char before cursor, stay in *Normal Mode*          |
-| `>>`       | move entire line 1 tab stop right, stay in *Normal Mode*  |
-| `<<`       | move entire line 1 tab stop left, stay in *Normal Mode*   |
+| `i`        | enter *insert mode*                                       |
+| `a`        | advance cursor one char and enter *insert mode*           |
+| `A`        | advance cursor to end of line and enter *insert mode*     |
+| `x`        | delete char at cursor, stay in *normal mode*              |
+| `X`        | delete char before cursor, stay in *normal mode*          |
+| `>>`       | move entire line 1 tab stop right, stay in *normal mode*  |
+| `<<`       | move entire line 1 tab stop left, stay in *normal mode*   |
 
 ## *Insert Mode* Commands
 
@@ -140,8 +140,8 @@ defining "sections."
 | `<C-u>`       | delete everything to left of cursor                 |
 | `<C-t>`       | indent current line one tab stop                    |
 | `<C-d>`       | un-indent current line one tab stop                 |
-| `<C-c>`       | break out of *Insert Mode*, punt on any auto cmds   |
-| `<C-x>`       | enter *Insert Mode* completion submode (vim not vi) |
+| `<C-c>`       | break out of *insert mode*, punt on any auto cmds   |
+| `<C-x>`       | enter *insert mode* completion submode (vim not vi) |
 
 For more information on `<C-x>` see,
 
@@ -157,15 +157,15 @@ find your vim editing session frozen.  Type `<C-q>` to unlock.
 
 ### *Insert Mode* vs *Replace Mode*
 
-* *Replace Mode* is similar to *Insert Mode* but
+* *replace mode* is similar to *insert mode* but
   characters are overwritten instead of inserted.
 * You can toggle between them via the terminal
   `<Insert>` key.
-* You can enter *Replace Mode* directly from *Normal Mode*
+* You can enter *replace mode* directly from *normal mode*
   via the `R` command.
-* Like in *Insert Mode* you can navigate around the text
+* Like in *insert mode* you can navigate around the text
   via the arrow keys creating multiple undo events.
-* In *Replace Mode*, the `<BS>` and `<C-h>` keys undo
+* In *replace mode*, the `<BS>` and `<C-h>` keys undo
   only current set of replacements, otherwise they
   act like the `<Left>` arrow key.
 
@@ -188,7 +188,7 @@ find your vim editing session frozen.  Type `<C-q>` to unlock.
 ## Marks
 
 Marks allow you to set locations to either be able to jump to
-or use with *Normal Mode* editing commands.
+or use with *normal mode* editing commands.
 
 Marks within a given buffer are denoted via letters `a-z`.  For marks between
 different buffers, use letters `A-Z`.  The mark is a "zero-width" entity
@@ -209,7 +209,7 @@ between the cursor and the preceding character.
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character.  If the mark is
 before the cursor in the file, the selection does not contain the
-highlighted character.  Just like the behavior of the `yb` *Normal Mode*
+highlighted character.  Just like the behavior of the `yb` *normal mode*
 command.
 
 ---

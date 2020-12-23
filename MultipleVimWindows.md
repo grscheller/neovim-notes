@@ -132,16 +132,16 @@ Vim allows you to open a shell in a separate Vim Window
 
 This terminal window is essentially a read only vim session that
 displays the shell session interactions.  You are put into
-*Insert Mode* and input is passed to the shell.  You can copy
-text by jumping to *Normal Mode* using the usual vim buffers.
-Entering *Insert Mode* will return you to the terminal session.
-You can only paste into the shell session itself while in *Insert Mode*.
+*insert mode* and input is passed to the shell.  You can copy
+text by jumping to *normal mode* using the usual vim buffers.
+Entering *insert mode* will return you to the terminal session.
+You can only paste into the shell session itself while in *insert mode*.
 
 | Command   | Description                                      |
 |:---------:|:------------------------------------------------ |
 | `<C-w>""` | Paste contents default buffer into shell session |
 | `<C-w>"a` | Paste contents buffer `"a` into shell session    |
-| `<C-w>N`  | Put vim terminal window into *Normal Mode*       |
+| `<C-w>N`  | Put vim terminal window into *normal mode*       |
 
 ---
 

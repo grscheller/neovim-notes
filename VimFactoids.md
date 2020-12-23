@@ -58,23 +58,26 @@ with that buffer.
 
 When configured to use the mouse, vim will steal the mouse
 events from the terminal emulator.  To enable full vim mouse
-support, `:set mouse=a` and to disable the mouse and let the
-terminal emulator handle all mouse events, `:set mouse=`
+support, `:set mouse=ar` and to disable the mouse and let
+the terminal emulator handle all mouse events, `:set mouse=`
 
 Available mouse options are:
 
 | Option | Mode                                 |
-|:------:|:------------------------------------:|
-| `n`    | *Normal Mode*                        |
-| `v`    | *Visual Mode*                        |
-| `i`    | *Insert Mode*                        |
-| `c`    | *Command Mode*                       |
-| `a`    | All previous modes                   |
-| `h`    | All previous modes only when in help |
+|:------:|:------------------------------------ |
+| `n`    | for *normal mode*                    |
+| `v`    | for *visual mode*                    |
+| `i`    | for *insert mode*                    |
+| `c`    | *for command mode*                   |
+| `a`    | all previous modes                   |
+| `h`    | all previous modes only when in help |
+| `r`    | for *hit-enter* and *more* prompts   |
 
-As a workaround, you can send mouse events directly to the
-terminal emulator instead of Vim by holding down the SHIFT
-key.
+You can send mouse events directly to the terminal
+emulator instead of the editor by holding down the SHIFT key.
+
+When I first started using the mouse in Vim, I found it
+helpful to just set `mouse=n`.
 
 ## Configuring wildmenu
 
@@ -96,12 +99,12 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   to vim.  If the vim executable starts with the name vi,
   it launches in vi compatibility mode.  Vim in compatibility
   mode is neither POSIX compliant nor an ex clone.
-* In vi, you cannot navigate around file in *Insert Mode* or
-  *Replace Mode* with the arrow keys.
-* Hitting `<Insert>` while in *Insert Mode* or *Replace Mode* does
+* In vi, you cannot navigate around file in *insert mode* or
+  *replace mode* with the arrow keys.
+* Hitting `<Insert>` while in *insert mode* or *replace mode* does
   not swap you between them.
-* In vi, `<C-o>` does not let you execute a *Normal Mode*
-  command while in *Insert Mode*.
+* In vi, `<C-o>` does not let you execute a *normal mode*
+  command while in *insert mode*.
 
 ---
 

@@ -19,9 +19,9 @@ can be internalized and eventually become part of your "muscle memory."
 
 ---
 
-## Normal Mode
+## *Normal Mode*
 
-### Cursor movement in Normal Mode
+### Cursor movement in *Normal Mode*
 
 | Command       | Description                                       |
 |:-------------:|:------------------------------------------------- |
@@ -99,8 +99,8 @@ from multiple files and pasting them into other files.
 
 ### Commands to insert or manipulate text
 
-These *Normal Mode* commands take vim to *Insert Mode*.
-To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
+These *normal mode* commands take vim to *insert mode*.
+To return to *normal mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description                                                     |
 |:-------:|:--------------------------------------------------------------- |
@@ -111,8 +111,8 @@ To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
 | `A`     | insert text at end of line                                      |
 | `o`     | open new line after current line in insert text                 |
 | `O`     | open new line before current line in insert text                |
-| `s`     | delete current character and enter *Insert Mode*                |
-| `S`     | delete line contents and enter *Insert Mode*                    |
+| `s`     | delete current character and enter *insert mode*                |
+| `S`     | delete line contents and enter *insert mode*                    |
 | `C`     | change to end of line                                           |
 | `3cw`   | change next three words starting at cursor                      |
 | `c3w`   | change next three words starting at cursor                      |
@@ -123,40 +123,40 @@ To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
 | `c0`    | change text before cursor to beginning of line                  |
 | `ciw`   | change inner word (change word cursor is on)                    |
 | `cis`   | change inner sentence (works best for prose)                    |
-| `"a3S`  | delete 3 lines into `"a`, enter *Normal Mode* on new line       |
-| `"b3C`  | delete rest of line & next 2 two into `"b`, enter *Normal Mode* |
+| `"a3S`  | delete 3 lines into `"a`, enter *normal mode* on new line       |
+| `"b3C`  | delete rest of line & next 2 two into `"b`, enter *normal mode* |
 
-### Repeating commands in Normal Mode
+### Repeating commands in *Normal Mode*
 
 | Command | Description                                |
 |:-------:|:------------------------------------------ |
 | `.`     | repeat the last command which changed text |
 
-This repeats the last *Normal Mode* command used which changed text.
-It does not repeat *Command Mode* commands.
+This repeats the last *normal mode* command used which changed text.
+It does not repeat *command mode* commands.
 
-This is frequently used with the `n` or `;` *Normal Mode* commands.
+This is frequently used with the `n` or `;` *normal mode* commands.
 For example, `n.n.nn.n` keeps moving to the beginning of the next match
 for the last search pattern where you can either decide to repeat, or
 not, the change at each location.
 
 ---
 
-## Insert Mode
+## *Insert Mode*
 
 The whole vi paradigm is that you do all navigation in *normal mode*
 and type text in *insert mode*.  You return to *normal mode*
 by pressing the `<Esc>` key.
 
-### Navigating in Insert Mode
+### Navigating in *Insert Mode*
 
 Sometimes it is convenient to be able to navigate while
 in *insert mode*.  I tend to do this only to navigate near
 where the cursor is.
 
 Most "out of the box" vim configurations allow you to navigate
-with the arrow keys while in *Insert Mode*.  Usually text can also
-be deleted with the backspace key.  In *Normal Mode*, the backspace
+with the arrow keys while in *insert mode*.  Usually text can also
+be deleted with the backspace key.  In *normal mode*, the backspace
 and space keys are just extra navigation keys.
 
 It is also possible to perform a single *normal mode* action within
@@ -173,7 +173,7 @@ It is also possible to perform a single *normal mode* action within
 | `<C-o>J`  | join current line with the next line     |
 | `<C-o>D`  | delete everything to the right of cursor |
 
-### Other Insert Mode commands
+### Other *Insert Mode* commands
 
 | Command       | Description                                     |
 |:-------------:|:----------------------------------------------- |
@@ -187,7 +187,7 @@ It is also possible to perform a single *normal mode* action within
 
 ---
 
-## Command Mode
+## *Command Mode*
 
 Vim is an open source version of the Unix editor vi,
 which is the visual interface of the Berkeley Unix
@@ -196,10 +196,10 @@ the AT&T Unix line editor ed.  On really old terminals,
 essentially line printers with keyboards, the descendants
 of teletypes, you edited files one line at a time.
 
-*Command Mode* commands developed from the original ex
+*command mode* commands developed from the original ex
 line editing commands.
 
-Use the `:` command to enter *Command Mode*.  The
+Use the `:` *normal_mode* command to enter *command mode*.  The
 cursor jumps down to the bottom of the terminal window
 and prompts you with `:`.
 
@@ -223,21 +223,21 @@ and prompts you with `:`.
 | `:s/foo/bar/g`      | substitute all instances of foo with bar             |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 
-### Navigating the Command Mode line
+### Navigating the *Command Mode* line
 
-While in *Command Mode*, up & down arrow keys cycle through previous
-*Command Mode* commands.  The left & right arrow keys help you
-re-edit the line.  Press `<Esc>`or`<C-[>` to return to *Normal Mode* without
+While in *command mode*, up & down arrow keys cycle through previous
+*command mode* commands.  The left & right arrow keys help you
+re-edit the line.  Press `<Esc>`or`<C-[>` to return to *normal mode* without
 issuing a command.
 
 ---
 
-## Visual Mode
+## *Visual Mode*
 
 This mode allows you to select region of text by visually highlighting,
 and then modify as a unit.
 
-To enter *Visual Mode* from *Normal Mode*
+To enter *visual mode* from *normal mode*
 
 | Command | Description                |
 |:-------:|:-------------------------- |
@@ -246,26 +246,26 @@ To enter *Visual Mode* from *Normal Mode*
 | `<C-v>` | for block visual mode      |
 | `gv`    | to reselect last selection |
 
-Highlight text with *Normal Mode* cursor navigation commands
+Highlight text with *normal mode* cursor navigation commands
 like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
-Once selected, you can issue either *Normal Mode* or
-*Command Mode* commands.
+Once selected, you can issue either *normal mode* or
+*command mode* commands.
 
-*Normal Mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
+*normal mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
 act on the highlighted region.  The behavior of some
 commands, like indenting commands `>>` or `<<`, vary
-depending on which *Visual Mode* (character, line or block)
+depending on which *visual mode* (character, line or block)
 you are in.
 
-*Command Mode* commands act on lines in their entirety
+*command mode* commands act on lines in their entirety
 that contain the selected region.
 
-To punt out of *Visual Mode* without doing anything,
+To punt out of *visual mode* without doing anything,
 press the `<esc>` key.
 
 If you have enabled mouse support, mouse actions can cause you
-to enter *Visual Mode*.  That is one reason I enable mouse
-support for *Normal Mode* only.
+to enter *visual mode*.  That is one reason I enable mouse
+support for *normal mode* only.
 
 ---
 
@@ -280,7 +280,7 @@ support for *Normal Mode* only.
 
 These can be used to linearly undo and redo edits,
 like the arrow buttons in a web browser.
-Navigating with the arrow keys while in *Insert Mode*
+Navigating with the arrow keys while in *insert mode*
 will result in multiple entries undo/redo levels.
 
 ### Some Vim/Neovim command line option examples

@@ -25,8 +25,8 @@ To get out,
 ```
 
 The ESC key brought you back (or left you in) "command mode".
-In vim/nvim this mode is known as *Normal Mode*.  The `:` key
-put you into "command-line mode", known as *Command Mode*
+In vim/nvim this mode is known as *normal mode*.  The `:` key
+put you into "command-line mode", known as *command mode*
 in vim/nvim.  You are now entering text on the last line of
 the terminal which begins with a `:` prompt.  The `q!`
 "command-line mode" vi command quits the editor without
@@ -37,9 +37,9 @@ From now on, we'll refer to these modes by their vim/nvim names.
 
 ## The 3 main modes
 
-* *Normal Mode*: Used to navigate file and issue "visual interface" (vi) commands
-* *Insert Mode*: Used to type text into the file
-* *Command Mode*: Used to issue "line editor" (ex) commands
+* *normal mode*: Used to navigate file and issue "visual interface" (vi) commands
+* *insert mode*: Used to type text into the file
+* *command mode*: Used to issue "line editor" (ex) commands
 
 ## Minimal command set common to vi, vim, and nvim
 
@@ -62,7 +62,7 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 In vi, depending on terminal type, arrow keys will also work to
 navigate the file in the editing buffer.
 
-### Changing text and/or interacting with "the buffer" in Normal Mode
+### Changing text and/or interacting with "the buffer" in *Normal Mode*
 
 Buffer is older vi jargon for what is now called the
 default register in vim/nvim.
@@ -83,8 +83,8 @@ What "before" or "after" mean depends on what is in the default register.
 
 ### Commands to insert or manipulate text
 
-These *Normal Mode* commands take vim to *Insert Mode*.
-To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
+These *normal mode* commands take vim to *insert mode*.
+To return to *normal mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description                                                |
 |:-------:|:---------------------------------------------------------- |
@@ -97,15 +97,15 @@ To return to *Normal Mode*, type either `<Esc>` or `<C-[>`.
 | `3cw`   | change next three words                                    |
 | `2c3w`  | change next six words                                      |
 
-### Insert Mode
+### *Insert Mode*
 
 The whole vi paradigm is that you do all navigation in *normal mode*
 and type text into the file buffer in *insert mode*.  You return
 to *normal mode* by pressing the `<Esc>` key.
 
-### Command Mode
+### *Command Mode*
 
-Use the `:` command to enter *Command Mode*.  The
+Use the `:` command to enter *command mode*.  The
 cursor jumps down to the bottom of the terminal window
 and prompts you with `:`.
 
@@ -126,25 +126,25 @@ and prompts you with `:`.
 | `:/dog/`            | jump next line with `dog` in it (first non-whitespace) |
 | `/dog`              | jump to next instance of `dog` in file                 |
 
-### Repeating commands in Normal Mode
+### Repeating commands in *Normal Mode*
 
 | Command | Description                                |
 |:-------:|:------------------------------------------ |
 | `.`     | repeat the last command which changed text |
 
-This repeats the last *Normal Mode* command used which changed text.
-It does not repeat *Command Mode* commands.
+This repeats the last *normal mode* command used which changed text.
+It does not repeat *command mode* commands.
 
-## POSIX command  line editing mode
+## POSIX shell command  line editing mode
 
-The non-multiline *Normal Mode* commands above
+The non-multiline *normal mode* commands above
 also apply to POSIX shell when in vi cmdline
 editing mode.  By default, Bash uses emacs editing
 mode.  Put `set -o vi` in your `~/.bashrc` file to
 enable vi editing mode.
 
-* When the prompt is printed you are in *Insert Mode*
-* Pressing `<Esc>` puts you in *Normal Mode* with a one line view
+* When the prompt is printed you are in *insert mode*
+* Pressing `<Esc>` puts you in *normal mode* with a one line view
 * Pressing `k` takes you back through your command line history
 * Pressing `j` takes you forward through your command line history
 * Pressing `h` and `l` moves you forward and back on the command line

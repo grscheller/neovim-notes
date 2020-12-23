@@ -19,8 +19,7 @@ information in ones above it.
 
 As Neovim goes to version 0.5 and Vim goes to 9.0, I
 feel that they are diverging to the point that I need
-to target one or the other.  It is not the purpose of
-these notes to document the differences.  I chose Neovim
+to target one over the other.  I chose Neovim
 over Vim because of Neovim's active community-driven
 development and the refactoring efforts which went into
-the codebase.
+the code base.

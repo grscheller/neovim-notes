@@ -6,7 +6,7 @@ Without this information, it can be very frustrating
 reverse engineer Vim behavior.  Vim sources a number
 of files before your editing session starts.  These files
 are examples of what is known as vimscript.  Vimscript
-is a scripting language based *Command Mode*.
+is a scripting language based *command mode*.
 
 First sourced is `/etc/vimrc`.  Historically on UNIX, this
 was the location for system-wide vim configuration changes.
@@ -121,7 +121,7 @@ as if in vim *command mode*.  Comments begin with `"`.
 
    " Misc. configurations
    set history=10000   " Number lines of command history to keep
-   set mouse=a         " Enable mouse for all modes
+   set mouse=ar        " Enable mouse for all modes
    set scrolloff=3     " Keep cursor away from top/bottom of window
    set nowrap          " Don't wrap lines
    set sidescroll=1    " Horizontally scroll nicely

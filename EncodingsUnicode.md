@@ -42,7 +42,7 @@ FTP files in text mode to convert format between different OS's.
 Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
-are using via 2 character "diagraph" sequences.  While in *Insert Mode*,
+are using via 2 character "diagraph" sequences.  While in *insert mode*,
 type `<C-k>` followed by a two character sequence.
 
 |  Command   | Description                                   |
@@ -65,7 +65,7 @@ variable width code points just fine.
 
 When using gvim, vim or nvi, with a unicode aware terminal
 emulator like rxvt-unicode or gnome-terminal, code points
-can be entered while in *Insert Mode* via
+can be entered while in *insert mode* via
 
 |  Command            | Description            |
 |:-------------------:|:---------------------- |
