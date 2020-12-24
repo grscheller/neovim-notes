@@ -15,7 +15,7 @@ can be internalized and eventually become part of your "muscle memory."
 
 ---
 
-* [Other Useful Vim Information](#useful-vim-information)
+* [Other Useful Vim Information](#other-useful-vim-information)
 
 ---
 
@@ -269,7 +269,7 @@ support for *normal mode* only.
 
 ---
 
-## Useful Vim Information
+## Other Useful Vim Information
 
 ### Undo/redo commands
 
@@ -281,7 +281,7 @@ support for *normal mode* only.
 These can be used to linearly undo and redo edits,
 like the arrow buttons in a web browser.
 Navigating with the arrow keys while in *insert mode*
-will result in multiple entries undo/redo levels.
+will result in multiple undo/redo events.
 
 ### Some Vim/Neovim command line option examples
 

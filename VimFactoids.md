@@ -105,6 +105,9 @@ following lines in your ~/.vim/vimrc or ~/.vimrc file.
   not swap you between them.
 * In vi, `<C-o>` does not let you execute a *normal mode*
   command while in *insert mode*.
+* There are fewer vi *insert mode* commands.
+* In vi the *insert mode* commands only interact with the text
+  you have just typed in, not what is in the file buffer.
 
 ---
 

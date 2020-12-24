@@ -41,11 +41,18 @@ From now on, we'll refer to these modes by their vim/nvim names.
 * *insert mode*: Used to type text into the file
 * *command mode*: Used to issue "line editor" (ex) commands
 
+If in either 
+
 ## Minimal command set common to vi, vim, and nvim
 
 Here are a minimal common subset of commands for vi, vim, and nvim.
 
 ### Cursor movement in *Normal Mode*
+
+*Normal mode* is the default mode you are put in when the editor
+is started.  Hitting `<Esc>` while in *insert mode* or *command mode*
+will put you into *normal mode*.
+
 
 | Command  | Description                                 |
 |:--------:|:------------------------------------------- |
@@ -59,13 +66,29 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 | `$`      | move cursor to end of line                  |
 | `0`      | move cursor to start of line                |
 
-In vi, depending on terminal type, arrow keys will also work to
-navigate the file in the editing buffer.
+In vi/vim/nvim, depending on terminal type, arrow keys will
+also work to navigate the file in the editing buffer.
+
+### Commands to insert or manipulate text
+
+These *normal mode* commands take vim to *insert mode*.
+To return to *normal mode*, type `<Esc>`.
+
+| Command | Description                                                |
+|:-------:|:---------------------------------------------------------- |
+| `i`     | insert text before character cursor is on                  |
+| `a`     | insert text after character cursor is on                   |
+| `A`     | insert text at end of line                                 |
+| `o`     | open new line after current line in insert text            |
+| `O`     | open new line before current line in insert text           |
+| `C`     | change to end of line                                      |
+| `3cw`   | change next three words                                    |
+| `2c3w`  | change next six words                                      |
 
 ### Changing text and/or interacting with "the buffer" in *Normal Mode*
 
-Buffer is older vi jargon for what is now called the
-default register in vim/nvim.
+Buffer is older vi jargon for what is now
+called the default register in vim/nvim.
 
 | Command   | Description                                            |
 |:---------:|:------------------------------------------------------ |
@@ -81,27 +104,14 @@ default register in vim/nvim.
 
 What "before" or "after" mean depends on what is in the default register.
 
-### Commands to insert or manipulate text
-
-These *normal mode* commands take vim to *insert mode*.
-To return to *normal mode*, type either `<Esc>` or `<C-[>`.
-
-| Command | Description                                                |
-|:-------:|:---------------------------------------------------------- |
-| `i`     | insert text before character cursor is on                  |
-| `a`     | insert text after character cursor is on                   |
-| `A`     | insert text at end of line                                 |
-| `o`     | open new line after current line in insert text            |
-| `O`     | open new line before current line in insert text           |
-| `C`     | change to end of line                                      |
-| `3cw`   | change next three words                                    |
-| `2c3w`  | change next six words                                      |
-
 ### *Insert Mode*
 
 The whole vi paradigm is that you do all navigation in *normal mode*
 and type text into the file buffer in *insert mode*.  You return
 to *normal mode* by pressing the `<Esc>` key.
+
+With vim/nvim, in *insert mode*, you can navigate through the file with
+the arrow keys.  You cannot navigate this way with vi.
 
 ### *Command Mode*
 
@@ -125,6 +135,10 @@ and prompts you with `:`.
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42            |
 | `:/dog/`            | jump next line with `dog` in it (first non-whitespace) |
 | `/dog`              | jump to next instance of `dog` in file                 |
+
+Entering `<CR>` will cause the above commands to be executed and return you
+to *normal mode*.  Hitting `<Esc>` instead will punt on running the command
+and return you to *normal mode*.
 
 ### Repeating commands in *Normal Mode*
 
