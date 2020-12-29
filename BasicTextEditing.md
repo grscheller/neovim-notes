@@ -220,7 +220,9 @@ and prompts you with `:`.
 | `:42`               | move cursor to beginning of line 42                  |
 | `:#`                | give line number of current line cursor is on        |
 | `:s/foo/bar/`       | substitute first instance of foo with bar            |
+| `:s/foo/bar/i`      | case insensitive version of above                    |
 | `:s/foo/bar/g`      | substitute all instances of foo with bar             |
+| `:s/foo/bar/gc`     | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 
 ### Navigating the *Command Mode* line

@@ -5,9 +5,9 @@ Vim commands and features not in your grandfather's vi.
 ## Jump Lists
 
 Associated with each vim window (not buffer!) is a list of
-past locations "jumped" to.  Jumps are remembered in a jump
-list.  Just navigating via the `hjkl` keys will not create
-jump points.  Nor will editing text.
+past locations "jumped" to.  Jumps are remembered in a
+jumplist.  Just navigating via the `hjkl` keys will not
+create jump points.  Nor will editing text.
 
 | Command          | Description                          |
 |:---------------- |:------------------------------------ |
@@ -27,12 +27,41 @@ The `:jumps` command will list a table consisting like this:
 
 Your current location in the jump list is always 0.
 
-| Command   | Description                                 |
-|:---------:|:------------------------------------------- |
-| `<C-o>`   | go back to previous location in jump list   |
-| `<C-i>`   | go forward to next location in jump list    |
-| `3 <C-o>` | go back 3 jumps in jump list                |
-| `2 <C-i>` | go forward 2 jumps in jump list             |
+| Command  | Description                                 |
+|:--------:|:------------------------------------------- |
+| `<C-o>`  | go back to previous location in jump list   |
+| `<C-i>`  | go forward to next location in jump list    |
+| `3<C-o>` | go back 3 jumps in jump list                |
+| `m'`     | explicitly add a jump to the jumplist       |
+
+## Change Lists
+
+Associated with each buffer is a list of
+past text "changes."  Changes are remembered in a changelist.
+
+| Command            | Description                           |
+|:------------------ |:------------------------------------- |
+| `:changes`         | List change points for buffer         |
+| `:help changelist` | For more detailed info on changelists |
+
+The `:changes` command will list a table consisting like this:
+
+| change | line | col | text                      |
+|:------:| ----:| ---:|:------------------------- |
+|    4   | 144  | 20  | inoremap <C-h> <Left>     |
+|    3   | 148  | 20  |                           |
+|    2   | 144  | 20  | inoremap <C-h> <Left>     |
+|    1   | 148  | 20  |                           |
+| >  0   | 144  | 20  | inoremap <C-h> <Left>     |
+|    1   | 148  | 20  |                           |
+|    2   | 145  | 20  | inoremap <C-j> <Down>     |
+
+Your current location in the change list is always 0.
+
+| Command | Description                                |
+|:-------:|:------------------------------------------ |
+| `g;`    | go back to previous location in changelist |
+| `g,`    | go forward to next location in changelist  |
 
 ## Types of registers
 
@@ -78,7 +107,7 @@ Use `:@:` to repeat last *command mode* command.
 ### Alternate file register
 
 The alternate file register `"#` is an assignable name, useful when jumping
-between 2 buffers via <C-^>.
+between 2 buffers via `<C-^>`.
 
 ### Expression register
 
@@ -94,8 +123,8 @@ which use registers.
 | `"~`      | paste from last drag-and-drop operation  |
 
 On Arch, the first two only seem to work in vim when the gvim
-package is installed.  I've never gotten the last one to work
-at all.
+package is installed.  In Neovim both seem plumbed into the X11
+clipboard.  I've never gotten the last one to work at all.
 
 ### Black hole register
 

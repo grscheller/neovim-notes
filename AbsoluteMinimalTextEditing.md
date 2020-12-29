@@ -41,7 +41,7 @@ From now on, we'll refer to these modes by their vim/nvim names.
 * *insert mode*: Used to type text into the file
 * *command mode*: Used to issue "line editor" (ex) commands
 
-If in either 
+If in either
 
 ## Minimal command set common to vi, vim, and nvim
 
@@ -52,7 +52,6 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 *Normal mode* is the default mode you are put in when the editor
 is started.  Hitting `<Esc>` while in *insert mode* or *command mode*
 will put you into *normal mode*.
-
 
 | Command  | Description                                 |
 |:--------:|:------------------------------------------- |
