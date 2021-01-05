@@ -1,3 +1,4 @@
+
 # Vim Factoids
 
 ## Buffers and registers in Vim
@@ -11,7 +12,7 @@ for now, are:
 
 For more in depth information see the section on all the different
 types of registers in
-[Vim Specific Features](VimSpecificFeatures.md#types-of-registers).
+[Vim Specific Features](NeovimSpecificFeatures.md#types-of-registers).
 
 Note: In older vi documentation and jargon, registers are referred
 to as buffers.
@@ -23,7 +24,8 @@ write to and `p` and `c` commands read from by "default."
 
 ### Named registers
 
-Illustrated in [Basic text editing](BasicTextEditing.md#you-can-use-named-registers-to-store-text),
+Illustrated in
+[Basic text editing](BasicTextEditing.md#you-can-use-named-registers-to-store-text),
 Named registers are areas where you can store snippets of text.
 They are named `"a` thru `"z` and are essentially 26
 independent "clip boards" that are shared between all the
@@ -77,12 +79,17 @@ You can send mouse events directly to the terminal
 emulator instead of the editor by holding down the SHIFT key.
 
 When I first started using the mouse in Vim, I found it
-helpful to just set `mouse=n`.
+helpful to just set `mouse=n`.  As I got more confortable
+with the various modes, setting `mouse=a` is wonderful,
+especially when dealing with
+[terminal windows](MultipleWindows.md#terminal-windows)
+in Neovim.
+
 
 ## Configuring wildmenu
 
 To make tab completion in command mode more efficient, put the
-following lines in your ~/.vim/vimrc or ~/.vimrc file.
+following lines in your ~/.config/nvim/init.vim file.
 
 ```
    set wildmenu

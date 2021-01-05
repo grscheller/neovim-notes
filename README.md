@@ -11,11 +11,11 @@ information in ones above it.
 * [Basic Text Editing](BasicTextEditing.md)
 * [Vim Factoids](VimFactoids.md)
 * [Advanced Traditional Vi Commands](AdvTradViCommands.md)
-* [Vim Specific Features](VimSpecificFeatures.md)
-* [Multiple Vim Windows](MultipleVimWindows.md)
+* [Neovim Specific Features](NeovimSpecificFeatures.md)
+* [Multiple Vim Windows](MultipleWindows.md)
 * [Encodings and Unicode](EncodingsUnicode.md)
 * [Regular Expressions](RegularExpressions.md)
-* [Configuring Vim](VimConfiguration.md)
+* [Configuring Neovim](Configurations.md)
 
 As Neovim goes to version 0.5 and Vim goes to 9.0, I
 feel that they are diverging to the point that I need

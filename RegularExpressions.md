@@ -206,4 +206,4 @@ POSIX.2 standard for backward compatibility, but are considered a wart.
 
 [1]: EncodingsUnicode.md
 [2]: README.md
-[3]: VimConfiguration.md
+[3]: Configurations.md

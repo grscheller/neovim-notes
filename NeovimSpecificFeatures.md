@@ -1,6 +1,6 @@
-# Vim Specific Features
+# Neovim Specific Features
 
-Vim commands and features not in your grandfather's vi.
+Neovim/Vim commands and features not in your grandfather's vi.
 
 ## Jump Lists
 
@@ -47,14 +47,14 @@ past text "changes."  Changes are remembered in a changelist.
 The `:changes` command will list a table consisting like this:
 
 | change | line | col | text                      |
-|:------:| ----:| ---:|:------------------------- |
-|    4   | 144  | 20  | inoremap <C-h> <Left>     |
+| ------:| ----:| ---:|:------------------------- |
+|    4   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    3   | 148  | 20  |                           |
-|    2   | 144  | 20  | inoremap <C-h> <Left>     |
+|    2   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    1   | 148  | 20  |                           |
-| >  0   | 144  | 20  | inoremap <C-h> <Left>     |
+|  > 0   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    1   | 148  | 20  |                           |
-|    2   | 145  | 20  | inoremap <C-j> <Down>     |
+|    2   | 145  | 20  | `inoremap <C-j> <Down>`   |
 
 Your current location in the change list is always 0.
 
