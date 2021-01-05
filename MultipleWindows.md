@@ -142,15 +142,16 @@ a VT220/xterm terminal.
 | `<C-\><C-n>`          | return to *normal mode* from *terminal mode*   |
 
 This terminal window is essentially a read only buffer that
-displays the shell session interactions.  You are put into
-*normal mode*.  Any *normal mode* command to enter *insert mode*
-actually puts you into *terminal mode* where all key strokes
-except `<C-\><C-n>` get passed to the underlying process running
+displays the user's interactions with the terminal program running
+in the terminal window.  You are put into *normal mode*.  Any
+*normal mode* command to enter *insert mode* actually puts you
+into *terminal mode*.  In *terminal mode* all key strokes except
+`<C-\><C-n>` get passed to the underlying process running
 in the terminal window.  If the mouse is enabled, mouse events
 get past down too.
 
 When the cursor is on the last line, regardless of mode,
-output from the terminal process is followed.  Enabling the
+output from the terminal process is scrolled.  Enabling the
 mouse makes for a smoother workflow by allowing you to
 change windows and tabs more easily.  You can switch to another
 vim window/tab with the mouse.  Returning to a terminal

@@ -183,4 +183,4 @@ For instance, you don't want to change "Unix is perfect".
 
 [1]: <AdvTradViCommands.md>
 [2]: <README.md>
-[3]: <MultipleVimWindows.md>
+[3]: <MultipleWindows.md>

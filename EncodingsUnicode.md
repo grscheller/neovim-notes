@@ -95,6 +95,6 @@ work, either as the key mapping or in whatever is mapped to.
 
 | prev: [Vim Specific Features][1] | [Home][2] | next: [Regular Expressions][3] |
 
-[1]: VimSpecificFeatures.md
+[1]: NeovimSpecificFeatures.md
 [2]: README.md
 [3]: RegularExpressions.md

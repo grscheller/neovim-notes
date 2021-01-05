@@ -202,7 +202,7 @@ POSIX.2 standard for backward compatibility, but are considered a wart.
 
 ---
 
-| prev: [Encodings and Unicode][1] | [Home][2] | next: [Configuring Vim][3] |
+| prev: [Encodings and Unicode][1] | [Home][2] | next: [Configuration][3] |
 
 [1]: EncodingsUnicode.md
 [2]: README.md

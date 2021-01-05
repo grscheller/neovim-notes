@@ -15,7 +15,7 @@ information in ones above it.
 * [Multiple Vim Windows](MultipleWindows.md)
 * [Encodings and Unicode](EncodingsUnicode.md)
 * [Regular Expressions](RegularExpressions.md)
-* [Configuring Neovim](Configurations.md)
+* [Configuring Vim & Neovim](Configurations.md)
 
 As Neovim goes to version 0.5 and Vim goes to 9.0, I
 feel that they are diverging to the point that I need
