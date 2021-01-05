@@ -1,10 +1,10 @@
 # Absolute Minimum One Needs to Know
 
-Let's say you have ssh to some server that only has vi or vim
-installed.  No emacs, no nano.  You only have one quick
-edit to do, so it is not worth installing your favorite
-editor.  Here is some critical info you need to know in
-order to sub-marginally accomplish your task.
+Let's say you've ssh'ed to some server which only has
+vi or vim installed.  No emacs, no nano.  You only have
+one quick edit to do, so it is not worth installing your
+favorite editor.  Here is some critical info you need to
+know in order to sub-marginally accomplish your task.
 
 ## How to exit vi/vim/nvim
 
@@ -41,7 +41,8 @@ From now on, we'll refer to these modes by their vim/nvim names.
 * *insert mode*: Used to type text into the file
 * *command mode*: Used to issue "line editor" (ex) commands
 
-If in either
+If in either *insert mode* or *command mode*, `<Esc>` will take
+you to *normal mode*.
 
 ## Minimal command set common to vi, vim, and nvim
 
@@ -80,7 +81,6 @@ To return to *normal mode*, type `<Esc>`.
 | `A`     | insert text at end of line                                 |
 | `o`     | open new line after current line in insert text            |
 | `O`     | open new line before current line in insert text           |
-| `C`     | change to end of line                                      |
 | `3cw`   | change next three words                                    |
 | `2c3w`  | change next six words                                      |
 
@@ -93,10 +93,11 @@ called the default register in vim/nvim.
 |:---------:|:------------------------------------------------------ |
 | `dd`      | delete line and put in default register (cut)          |
 | `5dd`     | delete 5 lines and put in default register             |
-| `D`       | delete to end of line and put in default register      |
+| `d$`      | delete to end of line, put in default register         |
+| `d0`      | delete to beginning of line, put in default register   |
 | `yy`      | yank line to default register (copy)                   |
 | `x`       | delete character under cursor, put in default register |
-| `r<char>` | change current char cursor is on to `<char>`           |
+| `r<char>` | change current character cursor highlights to `<char>` |
 | `p`       | paste default register contents "after"                |
 | `P`       | paste default register contents "before"               |
 | `J`       | join curent & next line, insert spaces as needed       |
@@ -148,7 +149,7 @@ and return you to *normal mode*.
 This repeats the last *normal mode* command used which changed text.
 It does not repeat *command mode* commands.
 
-## POSIX shell command  line editing mode
+## POSIX shell command line editing mode
 
 The non-multiline *normal mode* commands above
 also apply to POSIX shell when in vi cmdline
