@@ -1,4 +1,4 @@
-# Neovim Specific Features
+# Neovim/Vim Specific Features
 
 Neovim/Vim commands and features not in your grandfather's vi.
 

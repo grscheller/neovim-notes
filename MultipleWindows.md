@@ -165,6 +165,6 @@ gonome-terminal and urxvt, by holding down the shift key.
 
 | prev: [Vim Specific Features][1] | [Home][2] | next: [Encodings & Unicode][3] |
 
-[1]: NeovimSpecificFeatures.md
+[1]: VimSpecificFeatures.md
 [2]: README.md
 [3]: EncodingsUnicode.md
