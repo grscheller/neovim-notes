@@ -214,7 +214,7 @@ command.
 
 ---
 
-| prev: [Vim Factoids][1] | [Home][2] | next: [Vim SpecificFeatures][3] |
+| prev: [Vim Factoids][1] | [Home][2] | next: [Vim Specific Features][3] |
 
 [1]: VimFactoids.md
 [2]: README.md

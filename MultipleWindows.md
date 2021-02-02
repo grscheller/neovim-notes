@@ -1,4 +1,4 @@
-# Multiple Vim Windows
+# Multiple Neovim Windows
 
 It was the Berkley Unix nvi (for new vi) which first
 introduced multiple windows.
@@ -26,11 +26,11 @@ if you don't know how to navigate multiple vim windows.
 
 ## Creating new windows *Normal Mode*
 
-| Command  | Description                             |
-|:--------:|:--------------------------------------- |
-| `<C-w>n` | new window with empty buffer above      |
-| `<C-w>s` | new window new view same buffer above   |
-| `<C-w>v` | new window new view same buffer to left |
+| Command  | Description                                   |
+|:--------:|:--------------------------------------------- |
+| `<C-w>n` | new horizontal window with empty buffer above |
+| `<C-w>s` | new window/view same buffer above             |
+| `<C-w>v` | new window/view same buffer to left           |
 
 The directional sense of these commands can be adjusted via
 
@@ -49,13 +49,13 @@ I configure these in my `~/.config/nvim/init.vim` file.
 ## Navigating between and arranging Windows *Normal Mode*
 
 | Command      | Description                                            |
-|:------------:|:------------------------------------------------------ |
-| `<C-w><C-h>` | move one window left                                   |
-| `<C-w><C-l>` | move one window right                                  |
-| `<C-w><C-k>` | move one window up                                     |
-| `<C-w><C-j>` | move one window down                                   |
-| `<C-w><C-w>` | cycle through all windows                              |
-| `<C-w><C-x>` | exchange adjacent windows (vertically or horizontally) |
+|:--------:|:------------------------------------------------------ |
+| `<C-w>h` | move one window left                                   |
+| `<C-w>l` | move one window right                                  |
+| `<C-w>k` | move one window up                                     |
+| `<C-w>j` | move one window down                                   |
+| `<C-w>w` | cycle through all windows                              |
+| `<C-w>x` | exchange adjacent windows (vertically or horizontally) |
 
 ## Adjusting windows size (without mouse support)
 
