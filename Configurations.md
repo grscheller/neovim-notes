@@ -1,6 +1,6 @@
 # Configuring Neovim
 
-## Beovim startup files
+## Neovim startup files
 
 TODO: Document Startup Behavior
 
