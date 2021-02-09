@@ -148,16 +148,28 @@ The whole vi paradigm is that you do all navigation in *normal mode*
 and type text in *insert mode*.  You return to *normal mode*
 by pressing the `<Esc>` key.
 
-### Navigating in *Insert Mode*
+### Pasting from registers into *insert mode*
+
+To paste text from a Vim register while in *insert mode*,
+use `<C-r>`.
+
+| Command   | Description                             |
+|:---------:|:--------------------------------------- |
+| `<C-r>"`  | paste from default register into buffer |
+| `<C-r>a`  | paste from register "a into buffer      |
+| `<C-r>*`  | paste from X11 clipboard                |
+| `<C-r>+`  | paste from desktop clipboard            |
+
+### Navigating in *insert mode*
 
 Sometimes it is convenient to be able to navigate while
 in *insert mode*.  I tend to do this only to navigate near
 where the cursor is.
 
 Most "out of the box" vim configurations allow you to navigate
-with the arrow keys while in *insert mode*.  Usually text can also
-be deleted with the backspace key.  In *normal mode*, the backspace
-and space keys are just extra navigation keys.
+with the arrow keys while in *insert mode*.  Usually text can
+also be deleted with the backspace key.  In *normal mode*, the
+backspace and space keys are just extra navigation keys.
 
 It is also possible to perform a single *normal mode* action within
 *insert mode* by using`<C-o>` key sequences.
@@ -173,7 +185,7 @@ It is also possible to perform a single *normal mode* action within
 | `<C-o>J`  | join current line with the next line     |
 | `<C-o>D`  | delete everything to the right of cursor |
 
-### Other *Insert Mode* commands
+### Other *insert mode* commands
 
 | Command       | Description                                     |
 |:-------------:|:----------------------------------------------- |
@@ -184,6 +196,13 @@ It is also possible to perform a single *normal mode* action within
 | `<C-t>`       | indent current line one tab stop                |
 | `<C-d>`       | un-indent current line one tab stop             |
 | `<C-v><char>` | insert literal character                        |
+
+All of the above commands, except for `<C-t>` and `<C-d>` come from
+the original vi.  A subtle difference is that in vi these commands
+editted not the buffer, but the current edit of the buffer.  This
+explains a `<C-u>` idiosyncratic bahavior.  Vim/Neovim will first
+delete up to what was just typed before deleting to the beginning
+of the line, just like vi would have done.
 
 ---
 
@@ -225,12 +244,28 @@ and prompts you with `:`.
 | `:s/foo/bar/gc`     | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 
-### Navigating the *Command Mode* line
+### Navigating the *command mode* line
 
 While in *command mode*, up & down arrow keys cycle through previous
 *command mode* commands.  The left & right arrow keys help you
 re-edit the line.  Press `<Esc>`or`<C-[>` to return to *normal mode* without
 issuing a command.
+
+Using the up & down arrow keys with something typed will
+cycle through only those commands which begin with the
+typed text.
+
+### Pasting from registers into the *command mode* line
+
+use `<C-r>` while in *command mode* to paste text
+from a Vim register to the command line.
+
+| Command   | Description                                 |
+|:---------:|:------------------------------------------- |
+| `<C-r>"`  | paste from default register to command line |
+| `<C-r>a`  | paste from register "a to command line      |
+| `<C-r>*`  | paste from X11 clipboard                    |
+| `<C-r>+`  | paste from desktop clipboard                |
 
 ---
 
@@ -263,11 +298,13 @@ you are in.
 that contain the selected region.
 
 To punt out of *visual mode* without doing anything,
-press the `<esc>` key.
+press the `<Esc>` key.
 
 If you have enabled mouse support, mouse actions can cause you
-to enter *visual mode*.  That is one reason I enable mouse
-support for *normal mode* only.
+to enter *visual mode*.  When I first the transition from vi to vim,
+I found it useful to enable mouse support for *normal mode* only.
+After becoming more comfortble with *visual mode*, I found it
+completely natural enabling mouse support for all modes.
 
 ---
 

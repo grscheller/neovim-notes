@@ -106,13 +106,25 @@ Use `:@:` to repeat last *command mode* command.
 
 ### Alternate file register
 
-The alternate file register `"#` is an assignable name, useful when jumping
-between 2 buffers via `<C-^>`.
+The alternate file register `"#` is an assignable name, useful
+when jumping between 2 buffers via `<C-^>`.
 
 ### Expression register
 
-The expression register `"=` is used for expressions in commands
-which use registers.
+The expression register `"=` is used for evaluating vim script
+expressions.  The result is coerced into a string and pasted as
+if from a regular register.
+
+**Example:** While in *insert mode*, type `<C-r>=` and you are
+dropped to the *command mode* command line, but with an `=`
+prompt.  Type in any VimL expression, say `3 + 2 * 5<CR>`,
+then `13` is entered to the buffer and you are returned
+to *insert mode*.
+
+When at the command line `=` prompt, you can use `<C-r>` again to
+paste the contents of other registers into the "expression register".
+
+`<C-r>=` is also useful in *command mode* at the `:` and  `\` prompts.
 
 ### Selection and drop registers (Interacts with Desktop GUI)
 
@@ -123,8 +135,13 @@ which use registers.
 | `"~`      | paste from last drag-and-drop operation  |
 
 On Arch, the first two only seem to work in vim when the gvim
-package is installed.  In Neovim both seem plumbed into the X11
-clipboard.  I've never gotten the last one to work at all.
+package is installed.  With out-of-the-box Neovim, both are not
+plumbed into anything.  Once the xsel package was installed on
+Arch Linux, `"*` and `"+` worked fine.  Neovim needs an external
+utility to interact with the X11 and desktop clip boards.
+
+I have never gotten `"~` to work at all for me.  Even in Windows
+MS Office, I have found drag-and-drop buggy and hard to control.
 
 ### Black hole register
 

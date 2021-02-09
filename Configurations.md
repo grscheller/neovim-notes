@@ -4,7 +4,7 @@
 
 TODO: Document Startup Behavior
 
-### My curent Neovim Configuration
+### My current Neovim Configuration
 
 ```
    " Neovim configuration file
@@ -149,7 +149,7 @@ TODO: Document Startup Behavior
    Plug 'vim-airline/vim-airline'
    Plug 'vim-airline/vim-airline-themes'
 
-   " Extend */# functionality while in visual mode
+   " Extend * and # functionality while in visual mode
    Plug 'nelstrom/vim-visual-star-search'
 
    " Surrond text objects with matching (). {}. '', etc
