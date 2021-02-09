@@ -79,8 +79,8 @@ You can send mouse events directly to the terminal
 emulator instead of the editor by holding down the SHIFT key.
 
 When I first started using the mouse in Vim, I found it
-helpful to just set `mouse=n`.  As I got more confortable
-with the various modes, setting `mouse=a` is wonderful,
+helpful to just set `mouse=n`.  As I got more comfortable
+with *visual mode*, setting `mouse=a` worked well for me,
 especially when dealing with
 [terminal windows](MultipleWindows.md#terminal-windows)
 in Neovim.
@@ -107,8 +107,8 @@ following lines in your ~/.config/nvim/init.vim file.
   mode is neither POSIX compliant nor an ex clone.
 * In vi, you cannot navigate around file in *insert mode* or
   *replace mode* with the arrow keys.
-* Hitting `<Insert>` while in *insert mode* or *replace mode* does
-  not swap you between them.
+* In vi, hitting `<Insert>` while in *insert mode* or *replace mode*
+  does not swap you between them.
 * In vi, `<C-o>` does not let you execute a *normal mode*
   command while in *insert mode*.
 * There are fewer vi *insert mode* commands.
