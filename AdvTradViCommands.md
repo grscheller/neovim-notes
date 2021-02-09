@@ -4,9 +4,9 @@ The problem a lot of people have with Vim is
 [that they don't grok vi][4].
 
 Much of the information here I obtained from
-[Lagmonster](http://www.lagmonster.org/docs/vi2.html).
+[Lagmonster][5].
 This site no longer seems to be active.  These commands
-existed in the original ex version of vi.  Where the behavior
+existed in the original ex version of vi.  When the behavior
 differs from the original vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex
@@ -220,3 +220,4 @@ command.
 [2]: README.md
 [3]: VimSpecificFeatures.md
 [4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
+[5]: http://www.lagmonster.org/docs/vi2.html

@@ -85,7 +85,6 @@ especially when dealing with
 [terminal windows](MultipleWindows.md#terminal-windows)
 in Neovim.
 
-
 ## Configuring wildmenu
 
 To make tab completion in command mode more efficient, put the

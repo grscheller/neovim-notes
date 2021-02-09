@@ -372,7 +372,8 @@ To get the most out of it,
 
 ---
 
-| [Absolute Minimal Text Editing][1] | next: [Vim Factoids][2] |
+| [Absolute Minimal Text Editing][1] | [Home][2] | next: [Vim Factoids][3] |
 
 [1]: AbsoluteMinimalTextEditing.md
-[2]: VimFactoids.md
+[2]: README.md
+[3]: VimFactoids.md
