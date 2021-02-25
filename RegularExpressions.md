@@ -156,23 +156,34 @@ It is usually easiest to learn regular expressions using simple examples.
 ## Using Regular Expressions in Vim
 
 I like to think of all my regular expressions as extended regular
-expressions.  When working with basic regular expressions I still
-think in terms of extended regular expressions but with the need
-to escape the `(){}|+?` characters with a backslash to turn on their
-meta-meaning.  The characters `[].` are meta without escaping.
+expressions.  When working with basic regular expressions in Vim, I
+still think in terms of extended regular expressions but with the
+need to escape the `(){|+?` characters with a backslash to turn on
+their meta-meaning.  The characters `[].` are meta without escaping.
+The character sequences `}` or `\}` will match a matching meta `\{`,
+otherwise they are taken as a literal `}`.
+
+Neovim recommends keeping the default `magic` setting.
+See `:help magic`
 
 ### Examples of Vim Regular Expressions
 
-Find next "buf" or "bug"
+Find next `buf` or `bug`
 
 ```
    /bu[fg]
 ```
 
-Find next "buf" or "bug"
+Find next `buf` or `bug`
 
 ```
    /bu\(f\|g\)
+```
+
+Find next `buf`, `bug`, `bufg`, `bugf`, `buff`, and `bugg`
+
+```
+   /bu[fg]\{2,1}
 ```
 
 Replace "Unix" & "UNIX" with "Linux" on lines 5 thru end of file
@@ -180,6 +191,38 @@ Replace "Unix" & "UNIX" with "Linux" on lines 5 thru end of file
 ```
    :5,$s/U\(nix\|NIX\)/Linux/g
 ```
+
+For more examples, see `:help usr_27.txt`
+
+### Searching via patterns
+
+These all start or stay in *normal mode*.  They end in *normal mode*.
+In what follows, a regular expression pattern is denoted `{regex}`.
+
+See `:help pattern-searches` for more details.
+
+| Searches           | Description                                            |
+|:------------------ |:------------------------------------------------------ |
+| `/{regex}<CR>`     | Search forwards for `{regex}`                          |
+| `/{regex}/3<CR>`   | Search forwards 3 lines past `{regex}`                 |
+| `/{regex}/-5<CR>`  | Search forwards stop 5 lines before `{regex}`          |
+| `?{regex}<CR>`     | Search backwards for `{regex}`                         |
+| `/<CR>`            | Repeat last search forwards                            |
+| `/10<CR>`          | Search forwards 10 lines after next match              |
+| `?<CR>`            | Repeat last search backwards                           |
+| `n`                | Repeat last search in same direction as last search    |
+| `N`                | Repeat last search in oposite direction as last search |
+| `*`                | Search forward for keyword/word under/near cursor      |
+| `#`                | Search backwards for keyword/word under/near cursor    |
+| `g*`               | Same as `*` but not restricted to whole word matches   |
+| `g#`               | Same as `#` but not restricted to whole word matches   |
+| `gd`               | Go to (best guess) of local declaration                |
+| `gD`               | Same as `gd` except always start on search at line 1   |
+| `/dogbert/e`       | Search for dogbert, leave cursor at end                |
+| `/dogbert/e5`      | Search for dogbert, leave cursor 5 chars after end     |
+| `/dogbert/e-2`     | Search for dogbert, leave cursor 2 chars before end    |
+| `/dogbert/b3`      | Search for dogbert, leave cursor on the `b`            |
+| `/dogbert/b-3`     | Search for dogbert, leave cursor 3 chars before `d`    |
 
 ## POSIX.2 Regular Expressions
 
