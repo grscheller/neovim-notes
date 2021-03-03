@@ -326,7 +326,7 @@ will result in multiple undo/redo events.
 
 ```
    $ nvim file1 file2 file3  # Open/create 3 files for editting
-   $ nvim +[n] file     # Open file for editing on line n,
+   $ nvim +<n> file     # Open file for editing on line n,
                         # defaults to last line of file
    $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match
    $ nvim -R file         # Open file read only, can still write via :w!

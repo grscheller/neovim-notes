@@ -138,7 +138,7 @@ On Arch, the first two only seem to work in vim when the gvim
 package is installed.  With out-of-the-box Neovim, both are not
 plumbed into anything.  Once the xsel package was installed on
 Arch Linux, `"*` and `"+` worked fine.  Neovim needs an external
-utility to interact with the X11 and desktop clip boards.
+utility to interact with the X11 and desktop clipboards.
 
 I have never gotten `"~` to work at all for me.  Even in Windows
 MS Office, I have found drag-and-drop buggy and hard to control.

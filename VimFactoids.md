@@ -75,8 +75,8 @@ Available mouse options are:
 | `h`    | all previous modes only when in help |
 | `r`    | for *hit-enter* and *more* prompts   |
 
-You can send mouse events directly to the terminal
-emulator instead of the editor by holding down the SHIFT key.
+You can send mouse events directly to some terminal
+emulators instead of the editor by holding down the SHIFT key.
 
 When I first started using the mouse in Vim, I found it
 helpful to just set `mouse=n`.  As I got more comfortable
@@ -84,6 +84,11 @@ with *visual mode*, setting `mouse=a` worked well for me,
 especially when dealing with
 [terminal windows](MultipleWindows.md#terminal-windows)
 in Neovim.
+
+Neovim requires an external program, such as xsel for Unix,
+so that the `"*` and `"+` registers interact with the primary
+and secondry clipboard buffers.  Depending on how it was compiled,
+Vim could natively do this.
 
 ## Configuring wildmenu
 

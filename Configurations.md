@@ -4,10 +4,9 @@
 
 TODO: Document Startup Behavior
 
-### My current Neovim and Vim Configurations
+### My current Neovim Configuration
 
 * [~/.config/nvim/init.vim](init.vim)
-* [~/.vim/vimrc](vimrc)
 
 ---
 
