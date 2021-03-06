@@ -66,7 +66,7 @@ When scrolloff is set, some of these commands get modified.
 In my .vim/vimrc file, I use
 
 ```
-   set scrolloff=3
+    set scrolloff=3
 ```
 
 to keep the cursor 3 lines from the edge of the screen.
@@ -146,7 +146,7 @@ defining "sections."
 For more information on `<C-x>` see,
 
 ```
-   :help ins-completion
+    :help ins-completion
 ```
 
 If you accidentally typed `<C-x>` while in insert mode, typing any

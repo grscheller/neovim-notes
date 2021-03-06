@@ -43,20 +43,20 @@ By **word** I mean a juxtaposition of symbols from an alphabet.
 Let `A` and `B` be collections of words,
 
 ```
-   A ∪ B = { w ∥ w ∈ A or w ∈ b }
-   A⋅B = { ab ∥ a ∈ A and b ∈ B }
+    A ∪ B = { w ∥ w ∈ A or w ∈ b }
+    A⋅B = { ab ∥ a ∈ A and b ∈ B }
 ```
 
 Given a set `V` of words, let `ε` be the **empty word** , then
 
 ```
-   V₀   = {ε}
-   V₁   =  V
+    V₀   = {ε}
+    V₁   =  V
 
-   Vᵢ₊₁ = { wv ∥ w ∈ Vᵢ and v ∈ V }
+    Vᵢ₊₁ = { wv ∥ w ∈ Vᵢ and v ∈ V }
 
-   V* = V₀ ∪ V₁ ∪ V₂ ∪ V₃ ∪ …
-   V+ = V₁ ∪ V₂ ∪ V₃ ∪ V₄ ∪ …
+    V* = V₀ ∪ V₁ ∪ V₂ ∪ V₃ ∪ …
+    V+ = V₁ ∪ V₂ ∪ V₃ ∪ V₄ ∪ …
 ```
 
 The collection of **regular languages** over an alphabet `Σ` is recursively
@@ -171,25 +171,25 @@ See `:help magic`
 Find next `buf` or `bug`
 
 ```
-   /bu[fg]
+    /bu[fg]
 ```
 
 Find next `buf` or `bug`
 
 ```
-   /bu\(f\|g\)
+    /bu\(f\|g\)
 ```
 
 Find next `buf`, `bug`, `bufg`, `bugf`, `buff`, and `bugg`
 
 ```
-   /bu[fg]\{2,1}
+    /bu[fg]\{2,1}
 ```
 
 Replace "Unix" & "UNIX" with "Linux" on lines 5 thru end of file
 
 ```
-   :5,$s/U\(nix\|NIX\)/Linux/g
+    :5,$s/U\(nix\|NIX\)/Linux/g
 ```
 
 For more examples, see `:help usr_27.txt`
@@ -229,7 +229,7 @@ See `:help pattern-searches` for more details.
 For a description of POSIX.2 regular expressions see
 
 ```
-   $ man -s7 regex
+    $ man -s7 regex
 ```
 
 According to this Linux man page,

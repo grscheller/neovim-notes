@@ -43,8 +43,8 @@ Since these behaviors seem more natural to me, I configure them
 in my `~/.config/nvim/init.vim` file.
 
 ```
-   set splitbelow
-   set splitright
+    set splitbelow
+    set splitright
 ```
 
 ## Navigating between and arranging Windows *Normal Mode*
@@ -122,9 +122,9 @@ can switch between windows via clicking the "tab".
 ## Starting Vim with multiple windows/tabs
 
 ```
-   $ vim -p[n]    # Open n tab pages (default: one for each file)
-   $ vim -o[n]    # Open n windows (default: one for each file)
-   $ vim -O[n]    # Like -o but split vertically
+    $ vim -p[n]    # Open n tab pages (default: one for each file)
+    $ vim -o[n]    # Open n windows (default: one for each file)
+    $ vim -O[n]    # Like -o but split vertically
 ```
 
 ## Terminal Windows

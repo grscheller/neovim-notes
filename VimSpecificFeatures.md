@@ -154,7 +154,7 @@ The last search pattern register `"/` is readable from *normal mode*.
 You can assign values to it in *command mode* via
 
 ```
-   :let @/ = "Some String"
+    :let @/ = "Some String"
 ```
 
 ## Vim Macros

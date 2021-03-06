@@ -95,8 +95,8 @@ To make tab completion in command mode more efficient, put the
 following lines in your ~/.config/nvim/init.vim file.
 
 ```
-   set wildmenu
-   set wildmode=longest:full,full
+    set wildmenu
+    set wildmode=longest:full,full
 ```
 
 ## Vi and Vim differences

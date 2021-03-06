@@ -24,8 +24,8 @@ UTF-8, and legacy encodings.
 On my POSIX systems I put
 
 ```
-   set encoding=utf-8
-   set fileencoding=utf-8
+    set encoding=utf-8
+    set fileencoding=utf-8
 ```
 
 in my `~/.vim/vimrc`.

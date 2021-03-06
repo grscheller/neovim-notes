@@ -235,22 +235,8 @@ What "various sources" for the first two above is configured via
 the complete flag:
 
 ```
-   :set complete
-   complete=.,w,b,u,t
-```
-
-Aside: just testing GitHub markdown:
-
-```
     :set complete
     complete=.,w,b,u,t
-```
-
-Another test:
-
-```
-:set complete
-complete=.,w,b,u,t
 ```
 
 ---
@@ -374,15 +360,15 @@ will result in multiple undo/redo events.
 ### Some Vim/Neovim command line option examples
 
 ```
-   $ nvim file1 file2 file3  # Open/create 3 files for editing
-   $ nvim +<n> file     # Open file for editing on line n,
-                        # defaults to last line of file
-   $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match
-   $ nvim -R file         # Open file read only, can still write via :w!
-   $ vim -g file  # Run as gvim GUI
-   $ nvim -r       # List swap files, then exit
-   $ nvim -r file  # Recover crashed vim session, uses swap file
-   $ nvim -h       # List help message for command-line options and exit
+    $ nvim file1 file2 file3  # Open/create 3 files for editing
+    $ nvim +<n> file     # Open file for editing on line n,
+                         # defaults to last line of file
+    $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match
+    $ nvim -R file         # Open file read only, can still write via :w!
+    $ vim -g file  # Run as gvim GUI
+    $ nvim -r       # List swap files, then exit
+    $ nvim -r file  # Recover crashed vim session, uses swap file
+    $ nvim -h       # List help message for command-line options and exit
 ```
 
 ### Dealing with whitespace characters
