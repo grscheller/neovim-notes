@@ -221,8 +221,8 @@ will move to the previous one.
 
 | Command      | Description                                               |
 |:------------:|:--------------------------------------------------------- |
-| `<C-P>`      | complete keyword backwards from various sources           |
-| `<C-N>`      | complete keyword forward from various sources             |
+| `<C-P>`      | complete keyword backwards from "various sources"         |
+| `<C-N>`      | complete keyword forward from "various sources"           |
 | `<C-X><C-L>` | search for line forwards in buffer                        |
 | `<C-X><C-I>` | search for keyword forwards in file and included files    |
 | `<C-X><C-D>` | search for definition forwards in file and included files |
@@ -237,6 +237,25 @@ the complete flag:
 ```
     :set complete
     complete=.,w,b,u,t
+```
+
+Options for the complete flag:
+
+* .      - use current buffer
+* w      - use buffer from other windows
+* b      - use buffers from the buffer list
+* u      - use unloaded buffers
+* t      - tag completion ???
+* i      - scan current buffer and use included files
+* kspell - match dictionary words
+
+Example, remove tag completion and add kspell,
+
+```
+    :set complete+=kspell
+    :set complete-=t
+    :set complete
+    complete=.,w,b,u,kspell
 ```
 
 ---
@@ -290,17 +309,20 @@ Using the up & down arrow keys with something typed will
 cycle through only those commands which begin with the
 typed text.
 
-### Pasting from registers into the command mode line
+### Editing the command mode line
 
-use `<C-R>` while in *command mode* to paste text
-from a Vim register to the command line.
-
-| Command   | Description                                 |
-|:---------:|:------------------------------------------- |
-| `<C-R>"`  | paste from default register to command line |
-| `<C-R>a`  | paste from register "a to command line      |
-| `<C-R>*`  | paste from X11 clipboard                    |
-| `<C-R>+`  | paste from desktop clipboard                |
+| Command       | Description                                     |
+|:-------------:|:----------------------------------------------- |
+| `<C-W>`       | delete word to left of cursor                   |
+| `<C-U>`       | delete everything to left of cursor             |
+| `<C-H>`       | delete character to left of cursor              |
+| `<BS>`        | delete character to left of cursor              |
+| `<C-R>"`      | paste from default register to command line     |
+| `<C-R>a`      | paste from register "a to command line          |
+| `<C-R>*`      | paste from X11 clipboard                        |
+| `<C-R>+`      | paste from desktop clipboard                    |
+| `<Esc>`       | Quit *command mode* go back to *normal mode*    |
+| `<C-C>`       | Quit *command mode*, don't perform any autocmds |
 
 ---
 
