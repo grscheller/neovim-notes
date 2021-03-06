@@ -43,15 +43,15 @@ Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
 are using via 2 character "diagraph" sequences.  While in *insert mode*,
-type `<C-k>` followed by a two character sequence.
+type `<C-K>` followed by a two character sequence.
 
 |  Command   | Description                                   |
 |:----------:|:--------------------------------------------- |
 |  `:dig`    | list diagraphs available for current encoding |
-|  `<C-k>a^` | enter the character â                         |
-|  `<C-k>o:` | enter the character ö                         |
-|  `<C-k>i'` | enter the character í                         |
-|  `<C-k>l*` | enter the character λ                         |
+|  `<C-K>a^` | enter the character â                         |
+|  `<C-K>o:` | enter the character ö                         |
+|  `<C-K>i'` | enter the character í                         |
+|  `<C-K>l*` | enter the character λ                         |
 
 The choice of characters you can enter this way depends on the
 encoding you are using.
@@ -67,10 +67,10 @@ When using gvim, vim or nvim, with a unicode aware terminal
 emulator like rxvt-unicode or gnome-terminal, code points
 can be entered while in *insert mode* via
 
-|  Command            | Description            |
-|:-------------------:|:---------------------- |
-|  `<C-S-u>u03b2<CR>` | enter the character β  |
-|  `<C-S-u>u3bb<CR>`  | enter the character λ  |
+|  Command           | Description            |
+|:------------------:|:---------------------- |
+|  `<C-S-u>03b2<CR>` | enter the character β  |
+|  `<C-S-u>3bb<CR>`  | enter the character λ  |
 
 Where `<C-S-u>` means holding down CTRL+SHIFT+u.
 
@@ -89,7 +89,7 @@ Note: Using `<S-C-u>` will not work.
 Note: `<C-S-u>` does not work while on the linux console.
 
 Note: Defining a key mapping involving `<C-S-u>` does not
-work, either as the key mapping or in whatever is mapped to.
+work, either as the key mapping or for whatever is mapped to.
 
 ---
 

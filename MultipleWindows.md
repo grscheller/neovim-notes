@@ -15,12 +15,12 @@ session, using multiple CLI windows can be very useful.
 
 | *Norm Mode* Command  | Description                                 |
 |:--------------------:|:------------------------------------------- |
-| `<C-w>n`             | new window with empty buffer above          |
-| `<C-w>s`             | new window same buffer above                |
-| `<C-w>v`             | new window same buffer to left              |
-| `<C-w>q`             | close current window, same as `:quit`       |
-| `<C-w>c`             | close current window, same as `:close`      |
-| `<C-w>o`             | close all windows in tab except current one |
+| `<C-W>n`             | new window with empty buffer above          |
+| `<C-W>s`             | new window same buffer above                |
+| `<C-W>v`             | new window same buffer to left              |
+| `<C-W>q`             | close current window, same as `:quit`       |
+| `<C-W>c`             | close current window, same as `:close`      |
+| `<C-W>o`             | close all windows in tab except current one |
 
 | *Cmd Mode* Command   | Description                                  |
 |:-------------------- |:-------------------------------------------- |
@@ -51,21 +51,21 @@ in my `~/.config/nvim/init.vim` file.
 
 | Command  | Description                                                  |
 |:--------:|:------------------------------------------------------------ |
-| `<C-w>h` | move one window left                                         |
-| `<C-w>l` | move one window right                                        |
-| `<C-w>k` | move one window up                                           |
-| `<C-w>j` | move one window down                                         |
-| `<C-w>t` | move to top-left window                                      |
-| `<C-w>b` | move to bottom-right window                                  |
-| `<C-w>p` | move to previous (last accessed) window                      |
-| `<C-w>w` | cycle through all windows                                    |
-| `<C-w>=` | equalize heights/widths of all windows                       |
-| `<C-w>H` | move window far left, full screen height                     |
-| `<C-w>J` | move window to bottom, full screen width                     |
-| `<C-w>K` | move window to top, full screen width                        |
-| `<C-w>L` | move window far right, full screen height                    |
-| `<C-w>x` | exchange adjacent windows (vertically or horizontally)       |
-| `<C-w>r` | rotate adjacent windows (vertically or horizontally)         |
+| `<C-W>h` | move one window left                                         |
+| `<C-W>l` | move one window right                                        |
+| `<C-W>k` | move one window up                                           |
+| `<C-W>j` | move one window down                                         |
+| `<C-W>t` | move to top-left window                                      |
+| `<C-W>b` | move to bottom-right window                                  |
+| `<C-W>p` | move to previous (last accessed) window                      |
+| `<C-W>w` | cycle through all windows                                    |
+| `<C-W>=` | equalize heights/widths of all windows                       |
+| `<C-W>H` | move window far left, full screen height                     |
+| `<C-W>J` | move window to bottom, full screen width                     |
+| `<C-W>K` | move window to top, full screen width                        |
+| `<C-W>L` | move window far right, full screen height                    |
+| `<C-W>x` | exchange adjacent windows (vertically or horizontally)       |
+| `<C-W>r` | rotate adjacent windows (vertically or horizontally)         |
 
 I find the last 2 work best when window layout is kept simple.
 They won't work if one of the windows involved is further split,
@@ -75,28 +75,28 @@ thus only work with an innermost split.
 
 | Command        | Description                            |
 |:--------------:|:-------------------------------------- |
-| `20<C-w>_`     | set active window height 20 lines      |
-| `72<C-w><Bar>` | set active window width 72 chars       |
-| `10<C-w>+`     | increase active window height 10 lines |
-| `15<C-w>-`     | decrease active window height 15 lines |
-| `10<C-w>>`     | increase active window width 10 char   |
-| `15<C-w><`     | decrease active window width 15 char   |
+| `20<C-W>_`     | set active window height 20 lines      |
+| `72<C-W><Bar>` | set active window width 72 chars       |
+| `10<C-W>+`     | increase active window height 10 lines |
+| `15<C-W>-`     | decrease active window height 15 lines |
+| `10<C-W>>`     | increase active window width 10 char   |
+| `15<C-W><`     | decrease active window width 15 char   |
 
 Also, note that
 
 | Command      | Description                   |
 |:------------:|:----------------------------- |
-| `<C-w>_`     | maximize active window height |
-| `<C-w><Bar>` | maximize active window width  |
+| `<C-W>_`     | maximize active window height |
+| `<C-W><Bar>` | maximize active window width  |
 
 but
 
 | Command  | Description                            |
 |:--------:|:-------------------------------------- |
-| `<C-w>+` | increase active window height 1 lines  |
-| `<C-w>-` | decrease active window height 1 lines  |
-| `<C-w>>` | increase active window width 1 char    |
-| `<C-w><` | decrease active window width 1 char    |
+| `<C-W>+` | increase active window height 1 lines  |
+| `<C-W>-` | decrease active window height 1 lines  |
+| `<C-W>>` | increase active window width 1 char    |
+| `<C-W><` | decrease active window width 1 char    |
 
 I tend not to use these directly.  Instead I use them
 in other key bindings, or just use the mouse.
@@ -111,7 +111,7 @@ can switch between windows via clicking the "tab".
 |:------------------- |:------------------------------------- |
 | `gt`                | move to next tab                      |
 | `gT`                | move to previous tab                  |
-| `<C-w>T`            | break current window out into new tab |
+| `<C-W>T`            | break current window out into new tab |
 | `:tabn`             | move to next tab                      |
 | `:tabp`             | move to previous tab                  |
 | `:tabnew`           | open new tab with empty buffer        |
@@ -148,14 +148,14 @@ a VT220/xterm terminal.
 | `:vsp term://ksh`     | opens ksh in a new vertical split window       |
 | `:sp term://htop`     | opens htop program in a new split window       |
 | `:tabnew term://bash` | open bash session in new tab                   |
-| `<C-\><C-n>`          | return to *normal mode* from *terminal mode*   |
+| `<C-\><C-N>`          | return to *normal mode* from *terminal mode*   |
 
 This terminal window is essentially a read only buffer that
 displays the user's interactions with the terminal program running
 in the terminal window.  You are put into *normal mode*.  Any
 *normal mode* command to enter *insert mode* actually puts you
 into *terminal mode*.  In *terminal mode* all key strokes except
-`<C-\><C-n>` get passed to the underlying process running
+`<C-\><C-N>` get passed to the underlying process running
 in the terminal window.  If the mouse is enabled, mouse events
 get past down too.
 

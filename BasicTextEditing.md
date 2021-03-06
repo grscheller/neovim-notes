@@ -151,18 +151,18 @@ by pressing the `<Esc>` key.
 ### Pasting from registers into insert mode
 
 To paste text from a Vim register while in *insert mode*,
-use `<C-r>`.
+use `<C-R>`.
 
 | Command       | Description                                      |
 |:-------------:|:------------------------------------------------ |
-| `<C-r>"`      | paste from default register into buffer          |
-| `<C-r>a`      | paste from register "a into buffer (as if typed) |
-| `<C-r><C-r>a` | paste from register "a into buffer (literally)   |
-| `<C-r>*`      | paste from X11 clipboard                         |
-| `<C-r>+`      | paste from desktop clipboard                     |
-| `<C-r>%`      | paste current filename                           |
-| `<C-r>#`      | paste alternate filename                         |
-| `<C-r>=`      | prompted to enter expression and paste result    |
+| `<C-R>"`      | paste from default register into buffer          |
+| `<C-R>a`      | paste from register "a into buffer (as if typed) |
+| `<C-R><C-R>a` | paste from register "a into buffer (literally)   |
+| `<C-R>*`      | paste from X11 clipboard                         |
+| `<C-R>+`      | paste from desktop clipboard                     |
+| `<C-R>%`      | paste current filename                           |
+| `<C-R>#`      | paste alternate filename                         |
+| `<C-R>=`      | prompted to enter expression and paste result    |
 
 ### Navigating in *insert mode*
 
@@ -176,60 +176,60 @@ also be deleted with the backspace key.  In *normal mode*, the
 backspace and space keys are just extra navigation keys.
 
 It is also possible to perform a single *normal mode* action within
-*insert mode* by using`<C-o>` key sequences.
+*insert mode* by using`<C-O>` key sequences.
 
 | Command   | Description                              |
 |:---------:|:---------------------------------------- |
-| `<C-o>h`  | move cursor left one character           |
-| `<C-o>l`  | move cursor right one character          |
-| `<C-o>k`  | move cursor up one line                  |
-| `<C-o>j`  | move cursor down one line                |
-| `<C-o>3w` | move cursor three words left             |
-| `<C-o>2j` | move down two lines                      |
-| `<C-o>J`  | join current line with the next line     |
-| `<C-o>D`  | delete everything to the right of cursor |
+| `<C-O>h`  | move cursor left one character           |
+| `<C-O>l`  | move cursor right one character          |
+| `<C-O>k`  | move cursor up one line                  |
+| `<C-O>j`  | move cursor down one line                |
+| `<C-O>3w` | move cursor three words left             |
+| `<C-O>2j` | move down two lines                      |
+| `<C-O>J`  | join current line with the next line     |
+| `<C-O>D`  | delete everything to the right of cursor |
 
 ### Other insert mode commands
 
 | Command       | Description                                                 |
 |:-------------:|:----------------------------------------------------------- |
-| `<C-w>`       | delete word to left of cursor                               |
-| `<C-u>`       | delete everything to left of cursor                         |
-| `<C-h>`       | delete character to left of cursor                          |
+| `<C-W>`       | delete word to left of cursor                               |
+| `<C-U>`       | delete everything to left of cursor                         |
+| `<C-H>`       | delete character to left of cursor                          |
 | `<BS>`        | delete character to left of cursor                          |
-| `<C-v><char>` | insert literal character                                    |
-| `<C-t>`       | indent current line one tab stop                            |
-| `<C-d>`       | un-indent current line one tab stop                         |
-| `<C-a>`       | repeat last text insertion                                  |
-| `<C-e>`       | enter character below cursor (from line below current line) |
-| `<C-y>`       | enter character above cursor (from line above current line) |
+| `<C-V><char>` | insert literal character                                    |
+| `<C-T>`       | indent current line one tab stop                            |
+| `<C-D>`       | un-indent current line one tab stop                         |
+| `<C-A>`       | repeat last text insertion                                  |
+| `<C-E>`       | enter character below cursor (from line below current line) |
+| `<C-Y>`       | enter character above cursor (from line above current line) |
 | `<Esc>`       | Quit *insert mode* go back to *normal mode*                 |
-| `<C-c>`       | Quit *insert mode*, InsertLeave autocmd event not triggered |
+| `<C-C>`       | Quit *insert mode*, InsertLeave autocmd event not triggered |
 
 The first five commands come from the original vi.  A subtle difference is
 that in vi these commands edited not the buffer, but the current edit of the
-buffer.  This explains a `<C-u>` idiosyncratic bahavior.  Vim/Neovim will
+buffer.  This explains a `<C-U>` idiosyncratic bahavior.  Vim/Neovim will
 first delete up to what was just typed, just like vi would have done, before
 deleting to the beginning of the line.
 
 ### Ins-completion sub-mode commands
 
 This "sub-mode" is used for text completions.  While in *ins-completion mode*,
-`<C-y>` will accept the completion and `<C-e>` will return what was originally
-typed.  `<C-n>` will move to the next completion in the drop down, and `<C-p>`
+`<C-Y>` will accept the completion and `<C-E>` will return what was originally
+typed.  `<C-N>` will move to the next completion in the drop down, and `<C-P>`
 will move to the previous one.
 
 | Command      | Description                                               |
 |:------------:|:--------------------------------------------------------- |
-| `<C-p>`      | complete keyword backwards from various sources           |
-| `<C-n>`      | complete keyword forward from various sources             |
-| `<C-x><C-l>` | search for line forwards in buffer                        |
-| `<C-x><C-i>` | search for keyword forwards in file and included files    |
-| `<C-x><C-d>` | search for definition forwards in file and included files |
-| `<C-x><C-]>` | search for tag and insert before cursor                   |
-| `<C-x><C-k>` | search words in dictionary                                |
-| `<C-x><C-t>` | search words in thesaurus                                 |
-| `<C-x>s`     | search for spelling suggestions                           |
+| `<C-P>`      | complete keyword backwards from various sources           |
+| `<C-N>`      | complete keyword forward from various sources             |
+| `<C-X><C-L>` | search for line forwards in buffer                        |
+| `<C-X><C-I>` | search for keyword forwards in file and included files    |
+| `<C-X><C-D>` | search for definition forwards in file and included files |
+| `<C-X><C-]>` | search for tag and insert before cursor                   |
+| `<C-X><C-K>` | search words in dictionary                                |
+| `<C-X><C-T>` | search words in thesaurus                                 |
+| `<C-X>s`     | search for spelling suggestions                           |
 
 What "various sources" for the first two above is configured via
 the complete flag:
@@ -292,15 +292,15 @@ typed text.
 
 ### Pasting from registers into the command mode line
 
-use `<C-r>` while in *command mode* to paste text
+use `<C-R>` while in *command mode* to paste text
 from a Vim register to the command line.
 
 | Command   | Description                                 |
 |:---------:|:------------------------------------------- |
-| `<C-r>"`  | paste from default register to command line |
-| `<C-r>a`  | paste from register "a to command line      |
-| `<C-r>*`  | paste from X11 clipboard                    |
-| `<C-r>+`  | paste from desktop clipboard                |
+| `<C-R>"`  | paste from default register to command line |
+| `<C-R>a`  | paste from register "a to command line      |
+| `<C-R>*`  | paste from X11 clipboard                    |
+| `<C-R>+`  | paste from desktop clipboard                |
 
 ---
 
@@ -315,7 +315,7 @@ To enter *visual mode* from *normal mode*
 |:-------:|:-------------------------- |
 | `v`     | for character based        |
 | `V`     | for line based             |
-| `<C-v>` | for block visual mode      |
+| `<C-V>` | for block visual mode      |
 | `gv`    | to reselect last selection |
 
 Highlight text with *normal mode* cursor navigation commands
@@ -345,12 +345,12 @@ completely natural enabling mouse support for all modes.
 
 ## Other Useful Vim Information
 
-### Undo/redo commands
+### Undo/redo normal mode commands
 
 | Command | Description        |
 |:-------:|:------------------ |
 | `u`     | undo previous edit |
-| `<C-r>` | redo edit undone   |
+| `<C-R>` | redo edit undone   |
 
 These can be used to linearly undo and redo edits,
 like the arrow buttons in a web browser.
@@ -399,8 +399,8 @@ Vim/Neovim built in help is very powerful, but not beginner friendly.
 To get the most out of it,
 
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
-* Use `<C-o>` to jump back to previous location
-* Use `<C-i>` or `<Tab>` to jump forward again
+* Use `<C-O>` to jump back to previous location
+* Use `<C-I>` or `<Tab>` to jump forward again
 * familiarize yourself with how to use [multiple vim windows](MultipleWindows.md)
 * configure the [mouse](VimFactoids.md#using-the-mouse)
 * setting up the [wildmenu](VimFactoids.md#configuring-wildmenu)

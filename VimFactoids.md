@@ -103,7 +103,7 @@ following lines in your ~/.config/nvim/init.vim file.
 
 * Vi only has one level of undo/redo, `u` undo the
   last change and, if hit again, will redo the change.
-  `<C-r>`has no effect.
+  `<C-R>`has no effect.
 * On modern Linux systems, the vi "executable" is either a
   symlink to ex, traditional BSD based vi, or a symlink
   to vim.  If the vim executable starts with the name vi,
@@ -113,7 +113,7 @@ following lines in your ~/.config/nvim/init.vim file.
   *replace mode* with the arrow keys.
 * In vi, hitting `<Insert>` while in *insert mode* or *replace mode*
   does not swap you between them.
-* In vi, `<C-o>` does not let you execute a *normal mode*
+* In vi, `<C-O>` does not let you execute a *normal mode*
   command while in *insert mode*.
 * There are fewer vi *insert mode* commands.
 * In vi the *insert mode* commands only interact with the text

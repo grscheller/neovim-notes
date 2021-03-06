@@ -29,9 +29,9 @@ Your current location in the jump list is always 0.
 
 | Command  | Description                                 |
 |:--------:|:------------------------------------------- |
-| `<C-o>`  | go back to previous location in jump list   |
-| `<C-i>`  | go forward to next location in jump list    |
-| `3<C-o>` | go back 3 jumps in jump list                |
+| `<C-O>`  | go back to previous location in jump list   |
+| `<C-I>`  | go forward to next location in jump list    |
+| `3<C-O>` | go back 3 jumps in jump list                |
 | `m'`     | explicitly add a jump to the jumplist       |
 
 ## Change Lists
@@ -48,13 +48,13 @@ The `:changes` command will list a table consisting like this:
 
 | change | line | col | text                      |
 | ------:| ----:| ---:|:------------------------- |
-|    4   | 144  | 20  | `inoremap <C-h> <Left>`   |
+|    4   | 144  | 20  | `inoremap <C-H> <Left>`   |
 |    3   | 148  | 20  |                           |
-|    2   | 144  | 20  | `inoremap <C-h> <Left>`   |
+|    2   | 144  | 20  | `inoremap <C-H> <Left>`   |
 |    1   | 148  | 20  |                           |
-|  > 0   | 144  | 20  | `inoremap <C-h> <Left>`   |
+|  > 0   | 144  | 20  | `inoremap <C-H> <Left>`   |
 |    1   | 148  | 20  |                           |
-|    2   | 145  | 20  | `inoremap <C-j> <Down>`   |
+|    2   | 145  | 20  | `inoremap <C-J> <Down>`   |
 
 Your current location in the change list is always 0.
 
@@ -115,16 +115,16 @@ The expression register `"=` is used for evaluating vim script
 expressions.  The result is coerced into a string and pasted as
 if from a regular register.
 
-**Example:** While in *insert mode*, type `<C-r>=` and you are
+**Example:** While in *insert mode*, type `<C-R>=` and you are
 dropped to the *command mode* command line, but with an `=`
 prompt.  Type in any VimL expression, say `3 + 2 * 5<CR>`,
 then `13` is entered to the buffer and you are returned
 to *insert mode*.
 
-When at the command line `=` prompt, you can use `<C-r>` again to
+When at the command line `=` prompt, you can use `<C-R>` again to
 paste the contents of other registers into the "expression register".
 
-`<C-r>=` is also useful in *command mode* at the `:` and  `\` prompts.
+`<C-R>=` is also useful in *command mode* at the `:` and  `\` prompts.
 
 ### Selection and drop registers (Interacts with Desktop GUI)
 
