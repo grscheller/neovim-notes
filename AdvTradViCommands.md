@@ -16,7 +16,7 @@ Vi was often called "bimodal" where *normal mode* and
 *command mode* were conflated together and called
 "command mode" and "insert mode" was the second mode.
 
-## *Normal Mode* Commands
+## Normal Mode Commands
 
 ### Misc commands
 
@@ -31,7 +31,7 @@ For `<C-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
 via the `jobs` shell command.
 
-### Commands to move cursor in *Normal Mode*
+### Commands to move cursor in Normal Mode
 
 | Command   | Description                                        |
 |:---------:|:-------------------------------------------------- |
@@ -125,7 +125,7 @@ defining "sections."
 | `>>`       | move entire line 1 tab stop right, stay in *normal mode*  |
 | `<<`       | move entire line 1 tab stop left, stay in *normal mode*   |
 
-## *Insert Mode* Commands
+## Insert Mode Commands
 
 | Command       | Description                                         |
 |:-------------:|:--------------------------------------------------- |
@@ -155,7 +155,7 @@ control turned on, and you hit the unfortunate key combination
 `<C-x><C-s>`, something EMACS users are likely to do, you will
 find your vim editing session frozen.  Type `<C-q>` to unlock.
 
-### *Insert Mode* vs *Replace Mode*
+### Insert Mode vs Replace Mode
 
 * *replace mode* is similar to *insert mode* but
   characters are overwritten instead of inserted.
@@ -169,7 +169,7 @@ find your vim editing session frozen.  Type `<C-q>` to unlock.
   only current set of replacements, otherwise they
   act like the `<Left>` arrow key.
 
-## *Command Mode* Commands
+## Command Mode Commands
 
 | Command        | Description                                          |
 |:-------------- |:---------------------------------------------------- |

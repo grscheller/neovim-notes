@@ -19,9 +19,9 @@ can be internalized and eventually become part of your "muscle memory."
 
 ---
 
-## *Normal Mode*
+## Normal Mode
 
-### Cursor movement in *Normal Mode*
+### Cursor movement in Normal Mode
 
 | Command       | Description                                       |
 |:-------------:|:------------------------------------------------- |
@@ -86,13 +86,13 @@ the *normal mode* cursor positioning commands.
 
 In vi these were referred to as named buffers.
 
-| Command | Description                                    |
-|:-------:|:---------------------------------------------- |
-| `"adw`  | delete word and put in register `"a`           |
-| `"B2yy` | yank 2 lines and append to register `"b`       |
-| `"sd$`  | delete to end of line and put in register `"s` |
-| `"sp`   | paste contents of register `"s` after cursor   |
-| `"aP`   | paste contents of register `"a` before cursor  |
+| Command | Description                                              |
+|:-------:|:-------------------------------------------------------- |
+| `"adw`  | delete word and put in register `"a`                     |
+| `"B2yy` | yank 2 lines and append to register `"b`                 |
+| `"sd$`  | delete to end of line and put in register `"s`           |
+| `"sp`   | paste contents of register `"s` after char cursor is on  |
+| `"aP`   | paste contents of register `"a` before cursor            |
 
 One use case for named registers is copying multiple items
 from multiple files and pasting them into other files.
@@ -126,7 +126,7 @@ To return to *normal mode*, type either `<Esc>` or `<C-[>`.
 | `"a3S`  | delete 3 lines into `"a`, enter *normal mode* on new line       |
 | `"b3C`  | delete rest of line & next 2 two into `"b`, enter *normal mode* |
 
-### Repeating commands in *Normal Mode*
+### Repeating commands in Normal Mode
 
 | Command | Description                                |
 |:-------:|:------------------------------------------ |
@@ -142,23 +142,27 @@ not, the change at each location.
 
 ---
 
-## *Insert Mode*
+## Insert Mode
 
 The whole vi paradigm is that you do all navigation in *normal mode*
 and type text in *insert mode*.  You return to *normal mode*
 by pressing the `<Esc>` key.
 
-### Pasting from registers into *insert mode*
+### Pasting from registers into insert mode
 
 To paste text from a Vim register while in *insert mode*,
 use `<C-r>`.
 
-| Command   | Description                             |
-|:---------:|:--------------------------------------- |
-| `<C-r>"`  | paste from default register into buffer |
-| `<C-r>a`  | paste from register "a into buffer      |
-| `<C-r>*`  | paste from X11 clipboard                |
-| `<C-r>+`  | paste from desktop clipboard            |
+| Command       | Description                                      |
+|:-------------:|:------------------------------------------------ |
+| `<C-r>"`      | paste from default register into buffer          |
+| `<C-r>a`      | paste from register "a into buffer (as if typed) |
+| `<C-r><C-r>a` | paste from register "a into buffer (literally)   |
+| `<C-r>*`      | paste from X11 clipboard                         |
+| `<C-r>+`      | paste from desktop clipboard                     |
+| `<C-r>%`      | paste current filename                           |
+| `<C-r>#`      | paste alternate filename                         |
+| `<C-r>=`      | prompted to enter expression and paste result    |
 
 ### Navigating in *insert mode*
 
@@ -185,24 +189,69 @@ It is also possible to perform a single *normal mode* action within
 | `<C-o>J`  | join current line with the next line     |
 | `<C-o>D`  | delete everything to the right of cursor |
 
-### Other *insert mode* commands
+### Other insert mode commands
 
-| Command       | Description                                     |
-|:-------------:|:----------------------------------------------- |
-| `<C-w>`       | delete word to left of cursor                   |
-| `<C-u>`       | delete everything to left of cursor             |
-| `<C-h>`       | delete character to left of cursor              |
-| `<C-j>`       | insert newline - why not just press `<return>`? |
-| `<C-t>`       | indent current line one tab stop                |
-| `<C-d>`       | un-indent current line one tab stop             |
-| `<C-v><char>` | insert literal character                        |
+| Command       | Description                                                 |
+|:-------------:|:----------------------------------------------------------- |
+| `<C-w>`       | delete word to left of cursor                               |
+| `<C-u>`       | delete everything to left of cursor                         |
+| `<C-h>`       | delete character to left of cursor                          |
+| `<BS>`        | delete character to left of cursor                          |
+| `<C-v><char>` | insert literal character                                    |
+| `<C-t>`       | indent current line one tab stop                            |
+| `<C-d>`       | un-indent current line one tab stop                         |
+| `<C-a>`       | repeat last text insertion                                  |
+| `<C-e>`       | enter character below cursor (from line below current line) |
+| `<C-y>`       | enter character above cursor (from line above current line) |
+| `<Esc>`       | Quit *insert mode* go back to *normal mode*                 |
+| `<C-c>`       | Quit *insert mode*, InsertLeave autocmd event not triggered |
 
-All of the above commands, except for `<C-t>` and `<C-d>` come from
-the original vi.  A subtle difference is that in vi these commands
-editted not the buffer, but the current edit of the buffer.  This
-explains a `<C-u>` idiosyncratic bahavior.  Vim/Neovim will first
-delete up to what was just typed before deleting to the beginning
-of the line, just like vi would have done.
+The first five commands come from the original vi.  A subtle difference is
+that in vi these commands edited not the buffer, but the current edit of the
+buffer.  This explains a `<C-u>` idiosyncratic bahavior.  Vim/Neovim will
+first delete up to what was just typed, just like vi would have done, before
+deleting to the beginning of the line.
+
+### Ins-completion sub-mode commands
+
+This "sub-mode" is used for text completions.  While in *ins-completion mode*,
+`<C-y>` will accept the completion and `<C-e>` will return what was originally
+typed.  `<C-n>` will move to the next completion in the drop down, and `<C-p>`
+will move to the previous one.
+
+| Command      | Description                                               |
+|:------------:|:--------------------------------------------------------- |
+| `<C-p>`      | complete keyword backwards from various sources           |
+| `<C-n>`      | complete keyword forward from various sources             |
+| `<C-x><C-l>` | search for line forwards in buffer                        |
+| `<C-x><C-i>` | search for keyword forwards in file and included files    |
+| `<C-x><C-d>` | search for definition forwards in file and included files |
+| `<C-x><C-]>` | search for tag and insert before cursor                   |
+| `<C-x><C-k>` | search words in dictionary                                |
+| `<C-x><C-t>` | search words in thesaurus                                 |
+| `<C-x>s`     | search for spelling suggestions                           |
+
+What "various sources" for the first two above is configured via
+the complete flag:
+
+```
+   :set complete
+   complete=.,w,b,u,t
+```
+
+Aside: just testing GitHub markdown:
+
+```
+    :set complete
+    complete=.,w,b,u,t
+```
+
+Another test:
+
+```
+:set complete
+complete=.,w,b,u,t
+```
 
 ---
 
@@ -244,7 +293,7 @@ and prompts you with `:`.
 | `:s/foo/bar/gc`     | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 
-### Navigating the *command mode* line
+### Navigating the command mode line
 
 While in *command mode*, up & down arrow keys cycle through previous
 *command mode* commands.  The left & right arrow keys help you
@@ -255,7 +304,7 @@ Using the up & down arrow keys with something typed will
 cycle through only those commands which begin with the
 typed text.
 
-### Pasting from registers into the *command mode* line
+### Pasting from registers into the command mode line
 
 use `<C-r>` while in *command mode* to paste text
 from a Vim register to the command line.
@@ -269,7 +318,7 @@ from a Vim register to the command line.
 
 ---
 
-## *Visual Mode*
+## Visual Mode
 
 This mode allows you to select region of text by visually highlighting,
 and then modify as a unit.
@@ -325,7 +374,7 @@ will result in multiple undo/redo events.
 ### Some Vim/Neovim command line option examples
 
 ```
-   $ nvim file1 file2 file3  # Open/create 3 files for editting
+   $ nvim file1 file2 file3  # Open/create 3 files for editing
    $ nvim +<n> file     # Open file for editing on line n,
                         # defaults to last line of file
    $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match

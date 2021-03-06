@@ -1,4 +1,3 @@
-
 # Vim Factoids
 
 ## Buffers and registers in Vim
@@ -19,8 +18,8 @@ to as buffers.
 
 ### The default register
 
-The default register is just the area which `y` and `c` commands
-write to and `p` and `c` commands read from by "default."
+The default register is just the area where commands like `y` and `c`
+write to and `p` and `P` read from by default.
 
 ### Named registers
 
