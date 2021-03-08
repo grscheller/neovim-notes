@@ -272,7 +272,7 @@ of teletypes, you edited files one line at a time.
 *command mode* commands developed from the original ex
 line editing commands.
 
-Use the `:` *normal_mode* command to enter *command mode*.  The
+Use the `:` in *normal_mode* to enter *command mode*.  The
 cursor jumps down to the bottom of the terminal window
 and prompts you with `:`.
 
@@ -294,9 +294,17 @@ and prompts you with `:`.
 | `:#`                | give line number of current line cursor is on        |
 | `:s/foo/bar/`       | substitute first instance of foo with bar            |
 | `:s/foo/bar/i`      | case insensitive version of above                    |
-| `:s/foo/bar/g`      | substitute all instances of foo with bar             |
-| `:s/foo/bar/gc`     | same as above but ask for confirmation each time     |
+| `:1,$s/foo/bar/g`   | substitute all instances of foo with bar in file     |
+| `:%s/foo/bar/gc`    | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
+| `:5,+5d`            | delete from line 5 to 5 lines beyond current line    |
+| `:5;+5d`            | delete from line 5 to line 10                        |
+| `:.,/^typed/y`      | yank from current line to line starting with "typed" |
+
+Execute the *command mode* command via `<CR>`, which returns you
+to *normal mode*.
+
+Unlike Vim, Neovim does not have an *EX mode*.
 
 ### Navigating the command mode line
 
@@ -333,25 +341,25 @@ and then modify as a unit.
 
 To enter *visual mode* from *normal mode*
 
-| Command | Description                |
-|:-------:|:-------------------------- |
-| `v`     | for character based        |
-| `V`     | for line based             |
-| `<C-V>` | for block visual mode      |
-| `gv`    | to reselect last selection |
+| Command | Description                                         |
+|:-------:|:--------------------------------------------------- |
+| `v`     | for character based                                 |
+| `V`     | for line based                                      |
+| `<C-V>` | for block visual mode                               |
+| `gv`    | to reselect last selection (useful for `p` command) |
 
 Highlight text with *normal mode* cursor navigation commands
 like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
 Once selected, you can issue either *normal mode* or
 *command mode* commands.
 
-*normal mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
+*Normal mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
 act on the highlighted region.  The behavior of some
-commands, like indenting commands `>>` or `<<`, vary
-depending on which *visual mode* (character, line or block)
-you are in.
+commands, like I or A, vary depending on which *visual mode*
+(character, line or block) you are in.  Others, like indenting
+commands `>>` or `<<`, just act on the entire line.
 
-*command mode* commands act on lines in their entirety
+*Command mode* commands act on lines in their entirety
 that contain the selected region.
 
 To punt out of *visual mode* without doing anything,
