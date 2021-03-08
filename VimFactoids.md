@@ -11,7 +11,7 @@ for now, are:
 
 For more in depth information see the section on all the different
 types of registers in
-[Vim Specific Features](NeovimSpecificFeatures.md#types-of-registers).
+[Vim Specific Features](VimSpecificFeatures.md#types-of-registers).
 
 Note: In older vi documentation and jargon, registers are referred
 to as buffers.

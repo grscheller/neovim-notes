@@ -63,7 +63,7 @@ partner.  Plugs-ins like Syntastic can change the meaning of
 what is a matching symbol for different file types.
 
 When scrolloff is set, some of these commands get modified.
-In my .vim/vimrc file, I use
+In my init.vim file, I use
 
 ```
     set scrolloff=3
@@ -138,12 +138,12 @@ defining "sections."
 | `<C-O>n`      | go to next search item, remain in insert mode       |
 | `<C-O>D`      | delete everything to right of cursor                |
 | `<C-U>`       | delete everything to left of cursor                 |
-| `<C-T>`       | indent current line one tab stop                    |
-| `<C-D>`       | un-indent current line one tab stop                 |
 | `<C-C>`       | break out of *insert mode*, punt on any auto cmds   |
 | `<C-X>`       | enter *insert mode* completion submode (vim not vi) |
 
-For more information on `<C-X>` see,
+For more information on `<C-X>` see
+[ins-completion section](BasicTextEditing.md#ins-completion-sub-mode-commands)
+in BasicTextEditing, or
 
 ```
     :help ins-completion
