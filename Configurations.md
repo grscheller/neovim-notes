@@ -1,10 +1,6 @@
 # Configuring Neovim
 
-## Neovim startup files
-
-TODO: Document Startup Behavior
-
-### My current Neovim Configuration
+## My current Neovim Configuration
 
 * [~/.config/nvim/init.vim](init.vim)
 
