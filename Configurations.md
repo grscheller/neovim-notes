@@ -1,8 +1,14 @@
 # Configuring Neovim
 
-## My current Neovim Configuration
+## My current Neovim configuration
 
 * [~/.config/nvim/init.vim](init.vim)
+
+## Periodically run :checkhealth
+
+```
+    $ nvim -c ':checkhealth'
+```
 
 ---
 
