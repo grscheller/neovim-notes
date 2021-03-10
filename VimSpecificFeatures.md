@@ -194,6 +194,67 @@ For instance, you don't want to change "Unix is perfect".
     nn@bn@bnnn2@b
 ```
 
+## Marks
+
+Marks allow you to set locations to either be able to jump to
+or use with *normal mode* editing commands.  A mark is a
+"zero-width" entity between the cursor and the preceding character.
+
+### Letter marks
+
+Marks within a given buffer are denoted via letters `a-z`.  For marks between
+different buffers, use letters `A-Z`.
+
+| Command   | Description                                                  |
+|:---------:|:------------------------------------------------------------ |
+| `ma`      | set mark `a` for the current editing buffer                  |
+| `mB`      | set mark `B` for all buffers                                 |
+| `` `a ``  | jump to mark `a` current buffer                              |
+| `` g`a `` | jump to mark `a` current buffer, don't update junplist       |
+| `` `B ``  | jump to mark `B` current or another editing buffer           |
+| `'a`      | jump to first non-space char in line with mark `a`           |
+| `` d`a `` | delete from cursor to mark `a`                               |
+| `` y`a `` | yank from cursor to mark `a`                                 |
+| `` y`B `` | yank from cursor to mark `B`, fails if not in current buffer |
+| `d'w`     | delete current line thru line with mark `w`                  |
+
+### Special marks
+
+Like letter marks, these come in two flavors.  If you use a `'` instead
+of a `` ` ``, you are taken to the first non-space character of the line
+with that mark.
+
+| Command    | Description                                             |
+|:----------:|:------------------------------------------------------- |
+| `` `" ``   | jump to last position last time buffer exited           |
+| ``` `` ``` | jump back to position before latest jump                |
+| `''`       | same as above but to beginning of line                  |
+| `` `[ ``   | to first character of previously changed or yanked text |
+| `` `] ``   | to last character of previously changed or yanked text  |
+| `` `< ``   | to first character of last visually selected text       |
+| `` `> ``   | to last character of last visually selected text        |
+| `` `( ``   | jump to beginning of sentance                           |
+| `` `) ``   | jump to end of sentance                                 |
+| `` `{ ``   | jump to beginning of paragraph                          |
+| `` `} ``   | jump to end of paragraph                                |
+| `` ]` ``   | jump to next lowercase mark                             |
+| `` [` ``   | jump to previous lowercase mark                         |
+
+### Numbered marks
+
+Numbered marks `` `0 - `9 `` and `'0 - '9` will jump to the locations
+in the last files from which nvim was exited.  Numbered marks cannot
+be set directly but can be deleted.
+
+### Mark command mode
+
+| Command         | Description                               |
+|:--------------- |:----------------------------------------- |
+| `:marks`        | list info for all current marks           |
+| `:marks aB0`    | list info for marks a, B and 0            |
+| `:delmarks aB2` | delete marks a, B and 0                   |
+| `:delmarks!`    | delete all letter marks in current buffer |
+
 ---
 
 | prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Mult Neovim Windows][3] |

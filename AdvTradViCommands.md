@@ -190,20 +190,16 @@ will find your vim editing session frozen.  Type `<C-Q>` to unlock.
 Marks allow you to set locations to either be able to jump to
 or use with *normal mode* editing commands.
 
-Marks within a given buffer are denoted via letters `a-z`.  For marks between
-different buffers, use letters `A-Z`.  The mark is a "zero-width" entity
-between the cursor and the preceding character.
+Marks within the file being edited are denoted via letters `a-z`.
+A mark is a "zero-width" entity between the cursor and the preceding character.
 
 | Command   | Description                                                  |
 |:---------:|:------------------------------------------------------------ |
 | `ma`      | set mark `a` for the current editing buffer                  |
-| `mB`      | set mark `B` for all buffers                                 |
 | `` `a ``  | jump to mark `a` current buffer                              |
-| `` `B ``  | jump to mark `B` current or another editing buffer           |
 | `'a`      | jump to first non-space char in line with mark `a`           |
 | `` d`a `` | delete from cursor to mark `a`                               |
 | `` y`a `` | yank from cursor to mark `a`                                 |
-| `` y`B `` | yank from cursor to mark `B`, fails if not in current buffer |
 | `d'w`     | deletes current line thru line with mark `w`                 |
 
 Like a mark, the cursor is also a "zero-width" entity between the
