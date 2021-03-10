@@ -17,7 +17,5 @@ gist of the information in the ones before it.
 * [Regular Expressions](RegularExpressions.md)
 * [Configuring Neovim](Configurations.md)
 
-As Neovim goes to version 0.5 and Vim goes to 9.0, I
-feel that they are diverging to the point that I need
-to target one over the other.  Since I tend to use Neovim
-more than Vim, I chose it.
+Neovim has become my daily programming driver.  As such,
+I am testing this information against only nvim.
