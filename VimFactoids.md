@@ -46,7 +46,7 @@ with that buffer.
 | `:e file`     | same as above, for both, creates new buffer if necessary |
 | `:buffers`    | list buffers                                             |
 | `:ls`         | same as above, not the same as `!ls`                     |
-| `:b2`         | edit buffer 2 in current window (not commonly used)      |
+| `:b2`         | edit buffer 2 in current window                          |
 | `:new`        | open new window with a new empty buffer                  |
 | `:split`      | open new window but use the same buffer                  |
 | `:spl`        | same as above, basically 2 views of same buffer          |

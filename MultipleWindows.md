@@ -131,12 +131,15 @@ can switch between windows via clicking the "tab".
 
 Traditionally in vi one could interact with the Unix shell via
 
-| Command   | Description                                              |
-|:--------- |:----------------------------------------                 |
-| `:!<cmd>` | display output of shell command `<cmd>`                  |
-| `:sh`     | replace editing session with a new shell (not in Neovim) |
+| Command      | Description                                              |
+|:------------ |:-------------------------------------------------------- |
+| `:!<cmd>`    | display output of shell command `<cmd>`                  |
+| `:2,7!<cmd>` | replace lines 2 thru 7 with shell command output         |
+| `:.!<cmd>`   | replace current line with shell command output           |
+| `!!<cmd>`    | same as above but from *normal mode*                     |
+| `:sh`        | replace editing session with a new shell (not in Neovim) |
 
-Neovim/Vim allow you to open a shell in a separate editing Window.
+Both Neovim & Vim allow you to open a shell in a separate editing Window.
 The behaviors between Neovim and Vim are different, so I'll document
 the Neovim behavior.  Interacting with the terminal window as a
 terminal emulator is called *terminal mode*.  Neovim is emmulating
