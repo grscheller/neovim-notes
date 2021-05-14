@@ -10,6 +10,10 @@
 "" Remove Vim misfeatures and vulnerabilities
 set nomodeline
 
+"" Some plugins need a POSIX compatible shell
+"
+set shell=/bin/sh
+
 "" Improve Vi, not Clone Vi
 
 " More powerful backspacing in insert mode
@@ -34,9 +38,6 @@ set fileformats=unix,mac,dos
 """ Personnal preferences
 
 "" Configure features and behaviors
-
-" Setup color scheme
-colorscheme ron
 
 " Set default tabstops and replace tabs with spaces
 set tabstop=4
@@ -81,6 +82,9 @@ nnoremap <expr> <Leader>k ':dig<CR>a<C-K>'
 
 " Fix old vi normal mode inconsistancy between Y and D & C
 nnoremap Y y$
+
+" Open a vertical terminal in fish shell
+nnoremap <expr> <Leader>f ':vsplit<CR>:term fish<CR>i'
 
 " Use CTRL+arrow-keys to navigate between windows in normal mode
 nnoremap <C-Left> <C-W>h
@@ -185,14 +189,41 @@ Plug 'rust-lang/rust.vim'
 Plug 'ynkdir/vim-vimlparser'
 Plug 'syngan/vim-vimlint'
 
+" Iceberg colorscheme
+Plug 'cocopon/iceberg.vim'
+
+" Iceberg colorscheme
+Plug 'folke/tokyonight.nvim'
+
+" Colorize hexcodes and names like Blue
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
 
-"" Configure user settings for Syntastic
+"" Configure settings for Tokyo Night Colorscheme
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "quickfix", "__vista__", "terminal" ]
+
+"" Configure settings for Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_vim_checkers = ['vint', 'vimlint']
+let g:syntastic_shell = "/bin/sh"
 
 " Toggle Synastic into and out of passive mode
 nnoremap <Leader>st :SyntasticToggleMode<CR>
+
+"" Setup colors
+
+" Nvim-colorizer setup (create autocmds for filetypes)
+set termguicolors
+lua require'colorizer'.setup()
+
+" Colorscheme
+colorscheme tokyonight
+"colorscheme iceberg    " good for 4K monitors
+"colorscheme darkblue   " good for my cheap laptop monitor
+
