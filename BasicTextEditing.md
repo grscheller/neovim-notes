@@ -399,6 +399,7 @@ will result in multiple undo/redo events.
     $ nvim -r       # List swap files, then exit
     $ nvim -r file  # Recover crashed vim session, uses swap file
     $ nvim -h       # List help message for command-line options and exit
+    $ nvim -c :checkhealth   # Check health of Neovim instalation
 ```
 
 ### Dealing with whitespace characters
@@ -413,10 +414,32 @@ Helps when getting rid of tabs and trailing whitespace.
 
 ### Spell checking
 
-| Command        | Description             |
-|:-------------- |:----------------------- |
-| `:set spell`   | Turn spell checking on  |
-| `:set nospell` | Turn spell checking off |
+| Command         | Description             |
+|:--------------- |:----------------------- |
+| `:set spell`    | Turn spell checking on  |
+| `:set nospell`  | Turn spell checking off |
+| `:set invspell` | Toggle spell setting    |
+
+### Replace tabs with 4 spaces (as you type)
+
+Put the following commands in your
+`~/.config/nvim/init.vim` or `~/.vim/vimrc` file
+
+```
+   set tabstop=4
+   set shiftwidth=4
+   set softtabstop=4
+   set expandtab
+```
+
+Assuming the above 4 settings, to remove all existing
+tabs in the buffer and replace with 4 spaces,
+
+| Command  | Description                    |
+|:-------- |:------------------------------ |
+| `:retab` | Redo all the tabbing in buffer |
+
+To insert an actual tab, enter *insert mode* and type `<C-V><Tab>`.
 
 ### Detailed help
 
