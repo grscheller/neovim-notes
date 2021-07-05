@@ -1,8 +1,9 @@
 # Configuring Neovim
 
-## My current Neovim configuration
+## Neovim configurations
 
-* [~/.config/nvim/init.vim](init.vim)
+* My last [~/.config/nvim/init.vim](init_examples/last_init.vim)
+* My first [~/.config/nvim/init.lua](init_examples/first_init.lua)
 
 ## Periodically run :checkhealth
 
