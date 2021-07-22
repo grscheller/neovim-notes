@@ -69,7 +69,7 @@ Available mouse options are:
 | `n`    | for *normal mode*                    |
 | `v`    | for *visual mode*                    |
 | `i`    | for *insert mode*                    |
-| `c`    | *for command mode*                   |
+| `c`    | for *command mode*                   |
 | `a`    | all previous modes                   |
 | `h`    | all previous modes only when in help |
 | `r`    | for *hit-enter* and *more* prompts   |
