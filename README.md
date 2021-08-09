@@ -1,7 +1,9 @@
 # My Neovim Notes
 
 These notes are where I document the information
-I learn about vi/vim/nvim.
+I learn about vi/vim/nvim.  The focus is on how to
+use and configure the underlying editor.  It does
+not focus on how to use Vim Script nor Lua.
 
 I tried to put the MarkDown files linked below in
 an order where each one only relies on the
