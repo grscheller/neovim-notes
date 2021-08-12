@@ -178,8 +178,8 @@ paq {'syngan/vim-vimlint'}
 -- Provide Fish syntax highlighting support
 paq {'dag/vim-fish'}
 
--- Install my hacked version of Tokyo Night colorschemes
-paq {'grscheller/tokyonight.nvim'}
+-- Install colorscheme
+paq {'folke/tokyonight.nvim'}
 
 -- Colorize hexcodes and names like Blue
 paq {'norcalli/nvim-colorizer.lua'}

@@ -186,8 +186,8 @@ Plug 'syngan/vim-vimlint'
 " Provide Fish syntax highlighting support
 Plug 'dag/vim-fish'
 
-" Install colorschemes
-Plug 'grscheller/tokyonight.nvim'
+" Install colorscheme
+Plug 'folke/tokyonight.nvim'
 
 " Colorize hexcodes and names like Blue
 Plug 'norcalli/nvim-colorizer.lua'
