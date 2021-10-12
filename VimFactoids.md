@@ -1,5 +1,9 @@
 # Vim Factoids
 
+These "factoids" are generally true of both Vim and Neovim.
+At this time I have no good way to verify them directly
+with vim since I no longer install it.
+
 ## Buffers and registers in Vim
 
 These are areas that can store text.  The three most important ones,
@@ -74,8 +78,8 @@ Available mouse options are:
 | `h`    | all previous modes only when in help |
 | `r`    | for *hit-enter* and *more* prompts   |
 
-You can send mouse events directly to some terminal
-emulators instead of the editor by holding down the SHIFT key.
+You can send mouse events directly to some terminal emulator
+programs instead of the editor by holding down the SHIFT key.
 
 When I first started using the mouse in Vim, I found it
 helpful to just set `mouse=n`.  As I got more comfortable
@@ -86,8 +90,8 @@ in Neovim.
 
 Neovim requires an external program, such as xsel for Unix,
 so that the `"*` and `"+` registers interact with the primary
-and secondry clipboard buffers.  Depending on how it was compiled,
-Vim could natively do this.
+and secondary clipboard buffers.  Depending on how it was compiled,
+Vim can natively do this.
 
 ## Configuring wildmenu
 
@@ -101,23 +105,32 @@ following lines in your ~/.config/nvim/init.vim file.
 
 ## Vi and Vim differences
 
-* Vi only has one level of undo/redo, `u` undo the
+On modern Unix systems, the vi "executable" is either
+a symbolic link to the traditional BSD based ex, or
+a symbolic (sometimes hard) link to vim.  If the vim executable
+starts with the name vi, it launches in so called vi compatibility
+mode.  Vim in vi compatibility mode is neither POSIX compliant
+nor an ex clone.
+
+* Vi only has one level of undo/redo, `u` undoes the
   last change and, if hit again, will redo the change.
-  `<C-R>`has no effect.
-* On modern Linux systems, the vi "executable" is either a
-  symlink to ex, traditional BSD based vi, or a symlink
-  to vim.  If the vim executable starts with the name vi,
-  it launches in vi compatibility mode.  Vim in compatibility
-  mode is neither POSIX compliant nor an ex clone.
-* In vi, you cannot navigate around file in *insert mode* or
-  *replace mode* with the arrow keys.
+  `<C-R>`has no effect, but `R` does puts vi into *replace mode*.
 * In vi, hitting `<Insert>` while in *insert mode* or *replace mode*
   does not swap you between them.
+* In vi, you cannot navigate around file in *insert mode* or
+  *replace mode* with the arrow keys.
 * In vi, `<C-O>` does not let you execute a *normal mode*
   command while in *insert mode*.
 * There are fewer vi *insert mode* commands.
-* In vi the *insert mode* commands only interact with the text
-  you have just typed in, not what is in the file buffer.
+* In vi *normal mode* the `g`, ,`K`, `q`, `v`, and `V` keys are
+  all unbound.
+
+In *insert mode* vi commands only interact with the text
+you have just typed in, not what is in the file buffer.
+If `backspace` is not set, Vim duplicates this old vi behavior.
+Setting `backspace` to `"indent,eol,start"` is Neovim's default
+setting as well as Vim's default setting when a user's `.vimrc` is not
+present.
 
 ---
 

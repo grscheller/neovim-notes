@@ -6,7 +6,7 @@
 * A more fleshed out [~/.vim/vimrc](init_examples/later_vimrc)
 * My last [~/.config/nvim/init.vim](init_examples/last_init.vim)
 * My first [~/.config/nvim/init.lua](init_examples/first_init.lua)
-* My current [~/.config/nvim/init.lua](init_examples/current_init.lua)
+* My last stable [~/.config/nvim/init.lua](init_examples/later_init.lua)
 
 ## Periodically run :checkhealth
 
