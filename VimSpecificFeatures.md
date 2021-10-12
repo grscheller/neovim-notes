@@ -32,7 +32,6 @@ Your current location in the jump list is always 0.
 | `<C-O>`  | go back to previous location in jump list   |
 | `<C-I>`  | go forward to next location in jump list    |
 | `3<C-O>` | go back 3 jumps in jump list                |
-| `m'`     | explicitly add a jump to the jumplist       |
 
 ## Change Lists
 
@@ -252,7 +251,7 @@ be set directly but can be deleted.
 |:--------------- |:----------------------------------------- |
 | `:marks`        | list info for all current marks           |
 | `:marks aB0`    | list info for marks a, B and 0            |
-| `:delmarks aB2` | delete marks a, B and 0                   |
+| `:delmarks aB2` | delete marks a, B and 2                   |
 | `:delmarks!`    | delete all letter marks in current buffer |
 
 ---

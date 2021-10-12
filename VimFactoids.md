@@ -122,7 +122,7 @@ nor an ex clone.
 * In vi, `<C-O>` does not let you execute a *normal mode*
   command while in *insert mode*.
 * There are fewer vi *insert mode* commands.
-* In vi *normal mode* the `g`, ,`K`, `q`, `v`, and `V` keys are
+* In vi *normal mode* the `g`, `K`, `q`, `v`, and `V` keys are
   all unbound.
 
 In *insert mode* vi commands only interact with the text
