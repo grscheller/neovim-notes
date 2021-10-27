@@ -9,35 +9,28 @@
        :PaqInstall  <- Install all packages listed in configuration below
        :PaqUpdate   <- Update packages already on system
        :PaqClean    <- Remove packages not in configuration
-       :PaqSync     <- Execute all three operations above
+       :PaqSync     <- Async execute all three operations above
 
      Location Paq stores repos: ~/.local/share/nvim/site/pack/paqs/start/ ]]
 require'paq' {
     -- Paq manages itself
     "savq/paq-nvim";
-
     -- Colorize hexcodes and names like Blue, Yellow or Green
     "norcalli/nvim-colorizer.lua";
-
     -- Tokyo Night colorscheme
     "folke/tokyonight.nvim";
-
     -- Statusline - fork of hoob3rt/lualine.nvim
     "nvim-lualine/lualine.nvim";
     "kyazdani42/nvim-web-devicons";
-
     -- define keybindings; show keybindings in popup
     "folke/which-key.nvim";
-
     -- Install language modules for built-in treesitter
     "nvim-treesitter/nvim-treesitter";
-
     -- Fuzzy finder over lists
     "nvim-telescope/telescope.nvim";
     "nvim-lua/plenary.nvim";
     "nvim-lua/popup.nvim";
     "sharkdp/fd";
-
     -- Built-in LSP client config, completion and snippets support
     "neovim/nvim-lspconfig";
     "hrsh7th/nvim-cmp";
@@ -47,12 +40,10 @@ require'paq' {
     "L3MON4D3/LuaSnip";
     "saadparwaiz1/cmp_luasnip";
     "rafamadriz/friendly-snippets";
-
     -- Extra functionality over rust analyzer
     "simrat39/rust-tools.nvim";
-
     -- Config built-in LSP client for Metals Scala language server
-    "scalameta/nvim-metals"
+    "scalameta/nvim-metals";
 }
 
 --[[ Set some default behaviors ]]
@@ -68,18 +59,15 @@ vim.o.fileencoding = "utf-8"
 vim.o.spelllang = "en_us"
 vim.o.fileformats = "unix,mac,dos"
 
--- Sit do
 --[[ Set default tabstops and replace tabs with spaces ]]
 vim.o.tabstop = 4       -- Display hard tab as 4 spaces
 vim.o.shiftwidth = 4    -- Number of spaces used for auto-indent
 vim.o.softtabstop = 4   -- Insert/delete 4 spaces when inserting <Tab>/<BS>
-vim.o.expandtab = true
-
--- Expand tabs to spaces when inserting tabs
+vim.o.expandtab = true  -- Expand tabs to spaces when inserting tabs
 
 --[[ Settings for LSP client ]]
-vim.o.timeoutlen = 1000  -- Milliseconds to wait for key mapped sequence to complete
-vim.o.updatetime = 300  -- Set update time for CursorHold event
+vim.o.timeoutlen = 1000   -- Milliseconds to wait for key mapped sequence to complete
+vim.o.updatetime = 300    -- Set update time for CursorHold event
 vim.o.signcolumn = "yes"  -- Fixes first column, reduces jitter
 vim.o.shortmess = "atToOc"
 
@@ -92,9 +80,8 @@ vim.o.sidescroll = 1     -- Horizontally scroll nicely
 vim.o.sidescrolloff = 5  -- Keep cursor away from side of window
 vim.o.splitbelow = true  -- Horizontally split below
 vim.o.splitright = true  -- Vertically split to right
-vim.o.showcmd = true     -- Show partial normal mode commands in lower right corner
-vim.o.hlsearch = true       -- Highlight search results
-vim.o.incsearch = true      -- Highlight search matches as you type
+vim.o.hlsearch = true     -- Highlight search results
+vim.o.incsearch = true    -- Highlight search matches as you type
 vim.o.nrformats = "bin,hex,octal,alpha"  -- bases and single letters used for <C-A> & <C-X>
 vim.o.matchpairs = vim.o.matchpairs .. ",<:>,「:」"  -- Additional matching pairs of characters
 
@@ -111,7 +98,7 @@ vim.api.nvim_exec([[
     augroup end
 ]], false)
 
---[[ Highlight what is yanked ]]
+--[[ Give visual feedback for yanked text ]]
 vim.api.nvim_exec([[
     augroup highlight_yank
         au!
@@ -119,7 +106,7 @@ vim.api.nvim_exec([[
     augroup end
 ]], false)
 
---[[ Setup colorsscemes and statusline ]]
+--[[ Setup colorssceme ]]
 vim.o.termguicolors = true
 require'colorizer'.setup()
 
@@ -128,16 +115,13 @@ vim.g.tokyonight_colors = {bg = "#000000"}
 vim.g.tokyonight_italic_functions = 1
 vim.g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 
--- vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[colorscheme tokyonight]]
 
-require'nvim-web-devicons'.setup {
-    default = true
-}
-
-require'lualine'.setup {
-    options = {theme = "moonfly"}
-}
+--[[ Setup statusline ]]
+vim.o.showcmd = false   -- Show partial normal mode commands lower right corner
+vim.o.showmode = false  -- Show mode lower left corner
+require'nvim-web-devicons'.setup {default = true}
+require'lualine'.setup {options = {theme = "moonfly"}}
 
 --[[ Setup folke/which-key.nvim ]]
 local wk = require'which-key'
@@ -204,7 +188,7 @@ myLineNumberToggle = function()
     end
 end
 
--- Normal mode keybindings
+-- Normal mode keybinding for above Lua function
 wk.register {
     ["<Space>n"] = {":lua myLineNumberToggle()<CR>", "Line Number Toggle"}
 }
@@ -233,54 +217,46 @@ cmp.setup {
     },
     mapping = {
         ['<C-Space>'] = cmp.mapping.complete(),
-
         ['<C-E>'] = cmp.mapping.close(),
-
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true
-        },
-
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif myHasWordsBefore() then
-                cmp.complete()
-            else
-                fallback()
-            end
-        end, {"i", "s"}),
-
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {"i", "s"}),
-
+            select = true },
+        ['<Tab>'] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_next_item()
+                elseif luasnip.expand_or_jumpable() then
+                    luasnip.expand_or_jump()
+                elseif myHasWordsBefore() then
+                    cmp.complete()
+                else
+                    fallback()
+                end
+            end, {"i", "s"}),
+        ['<S-Tab>'] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_prev_item()
+                elseif luasnip.jumpable(-1) then
+                    luasnip.jump(-1)
+                else
+                    fallback()
+                end
+            end, {"i", "s"}),
         ['<C-D>'] = cmp.mapping.scroll_docs(-4),
-
         ['<C-F>'] = cmp.mapping.scroll_docs(4)
     },
     sources = {
-        {name = 'nvim_lsp'},
         {name = 'luasnip'},
+        {name = 'nvim_lsp'},
+        {name = 'treesitter'},
         {name = 'nvim_lua'},
-        {name = 'path'},
-        {
-            name = 'buffer',
-            opts = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end
-            }
-        },
-        {name = 'treesitter'}
+        {name = 'buffer',
+         opts = {
+             get_bufnrs = function()
+                 return vim.api.nvim_list_bufs()
+             end}},
+        {name = 'path'}
     }
 }
 
@@ -299,9 +275,7 @@ local lsp_servers = {
 }
 
 for _, lsp_server in ipairs(lsp_servers) do
-    nvim_lsp[lsp_server].setup {
-        capabilities = lsp_capabilities
-    }
+    nvim_lsp[lsp_server].setup {capabilities = lsp_capabilities}
 end
 
 --[[ Rust configuration, rust-tools.nvim will call lspconfig itself ]]
@@ -309,7 +283,7 @@ local rust_opts = {
     tools = {
         autoSetHints = true,
         hover_with_actions = true,
-        inlay_hints ={
+        inlay_hints = {
             show_parameter_hints = false,
             parameter_hints_prefix = "",
             other_hints_prefix = ""
@@ -318,14 +292,14 @@ local rust_opts = {
     -- Options to be sent to nvim-lspconfig
     -- overriding defaults set by rust-tools.nvim
     server = {
-        settings = {}
+        settings = {capabilities = lsp_capabilities}
     }
 }
 
 require('rust-tools').setup(rust_opts)
 
 --[[ Metals configuration ]]
-vim.g.metals_server_version = '0.10.7'  -- See https://scalameta.org/metals/docs/editors/overview.html
+vim.g.metals_server_version = '0.10.8'  -- See https://scalameta.org/metals/docs/editors/overview.html
 metals_config = require'metals'.bare_config()
 
 metals_config.settings = {showImplicitArguments = true}
