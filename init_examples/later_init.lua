@@ -23,7 +23,8 @@ require'paq' {
     "folke/tokyonight.nvim";
 
     -- Statusline - fork of hoob3rt/lualine.nvim
-    "shadmansaleh/lualine.nvim";
+    "nvim-lualine/lualine.nvim";
+    "kyazdani42/nvim-web-devicons";
 
     -- define keybindings; show keybindings in popup
     "folke/which-key.nvim";
@@ -77,7 +78,7 @@ vim.o.expandtab = true
 -- Expand tabs to spaces when inserting tabs
 
 --[[ Settings for LSP client ]]
-vim.o.timeoutlen = 800  -- Milliseconds to wait for key mapped sequence to complete
+vim.o.timeoutlen = 1000  -- Milliseconds to wait for key mapped sequence to complete
 vim.o.updatetime = 300  -- Set update time for CursorHold event
 vim.o.signcolumn = "yes"  -- Fixes first column, reduces jitter
 vim.o.shortmess = "atToOc"
@@ -110,6 +111,14 @@ vim.api.nvim_exec([[
     augroup end
 ]], false)
 
+--[[ Highlight what is yanked ]]
+vim.api.nvim_exec([[
+    augroup highlight_yank
+        au!
+        au TextYankPost * silent! lua vim.highlight.on_yank{timeout=600, on_visual=false}
+    augroup end
+]], false)
+
 --[[ Setup colorsscemes and statusline ]]
 vim.o.termguicolors = true
 require'colorizer'.setup()
@@ -119,11 +128,16 @@ vim.g.tokyonight_colors = {bg = "#000000"}
 vim.g.tokyonight_italic_functions = 1
 vim.g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 
-require'lualine'.setup {
-    options = {theme = "tokyonight"}
+-- vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme tokyonight]]
+
+require'nvim-web-devicons'.setup {
+    default = true
 }
 
-vim.cmd[[colorscheme tokyonight]]
+require'lualine'.setup {
+    options = {theme = "moonfly"}
+}
 
 --[[ Setup folke/which-key.nvim ]]
 local wk = require'which-key'
@@ -140,7 +154,7 @@ wk.setup {
 wk.register {
     ["<Space><Space>"] = {":nohlsearch<CR>", "Clear hlsearch"},
     ["Y"] = {"y$", "Yank to End of Line"}, -- Fix between Y, D & C inconsistency
-    ["gp"] = {"`[v`]", "Reselect Previous Changed Text"},
+    ["gp"] = {"`[v`]", "Reselect Previous Changed/Yanked Text"},
     ["<Space>sp"] = {":set invspell<CR>", "Toggle Spelling"},
     ["<Space>ws"] = {":%s/\\s\\+$//<CR>", "Trim Trailing White Space"},
     ["<Space>t"] = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"},
@@ -154,6 +168,8 @@ wk.register {
     ["<Space>fg"] = {":Telescope live_grep<CR>", "Live Grep"},
     ["<Space>fh"] = {":Telescope help_tags<CR>", "Help Tags"},
     ["<Space>fr"] = {":Telescope oldfiles<CR>", "Open Recent File"},
+    -- Treesitter related keybindings
+    ["<Space>h"] = {":TSBufToggle highlight<CR>", "Treesitter Highlight Toggle"},
     -- Move windows around using CTRL-hjkl
     ["<C-H>"] = {"<C-W>H", "Move Window LHS"},
     ["<C-J>"] = {"<C-W>J", "Move Window BOT"},
@@ -270,6 +286,10 @@ cmp.setup {
 
 --[[ LSP Configurations ]]
 local nvim_lsp = require'lspconfig'
+local cmp_lsp = require'cmp_nvim_lsp'
+
+local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+lsp_capabilities = cmp_lsp.update_capabilities(lsp_capabilities)
 
 local lsp_servers = {
     "bashls", -- Bash-language-server (pacman or sudo npm i -g bash-language-server)
@@ -280,7 +300,7 @@ local lsp_servers = {
 
 for _, lsp_server in ipairs(lsp_servers) do
     nvim_lsp[lsp_server].setup {
-        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        capabilities = lsp_capabilities
     }
 end
 
