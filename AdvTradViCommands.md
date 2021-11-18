@@ -150,7 +150,7 @@ in BasicTextEditing, or
 ```
 
 If you accidentally typed `<C-X>` while in insert mode, typing any
-non-control character, excect `s` will get you back.  If you have
+non-control character, except `s` will get you back.  If you have
 terminal flow control turned on, and you hit the unfortunate key
 combination `<C-X><C-S>`, something EMACS users are likely to do, you
 will find your vim editing session frozen.  Type `<C-Q>` to unlock.
