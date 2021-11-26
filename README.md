@@ -1,13 +1,7 @@
 # My Neovim Notes
 
-These notes are where I document the information
-I learn about vi/vim/nvim.  The focus is on how to
-use and configure the underlying editor.  It does
-not focus on how to use Vim Script nor Lua.
-
-I tried to put the MarkDown files linked below in
-an order where each one only relies on the
-gist of the information in the ones before it.
+These notes evolved over many years.  They originally
+started out as a text file vi cheatsheet.
 
 * [Absolute Minimal Text Editing](AbsoluteMinimalTextEditing.md)
 * [Basic Text Editing](BasicTextEditing.md)
@@ -20,4 +14,4 @@ gist of the information in the ones before it.
 * [Configuring Neovim](Configurations.md)
 
 Neovim has become my daily programming driver.  As such,
-I am testing this information against only nvim.
+I am only testing this information against nvim.
