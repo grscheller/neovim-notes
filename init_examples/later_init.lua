@@ -1,17 +1,8 @@
 -- Neovim configuration ~/.config/nvim/init.lua
 
---[[ Bootstrap Paq by cloning it into the "right place"
-
+--[[ Bootstrap Paq by cloning it to standard Neovim package location
        git clone https://github.com/savq/paq-nvim.git \
-           ~/.local/share/nvim/site/pack/paqs/opt/paq-nvim
-
-     Paq Commands:
-       :PaqInstall  <- Install all packages listed in configuration below
-       :PaqUpdate   <- Update packages already on system
-       :PaqClean    <- Remove packages not in configuration
-       :PaqSync     <- Async execute all three operations above
-
-     Location Paq stores repos: ~/.local/share/nvim/site/pack/paqs/start/ ]]
+         ~/.local/share/nvim/site/pack/paqs/start/paq-nvim  ]]
 require'paq' {
     -- Paq manages itself
     "savq/paq-nvim";
@@ -21,7 +12,6 @@ require'paq' {
     "folke/tokyonight.nvim";
     -- Statusline - fork of hoob3rt/lualine.nvim
     "nvim-lualine/lualine.nvim";
-    "kyazdani42/nvim-web-devicons";
     -- define keybindings; show keybindings in popup
     "folke/which-key.nvim";
     -- Install language modules for built-in treesitter
@@ -31,31 +21,30 @@ require'paq' {
     "nvim-lua/plenary.nvim";
     "nvim-lua/popup.nvim";
     "sharkdp/fd";
-    -- Built-in LSP client config, completion and snippets support
-    "neovim/nvim-lspconfig";
-    "hrsh7th/cmp-nvim-lsp";
-    "hrsh7th/cmp-buffer";
-    "hrsh7th/cmp-path";
-    "hrsh7th/cmp-cmdline";
-    "hrsh7th/nvim-cmp";
+    -- Configs for Neovim's built-in LSP client
+    "neovim/nvim-lspconfig";  -- Provided by core neovim team
+    "simrat39/rust-tools.nvim";  -- Extra functionality over rust analyzer
+    "scalameta/nvim-metals";  -- Config for Scala Metals
+    -- Snippets support
     "L3MON4D3/LuaSnip";
-    "saadparwaiz1/cmp_luasnip";
     "rafamadriz/friendly-snippets";
-    -- Extra functionality over rust analyzer
-    "simrat39/rust-tools.nvim";
-    -- Config built-in LSP client for Metals Scala language server
-    "scalameta/nvim-metals";
+    -- Completion support via nvim-cmp
+    "hrsh7th/nvim-cmp";
+    "hrsh7th/cmp-buffer";
+    "hrsh7th/cmp-cmdline";
+    "saadparwaiz1/cmp_luasnip";
+    "hrsh7th/cmp-nvim-lsp";
+    "hrsh7th/cmp-nvim-lua";
+    "hrsh7th/cmp-path";
 }
 
 --[[ Set some default behaviors ]]
-vim.o.hidden = true  -- Allow hidden buffers
 vim.o.shell = "/bin/sh"  -- Some packages need a POSIX compatible shell
 vim.o.path = vim.o.path .. ".,**"  -- Allow gf and :find to use recursive sub-folders
 vim.o.wildmenu = true                 -- Make tab completion in
 vim.o.wildmode = "longest:full,full"  -- command mode more useful.
 
---[[ Set default encoding, localizations, and file formats ]]
-vim.o.encoding = "utf-8"
+--[[ Set default fileencoding, localizations, and file formats ]]
 vim.o.fileencoding = "utf-8"
 vim.o.spelllang = "en_us"
 vim.o.fileformats = "unix,mac,dos"
@@ -73,16 +62,14 @@ vim.o.signcolumn = "yes"  -- Fixes first column, reduces jitter
 vim.o.shortmess = "atToOc"
 
 --[[ Some personnal preferences ]]
-vim.o.history = 10000    -- Number lines of command history to keep
 vim.o.mouse = "a"        -- Enable mouse for all modes
+vim.o.joinspaces = true  -- Use 2 spaces when joinig sentances
 vim.o.scrolloff = 2      -- Keep cursor away from top/bottom of window
 vim.o.wrap = false       -- Don't wrap lines
 vim.o.sidescroll = 1     -- Horizontally scroll nicely
 vim.o.sidescrolloff = 5  -- Keep cursor away from side of window
 vim.o.splitbelow = true  -- Horizontally split below
 vim.o.splitright = true  -- Vertically split to right
-vim.o.hlsearch = true     -- Highlight search results
-vim.o.incsearch = true    -- Highlight search matches as you type
 vim.o.nrformats = "bin,hex,octal,alpha"  -- bases and single letters used for <C-A> & <C-X>
 vim.o.matchpairs = vim.o.matchpairs .. ",<:>,「:」"  -- Additional matching pairs of characters
 
@@ -120,14 +107,40 @@ vim.g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 vim.cmd[[colorscheme tokyonight]]
 
 --[[ Setup statusline ]]
-vim.o.showcmd = false   -- Show partial normal mode commands lower right corner
-vim.o.showmode = false  -- Show mode lower left corner
-require'nvim-web-devicons'.setup {default = true}
-require'lualine'.setup {options = {theme = "moonfly"}}
+vim.o.showcmd = false
+vim.o.showmode = false
+require'lualine'.setup {
+    options = {
+        icons_enabled = true,
+        theme = 'moonfly',
+        component_separators = {left = '', right = ''},
+        section_separators = {left = '', right = ''},
+        disabled_filetypes = {},
+        always_divide_middle = true
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff', {'diagnostics', sources = {'nvim_diagnostic'}}},
+        lualine_c = {'filename'},
+        lualine_x = {'filetype', 'encoding'},
+        lualine_y = {'location'},
+        lualine_z = {'progress'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {'progress'},
+        lualine_z = {}
+    },
+    tabline = {},
+    extensions = {}
+}
 
 --[[ Setup folke/which-key.nvim ]]
-local wk = require'which-key'
-wk.setup {
+local wk = require'which-key'  -- used to define all keybindings
+wk.setup {                     -- except those for nvim-cmp
     plugins = {
         spelling = {
             enabled = true,
@@ -140,7 +153,6 @@ wk.setup {
 wk.register {
     ["<Space><Space>"] = {":nohlsearch<CR>", "Clear hlsearch"},
     ["Y"] = {"y$", "Yank to End of Line"}, -- Fix between Y, D & C inconsistency
-    ["gp"] = {"`[v`]", "Reselect Previous Changed/Yanked Text"},
     ["<Space>sp"] = {":set invspell<CR>", "Toggle Spelling"},
     ["<Space>ws"] = {":%s/\\s\\+$//<CR>", "Trim Trailing White Space"},
     ["<Space>t"] = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"},
@@ -251,12 +263,52 @@ cmp.setup {
         ['<C-D>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
         ['<C-F>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'})
     },
-    sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'luasnip'}}, {{name = 'buffer'}})
+--  From hrsh7th/nvim-cmp
+--  I don't understand what is going on here, can't find documentation
+--  on cmp.config.sources nor understand the plug-in's source code
+--                        
+--  sources = cmp.config.sources({
+--      {name = 'nvim_lsp'},
+--      {name = 'luasnip'}
+--  }, {
+--      {name = 'buffer',
+--       opts = {
+--           get_bufnrs = function()
+--               return vim.api.nvim_list_bufs()
+--           end}},
+--      {name = 'path'}
+--  })
+--
+--  Based on n3wborn/nvim config files.
+    sources = {
+        {name = 'nvim_lsp'},
+        {name = 'luasnip'},
+        {name = 'buffer',
+         options = {
+             get_bufnrs = function()
+                 return vim.api.nvim_list_bufs()
+             end
+         }},
+        {name = 'path'},
+        {name = 'nvim_lua'}
+    }
 }
 
-cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
+cmp.setup.cmdline('/', {
+    sources = {
+        {name = 'buffer'}
+    }
+})
 
-cmp.setup.cmdline(':', {sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})})
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        {name = 'path'}
+    }, {
+        {name = 'cmdline'}
+    }, {
+        {name = 'nvim-lua'}      -- Not sure about this one?
+    })
+})
 
 --[[ LSP Configurations ]]
 local nvim_lsp = require'lspconfig'
@@ -266,14 +318,20 @@ local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp_capabilities = cmp_lsp.update_capabilities(lsp_capabilities)
 
 local lsp_servers = {
+    -- For list of language servers, follow first
+    -- link of https://github.com/neovim/nvim-lspconfig
     "bashls", -- Bash-language-server (pacman or sudo npm i -g bash-language-server)
     "clangd", -- C and C++ - both clang and gcc
-    "html",   -- HTML (npm i -g vscode-langservers-extracted)
+    "cssls",  -- vscode-css-language-servers
+    "html",   -- vscode-html-language-servers
+    "jsonls", -- vscode-json-language-servers
     "pyright" -- Pyright for Python (pacman or npm)
 }
 
 for _, lsp_server in ipairs(lsp_servers) do
-    nvim_lsp[lsp_server].setup {capabilities = lsp_capabilities}
+    nvim_lsp[lsp_server].setup {
+        capabilities = lsp_capabilities
+    }
 end
 
 --[[ Rust configuration, rust-tools.nvim will call lspconfig itself ]]
@@ -297,7 +355,7 @@ local rust_opts = {
 require('rust-tools').setup(rust_opts)
 
 --[[ Metals configuration ]]
-vim.g.metals_server_version = '0.10.8'  -- See https://scalameta.org/metals/docs/editors/overview.html
+vim.g.metals_server_version = '0.10.9'  -- See https://scalameta.org/metals/docs/editors/overview.html
 metals_config = require'metals'.bare_config()
 
 metals_config.settings = {showImplicitArguments = true}
