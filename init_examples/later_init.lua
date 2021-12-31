@@ -25,17 +25,17 @@ require'paq' {
     "neovim/nvim-lspconfig";  -- Provided by core neovim team
     "simrat39/rust-tools.nvim";  -- Extra functionality over rust analyzer
     "scalameta/nvim-metals";  -- Config for Scala Metals
+    -- Completion support via nvim-cmp
+    "hrsh7th/cmp-nvim-lsp";
+    "hrsh7th/cmp-buffer";
+    "hrsh7th/cmp-path";
+    "hrsh7th/cmp-cmdline";
+    "hrsh7th/nvim-cmp";
+    "hrsh7th/cmp-nvim-lua";
     -- Snippets support
     "L3MON4D3/LuaSnip";
-    "rafamadriz/friendly-snippets";
-    -- Completion support via nvim-cmp
-    "hrsh7th/nvim-cmp";
-    "hrsh7th/cmp-buffer";
-    "hrsh7th/cmp-cmdline";
     "saadparwaiz1/cmp_luasnip";
-    "hrsh7th/cmp-nvim-lsp";
-    "hrsh7th/cmp-nvim-lua";
-    "hrsh7th/cmp-path";
+    "rafamadriz/friendly-snippets";
 }
 
 --[[ Set some default behaviors ]]
@@ -60,6 +60,9 @@ vim.o.timeoutlen = 1000   -- Milliseconds to wait for key mapped sequence to com
 vim.o.updatetime = 300    -- Set update time for CursorHold event
 vim.o.signcolumn = "yes"  -- Fixes first column, reduces jitter
 vim.o.shortmess = "atToOc"
+
+--[[ Save undo history in ~/.local/share/nvim/undo/ ]]
+vim.o.undofile = true  -- nvim never deletes the undo histories stored here
 
 --[[ Some personnal preferences ]]
 vim.o.mouse = "a"        -- Enable mouse for all modes
@@ -138,53 +141,6 @@ require'lualine'.setup {
     extensions = {}
 }
 
---[[ Setup folke/which-key.nvim ]]
-local wk = require'which-key'  -- used to define all keybindings
-wk.setup {                     -- except those for nvim-cmp
-    plugins = {
-        spelling = {
-            enabled = true,
-            suggestions = 36
-        }
-    }
-}
-
--- Normal mode keybindings
-wk.register {
-    ["<Space><Space>"] = {":nohlsearch<CR>", "Clear hlsearch"},
-    ["Y"] = {"y$", "Yank to End of Line"}, -- Fix between Y, D & C inconsistency
-    ["<Space>sp"] = {":set invspell<CR>", "Toggle Spelling"},
-    ["<Space>ws"] = {":%s/\\s\\+$//<CR>", "Trim Trailing White Space"},
-    ["<Space>t"] = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"},
-    ["<Space>k"] = {":dig<CR>a<C-K>", "Pick & Enter Diagraph"},
-    ["<Space>l"] = {":mode<CR>", "Clear & Redraw Screen"},  -- Lost <C-L> for this below
-    ["<Space>b"] = {":enew<CR>", "New Unnamed Buffer"},
-    -- Telescope related keybindings
-    ["<Space>f"] = {name = "+Telescope"},
-    ["<Space>fb"] = {":Telescope buffers<CR>", "Buffers"},
-    ["<Space>ff"] = {":Telescope find_files<CR>", "Find File"},
-    ["<Space>fg"] = {":Telescope live_grep<CR>", "Live Grep"},
-    ["<Space>fh"] = {":Telescope help_tags<CR>", "Help Tags"},
-    ["<Space>fr"] = {":Telescope oldfiles<CR>", "Open Recent File"},
-    -- Treesitter related keybindings
-    ["<Space>h"] = {":TSBufToggle highlight<CR>", "Treesitter Highlight Toggle"},
-    -- Move windows around using CTRL-hjkl
-    ["<C-H>"] = {"<C-W>H", "Move Window LHS"},
-    ["<C-J>"] = {"<C-W>J", "Move Window BOT"},
-    ["<C-K>"] = {"<C-W>K", "Move Window TOP"},
-    ["<C-L>"] = {"<C-W>L", "Move Window RHS"},
-    -- Navigate between windows using CTRL+arrow-keys
-    ["<M-Left>"]  = {"<C-W>h", "Goto Window Left" },
-    ["<M-Down>"]  = {"<C-W>j", "Goto Window Down" },
-    ["<M-Up>"]    = {"<C-W>k", "Goto Window Up"   },
-    ["<M-Right>"] = {"<C-W>l", "Goto Window Right"},
-    -- Resize windows using ALT-hjkl for Linux
-    ["<M-h>"] = {"2<C-W><", "Make Window Narrower"},
-    ["<M-j>"] = {"2<C-W>-", "Make Window Shorter" },
-    ["<M-k>"] = {"2<C-W>+", "Make Window Taller"  },
-    ["<M-l>"] = {"2<C-W>>", "Make Window Wider"   }
-}
-
 --[[ Toggle between 3 line numbering states ]]
 vim.o.number = false
 vim.o.relativenumber = false
@@ -202,9 +158,76 @@ myLineNumberToggle = function()
     end
 end
 
--- Normal mode keybinding for above Lua function
+--[[ Setup folke/which-key.nvim ]]
+local wk = require'which-key'  -- used to define all keybindings
+wk.setup {                     -- except those for nvim-cmp
+    plugins = {
+        spelling = {
+            enabled = true,
+            suggestions = 36
+        }
+    }
+}
+
+--[[ Normal mode keybindings ]]
 wk.register {
-    ["<Space>n"] = {":lua myLineNumberToggle()<CR>", "Line Number Toggle"}
+    -- Navigate between windows using CTRL+arrow-keys
+    ["<C-h>"] = {"<C-W>h", "Goto Window Left" },
+    ["<C-j>"] = {"<C-W>j", "Goto Window Down" },
+    ["<C-k>"] = {"<C-W>k", "Goto Window Up"   },
+    ["<C-l>"] = {"<C-W>l", "Goto Window Right"},
+    -- Move windows around using CTRL-hjkl
+    ["<M-Left>"]  = {"<C-W>H", "Move Window LHS"},
+    ["<M-Down>"]  = {"<C-W>J", "Move Window BOT"},
+    ["<M-Up>"]    = {"<C-W>K", "Move Window TOP"},
+    ["<M-Right>"] = {"<C-W>L", "Move Window RHS"},
+    -- Resize windows using ALT-hjkl for Linux
+    ["<M-h>"] = {"2<C-W><", "Make Window Narrower"},
+    ["<M-j>"] = {"2<C-W>-", "Make Window Shorter" },
+    ["<M-k>"] = {"2<C-W>+", "Make Window Taller"  },
+    ["<M-l>"] = {"2<C-W>>", "Make Window Wider"   }
+}
+
+wk.register {
+    ["<Space>"] = {
+        ["<Space>"] = {":nohlsearch<CR>", "Clear hlsearch"},
+        b = {":enew<CR>", "New Unnamed Buffer"},
+        h = {":TSBufToggle highlight<CR>", "Treesitter Highlight Toggle"},
+        k = {":dig<CR>a<C-K>", "Pick & Enter Diagraph"},
+        l = {":mode<CR>", "Clear & Redraw Screen"},  -- Lost <C-L> for this above
+        n = {":lua myLineNumberToggle()<CR>", "Line Number Toggle"},
+        s = {
+            name = "+Spelling",
+            t = {":set invspell<CR>", "Toggle Spelling"}
+        },
+        t = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"},
+        w = {
+            name = "+Whitespace",
+            t = {":%s/\\s\\+$//<CR>", "Trim Trailing Whitespace"}
+        }
+    },
+    -- Telescope related keybindings
+    t = {
+	    name = "+Telescope",
+        b = {":lua require'telescope.builtin'.buffers()<CR>", "Buffers"},
+        f = {
+            name = "Telescope Find",
+            f = {":lua require'telescope.builtin'.find_files()<CR>", "Find File"},
+            z = {":lua require'telescope.builtin'.current_buffer_fuzzy_find()<CR>", "Fuzzy Find Current Buffer"},
+        },
+        g = {
+	        name = "+Telescope Grep",
+            l = {":lua require'telescope.builtin'.live_grep()<CR>", "Live Grep"},
+            s = {":lua require'telescope.builtin'.grep_string()<CR>", "Grep String"}
+	    },
+        r = {":lua require'telescope.builtin'.oldfiles()<CR>", "Open Recent File"},
+        t = {
+	        name = "+Telescope Tags",
+            b = {":lua require'telescope.builtin'.tags{only_current_buffer() = true}<CR>", "Tags in Current Buffer"},
+            h = {":lua require'telescope.builtin'.help_tags()<CR>", "Help Tags"},
+            t = {":lua require'telescope.builtin'.tags()<CR>", "Tags"}
+        }
+    }
 }
 
 --[[ Setup nvim-treesitter ]]
@@ -233,7 +256,7 @@ cmp.setup {
         ['<C-Y>'] = cmp.config.disable,
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
         ['<C-E>'] = cmp.mapping {
-            i = cmp.mapping.close(),
+            i = cmp.mapping.abort(),
             c = cmp.mapping.close() },
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
@@ -263,22 +286,7 @@ cmp.setup {
         ['<C-D>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
         ['<C-F>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'})
     },
---  From hrsh7th/nvim-cmp
---  I don't understand what is going on here, can't find documentation
---  on cmp.config.sources nor understand the plug-in's source code
---                        
---  sources = cmp.config.sources({
---      {name = 'nvim_lsp'},
---      {name = 'luasnip'}
---  }, {
---      {name = 'buffer',
---       opts = {
---           get_bufnrs = function()
---               return vim.api.nvim_list_bufs()
---           end}},
---      {name = 'path'}
---  })
---
+
 --  Based on n3wborn/nvim config files.
     sources = {
         {name = 'nvim_lsp'},
@@ -301,13 +309,11 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-        {name = 'path'}
-    }, {
-        {name = 'cmdline'}
-    }, {
+    sources = cmp.config.sources {
+        {name = 'path'},
+        {name = 'cmdline'},
         {name = 'nvim-lua'}      -- Not sure about this one?
-    })
+    }
 })
 
 --[[ LSP Configurations ]]
@@ -367,27 +373,35 @@ vim.api.nvim_exec([[
     augroup end
 ]], false)
 
---[[ LSP related keybindings ]]
+--[[ LSP related keybindings - not sure what half of them really do ]]
 wk.register {
-    [","]   = {name = "+lsp"},
-    [",g"]  = {name = "+goto"},
-    [",s"]  = {name = "+symbol"},
-    [",w"]  = {name = "+workspace folder"},
-    [",m"]  = {":lua require'metals'.open_all_diagnostics()<CR>", "Metals Diagnostics"},
-    [",F"]  = {":lua vim.lsp.buf.formatting()<CR>", "Formatting"},
-    [",gd"] = {":lua vim.lsp.buf.definition()<CR>", "Goto Definition"},
-    [",gD"] = {":lua vim.lsp.buf.declaration()<CR>", "Goto Declaration"},
-    [",gi"] = {":lua vim.lsp.buf.implementation()<CR>", "Goto Implementation"},
-    [",gr"] = {":lua vim.lsp.buf.references()<CR>", "Goto References"},
-    [",hs"] = {":lua vim.lsp.buf.signature_help()<CR>", "Signature Help"},
-    [",H"]  = {":lua vim.lsp.buf.hover()<CR>", "Hover"},
-    [",K"]  = {":lua vim.lsp.buf.worksheet_hover()<CR>", "Worksheet Hover"},
-    [",rn"] = {":lua vim.lsp.buf.rename()<CR>", "Rename"},
-    [",sd"] = {":lua vim.lsp.buf.document_symbol()<CR>", "Document Symbol"},
-    [",sw"] = {":lua vim.lsp.buf.workspace_symbol()<CR>", "Workspace Symbol"},
-    [",wa"] = {":lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder"},
-    [",wr"] = {":lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder"},
-    [",l"]  = {":lua vim.lsp.diagnostic.set_loclist()<CR>", "Diagnostic Set Loclist"},
-    [",["]  = {":lua vim.lsp.diagnostic.goto_prev {wrap = false}<CR>", "Diagnostic Goto Prev"},
-    [",]"]  = {":lua vim.lsp.diagnostic.goto_next {wrap = false}<CR>", "Diagnostic Goto Next"}
+    [","] = {
+        name = "+lsp",
+        F = {":lua vim.lsp.buf.formatting()<CR>", "Formatting"},
+        g = {
+            name = "+goto",
+            d = {":lua vim.lsp.buf.definition()<CR>", "Goto Definition"},
+            D = {":lua vim.lsp.buf.declaration()<CR>", "Goto Declaration"},
+            i = {":lua vim.lsp.buf.implementation()<CR>", "Goto Implementation"},
+            r = {":lua vim.lsp.buf.references()<CR>", "Goto References"}
+        },
+        h = {":lua vim.lsp.buf.signature_help()<CR>", "Signature Help"},
+        H = {":lua vim.lsp.buf.hover()<CR>", "Hover"},
+        K = {":lua vim.lsp.buf.worksheet_hover()<CR>", "Worksheet Hover"},
+        l = {":lua vim.lsp.diagnostic.set_loclist()<CR>", "Diagnostic Set Loclist"},
+        m = {":lua require'metals'.open_all_diagnostics()<CR>", "Metals Diagnostics"},
+        r = {":lua vim.lsp.buf.rename()<CR>", "Rename"},
+        s = {
+            name = "+symbol",
+            d = {":lua vim.lsp.buf.document_symbol()<CR>", "Document Symbol"},
+            w = {":lua vim.lsp.buf.workspace_symbol()<CR>", "Workspace Symbol"}
+        },
+        w = {
+            name = "+workspace folder",
+            a = {":lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder"},
+            r = {":lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder"}
+        },
+        ["["] = {":lua vim.lsp.diagnostic.goto_prev({wrap = false})<CR>", "Diagnostic Goto Prev"},
+        ["]"] = {":lua vim.lsp.diagnostic.goto_next({wrap = false})<CR>", "Diagnostic Goto Next"}
+    }
 }
