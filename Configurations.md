@@ -27,16 +27,23 @@ for me, and I am in the middle of something important, I might
 let it go a while longer before doing maintenance.
 
 ```
-    $ nvim -c ':PaqSync'
+    $ nvim
+    :PaqSync
     :q
-    $ nvim -c ':checkhealth'
+
+    $ nvim
+    :TSUpdateSync
+    :q
+
+    $ nvim
+    :checkhealth
     :q
 ```
 
 I would advice not to try to reload your init.lua configuration
 from within a running nvim session.  Yes, it is possible, but
 you are asking for complications.  Hence, that is why I exit
-nvim between the `:PaqSync` and the `:checkhealth`.
+nvim between of the commands.
 
 ---
 
