@@ -153,16 +153,16 @@ by pressing the `<Esc>` key.
 To paste text from a Vim register while in *insert mode*,
 use `<C-R>`.
 
-| Command       | Description                                      |
-|:-------------:|:------------------------------------------------ |
-| `<C-R>"`      | paste from default register into buffer          |
-| `<C-R>a`      | paste from register "a into buffer (as if typed) |
-| `<C-R><C-R>a` | paste from register "a into buffer (literally)   |
-| `<C-R>*`      | paste from X11 clipboard                         |
-| `<C-R>+`      | paste from desktop clipboard                     |
-| `<C-R>%`      | paste current filename                           |
-| `<C-R>#`      | paste alternate filename                         |
-| `<C-R>=`      | prompted to enter expression and paste result    |
+| Command       | Description                                   |
+|:-------------:|:--------------------------------------------- |
+| `<C-R>"`      | paste last deleted, yanked, or pasted content |
+| `<C-R>a`      | paste from register "a                        |
+| `<C-R>*`      | paste from X11 clipboard                      |
+| `<C-R>+`      | paste from desktop clipboard                  |
+| `<C-R>%`      | paste current filename                        |
+| `<C-R>#`      | paste alternate filename                      |
+| `<C-R>/`      | paste last search pattern                     |
+| `<C-R>:`      | paste last *command mode* command             |
 
 ### Navigating in *insert mode*
 
@@ -290,19 +290,29 @@ and prompts you with `:`.
 | `:next`             | edit next buffer typically next file on command line |
 | `:prev`             | edit previous buffer                                 |
 | `:wn`               | write to disk and move on to next file to edit       |
-| `:42`               | move cursor to beginning of line 42                  |
+| `:42`               | move cursor to 42                                    |
+| `:+5`               | move cursor 5 lines down                             |
+| `:-3`               | move cursor 3 lines up                               |
 | `:#`                | give line number of current line cursor is on        |
 | `:s/foo/bar/`       | substitute first instance of foo with bar            |
 | `:s/foo/bar/i`      | case insensitive version of above                    |
 | `:1,$s/foo/bar/g`   | substitute all instances of foo with bar in file     |
 | `:%s/foo/bar/gc`    | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
-| `:5,+5d`            | delete from line 5 to 5 lines beyond current line    |
-| `:5;+5d`            | delete from line 5 to line 10                        |
+| `:g/baz/s/foo/bar/` | substitute first foo with bar on all lines with baz  |
+| `:5,+5d`            | delete from line 5 thru 5 lines beyond current line  |
+| `:5;+5d`            | go to line 5, delete lines 5 thru 10                 |
+| `:10;+3y`           | go to line 10, yank it and next 3 lines              |
 | `:.,/^typed/y`      | yank from current line to line starting with "typed" |
+| `:m+3`              | move current line down 3 lines                       |
+| `:m-4`              | move current line up 3 = 4 - 1 lines                 |
 
-Execute the *command mode* command via `<CR>`, which returns you
+Execute these *command mode* command via `<CR>`, which returns you
 to *normal mode*.
+
+The above `:m-4` is another example of vim/nvim exactly duplicating
+a vi idiosyncracy.  Avoid using *command mode* commands with negative
+numbers in them.
 
 Unlike Vim, Neovim does not have an *EX mode*.
 
