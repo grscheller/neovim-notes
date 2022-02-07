@@ -13,8 +13,10 @@ Here are some of my past Vim/Neovim configurations.
 I am in the process of breaking my init.lua up into multiple
 files.  The advantages of having a configuration in one single
 place is being outweighed by its complexity.  See my
-[dotfiles repo](https://github.com/grscheller/dotfiles)
-for my current Neovim configuration.
+[nvim](https://github.com/grscheller/dotfiles/tree/main/config/nvim)
+section of my
+[dotfiles](https://github.com/grscheller/dotfiles)
+repo for my current Neovim configuration.
 
 ## Bootstraping Paq and Packer
 
