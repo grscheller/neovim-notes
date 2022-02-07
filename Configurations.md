@@ -12,7 +12,7 @@ Here are some of my past Vim/Neovim configurations.
 
 I am in the process of breaking my init.lua up into multiple
 files.  The advantages of having a configuration in one single
-place is being outweighed by its complexity.  See my
+place is being outweighed by its complexity.  See the
 [nvim](https://github.com/grscheller/dotfiles/tree/main/config/nvim)
 section of my
 [dotfiles](https://github.com/grscheller/dotfiles)
