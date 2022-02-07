@@ -1,45 +1,69 @@
 -- Neovim configuration ~/.config/nvim/init.lua
 
---[[ Bootstrap Paq by cloning it to standard Neovim package location
-       git clone https://github.com/savq/paq-nvim.git \
-         ~/.local/share/nvim/site/pack/paqs/start/paq-nvim  ]]
-require'paq' {
-    -- Paq manages itself
-    "savq/paq-nvim";
+--[[ Using Packer as my plugin manager
+
+     To bootstrap Packer for the first time,
+     run the following shell command:
+
+       git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+           ~/.local/share/nvim/site/pack/packer/start/packer.nvim  
+
+     Whenever changes are made to this next section, or you
+     just bootstrapped Packer with the above method, from
+     within nvim run the command:
+
+       :PackerSync
+
+     Without doing anything fancy, I'll just load the
+     plugins in the same way I did with Paq (for now).  ]]
+require'packer'.startup(function()
+    -- Packer manages itself
+    use 'wbthomason/packer.nvim'
+
     -- Colorize hexcodes and names like Blue, Yellow or Green
-    "norcalli/nvim-colorizer.lua";
+    use 'norcalli/nvim-colorizer.lua'
+
     -- Tokyo Night colorscheme
-    "folke/tokyonight.nvim";
+    use 'folke/tokyonight.nvim'
+
     -- Statusline - fork of hoob3rt/lualine.nvim
-    "nvim-lualine/lualine.nvim";
-    -- define keybindings; show keybindings in popup
-    "folke/which-key.nvim";
+    use 'nvim-lualine/lualine.nvim'
+
+    -- define keybindings, show keybindings in popup
+    use 'folke/which-key.nvim'
+
     -- Install language modules for built-in treesitter
-    "nvim-treesitter/nvim-treesitter";
+    use 'nvim-treesitter/nvim-treesitter'
+
     -- Fuzzy finder over lists
-    "nvim-telescope/telescope.nvim";
-    "nvim-lua/plenary.nvim";
-    "nvim-lua/popup.nvim";
-    "sharkdp/fd";
+    use 'nvim-telescope/telescope.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-lua/popup.nvim'
+    use 'sharkdp/fd'
+
     -- Configs for Neovim's built-in LSP client
-    "neovim/nvim-lspconfig";  -- Provided by core neovim team
-    "ziglang/zig.vim";  -- File detection and syntax highlighting for Zig
-    "simrat39/rust-tools.nvim";  -- Extra functionality over rust analyzer
-    "scalameta/nvim-metals";  -- Config for Scala Metals
+    use 'neovim/nvim-lspconfig'  -- Provided by core neovim team
+    use 'ziglang/zig.vim'  -- File detection and syntax highlighting for Zig
+    use 'simrat39/rust-tools.nvim'  -- Extra functionality over rust analyzer
+    use 'scalameta/nvim-metals'  -- Config for Scala Metals
+
     -- Nvim LSP Installer
-    "williamboman/nvim-lsp-installer";  -- Good when Pacman not an option
+    use 'williamboman/nvim-lsp-installer'  -- Good when Pacman not an option
+
     -- Completion support via nvim-cmp
-    "hrsh7th/nvim-cmp";
-    "hrsh7th/cmp-nvim-lsp";
-    "hrsh7th/cmp-buffer";
-    "hrsh7th/cmp-path";
-    "hrsh7th/cmp-cmdline";
-    "hrsh7th/cmp-nvim-lua";
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/cmp-nvim-lua'
+
     -- Snippets support
-    "L3MON4D3/LuaSnip";
-    "saadparwaiz1/cmp_luasnip";
-    "rafamadriz/friendly-snippets";
-}
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'rafamadriz/friendly-snippets'
+
+end)
 
 --[[ Set some default behaviors ]]
 vim.o.shell = "/bin/sh"  -- Some packages need a POSIX compatible shell
@@ -203,7 +227,11 @@ wk.register {
             name = "+Spelling",
             t = {":set invspell<CR>", "Toggle Spelling"}
         },
-        t = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"},
+        t = {
+            name = "+Fish Shell in Terminal",
+            s = {":split<CR>:term fish<CR>i", "Fish Shell in split"},
+            v = {":vsplit<CR>:term fish<CR>i", "Fish Shell in vsplit"}
+        },
         w = {
             name = "+Whitespace",
             t = {":%s/\\s\\+$//<CR>", "Trim Trailing Whitespace"}
