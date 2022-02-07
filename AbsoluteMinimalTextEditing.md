@@ -52,7 +52,7 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 
 *Normal mode* is the default mode you are put in when the editor
 is started.  Hitting `<Esc>` while in *insert mode* or *command mode*
-will put you into *normal mode*.
+will put you back into *normal mode*.
 
 | Command  | Description                                 |
 |:--------:|:------------------------------------------- |
@@ -67,26 +67,26 @@ will put you into *normal mode*.
 | `0`      | move cursor to start of line                |
 
 In vi/vim/nvim, depending on terminal type, arrow keys will
-also work to navigate the file in the editing buffer.
+sometimes work to navigate the file in *normal mode*.
 
 ### Commands to insert or manipulate text
 
 These *normal mode* commands take vim to *insert mode*.
 To return to *normal mode*, type `<Esc>`.
 
-| Command | Description                                                |
-|:-------:|:---------------------------------------------------------- |
-| `i`     | insert text before character cursor is on                  |
-| `a`     | insert text after character cursor is on                   |
-| `A`     | insert text at end of line                                 |
-| `o`     | open new line after current line in insert text            |
-| `O`     | open new line before current line in insert text           |
-| `3cw`   | change next three words                                    |
-| `2c3w`  | change next six words                                      |
+| Command | Description                                      |
+|:-------:|:------------------------------------------------ |
+| `i`     | insert text before character cursor is on        |
+| `a`     | insert text after character cursor is on         |
+| `A`     | insert text at end of line                       |
+| `o`     | open new line after current line in insert text  |
+| `O`     | open new line before current line in insert text |
+| `3cw`   | delete next 3 words and insert text              |
+| `c2w`   | delete next 2 words and insert text              |
 
-### Changing text and/or interacting with "the buffer" in *Normal Mode*
+### Changing text and/or interacting with the "buffer" in *Normal Mode*
 
-Buffer is older vi jargon for what is now
+The "buffer" is older vi jargon for what is now
 called the default register in vim/nvim.
 
 | Command   | Description                                            |
@@ -117,24 +117,28 @@ the arrow keys.  You cannot navigate this way with vi.
 
 Use the `:` command to enter *command mode*.  The
 cursor jumps down to the bottom of the terminal window
-and prompts you with `:`.
+and prompts you with `:`.  Use `\` and `?` to search forward and
+backward in file respectfully.
 
-| Command             | Description                                            |
-|:------------------- |:------------------------------------------------------ |
-| `:w`                | write to disk file being edited                        |
-| `:w file`           | write to file, still editing original file             |
-| `:q`                | quit editing, will warn about unsaved changes          |
-| `:wq`               | write to disk, then quit                               |
-| `:q!`               | quit without saving unsaved changes                    |
-| `:n`                | edit next buffer typically next file on command line   |
-| `:prev`             | edit previous buffer                                   |
-| `:42`               | move cursor to beginning of line 42                    |
-| `:#`                | give line number of current line cursor is on          |
-| `:s/foo/bar/`       | substitute first instance of foo with bar              |
-| `:s/foo/bar/g`      | substitute all instances of foo with bar               |
-| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42            |
-| `:/dog/`            | jump next line with `dog` in it (first non-whitespace) |
-| `/dog`              | jump to next instance of `dog` in file                 |
+| Command             | Description                                          |
+|:------------------- |:---------------------------------------------------- |
+| `:w`                | write to disk file being edited                      |
+| `:w file`           | write to file, still editing original file           |
+| `:q`                | quit editing, will warn about unsaved changes        |
+| `:wq`               | write to disk, then quit                             |
+| `:q!`               | quit without saving unsaved changes                  |
+| `:n`                | edit next buffer typically next file on command line |
+| `:prev`             | edit previous buffer                                 |
+| `:42`               | move cursor to beginning of line 42                  |
+| `:#`                | give line number of current line cursor is on        |
+| `:s/foo/bar/`       | substitute first instance of foo with bar            |
+| `:s/foo/bar/g`      | substitute all instances of foo with bar             |
+| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
+| `:/dog/`            | jump to next line with `dog` in it                   |
+| `/dog`              | jump forward to next instance of `dog` in file       |
+| `?cat`              | jump back to previous instance of `cat` in file      |
+| `/`                 | jump forward using last search pattern               |
+| `?`                 | jump back using last search pattern                  |
 
 Entering `<CR>` will cause the above commands to be executed and return you
 to *normal mode*.  Hitting `<Esc>` instead will punt on running the command
@@ -148,21 +152,6 @@ and return you to *normal mode*.
 
 This repeats the last *normal mode* command used which changed text.
 It does not repeat *command mode* commands.
-
-## POSIX shell command line editing mode
-
-The non-multiline *normal mode* commands above
-also apply to POSIX shell when in vi cmdline
-editing mode.  By default, Bash uses emacs editing
-mode.  Put `set -o vi` in your `~/.bashrc` file to
-enable vi editing mode.
-
-* When the prompt is printed you are in *insert mode*
-* Pressing `<Esc>` puts you in *normal mode* with a one line view
-* Pressing `k` takes you back through your command line history
-* Pressing `j` takes you forward through your command line history
-* Pressing `h` and `l` moves you forward and back on the command line
-* The `f`, `t`, `F`, `T`, `;`, `,` commands, covered later, are useful
 
 ---
 

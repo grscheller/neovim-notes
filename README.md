@@ -3,7 +3,7 @@
 These notes have evolved over many years.  They originally
 started out as a text file vi cheatsheet.
 
-* [Absolute Minimal Text Editing](AbsoluteMinimalTextEditing.md)
+* [Absolute Minimum You Need to Know](AbsoluteMinimalTextEditing.md)
 * [Basic Text Editing](BasicTextEditing.md)
 * [Vim Factoids](VimFactoids.md)
 * [Advanced Traditional Vi Commands](AdvTradViCommands.md)
