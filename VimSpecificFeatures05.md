@@ -258,6 +258,6 @@ be set directly but can be deleted.
 
 | prev: [Adv Trad Vi Commands][1] | [Home][2] | next: [Mult Neovim Windows][3] |
 
-[1]: AdvTradViCommands.md
+[1]: AdvTradViCommands04.md
 [2]: README.md
-[3]: MultipleWindows.md
+[3]: MultipleWindows06.md

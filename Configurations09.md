@@ -8,11 +8,9 @@ Here are some of my past Vim/Neovim configurations.
 * A more fleshed out Vim [~/.vim/vimrc](init_examples/later_vimrc)
 * My last Neovim [~/.config/nvim/init.vim](init_examples/last_init.vim)
 * My first Neovim [~/.config/nvim/init.lua](init_examples/first_init.lua)
-* My last sell contained Neovim [~/.config/nvim/init.lua](init_examples/last_selfcontained_init.lua)
 
-I am in the process of breaking my init.lua up into multiple
-files.  The advantages of having a configuration in one single
-place is being outweighed by its complexity.  See my
+The advantages of having a configuration in one single
+place eventually gets outweighed by its complexity.  See the
 [nvim](https://github.com/grscheller/dotfiles/tree/main/config/nvim)
 section of my
 [dotfiles](https://github.com/grscheller/dotfiles)
@@ -61,12 +59,12 @@ needs to be done after the above bootstrapping.
 
 I would advice not to try to reload your init.lua configuration
 from within a running nvim session.  Yes, it is possible, but
-you are asking for complications.  Hence, that is why I exit
-nvim between of the commands.
+you are asking for complications.  That is why I exit nvim between
+each of these commands.
 
 ---
 
 | prev: [Regular Expressions][1] | [Home][2] |
 
-[1]: RegularExpressions.md
+[1]: RegularExpressions08.md
 [2]: README.md

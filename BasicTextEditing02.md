@@ -472,6 +472,6 @@ To get the most out of it,
 
 | [Absolute Minimal Text Editing][1] | [Home][2] | next: [Vim Factoids][3] |
 
-[1]: AbsoluteMinimalTextEditing.md
+[1]: AbsoluteMinimalTextEditing01.md
 [2]: README.md
-[3]: VimFactoids.md
+[3]: VimFactoids03.md

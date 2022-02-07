@@ -180,6 +180,6 @@ buffer, you need to put alacritty into vi-mode via CTRL+SHIFT+SPACE.
 
 | prev: [Vim Specific Features][1] | [Home][2] | next: [Encodings & Unicode][3] |
 
-[1]: VimSpecificFeatures.md
+[1]: VimSpecificFeatures05.md
 [2]: README.md
-[3]: EncodingsUnicode.md
+[3]: EncodingsUnicode07.md

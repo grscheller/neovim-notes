@@ -89,12 +89,13 @@ Note: Using `<S-C-u>` will not work.
 Note: `<C-S-u>` does not work while on the linux console.
 
 Note: Defining a key mapping involving `<C-S-u>` does not
-work, either as the key mapping or for whatever is mapped to.
+work, either as the key mapping or to whatever the key
+mapping is mapped to.
 
 ---
 
 | prev: [Mult Neovim Windows][1] | [Home][2] | next: [Regular Expressions][3] |
 
-[1]: MultipleWindows.md
+[1]: MultipleWindows06.md
 [2]: README.md
-[3]: RegularExpressions.md
+[3]: RegularExpressions08.md
