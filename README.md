@@ -14,4 +14,6 @@ started out as a text file vi cheatsheet.
 * [Configuring Neovim](Configurations09.md)
 
 Neovim has become my daily programming driver.  As such,
-I am only testing this information against nvim.
+I am only testing this information against nvim and
+sometimes pre-vim vi.  Unfornunately, vim and nvim are
+beginning to diverge.
