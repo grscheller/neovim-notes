@@ -1,8 +1,8 @@
 # Lua
 
-## Lua Structure
+## Lua Scripting
 
-## Calling Vimscript from Lua
+### Calling Vimscript from Lua
 
 ---
 

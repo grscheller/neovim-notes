@@ -1,7 +1,7 @@
 # My Neovim Notes
 
 These notes have evolved over many years.  They originally
-started out as a text file vi cheatsheet.
+started out as a single text file vi cheatsheet.
 
 * [Absolute Minimum You Need to Know](AbsoluteMinimalTextEditing01.md)
 * [Basic Text Editing](BasicTextEditing02.md)

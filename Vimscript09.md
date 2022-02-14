@@ -19,9 +19,32 @@ for loops begin executing before you finish typing them.
 
 ### set command
 
-## Scripting constructs
+## VimL Scripting
 
-## Calling Lua from Vimscript
+### Calling Lua from Vimscript
+
+Use a VimL here document to run Lua ccode from Vimscript.
+
+```
+   Lua << EOF
+   --[[ Rust configuration, rust-tools.nvim will call lspconfig itself ]]
+   local rust_opts = {
+       tools = {
+           autoSetHints = true,
+           hover_with_actions = true,
+           inlay_hints = {
+               show_parameter_hints = false,
+               parameter_hints_prefix = "",
+               other_hints_prefix = ""
+           },
+       }
+   }
+   
+   require('rust-tools').setup(rust_opts)
+   EOF
+```
+
+Note: Each "Lua chunk" defined his way is in its own Lua namespace.
 
 ---
 
