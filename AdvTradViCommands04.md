@@ -143,7 +143,7 @@ defining "sections."
 | `<C-X>`       | enter *insert mode* completion submode (vim not vi) |
 
 For more information on `<C-X>` see
-[ins-completion section](BasicTextEditing.md#ins-completion-sub-mode-commands)
+[ins-completion section](BasicTextEditing02.md#ins-completion-sub-mode-commands)
 in BasicTextEditing, or
 
 ```

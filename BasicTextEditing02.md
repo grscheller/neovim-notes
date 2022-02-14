@@ -468,7 +468,7 @@ To get the most out of it,
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
 * Use `<C-O>` to jump back to previous location
 * Use `<C-I>` or `<Tab>` to jump forward again
-* familiarize yourself with how to use [multiple vim windows](MultipleWindows.md)
+* familiarize yourself with how to use [multiple vim windows](MultipleWindows06.md)
 * configure the [mouse](VimFactoids03.md#using-the-mouse)
 * setting up the [wildmenu](VimFactoids03.md#configuring-wildmenu)
 

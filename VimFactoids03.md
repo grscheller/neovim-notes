@@ -15,7 +15,7 @@ for now, are:
 
 For more in depth information see the section on all the different
 types of registers in
-[Vim Specific Features](VimSpecificFeatures.md#types-of-registers).
+[Vim Specific Features](VimSpecificFeatures05.md#types-of-registers).
 
 Note: In older vi documentation and jargon, registers are referred
 to as buffers.
@@ -28,7 +28,7 @@ write to and `p` and `P` read from by default.
 ### Named registers
 
 Illustrated in
-[Basic text editing](BasicTextEditing.md#you-can-use-named-registers-to-store-text),
+[Basic text editing](BasicTextEditing02.md#you-can-use-named-registers-to-store-text),
 Named registers are areas where you can store snippets of text.
 They are named `"a` thru `"z` and are essentially 26
 independent "clip boards" that are shared between all the
@@ -62,8 +62,8 @@ with that buffer.
 ## Using the mouse
 
 When configured to use the mouse, vim will steal the mouse
-events from the terminal emulator.  To enable full vim mouse
-support, `:set mouse=ar` and to disable the mouse and let
+events from the terminal emulator.  To enable vim mouse support
+in all modes, `:set mouse=a` and to disable the mouse and let
 the terminal emulator handle all mouse events, `:set mouse=`
 
 Available mouse options are:
@@ -85,7 +85,7 @@ When I first started using the mouse in Vim, I found it
 helpful to just set `mouse=n`.  As I got more comfortable
 with *visual mode*, setting `mouse=a` worked well for me,
 especially when dealing with
-[terminal windows](MultipleWindows.md#terminal-windows)
+[terminal windows](MultipleWindows06.md#terminal-windows)
 in Neovim.
 
 Neovim requires an external program, such as xsel for Unix,
