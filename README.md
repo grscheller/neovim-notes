@@ -11,9 +11,13 @@ started out as a text file vi cheatsheet.
 * [Multiple Neovim Windows](MultipleWindows06.md)
 * [Encodings and Unicode](EncodingsUnicode07.md)
 * [Regular Expressions](RegularExpressions08.md)
-* [Configuring Neovim](Configurations09.md)
+* [Vimscript](Vimscript09.md)
+* [Lua](Lua10.md)
+* [Configuring Neovim](Configuration11.md)
 
-Neovim has become my daily programming driver.  As such,
-I am only testing this information against nvim and
-sometimes pre-vim vi.  Unfornunately, vim and nvim are
-beginning to diverge.
+Unfortunately, Vim and Neovim are beginning to diverge.
+
+Since Neovim has become my daily programming driver,
+I test this information against only nvim, and sometimes
+with the vi which comes with Arch Linux (Joy, Horton, Ritter),
+not vim in vi mode.

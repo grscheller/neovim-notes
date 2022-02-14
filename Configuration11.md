@@ -58,13 +58,13 @@ needs to be done after the above bootstrapping.
 ```
 
 I would advice not to try to reload your init.lua configuration
-from within a running nvim session.  Yes, it is possible, but
-you are asking for complications.  That is why I exit nvim between
-each of these commands.
+from within a running nvim session.  Yes, it is possible, but I
+have run into multiple complications.  That is why I exit nvim
+between each of these commands.
 
 ---
 
-| prev: [Regular Expressions][1] | [Home][2] |
+| prev: [Lua][1] | [Home][2] |
 
-[1]: RegularExpressions08.md
+[1]: Lua10.md
 [2]: README.md
