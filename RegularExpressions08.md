@@ -221,7 +221,7 @@ See `:help pattern-searches` for more details.
 | `/dogbert/e`       | Search for dogbert, leave cursor at end                |
 | `/dogbert/e5`      | Search for dogbert, leave cursor 5 chars after end     |
 | `/dogbert/e-2`     | Search for dogbert, leave cursor 2 chars before end    |
-| `/dogbert/b3`      | Search for dogbert, leave cursor on the `b`            |
+| `/dogbert/b2`      | Search for dogbert, leave cursor on the `g`            |
 | `/dogbert/b-3`     | Search for dogbert, leave cursor 3 chars before `d`    |
 
 ## POSIX.2 Regular Expressions
