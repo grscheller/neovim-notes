@@ -21,14 +21,14 @@ The two main encodings are UTF-8 for UNIX, MAC-OS and HTML/Web, and UTF-16
 for Microsoft Windows.  Windows tends to use a mix of UTF-16,
 UTF-8, and legacy encodings.
 
-On my POSIX systems I put
+On POSIX systems I used to put
 
 ```
     set encoding=utf-8
     set fileencoding=utf-8
 ```
 
-in my `~/.vim/vimrc`.
+in my `~/.vim/vimrc`.  Now I do a similar configuration via `init.lua`.
 
 When I go native on Windows, vim automatically figures out whether
 the edited file is in UTF-8 or UTF-16LE with `\r\n` line endings.

@@ -219,10 +219,10 @@ This "sub-mode" is used for text completions.  While in *ins-completion mode*,
 typed.  `<C-N>` will move to the next completion in the drop down, and `<C-P>`
 will move to the previous one.
 
+I rarely use these features since I have better alternatives through plugins.
+
 | Command      | Description                                               |
 |:------------:|:--------------------------------------------------------- |
-| `<C-P>`      | complete keyword backwards from "various sources"         |
-| `<C-N>`      | complete keyword forward from "various sources"           |
 | `<C-X><C-L>` | search for line forwards in buffer                        |
 | `<C-X><C-I>` | search for keyword forwards in file and included files    |
 | `<C-X><C-D>` | search for definition forwards in file and included files |
@@ -230,9 +230,13 @@ will move to the previous one.
 | `<C-X><C-K>` | search words in dictionary                                |
 | `<C-X><C-T>` | search words in thesaurus                                 |
 | `<C-X>s`     | search for spelling suggestions                           |
+| `<C-Y>`      | accept the completion                                     |
+| `<C-E>`      | punt on completion and take what was typed                |
+| `<C-P>`      | complete keyword backwards from "various sources"         |
+| `<C-N>`      | complete keyword forward from "various sources"           |
 
-What "various sources" for the first two above is configured via
-the complete flag:
+What "various sources" for the last two above
+is configured via the complete flag:
 
 ```
     :set complete
@@ -351,12 +355,12 @@ and then modify as a unit.
 
 To enter *visual mode* from *normal mode*
 
-| Command | Description                                         |
-|:-------:|:--------------------------------------------------- |
-| `v`     | for character based                                 |
-| `V`     | for line based                                      |
-| `<C-V>` | for block visual mode                               |
-| `gv`    | to reselect last selection (useful for `p` command) |
+| Command | Description                            |
+|:-------:|:-------------------------------------- |
+| `v`     | for character based                    |
+| `V`     | for line based                         |
+| `<C-V>` | for block visual mode                  |
+| `gv`    | to reselect last visual mode selection |
 
 Highlight text with *normal mode* cursor navigation commands
 like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
@@ -409,7 +413,7 @@ will result in multiple undo/redo events.
     $ nvim -r       # List swap files, then exit
     $ nvim -r file  # Recover crashed vim session, uses swap file
     $ nvim -h       # List help message for command-line options and exit
-    $ nvim -c :checkhealth   # Check health of Neovim instalation
+    $ nvim -c :checkhealth   # Check health of Neovim installation
 ```
 
 ### Dealing with whitespace characters
@@ -465,8 +469,8 @@ To get the most out of it,
 * Use `<C-O>` to jump back to previous location
 * Use `<C-I>` or `<Tab>` to jump forward again
 * familiarize yourself with how to use [multiple vim windows](MultipleWindows.md)
-* configure the [mouse](VimFactoids.md#using-the-mouse)
-* setting up the [wildmenu](VimFactoids.md#configuring-wildmenu)
+* configure the [mouse](VimFactoids03.md#using-the-mouse)
+* setting up the [wildmenu](VimFactoids03.md#configuring-wildmenu)
 
 ---
 

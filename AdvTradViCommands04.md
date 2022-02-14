@@ -33,27 +33,27 @@ via the `jobs` shell command.
 
 ### Commands to move cursor in Normal Mode
 
-| Command   | Description                                        |
-|:---------:|:-------------------------------------------------- |
-| `+`       | move to first non-space character next line        |
-| `-`       | move to first non-space character prev line        |
-| `nG`      | move to nth line in file                           |
-| `G`       | move to last line in file                          |
-| `ngg`     | move to nth line in file                           |
-| `gg`      | move to first line in file                         |
-| `n\<Bar>` | move to nth column in line                         |
-| `<Bar>`   | move to beginning of line                          |
-| `0`       | move to beginning of line                          |
-| `H`       | move to top of screen                              |
-| `M`       | move to middle of screen                           |
-| `L`       | move to bottom of screen                           |
-| `nH`      | move to nth line from top of screen                |
-| `nL`      | move to nth line from bottom of screen             |
-| `<C-U>`   | move cursor/view up half a screen                  |
-| `<C-D>`   | move cursor/view down half a screen                |
-| `<C-B>`   | move cursor/view up a full screen                  |
-| `<C-F>`   | move cursor/view down a full screen                |
-| `%`       | move between matching `( )`, `[ ]`, `{ }` or `< >` |
+| Command  | Description                                        |
+|:--------:|:-------------------------------------------------- |
+| `+`      | move to first non-space character next line        |
+| `-`      | move to first non-space character prev line        |
+| `nG`     | move to nth line in file                           |
+| `G`      | move to last line in file                          |
+| `ngg`    | move to nth line in file                           |
+| `gg`     | move to first line in file                         |
+| `0`      | move to beginning of line                          |
+| `H`      | move to top of screen                              |
+| `M`      | move to middle of screen                           |
+| `L`      | move to bottom of screen                           |
+| `nH`     | move to nth line from top of screen                |
+| `nL`     | move to nth line from bottom of screen             |
+| `<C-U>`  | move cursor/view up half a screen                  |
+| `<C-D>`  | move cursor/view down half a screen                |
+| `<C-B>`  | move cursor/view up a full screen                  |
+| `<C-F>`  | move cursor/view down a full screen                |
+| `%`      | move between matching `( )`, `[ ]`, `{ }` or `< >` |
+| `n<Bar>` | move to nth column in line                         |
+| `<Bar>`  | move to beginning of line                          |
 
 Where `<Bar>` = `|`
 
@@ -116,6 +116,7 @@ defining "sections."
 | `C`        | change from cursor to end of line (enter *insert mode*)   |
 | `R`        | from cursor, overwriting text (enter *replace mode*)      |
 | `S`        | change entire line (enter *insert mode*)                  |
+| `D`        | delete from cursor to end of line                         |
 | `I`        | insert text at beginning of line after initial whitespace |
 | `i`        | enter *insert mode*                                       |
 | `a`        | advance cursor one char and enter *insert mode*           |
