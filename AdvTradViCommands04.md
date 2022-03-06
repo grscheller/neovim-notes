@@ -39,8 +39,6 @@ via the `jobs` shell command.
 | `-`      | move to first non-space character prev line        |
 | `nG`     | move to nth line in file                           |
 | `G`      | move to last line in file                          |
-| `ngg`    | move to nth line in file                           |
-| `gg`     | move to first line in file                         |
 | `0`      | move to beginning of line                          |
 | `H`      | move to top of screen                              |
 | `M`      | move to middle of screen                           |
@@ -62,52 +60,46 @@ to the first one on the current line and jump to its matching
 partner.  Plugs-ins like Syntastic can change the meaning of
 what is a matching symbol for different file types.
 
-When scrolloff is set, some of these commands get modified.
-In my init.vim file, I use
+When scrolloff is set in vim, some of these commands get modified,
 
 ```
     set scrolloff=3
 ```
 
-to keep the cursor 3 lines from the edge of the screen.
+will keep the cursor 3 lines from the edge of the screen.
 
 ### Commands to move screen view
 
-| Command | Description                            |
-|:-------:|:-------------------------------------- |
-| `<C-E>` | move view down one line                |
-| `<C-Y>` | move view up one line                  |
-| `zt`    | make current line top line of view     |
-| `zz`    | make current line middle line of view  |
-| `zb`    | make current line bottom line of view  |
-| `[n]zt` | make line `n` top line of view      |
-| `[n]zz` | make line `n` middle line of view   |
-| `[n]zb` | make line `n` bottom line of view   |
+| Command | Description                           |
+|:-------:|:------------------------------------- |
+| `<C-E>` | move view down one line               |
+| `<C-Y>` | move view up one line                 |
+| `zt`    | make current line top line of view    |
+| `zz`    | make current line middle line of view |
+| `zb`    | make current line bottom line of view |
+| `[n]zt` | make line `n` top line of view        |
+| `[n]zz` | make line `n` middle line of view     |
+| `[n]zb` | make line `n` bottom line of view     |
 
 Where applicable, you can type a number before these commands
 to repeat them that many times.
 
 ### Cursor commands useful for written text
 
-| Command | Description                                 |
-|:-------:|:------------------------------------------- |
-| `(`     | move cursor to beginning of sentence        |
-| `)`     | move cursor to beginning of next sentence   |
-| `{`     | move cursor up a paragraph                  |
-| `}`     | move cursor down paragraph                  |
-| `[[`    | move cursor to beginning previous section   |
-| `]]`    | move cursor to beginning next section       |
+| Command | Description                               |
+|:-------:|:----------------------------------------- |
+| `(`     | move cursor to beginning of sentence      |
+| `)`     | move cursor to beginning of next sentence |
+| `{`     | move cursor up a paragraph                |
+| `}`     | move cursor down paragraph                |
+| `[[`    | move cursor to beginning previous section |
+| `]]`    | move cursor to beginning next section     |
 
-What "section" means is most easily understood in the
-context of file types.  For text files, different sections
-can be separated by a formfeed (U+000c). `[[` and `]]`
-jump you to the previous and next one respectively.
-
-(TL;DR) For pre-ANSI K&R C files, The last two will jump
-between `{` which are in the first column.  Programmers
-used these to jump between C functions in source code.
-For troff files various constructs were understood as
-defining "sections."
+What "section" means is most easily understood in the context of
+file types.  For example, in pre-ANSI K&R C files, `[[` and `]]`
+will jump between `{` which are in the first column.  Programmers
+used these to jump between C functions in source code.  For troff
+files various constructs were understood as defining "sections."
 
 ### Commands to change text
 
@@ -194,14 +186,14 @@ or use with *normal mode* editing commands.
 Marks within the file being edited are denoted via letters `a-z`.
 A mark is a "zero-width" entity between the cursor and the preceding character.
 
-| Command   | Description                                                  |
-|:---------:|:------------------------------------------------------------ |
-| `ma`      | set mark `a` for the current editing buffer                  |
-| `` `a ``  | jump to mark `a` current buffer                              |
-| `'a`      | jump to first non-space char in line with mark `a`           |
-| `` d`a `` | delete from cursor to mark `a`                               |
-| `` y`a `` | yank from cursor to mark `a`                                 |
-| `d'w`     | deletes current line thru line with mark `w`                 |
+| Command   | Description                                        |
+|:---------:|:-------------------------------------------------- |
+| `ma`      | set mark `a` for the current editing buffer        |
+| `` `a ``  | jump to mark `a` current buffer                    |
+| `'a`      | jump to first non-space char in line with mark `a` |
+| `` d`a `` | delete from cursor to mark `a`                     |
+| `` y`a `` | yank from cursor to mark `a`                       |
+| `d'w`     | deletes current line thru line with mark `w`       |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character.  If the mark is

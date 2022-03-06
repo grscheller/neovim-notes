@@ -2,7 +2,9 @@
 
 Neovim/Vim commands and features not in your grandfather's vi.
 
-## Jump Lists
+## Vim Lists
+
+### Jump Lists
 
 Associated with each vim window (not buffer!) is a list of
 past locations "jumped" to.  Jumps are remembered in a
@@ -33,9 +35,9 @@ Your current location in the jump list is always 0.
 | `<C-I>`  | go forward to next location in jump list    |
 | `3<C-O>` | go back 3 jumps in jump list                |
 
-## Change Lists
+### Change Lists
 
-Associated with each buffer is a list of
+Associated with each buffer (not window!) is a list of
 past text "changes."  Changes are remembered in a changelist.
 
 | Command            | Description                           |
@@ -62,6 +64,15 @@ Your current location in the change list is always 0.
 | `g;`    | go back to previous location in changelist |
 | `g,`    | go forward to next location in changelist  |
 
+### Tag stack
+
+Part of the old ctags infrastructure obviated by LSP.  See
+[here](https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html)
+for how to use and configure ctags.
+
+The `:tags` command and `<C-T>` retain some limited functionality, but
+nothing that you can't accomplish with jumplists and changelists.
+
 ## Types of registers
 
 ### Default register
@@ -79,6 +90,9 @@ These contain only multiline (one or more whole lines) data.
 | `"2` thru `"9` | contents shift downward when `"1` is updated   |
 
 These can be written to in *command mode* via `:let @5 = "foobar"`
+
+I find these registers confusing and not worth using.  I can accomplish
+many of the same use cases for these using named registers.
 
 ### Small delete register
 
@@ -133,14 +147,17 @@ paste the contents of other registers into the "expression register".
 | `"+`      | copy/paste from/to desktop clipboard     |
 | `"~`      | paste from last drag-and-drop operation  |
 
-On Arch, the first two only seem to work in vim when the gvim
-package is installed.  With out-of-the-box Neovim, both are not
-plumbed into anything.  Once the xsel package was installed on
-Arch Linux, `"*` and `"+` worked fine.  Neovim needs an external
-utility to interact with the X11 and desktop clipboards.
+On Arch, the first two only seem to work in terminal vim when the gvim
+package is installed.  With out-of-the-box Neovim, both `"*` and `"+`
+are not plumbed into anything.
 
-I have never gotten `"~` to work at all for me.  Even in Windows
-MS Office, I have found drag-and-drop buggy and hard to control.
+For X11 on Arch, install the xsel package.
+
+For Wayland on Arch, install the wl-clipboard package.
+
+I have never gotten `"~` to work for me at all in either terminal
+based Vim or Neovim.  Even in Windows MS Office, I have found
+drag-and-drop operations buggy and hard to control.
 
 ### Black hole register
 
