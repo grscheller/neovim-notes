@@ -203,7 +203,7 @@ command.
 | prev: [Vim Factoids][1] | [Home][2] | next: [Vim Specific Features][3] |
 
 [1]: 03-VimFactoids.md
-[2]: README.md
+[2]: ../README.md
 [3]: 05-VimSpecificFeatures.md
 [4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 [5]: http://www.lagmonster.org/docs/vi2.html

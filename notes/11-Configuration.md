@@ -4,10 +4,10 @@
 
 Here are some of my past Vim/Neovim configurations.
 
-* A very early Vim [~/.vimrc](init_examples/first_vimrc)
-* A more fleshed out Vim [~/.vim/vimrc](init_examples/later_vimrc)
-* My last Neovim [~/.config/nvim/init.vim](init_examples/last_init.vim)
-* My first Neovim [~/.config/nvim/init.lua](init_examples/first_init.lua)
+* A very early Vim [~/.vimrc](../init_examples/first_vimrc)
+* A more fleshed out Vim [~/.vim/vimrc](../init_examples/later_vimrc)
+* My last Neovim [~/.config/nvim/init.vim](../init_examples/last_init.vim)
+* My first Neovim [~/.config/nvim/init.lua](../init_examples/first_init.lua)
 
 The advantages of having a configuration in one single
 place eventually gets outweighed by its complexity.  See the
@@ -67,4 +67,4 @@ between each of these commands.
 | prev: [Lua][1] | [Home][2] |
 
 [1]: 10-Lua.md
-[2]: README.md
+[2]: ../README.md

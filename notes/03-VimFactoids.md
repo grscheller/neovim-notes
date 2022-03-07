@@ -137,5 +137,5 @@ present.
 | prev: [Basic Text Editing][1] | [Home][2] | next: [Adv Trad Vi Commands][3] |
 
 [1]: 02-BasicTextEditing.md
-[2]: README.md
+[2]: ../README.md
 [3]: 04-AdvTradViCommands.md
