@@ -307,9 +307,14 @@ and prompts you with `:`.
 | `:5,+5d`            | delete from line 5 thru 5 lines beyond current line  |
 | `:5;+5d`            | go to line 5, delete lines 5 thru 10                 |
 | `:10;+3y`           | go to line 10, yank it and next 3 lines              |
-| `:.,/^typed/y`      | yank from current line to line starting with "typed" |
+| `:,/^typed/y`       | yank from current line to line starting with "typed" |
 | `:m+3`              | move current line down 3 lines                       |
 | `:m-4`              | move current line up 3 = 4 - 1 lines                 |
+| `:5,42p`            | print lines 5 thru 42 at botton in command mode area |
+| `:42,$p`            | print lines 42 thru last line in buffer              |
+| `:,100p`            | print current line thru line 100                     |
+| `:50,p`             | print line 50 thru current line cursor is on         |
+| `:p`                | print current line cursor is on                      |
 
 Execute these *command mode* command via `<CR>`, which returns you
 to *normal mode*.
