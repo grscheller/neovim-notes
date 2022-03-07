@@ -1,5 +1,0 @@
-# ignore Intellij idea files
-.idea
-
-# ignore text files - for ideas I may have
-**/*.txt

@@ -249,4 +249,4 @@ POSIX.2 standard for backward compatibility, but are considered a wart.
 
 [1]: 07-EncodingsUnicode.md
 [2]: README.md
-[3]: 09Vimscript.md
+[3]: 09-Vimscript.md
