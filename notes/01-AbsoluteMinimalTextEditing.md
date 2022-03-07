@@ -116,10 +116,11 @@ the arrow keys.  You cannot navigate this way with vi.
 
 ### *Command Mode*
 
-Use the `:` command to enter *command mode*.  The
-cursor jumps down to the bottom of the terminal window
-and prompts you with `:`.  Use `\` and `?` to search forward and
-backward in file respectfully.
+From *normal mode* use  `:`, `/`, or `?` to enter *command mode*.
+The cursor jumps down to the bottom of the terminal window and
+prompts you with either `:`, `\`, or `?` depending on which one
+you typed.  The later two are used to search forward and backward
+respectfully in the file.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
