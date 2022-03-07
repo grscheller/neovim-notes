@@ -249,7 +249,7 @@ Options for the complete flag:
 * w      - use buffer from other windows
 * b      - use buffers from the buffer list
 * u      - use unloaded buffers
-* t      - tag completion ???
+* t      - tag completion
 * i      - scan current buffer and use included files
 * kspell - match dictionary words
 
@@ -476,6 +476,6 @@ To get the most out of it,
 
 | [Absolute Minimal Text Editing][1] | [Home][2] | next: [Vim Factoids][3] |
 
-[1]: AbsoluteMinimalTextEditing01.md
+[1]: 01-AbsoluteMinimalTextEditing.md
 [2]: README.md
-[3]: VimFactoids03.md
+[3]: 03-VimFactoids.md

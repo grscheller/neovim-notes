@@ -36,7 +36,7 @@ Use a VimL here document to run Lua ccode from Vimscript.
                show_parameter_hints = false,
                parameter_hints_prefix = "",
                other_hints_prefix = ""
-           },
+           }
        }
    }
    
@@ -44,12 +44,12 @@ Use a VimL here document to run Lua ccode from Vimscript.
    EOF
 ```
 
-Note: Each "Lua chunk" defined his way is in its own Lua namespace.
+Note: Each "Lua chunk" defined this way is in its own Lua namespace.
 
 ---
 
 | prev: [Regular Expressions][1] | [Home][2] | next: [Lua][3] |
 
-[1]: RegularExpressions08.md
+[1]: 08-RegularExpressions.md
 [2]: README.md
-[3]: Lua10.md
+[3]: 10-Lua.md

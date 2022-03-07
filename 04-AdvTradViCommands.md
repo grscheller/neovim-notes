@@ -127,9 +127,6 @@ files various constructs were understood as defining "sections."
 | `<C-V>{char}` | insert character `{char}` literally                 |
 | `<C-V><Tab>`  | insert literal `<Tab>` (handy for makefiles)        |
 | `<C-W>`       | delete previous word                                |
-| `<C-O>`       | go to normal mode for just one command              |
-| `<C-O>n`      | go to next search item, remain in insert mode       |
-| `<C-O>D`      | delete everything to right of cursor                |
 | `<C-U>`       | delete everything to left of cursor                 |
 | `<C-C>`       | break out of *insert mode*, punt on any auto cmds   |
 | `<C-X>`       | enter *insert mode* completion submode (vim not vi) |
@@ -205,8 +202,8 @@ command.
 
 | prev: [Vim Factoids][1] | [Home][2] | next: [Vim Specific Features][3] |
 
-[1]: VimFactoids03.md
+[1]: 03-VimFactoids.md
 [2]: README.md
-[3]: VimSpecificFeatures05.md
+[3]: 05-VimSpecificFeatures.md
 [4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 [5]: http://www.lagmonster.org/docs/vi2.html

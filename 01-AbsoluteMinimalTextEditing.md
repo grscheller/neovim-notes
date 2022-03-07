@@ -159,4 +159,4 @@ It does not repeat *command mode* commands.
 | [Home][1] | next: [Basic Text Editing][2] |
 
 [1]: README.md
-[2]: BasicTextEditing02.md
+[2]: 02-BasicTextEditing.md

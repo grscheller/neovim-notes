@@ -96,6 +96,6 @@ mapping is mapped to.
 
 | prev: [Mult Neovim Windows][1] | [Home][2] | next: [Regular Expressions][3] |
 
-[1]: MultipleWindows06.md
+[1]: 06-MultipleWindows.md
 [2]: README.md
-[3]: RegularExpressions08.md
+[3]: 08-RegularExpressions.md

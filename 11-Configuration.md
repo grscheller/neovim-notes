@@ -66,5 +66,5 @@ between each of these commands.
 
 | prev: [Lua][1] | [Home][2] |
 
-[1]: Lua10.md
+[1]: 10-Lua.md
 [2]: README.md
