@@ -246,7 +246,7 @@ is configured via the complete flag:
 Options for the complete flag:
 
 * .      - use current buffer
-* w      - use buffer from other windows
+* w      - use buffers from other windows
 * b      - use buffers from the buffer list
 * u      - use unloaded buffers
 * t      - tag completion

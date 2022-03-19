@@ -49,15 +49,19 @@ via the `jobs` shell command.
 | `<C-D>`  | move cursor/view down half a screen                |
 | `<C-B>`  | move cursor/view up a full screen                  |
 | `<C-F>`  | move cursor/view down a full screen                |
+| `<C-E>`  | move view down a one line, don't move cursor       |
+| `<C-Y>`  | move view up a one line, don't move cursor         |
 | `%`      | move between matching `( )`, `[ ]`, `{ }` or `< >` |
 | `n<Bar>` | move to nth column in line                         |
 | `<Bar>`  | move to beginning of line                          |
 
 Where `<Bar>` = `|`
 
+Both `<C-E>` & `<C-Y>` will move cursor to keep it in the view.
+
 With `%`, if you are not currently on a grouping symbol, move
 to the first one on the current line and jump to its matching
-partner.  Plugs-ins like Syntastic can change the meaning of
+partner.  Plugsins like Syntastic can change the meaning of
 what is a matching symbol for different file types.
 
 When scrolloff is set in vim, some of these commands get modified,
