@@ -15,9 +15,6 @@ Neovim/Vim commands and features not in your grandfather's vi.
 | `<C-E>` | move view down one line (Also in Vi)  |
 | `<C-Y>` | move view up one line (Also in Vi)    |
 
-Where applicable, you can type a number before these commands
-to repeat them that many times.
-
 ## Vim Lists
 
 ### Jump Lists
