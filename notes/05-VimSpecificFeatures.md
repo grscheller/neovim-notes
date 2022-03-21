@@ -2,6 +2,22 @@
 
 Neovim/Vim commands and features not in your grandfather's vi.
 
+## Commands to move screen view
+
+| Command | Description                           |
+|:-------:|:------------------------------------- |
+| `zt`    | make current line top line of view    |
+| `zz`    | make current line middle line of view |
+| `zb`    | make current line bottom line of view |
+| `[n]zt` | make line `n` top line of view        |
+| `[n]zz` | make line `n` middle line of view     |
+| `[n]zb` | make line `n` bottom line of view     |
+| `<C-E>` | move view down one line (Also in Vi)  |
+| `<C-Y>` | move view up one line (Also in Vi)    |
+
+Where applicable, you can type a number before these commands
+to repeat them that many times.
+
 ## Vim Lists
 
 ### Jump Lists
