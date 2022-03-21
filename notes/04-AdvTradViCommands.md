@@ -10,7 +10,8 @@ existed in the original ex version of vi.  When the behavior
 differs from the original vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex
-line editor.
+line editor.  That is the reason vi's configuratio file
+is called `~/.exrc`.
 
 Vi was often called "bimodal" where *normal mode* and
 *command mode* were conflated together and called
@@ -64,7 +65,7 @@ to the first one on the current line and jump to its matching
 partner.  Plugsins like Syntastic can change the meaning of
 what is a matching symbol for different file types.
 
-When scrolloff is set in vim, some of these commands get modified,
+When scrolloff is set in .vimrc, some of these commands get modified,
 
 ```
     set scrolloff=3
@@ -179,6 +180,50 @@ will find your vim editing session frozen.  Type `<C-Q>` to unlock.
 | `:=`           | show number of lines in buffer                       |
 | `:n,md`        | delete lines `n` thru `m`                            |
 
+About the only useful things you can put into vi's configuration
+file, `~/.exrc`, are the `set`, `map`, and `ab` commands.
+
+### The set: Command
+
+The `:set` command changes vi's default options.  Unlike most UNIX commands
+there is no '-o' option to set these from the vi commandline.
+
+| Command             | Description                                          |
+|:------------------- |:---------------------------------------------------- |
+| `:set list`         | display `<Tab>` as `^I` and `EOL` as `$`             |
+| `:set nolist`       | display `<Tab>` & `EOL` normally (the default)       |
+| `:set tabstop=6`    | set the tab stop to 6 characters                     |
+| `:set ts=2`         | set the tab stop to 2 characters                     |
+| `:set shiftwidth=4` | set indentation to 4 characters (uses tabs & spaces) |
+| `:set`              | show all options differing from the defaults         |
+| `:set all`          | show all options and their set values                |
+| `:set ts?`          | query the value of the tabstop option                |
+
+### The map: Command
+
+The `:map` command is the only member of the map family of commands
+in the original vi.
+
+| Command     | Description                                       |
+|:----------- |:------------------------------------------------- |
+| `:map a 2k` | now `a` moves cursor up two lines, followed by    |
+| `:map k 3l` | now in vi `k` or `a` both moves cursor 3 chars rt |
+| `:map k 3l` | but in nvim `a` moves cursor 23 characters rt     |
+
+Moral: Neovim think lexiconically, not functionally.  Vi, just buggie.
+
+### The ab: Command
+
+Think of `:ab` command as a poor man's snippets.  They work in both
+*insert mode* and *command mode*.  `ab` is short for for `abbreviate`.
+
+| Command          | Description                       |
+|:---------------- |:--------------------------------- |
+| `:ab fb foo bar` | typing 'fb ' gives you 'foo bar ' |
+
+As with `:set` and `:map`, `:ab` is part a of a much larger family
+of commands in both Vim and Neovim.
+
 ## Marks
 
 Marks allow you to set locations to either be able to jump to
@@ -195,6 +240,7 @@ A mark is a "zero-width" entity between the cursor and the preceding character.
 | `` d`a `` | delete from cursor to mark `a`                     |
 | `` y`a `` | yank from cursor to mark `a`                       |
 | `d'w`     | deletes current line thru line with mark `w`       |
+| `delm a`  | delete mark `a` (Vim & Neovim only)                |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character.  If the mark is
