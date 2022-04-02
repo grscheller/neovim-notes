@@ -15,8 +15,6 @@ started out as a single text file vi cheatsheet.
 * [Lua](notes/10-Lua.md)
 * [Configuring Neovim](notes/11-Configuration.md)
 
-Unfortunately, Vim and Neovim are beginning to diverge.
-
 Since Neovim has become my daily programming driver,
 I test this information against only nvim, and sometimes
 with the vi which comes with Arch Linux (Joy, Horton, Ritter),
