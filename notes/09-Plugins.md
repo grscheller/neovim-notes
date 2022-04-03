@@ -65,34 +65,35 @@ like easymotion/vim-easymotion.  Not availble for `f`,`t`,`F`,`T`.
 
 ### Vim Surround (tpope/vim-surround)
 
-Manipulate matching surrounding symbols.
+Manipulate matching surrounding symbols.  Due to the limitations of
+Markdown, I will sometimes need to use a period `.` to indicate a space.
 
 | mode   | Command  | Description/Example                                         |
 |:------ |:--------:|:----------------------------------------------------------- |
 | normal | `ds"`    | `"foo bar"` -> `foo bar`                                    |
 | normal | `dst`    | delete surrounding HTML tags (has to be an html file)       |
 | normal | `ds(`    | `foo({ foo = bar, n = 42 })` -> `foo{ foo = bar, n = 42 }`  |
-| normal | `cs( `   | `foo({ foo = bar, n = 42 })` -> `foo { foo = bar, n = 42 }` |
+| normal | `cs(.`   | `foo({ foo = bar, n = 42 })` -> `foo { foo = bar, n = 42 }` |
 | normal | `cs'[`   | `'hello 42'` -> `[ hello 42 ]`                              |
 | normal | `cs']`   | `'hello 42'` -> `[hello 42]`                                |
 | normal | `cst<p>` | `<title>My homepage</title>` -> `<p>My homepage</p>`        |
 | normal | `ysiw(`  | `hello world` -> `hello ( world )` <= cursor was on the 'r' |
-| normal | `yss{`   | `  printf("Hi there\n")` -> `  { printf("Hi there\n") }`    |
-| normal | `ySS{`   | `  printf("Hi there\n")` -> `  {`                           |
-|        |          | `                      `    `      printf("Hi there\n")`    |
-|        |          | `                      `    `  }`                           |
+| normal | `yss{`   | `..printf("Hi there\n")` -> `..{ printf("Hi there\n") }`    |
+| normal | `ySS{`   | `..printf("Hi there\n")` -> `..{`                           |
+|        |          | `......................` -> `......printf("Hi there\n")`    |
+|        |          | `......................` -> `..}`                           |
 | visual | `S"`     | wrap visual selection in `"`,  result varies by submode     |
 | visual | `S}`     | wrap visual selection in `{}`, result varies by submode     |
 
-Due to the limitations of Markdown, I will represent the location of
-the cursor with `$` instead of the more logical choice `|`.
+Due to the limitations of Markdown, I will need to represent the
+location of the cursor with `$` instead of the more logical choice `|`.
 
 | mode    | Typed             | Result           |
 |:------  |:------------------|----------------- |
 | insert  | `foo = bar<C-S>(` | `foo = bar( $ )` |
 | insert  | `foo<C-G>s(`      | `foo( $ )`       |
 | insert  | `do <C-G>S(`      | `do { `          |
-|         |                   | `    $`          |
+|         |                   | `....$`          |
 |         |                   | `}    `          |
 
 ### Vim Repeat (tpope/vim-repeat)
