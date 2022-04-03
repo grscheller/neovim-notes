@@ -2,7 +2,7 @@
 
 ## Past Configurations
 
-Here is roughly what my very first `~/.vimrc` was
+Here is roughly what my very first `~/.vimrc` looked like.
 
 ```viml
     syntax off
@@ -485,5 +485,5 @@ Just exit nvim between each of these commands.
 
 | prev: [Lua][1] | [Home][2] |
 
-[1]: 10-Lua.md
+[1]: 11-Lua.md
 [2]: ../README.md

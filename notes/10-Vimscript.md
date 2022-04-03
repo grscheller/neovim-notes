@@ -48,8 +48,8 @@ Note: Each "Lua chunk" defined this way is in its own Lua namespace.
 
 ---
 
-| prev: [Regular Expressions][1] | [Home][2] | next: [Lua][3] |
+| prev: [Plugins][1] | [Home][2] | next: [Lua][3] |
 
-[1]: 08-RegularExpressions.md
+[1]: 09-Plugins.md
 [2]: ../README.md
-[3]: 10-Lua.md
+[3]: 11-Lua.md

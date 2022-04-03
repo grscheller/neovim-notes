@@ -11,9 +11,10 @@ started out as a single text file vi cheatsheet.
 * [Multiple Neovim Windows](notes/06-MultipleWindows.md)
 * [Encodings and Unicode](notes/07-EncodingsUnicode.md)
 * [Regular Expressions](notes/08-RegularExpressions.md)
-* [Vimscript](notes/09-Vimscript.md)
-* [Lua](notes/10-Lua.md)
-* [Configuring Neovim](notes/11-Configuration.md)
+* [Plugins](notes/09-Plugins.md)
+* [Vimscript](notes/10-Vimscript.md)
+* [Lua](notes/11-Lua.md)
+* [Configuring Neovim](notes/12-Configuration.md)
 
 Since Neovim has become my daily programming driver,
 I test this information against only nvim, and sometimes
