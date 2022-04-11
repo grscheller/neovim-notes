@@ -4,6 +4,8 @@
 
 ### Calling Vimscript from Lua
 
+#### Setting vim options
+
 ---
 
 | prev: [Vimscript][1] | [Home][2] | next: [Configuring Neovim][3] |

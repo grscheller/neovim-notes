@@ -41,21 +41,28 @@ them, use the `:buffers` command.  Among other things, vim
 gives a unique buffer number and associates a filename (if any)
 with that buffer.
 
-| Command       | Description                                 |
+| Command       | Description                                              |
 |:------------- |:-------------------------------------------------------- |
-| `:n`          | edit next buffer                                         |
-| `:next`       | same as above                                            |
-| `:prev`       | edit previous buffer                                     |
-| `:edit file`  | edit buffer associated with file in current window       |
-| `:e file`     | same as above, for both, creates new buffer if necessary |
-| `:buffers`    | list buffers                                             |
+| `:buffers`    | list buffers in the bufferlist                           |
 | `:ls`         | same as above, not the same as `!ls`                     |
-| `:b2`         | edit buffer 2 in current window                          |
+| `:n`          | edit next buffer in bufferlist in current window         |
+| `:next`       | same as above                                            |
+| `:prev`       | edit previous buffer in bufferlist in current window     |
+| `:b 2`        | edit buffer 2 in current window                          |
+| `:sb 3`       | split window, use buffer 3 for new window                |
+| `:sball`      | split all buffers into separate windows                  |
+| `:sb`         | open new window using current buffer                     |
+| `:sbuffer`    | same as above, basically 2 views of same buffer          |
+| `:sp`         | same as above                                            |
+| `:split`      | same as above                                            |
+| `:vsp`        | same as above, but split window vertically               |
+| `:vspilt`     | same as above                                            |
 | `:new`        | open new window with a new empty buffer                  |
-| `:split`      | open new window but use the same buffer                  |
-| `:spl`        | same as above, basically 2 views of same buffer          |
+| `:e file`     | edit buffer associated with file in current window       |
+| `:edit file`  | same as above, for both create new buffer if necessary   |
 | `:w`          | write buffer to file associated with buffer              |
 | `:w file`     | write buffer to file, buffer file association unchanged  |
+| `:r file`     | read file into buffer, buffer file association unchanged |
 | `:q`          | quit window, fails if last view & changes not saved      |
 | `:q!`         | quit window, abandon any changes if last view            |
 

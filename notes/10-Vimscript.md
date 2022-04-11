@@ -23,7 +23,7 @@ for loops begin executing before you finish typing them.
 
 ### Calling Lua from Vimscript
 
-Use a VimL here document to run Lua ccode from Vimscript.
+Use a VimL here document to run Lua code from Vimscript.
 
 ```
    Lua << EOF
@@ -45,6 +45,8 @@ Use a VimL here document to run Lua ccode from Vimscript.
 ```
 
 Note: Each "Lua chunk" defined this way is in its own Lua namespace.
+Global Lua variables seem to be the only way to share state across
+a running Neovim instance.
 
 ---
 
