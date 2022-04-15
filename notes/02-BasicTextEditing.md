@@ -56,8 +56,8 @@ can be internalized and eventually become part of your "muscle memory."
 | `dd`      | delete line and put in default register (cut)           |
 | `3dd`     | delete 3 lines and put in default register              |
 | `D`       | delete to end of line and put in default register       |
+| `Y`       | yank to end of line and put in default register         |
 | `yy`      | yank line to default register (copy)                    |
-| `Y`       | yank line to default register (copy)                    |
 | `x`       | delete character under cursor, put in default register  |
 | `X`       | delete character before cursor, put in default register |
 | `~`       | change case of current char and advance one char        |
