@@ -43,15 +43,15 @@ Following the recommendations of
 [RFC-1345](https://tools.ietf.org/html/rfc1345),
 vim allows users to enter characters within whatever encodings they
 are using via 2 character "diagraph" sequences.  While in *insert mode*,
-type `<C-K>` followed by a two character sequence.
+type `<C-k>` followed by a two character sequence.
 
 |  Command   | Description                                   |
 |:----------:|:--------------------------------------------- |
 |  `:dig`    | list diagraphs available for current encoding |
-|  `<C-K>a^` | enter the character â                         |
-|  `<C-K>o:` | enter the character ö                         |
-|  `<C-K>i'` | enter the character í                         |
-|  `<C-K>l*` | enter the character λ                         |
+|  `<C-k>a^` | enter the character â                         |
+|  `<C-k>o:` | enter the character ö                         |
+|  `<C-k>i'` | enter the character í                         |
+|  `<C-k>l*` | enter the character λ                         |
 
 The choice of characters you can enter this way depends on the
 encoding you are using.

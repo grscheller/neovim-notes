@@ -90,16 +90,16 @@ location of the cursor with `$` instead of the more logical choice `|`.
 
 | mode    | Typed             | Result           |
 |:------  |:------------------|----------------- |
-| insert  | `foo = bar<C-S>(` | `foo = bar( $ )` |
-| insert  | `foo<C-G>s(`      | `foo( $ )`       |
-| insert  | `do <C-G>S(`      | `do { `          |
+| insert  | `foo = bar<C-s>(` | `foo = bar( $ )` |
+| insert  | `foo<C-g>s(`      | `foo( $ )`       |
+| insert  | `do <C-g>S(`      | `do { `          |
 |         |                   | `....$`          |
 |         |                   | `}    `          |
 
 ### Vim Repeat (tpope/vim-repeat)
 
 * Allows opted in plugins to repeat actions via `.`
-* Allows `u` and `<C-R>` to behave as expected for opted in plugins
+* Allows `u` and `<C-r>` to behave as expected for opted in plugins
 
 ---
 

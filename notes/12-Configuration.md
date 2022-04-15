@@ -18,7 +18,7 @@ Here is roughly what my very first `~/.vimrc` looked like.
 2. Next 2 cause utf-8 to be used to edit & store files.  Former one nvim default.
 3. Next 4 were used to "make tabs 4 spaces."  I didn't really understand them.
    * `tabstop=8` sets the tab stops at every 8 columns
-   * `expandtab` never insert an actual `TAB`, unless you do `<C-V><tab>`
+   * `expandtab` never insert an actual `TAB`, unless you do `<C-v><tab>`
    * `shiftwidth=4` used to set (auto)indent, used by `>>`,`<<`,`cindent`
    * `softtabstop=4` makes `<tab>`/`<bs>` add/delete 4 columns of whitespace
 
@@ -194,7 +194,7 @@ file.  Basically a direct translation of a later version of the above.
     vim.o.smartcase = true       -- ... unless query has caps
     vim.o.showcmd = true         -- Show partial normal mode commands in lower right corner
     vim.o.nrformats = "bin,hex,octal,alpha"  -- bases and single letters
-                                             -- used for <C-A> & <C-X>
+                                             -- used for <C-a> & <C-x>
 
     -- Set default tabstops and replace tabs with spaces
     vim.o.tabstop = 4
@@ -226,28 +226,28 @@ file.  Basically a direct translation of a later version of the above.
        -- type <Leader>k
        -- use q to exit digraph table
        -- type digraph
-    vim.api.nvim_set_keymap('n', '<Leader>k', ':dig<CR>a<C-K>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<Leader>k', ':dig<CR>a<C-k>', { noremap = true })
 
-    -- Clear & redraw screen, lost <C-L> for this below
+    -- Clear & redraw screen, lost <C-l> for this below
     vim.api.nvim_set_keymap('n', '<Leader>l', ':mode<CR>', { noremap = true, silent = true })
 
     -- Move windows around using CTRL-hjkl in normal mode
-    vim.api.nvim_set_keymap('n', '<C-H>', '<C-W>H', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-J>', '<C-W>J', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-K>', '<C-W>K', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-L>', '<C-W>L', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>H', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>J', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>K', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>L', { noremap = true })
 
     -- Resize windows using ALT-hjkl in normal mode
-    vim.api.nvim_set_keymap('n', '<M-h>', '2<C-W><', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<M-j>', '2<C-W>-', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<M-k>', '2<C-W>+', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<M-l>', '2<C-W>>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<M-h>', '2<C-w><', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<M-j>', '2<C-w>-', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<M-k>', '2<C-w>+', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<M-l>', '2<C-w>>', { noremap = true })
 
     -- Navigate between windows using CTRL+arrow-keys in normal mode
-    vim.api.nvim_set_keymap('n', '<C-Left>',  '<C-W>h', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-Down>',  '<C-W>j', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-Up>',    '<C-W>k', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W>l', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-Left>',  '<C-w>h', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-Down>',  '<C-w>j', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-Up>',    '<C-w>k', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-Right>', '<C-w>l', { noremap = true })
 
     -- Toggle between 3 line numbering states via <Leader>n
     vim.o.number = false
@@ -305,7 +305,7 @@ file.  Basically a direct translation of a later version of the above.
     -- Enable repeating last action via "." for supported plugins
     paq {'tpope/vim-repeat'}
 
-    -- Shows what is in registers. extends " and @ in normal mode and <C-R> in insert mode
+    -- Shows what is in registers. extends " and @ in normal mode and <C-r> in insert mode
     paq {'junegunn/vim-peekaboo'}
 
     -- Use vim-airline to configure the statusline

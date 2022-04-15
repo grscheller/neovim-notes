@@ -12,8 +12,8 @@ Neovim/Vim commands and features not in your grandfather's vi.
 | `[n]zt` | make line `n` top line of view        |
 | `[n]zz` | make line `n` middle line of view     |
 | `[n]zb` | make line `n` bottom line of view     |
-| `<C-E>` | move view down one line (Also in Vi)  |
-| `<C-Y>` | move view up one line (Also in Vi)    |
+| `<C-e>` | move view down one line (Also in Vi)  |
+| `<C-y>` | move view up one line (Also in Vi)    |
 
 ## Vim Lists
 
@@ -44,9 +44,9 @@ Your current location in the jump list is always 0.
 
 | Command  | Description                                 |
 |:--------:|:------------------------------------------- |
-| `<C-O>`  | go back to previous location in jump list   |
-| `<C-I>`  | go forward to next location in jump list    |
-| `3<C-O>` | go back 3 jumps in jump list                |
+| `<C-o>`  | go back to previous location in jump list   |
+| `<C-i>`  | go forward to next location in jump list    |
+| `3<C-o>` | go back 3 jumps in jump list                |
 
 ### Change Lists
 
@@ -62,13 +62,13 @@ The `:changes` command will list a table consisting like this:
 
 | change | line | col | text                      |
 | ------:| ----:| ---:|:------------------------- |
-|    4   | 144  | 20  | `inoremap <C-H> <Left>`   |
+|    4   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    3   | 148  | 20  |                           |
-|    2   | 144  | 20  | `inoremap <C-H> <Left>`   |
+|    2   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    1   | 148  | 20  |                           |
-|  > 0   | 144  | 20  | `inoremap <C-H> <Left>`   |
+|  > 0   | 144  | 20  | `inoremap <C-h> <Left>`   |
 |    1   | 148  | 20  |                           |
-|    2   | 145  | 20  | `inoremap <C-J> <Down>`   |
+|    2   | 145  | 20  | `inoremap <C-j> <Down>`   |
 
 Your current location in the change list is always 0.
 
@@ -83,7 +83,7 @@ Part of the old ctags infrastructure obviated by LSP.  See
 [here](https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html)
 for how to use and configure ctags.
 
-The `:tags` command and `<C-T>` retain some limited functionality, but
+The `:tags` command and `<C-t>` retain some limited functionality, but
 nothing that you can't accomplish with jumplists and changelists.
 
 ## Types of registers
@@ -141,16 +141,16 @@ The expression register `"=` is used for evaluating vim script
 expressions.  The result is coerced into a string and pasted as
 if from a regular register.
 
-**Example:** While in *insert mode*, type `<C-R>=` and you are
+**Example:** While in *insert mode*, type `<C-r>=` and you are
 dropped to the *command mode* command line, but with an `=`
 prompt.  Type in any VimL expression, say `3 + 2 * 5<CR>`,
 then `13` is entered to the buffer and you are returned
 to *insert mode*.
 
-When at the command line `=` prompt, you can use `<C-R>` again to
+When at the command line `=` prompt, you can use `<C-r>` again to
 paste the contents of other registers into the "expression register".
 
-`<C-R>=` is also useful in *command mode* at the `:` and  `\` prompts.
+`<C-r>=` is also useful in *command mode* at the `:` and  `\` prompts.
 
 ### Selection and drop registers (Interacts with Desktop GUI)
 

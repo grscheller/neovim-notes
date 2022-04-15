@@ -121,12 +121,12 @@ nor an ex clone.
 
 * Vi only has one level of undo/redo, `u` undoes the
   last change and, if hit again, will redo the change.
-  `<C-R>`has no effect, but `R` does puts vi into *replace mode*.
+  `<C-r>`has no effect, but `R` does puts vi into *replace mode*.
 * In vi, hitting `<Insert>` while in *insert mode* or *replace mode*
   does not swap you between them.
 * In vi, you cannot navigate around file in *insert mode* or
   *replace mode* with the arrow keys.
-* In vi, `<C-O>` does not let you execute a *normal mode*
+* In vi, `<C-o>` does not let you execute a *normal mode*
   command while in *insert mode*.
 * There are fewer vi *insert mode* commands.
 * In vi *normal mode* the `g`, `K`, `q`, `v`, and `V` keys are

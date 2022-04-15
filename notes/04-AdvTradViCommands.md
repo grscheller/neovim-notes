@@ -23,12 +23,12 @@ Vi was often called "bimodal" where *normal mode* and
 
 | Command | Description                                |
 |:-------:|:------------------------------------------ |
-| `<C-G>` | show filename and other useful status info |
-| `<C-L>` | redraw view                                |
+| `<C-g>` | show filename and other useful status info |
+| `<C-l>` | redraw view                                |
 | `ZZ`    | save changes and exit vim                  |
-| `<C-Z>` | suspend vim to shell background            |
+| `<C-z>` | suspend vim to shell background            |
 
-For `<C-Z>`, the shell command `fg %1` will usually work to
+For `<C-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
 via the `jobs` shell command.
 
@@ -46,19 +46,19 @@ via the `jobs` shell command.
 | `L`      | move to bottom of screen                           |
 | `nH`     | move to nth line from top of screen                |
 | `nL`     | move to nth line from bottom of screen             |
-| `<C-U>`  | move cursor/view up half a screen                  |
-| `<C-D>`  | move cursor/view down half a screen                |
-| `<C-B>`  | move cursor/view up a full screen                  |
-| `<C-F>`  | move cursor/view down a full screen                |
-| `<C-E>`  | move view down a one line, don't move cursor       |
-| `<C-Y>`  | move view up a one line, don't move cursor         |
+| `<C-u>`  | move cursor/view up half a screen                  |
+| `<C-d>`  | move cursor/view down half a screen                |
+| `<C-b>`  | move cursor/view up a full screen                  |
+| `<C-f>`  | move cursor/view down a full screen                |
+| `<C-e>`  | move view down a one line, don't move cursor       |
+| `<C-y>`  | move view up a one line, don't move cursor         |
 | `%`      | move between matching `( )`, `[ ]`, `{ }` or `< >` |
 | `n<Bar>` | move to nth column in line                         |
 | `<Bar>`  | move to beginning of line                          |
 
 Where `<Bar>` = `|`
 
-Both `<C-E>` & `<C-Y>` will move cursor to keep it in the view.
+Both `<C-e>` & `<C-y>` will move cursor to keep it in the view.
 
 With `%`, if you are not currently on a grouping symbol, move
 to the first one on the current line and jump to its matching
@@ -111,16 +111,16 @@ files various constructs were understood as defining "sections."
 
 | Command       | Description                                         |
 |:-------------:|:--------------------------------------------------- |
-| `<C-H>`       | delete previous character                           |
+| `<C-h>`       | delete previous character                           |
 | `<BS>`        | delete previous character                           |
-| `<C-V>{char}` | insert character `{char}` literally                 |
-| `<C-V><Tab>`  | insert literal `<Tab>` (handy for makefiles)        |
-| `<C-W>`       | delete previous word                                |
-| `<C-U>`       | delete everything to left of cursor                 |
-| `<C-C>`       | break out of *insert mode*, punt on any auto cmds   |
-| `<C-X>`       | enter *insert mode* completion submode (vim not vi) |
+| `<C-v>{char}` | insert character `{char}` literally                 |
+| `<C-v><Tab>`  | insert literal `<Tab>` (handy for makefiles)        |
+| `<C-w>`       | delete previous word                                |
+| `<C-u>`       | delete everything to left of cursor                 |
+| `<C-c>`       | break out of *insert mode*, punt on any auto cmds   |
+| `<C-x>`       | enter *insert mode* completion submode (vim not vi) |
 
-For more information on `<C-X>` see
+For more information on `<C-x>` see
 [ins-completion section](BasicTextEditing02.md#ins-completion-sub-mode-commands)
 in BasicTextEditing, or
 
@@ -128,11 +128,11 @@ in BasicTextEditing, or
     :help ins-completion
 ```
 
-If you accidentally typed `<C-X>` while in insert mode, typing any
+If you accidentally typed `<C-x>` while in insert mode, typing any
 non-control character, except `s` will get you back.  If you have
 terminal flow control turned on, and you hit the unfortunate key
-combination `<C-X><C-S>`, something EMACS users are likely to do, you
-will find your vim editing session frozen.  Type `<C-Q>` to unlock.
+combination `<C-x><C-s>`, something EMACS users are likely to do, you
+will find your vim editing session frozen.  Type `<C-q>` to unlock.
 
 ### Insert Mode vs Replace Mode
 
@@ -144,9 +144,9 @@ will find your vim editing session frozen.  Type `<C-Q>` to unlock.
   via the `R` command.
 * Like in *insert mode* you can navigate around the text
   via the arrow keys creating multiple undo events.
-* In *replace mode*, the `<BS>` and `<C-H>` keys undo
+* In *replace mode*, the `<BS>` and `<C-h>` keys undo
   only current set of replacements, otherwise they
-  act like the `<Left>` arrow key.
+  act like the `<LefT>` arrow key.
 
 ## Command Mode Commands
 
