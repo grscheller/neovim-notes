@@ -1,6 +1,6 @@
 # Absolute Minimum One Needs to Know
 
-Let's say you've ssh'ed to some server which only has
+Let's say you've logged into some server which only has
 vi or vim installed.  No emacs, no nano.  You only have
 one quick edit to do, so it is not worth installing your
 favorite editor.  Here is some critical info you need to
@@ -21,18 +21,18 @@ Damn it, CTRL-C does not even work!
 To get out,
 
 ```
-    <Esc>:qa!<CR>
+    <Esc>:q!<CR>
 ```
 
 The ESC key brought you back (or left you in) "command mode".
 In vim/nvim this mode is known as *normal mode*.  The `:` key
 put you into "command-line mode", known as *command mode*
 in vim/nvim.  You are now entering text on the last line of
-the terminal which begins with a `:` prompt.  The `qa!`
-"command-line mode" vi command quits all editing buffers
-without saving any changes.  The `<CR>` key, also known as
-`<Return>`, `<Enter>` or `<EOL>` key, submits the command
-ending your session.
+the terminal which begins with a `:` prompt.  The `q!`
+"command-line mode" vi command quits the current editting 
+session without saving any changes.  The `<CR>` key, also
+known as the `<Return>`, `<Enter>` or `<EOL>` key, submits
+the command ending your session.
 
 From now on, we'll refer to these modes by their vim/nvim names.
 

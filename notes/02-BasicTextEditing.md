@@ -282,19 +282,19 @@ and prompts you with `:`.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
-| `:w`                | write to disk file being edited                      |
+| `:w`                | write buffer to associated file on disk              |
 | `:w file`           | write to file, still editing original file           |
 | `:q`                | quit editing, will warn if unsaved changes           |
-| `:wq`               | write current buffer to disk, then quit current view |
+| `:wq`               | write current buffer to disk, quit current window    |
 | `:wa`               | write all buffers to disk                            |
-| `:q!`               | quit current view without saving unsaved changes     |
-| `:qa`               | quit program if there are no unsaved changes         |
-| `:qa!`              | quit program without saving unsaved changes          |
+| `:q!`               | quit current window without saving changes           |
+| `:qa`               | quit all windows                                     |
+| `:qa!`              | quit all windows, even if there are unsaved changes  |
 | `:n`                | edit next buffer typically next file on command line |
 | `:next`             | edit next buffer typically next file on command line |
 | `:prev`             | edit previous buffer                                 |
-| `:wn`               | write to disk and move on to next file to edit       |
-| `:42`               | move cursor to 42                                    |
+| `:wn`               | write buffer to disk and move on to next buffer      |
+| `:42`               | move cursor to line 42                               |
 | `:+5`               | move cursor 5 lines down                             |
 | `:-3`               | move cursor 3 lines up                               |
 | `:#`                | give line number of current line cursor is on        |
