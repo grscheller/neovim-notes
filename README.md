@@ -14,7 +14,7 @@ started out as a single text file vi cheatsheet.
 * [Plugins](notes/09-Plugins.md)
 * [Vimscript](notes/10-Vimscript.md)
 * [Lua](notes/11-Lua.md)
-* [Configuring Neovim](notes/12-Configuration.md)
+* [Neovim Configuration & Maintenance](notes/12-Configuration.md)
 
 Since Neovim has become my daily programming driver,
 I test this information against only nvim, and sometimes
