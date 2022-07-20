@@ -10,7 +10,7 @@ existed in the original ex version of vi.  When the behavior
 differs from the original vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex
-line editor.  That is the reason vi's configuratio file
+line editor.  That is the reason vi's configuration file
 is called `~/.exrc`.
 
 Vi was often called "bimodal" where *normal mode* and
@@ -65,7 +65,7 @@ to the first one on the current line and jump to its matching
 partner.  Plugsins like Syntastic can change the meaning of
 what is a matching symbol for different file types.
 
-When scrolloff is set in .vimrc, some of these commands get modified,
+If scrolloff is set in init.vim, some of these commands get modified,
 
 ```
     set scrolloff=3

@@ -34,8 +34,8 @@ has to be bootstrapped.
        ~/.local/share/nvim/site/pack/packer/start/packer.nvim  
 ```
 
-Both Paq and Packer need configuration in your Neovim configuration
-filrs.  I found Packer to be substantially faster than Paq, even through
+Both Paq and Packer need to be configured in your Neovim configuration
+files.  I found Packer to be substantially faster than Paq, even through
 it does much more.
 
 ## Periodic Mantenance
