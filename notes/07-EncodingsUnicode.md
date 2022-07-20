@@ -63,7 +63,7 @@ and display of Unicode code points just works.  Terminals
 are fixed width font beasts, but Libre Office handles the
 variable width code points just fine.
 
-When using gvim, vim or nvim, with a unicode aware terminal
+When using gvim, or vim/nvim with a unicode aware terminal
 emulator like rxvt-unicode or gnome-terminal, code points
 can be entered while in *insert mode* via
 
