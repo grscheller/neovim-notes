@@ -1,7 +1,8 @@
 # My Neovim Notes
 
 These notes have evolved over many years.  They originally
-started out as a single text file vi cheatsheet.
+started out as a single text file vi cheatsheet.  I am trying
+to capture the base editor behavior for basic text editing.
 
 * [Absolute Minimum You Need to Know](notes/01-AbsoluteMinimalTextEditing.md)
 * [Basic Text Editing](notes/02-BasicTextEditing.md)
@@ -16,7 +17,6 @@ started out as a single text file vi cheatsheet.
 * [Lua](notes/11-Lua.md)
 * [Neovim Configuration & Maintenance](notes/12-Configuration.md)
 
-Since Neovim has become my daily programming driver,
-I test this information against only nvim, and sometimes
-with the vi which comes with Arch Linux (Joy, Horton, Ritter),
+I test this information against nvim, and sometimes with
+the vi which comes with Arch Linux (Joy, Horton, Ritter),
 not vim in vi mode.

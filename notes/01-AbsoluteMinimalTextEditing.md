@@ -98,7 +98,7 @@ called the default register in vim/nvim.
 | `d0`      | delete to beginning of line, put in default register   |
 | `yy`      | yank line to default register (copy)                   |
 | `x`       | delete character under cursor, put in default register |
-| `r<char>` | change current character cursor highlights to `<char>` |
+| `r<char>` | change current character cursor highlights to '<char>' |
 | `p`       | paste default register contents "after"                |
 | `P`       | paste default register contents "before"               |
 | `J`       | join curent & next line, insert spaces as needed       |
@@ -107,40 +107,41 @@ What "before" or "after" mean depends on what is in the default register.
 
 ### *Insert Mode*
 
-The whole vi paradigm is that you do all navigation in *normal mode*
-and type text into the file buffer in *insert mode*.  You return
-to *normal mode* by pressing the `<Esc>` key.
+The original vi paradigm was that you do all navigation in *normal mode*
+and type text into the file buffer in *insert mode*.  From *insert mode*
+you return to *normal mode* by pressing the `<Esc>` key.
 
-With vim/nvim, in *insert mode*, you can navigate through the file with
-the arrow keys.  You cannot navigate this way with vi.
+For vim/nvim you can navigate through the file while in *insert mode*
+with the arrow keys.  You cannot navigate this way with vi.
 
 ### *Command Mode*
 
 From *normal mode* use  `:`, `/`, or `?` to enter *command mode*.
-The cursor jumps down to the bottom of the terminal window and
+The cursor jumps down to the bottom of the terminal window and to
 prompts you with either `:`, `\`, or `?` depending on which one
 you typed.  The later two are used to search forward and backward
 respectfully in the file.
 
-| Command             | Description                                          |
-|:------------------- |:---------------------------------------------------- |
-| `:w`                | write to disk file being edited                      |
-| `:w file`           | write to file, still editing original file           |
-| `:q`                | quit editing, will warn about unsaved changes        |
-| `:wq`               | write to disk, then quit                             |
-| `:q!`               | quit without saving unsaved changes                  |
-| `:n`                | edit next buffer typically next file on command line |
-| `:prev`             | edit previous buffer                                 |
-| `:42`               | move cursor to beginning of line 42                  |
-| `:#`                | give line number of current line cursor is on        |
-| `:s/foo/bar/`       | substitute first instance of foo with bar            |
-| `:s/foo/bar/g`      | substitute all instances of foo with bar             |
-| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
-| `:/dog/`            | jump to next line with `dog` in it                   |
-| `/dog`              | jump forward to next instance of `dog` in file       |
-| `?cat`              | jump back to previous instance of `cat` in file      |
-| `/`                 | jump forward using last search pattern               |
-| `?`                 | jump back using last search pattern                  |
+| Command             | Description                                               |
+|:------------------- |:--------------------------------------------------------- |
+| `:w`                | write to disk file being edited                           |
+| `:w file`           | write to file, still editing original file                |
+| `:q`                | quit editing, will warn about unsaved changes             |
+| `:wq`               | write to disk, then quit                                  |
+| `:q!`               | quit without saving unsaved changes                       |
+| `:n`                | edit next buffer typically next file on command line      |
+| `:prev`             | edit previous buffer                                      |
+| `:42`               | move cursor to beginning of line 42                       |
+| `:#`                | give line number of current line cursor is on             |
+| `:s/foo/bar/`       | substitute first instance of foo with bar on current line |
+| `:s/foo/bar/g`      | substitute all instances of foo with bar on current line  |
+| `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42               |
+| `:/dog/`            | jump to next line with 'dog' in it                        |
+| `:/dog/s/13/42/`    | jump to next line with 'dog' and replace first 13 with 42 |
+| `/dog`              | jump forward to next instance of 'dog' in file            |
+| `?cat`              | jump back to previous instance of 'cat' in file           |
+| `/`                 | jump forward using last search pattern                    |
+| `?`                 | jump back using last search pattern                       |
 
 Entering `<CR>` will cause the above commands to be executed and return you
 to *normal mode*.  Hitting `<Esc>` instead will punt on running the command
