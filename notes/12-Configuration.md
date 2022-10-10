@@ -8,7 +8,7 @@ Your Neovim configuration is stored here,
 The entry point can be written in Lua `init.lua` or VimL `init.vim`.
 
 See the
-[nvim](https://github.com/grscheller/dotfiles/tree/main/config/nvim)
+[nvim](https://github.com/grscheller/dotfiles/tree/main/home/config/nvim)
 section of my
 [dotfiles](https://github.com/grscheller/dotfiles)
 repo for my current Neovim configuration.

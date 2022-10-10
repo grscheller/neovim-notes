@@ -12,10 +12,10 @@ Vimscript support.
 
 ## Ex commands
 
-Command mode should not be used as a VimL REPL.  As far as
-I can tell, its best just to execute one line ex commands.
-Command mode becomes very quirky when given Vimscript.  For example,
-for loops begin executing before you finish typing them.
+Command mode is not a good VimL REPL.  It is only really
+good for one line ex commands.  Command mode can be very
+quirky when given Vimscript.  For example, "for loops"
+begin executing before you are finished typing them.
 
 ### set command
 
@@ -26,8 +26,7 @@ for loops begin executing before you finish typing them.
 Use a VimL here document to run Lua code from Vimscript.
 
 ```
-   Lua << EOF
-   --[[ Rust configuration, rust-tools.nvim will call lspconfig itself ]]
+   lua << EOF
    local rust_opts = {
        tools = {
            autoSetHints = true,
@@ -39,14 +38,13 @@ Use a VimL here document to run Lua code from Vimscript.
            }
        }
    }
-   
    require('rust-tools').setup(rust_opts)
    EOF
 ```
 
 Note: Each "Lua chunk" defined this way is in its own Lua namespace.
-Global Lua variables seem to be the only way to share state across
-a running Neovim instance.
+Local lua variables are local to each chenk.  Global Lua variables
+are shared between different chunks.
 
 ---
 
