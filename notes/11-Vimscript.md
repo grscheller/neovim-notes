@@ -50,6 +50,6 @@ are shared between different chunks.
 
 | prev: [Plugins][1] | [Home][2] | next: [Lua][3] |
 
-[1]: 09-Plugins.md
+[1]: 10-Lua.md
 [2]: ../README.md
-[3]: 11-Lua.md
+[3]: 12-Configuration.md
