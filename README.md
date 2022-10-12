@@ -13,8 +13,8 @@ to capture the base editor behavior for basic text editing.
 * [Encodings and Unicode](notes/07-EncodingsUnicode.md)
 * [Regular Expressions](notes/08-RegularExpressions.md)
 * [Plugins](notes/09-Plugins.md)
-* [Lua](notes/11-Lua.md)
-* [Vimscript](notes/10-Vimscript.md)
+* [Lua](notes/10-Lua.md)
+* [Vimscript](notes/11-Vimscript.md)
 * [Neovim Configuration & Maintenance](notes/12-Configuration.md)
 
 I test this information against nvim, and sometimes with

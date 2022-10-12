@@ -67,5 +67,5 @@ Just exit nvim between each of these commands.
 
 | prev: [Lua][1] | [Home][2] |
 
-[1]: 11-Lua.md
+[1]: 11-Vimscript.md
 [2]: ../README.md

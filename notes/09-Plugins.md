@@ -107,4 +107,4 @@ location of the cursor with `$` instead of the more logical choice `|`.
 
 [1]: 08-RegularExpressions.md
 [2]: ../README.md
-[3]: 10-Vimscript.md
+[3]: 10-Lua.md
