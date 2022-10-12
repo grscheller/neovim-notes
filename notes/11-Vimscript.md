@@ -48,7 +48,7 @@ are shared between different chunks.
 
 ---
 
-| prev: [Plugins][1] | [Home][2] | next: [Lua][3] |
+| prev: [Lua][1] | [Home][2] | next: [Neovim Configuring & Maintenance][3] |
 
 [1]: 10-Lua.md
 [2]: ../README.md

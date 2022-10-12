@@ -17,7 +17,7 @@ Lua table are the main data type.  Other types include `nil`, `boolean`,
 
 ---
 
-| prev: [Vimscript][1] | [Home][2] | next: [Neovim Configuring & Maintenance][3] |
+| prev: [Plugins][1] | [Home][2] | next: [Vimscript][3] |
 
 [1]: 09-Plugins.md
 [2]: ../README.md
