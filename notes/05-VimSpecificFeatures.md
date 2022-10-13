@@ -79,7 +79,7 @@ Your current location in the change list is always 0.
 
 ### Tag stack
 
-Part of the old ctags infrastructure obviated by LSP.  See
+This is part of the old ctags infrastructure obviated by LSP.  See
 [here](https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html)
 for how to use and configure ctags.
 
