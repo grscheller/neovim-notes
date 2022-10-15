@@ -26,10 +26,10 @@ To get out,
 
 The ESC key brought you back (or left you in) "command mode".
 In vim/nvim this mode is known as *normal mode*.  The `:` key
-put you into "command-line mode", known as *command mode*
+put you into "command line mode", known as *command mode*
 in vim/nvim.  You are now entering text on the last line of
 the terminal which begins with a `:` prompt.  The `q!`
-"command-line mode" vi command quits the current editting 
+"command line mode" vi command quits the current editing
 session without saving any changes.  The `<CR>` key, also
 known as the `<Return>`, `<Enter>` or `<EOL>` key, submits
 the command ending your session.

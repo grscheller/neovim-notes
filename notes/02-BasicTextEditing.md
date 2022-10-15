@@ -21,6 +21,22 @@ can be internalized and eventually become part of your "muscle memory."
 
 ## Normal Mode
 
+I use *normal mode* as the default mode to enter when I pause
+to think.  I known people to use *insert mode* for this, but
+I first learned on the the original vi where *insert mode* was
+not as rich.
+
+### Close Editor Window from Normal Mode
+
+| Command  | Description                               |
+|:--------:|:----------------------------------------- |
+| `ZZ`     | exit editor, save changes, vi/vim/nvim    |
+| `ZQ`     | exit editor, don't save changes, vim/nvim |
+
+If you have unsaved changes, or have files you have not edited yet,
+you will have to hit `ZZ` or `ZQ` again.  In nvim, `ZZ` and `ZQ` will
+only close the current window if multiple windows or tabs are open.
+
 ### Cursor movement in Normal Mode
 
 | Command       | Description                                       |
