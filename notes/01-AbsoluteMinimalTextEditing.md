@@ -35,12 +35,16 @@ known as the `<Return>`, `<Enter>` or `<EOL>` key, submits
 the command ending your session.
 
 From now on, we'll refer to these modes by their vim/nvim names.
+Also, we will make a distinction between the file stored on
+disk and the "text buffer" image of the file read into memory.
+Text buffers are uaually, but not always, associated with a
+file.
 
 ## The 3 main modes
 
-* *normal mode*: Used to navigate file and issue "visual interface" (vi) commands
-* *insert mode*: Used to type text into the file
-* *command mode*: Used to issue "line editor" (ex) commands
+* *normal mode*: Navigate text buffer & issue "visual interface" (vi) commands
+* *insert mode*: Insert text into the text buffer
+* *command mode*: Execute "line editor" (ex) commands on the text buffer
 
 If in either *insert mode* or *command mode*, `<Esc>` will take
 you to *normal mode*.
@@ -68,7 +72,7 @@ will put you back into *normal mode*.
 | `0`      | move cursor to start of line                |
 
 In vi/vim/nvim, depending on terminal type, arrow keys will
-sometimes work to navigate the file in *normal mode*.
+sometimes work to navigate the text buffer in *normal mode*.
 
 ### Commands to insert or manipulate text
 
@@ -108,10 +112,10 @@ What "before" or "after" mean depends on what is in the default register.
 ### *Insert Mode*
 
 The original vi paradigm was that you do all navigation in *normal mode*
-and type text into the file buffer in *insert mode*.  From *insert mode*
+and type text into the text buffer in *insert mode*.  From *insert mode*
 you return to *normal mode* by pressing the `<Esc>` key.
 
-For vim/nvim you can navigate through the file while in *insert mode*
+For vim/nvim you can navigate through the text buffer while in *insert mode*
 with the arrow keys.  You cannot navigate this way with vi.
 
 ### *Command Mode*
@@ -120,12 +124,12 @@ From *normal mode* use  `:`, `/`, or `?` to enter *command mode*.
 The cursor jumps down to the bottom of the terminal window and to
 prompts you with either `:`, `\`, or `?` depending on which one
 you typed.  The later two are used to search forward and backward
-respectfully in the file.
+respectfully in the text buffer.
 
 | Command             | Description                                               |
 |:------------------- |:--------------------------------------------------------- |
 | `:w`                | write to disk file being edited                           |
-| `:w file`           | write to file, still editing original file                |
+| `:w file`           | write to file, text buffer still associated to orig file  |
 | `:q`                | quit editing, will warn about unsaved changes             |
 | `:wq`               | write to disk, then quit                                  |
 | `:q!`               | quit without saving unsaved changes                       |
@@ -138,8 +142,8 @@ respectfully in the file.
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42               |
 | `:/dog/`            | jump to next line with 'dog' in it                        |
 | `:/dog/s/13/42/`    | jump to next line with 'dog' and replace first 13 with 42 |
-| `/dog`              | jump forward to next instance of 'dog' in file            |
-| `?cat`              | jump back to previous instance of 'cat' in file           |
+| `/dog`              | jump forward to next instance of 'dog' in text buffer     |
+| `?cat`              | jump back to previous instance of 'cat' in text buffer    |
 | `/`                 | jump forward using last search pattern                    |
 | `?`                 | jump back using last search pattern                       |
 

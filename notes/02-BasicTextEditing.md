@@ -43,8 +43,9 @@ only close the current window if multiple windows or tabs are open.
 |:-------------:|:------------------------------------------------- |
 | `h,j,k,l`     | move cursor one character (also arrow keys)       |
 | `w, W`        | move forward to beginning next word               |
-| `b, B`        | move back to beginning word                       |
-| `e, E`        | move forward to end of word                       |
+| `b, B`        | move backward to beginning word or WORD           |
+| `e, E`        | move forward to end of word or WORD               |
+| `ge, gE`      | move backward to end of previous word or WORD     |
 | `$`           | move to end of line                               |
 | `^`           | move to first non-whitespace character on line    |
 | `0`           | move to beginning of line                         |
@@ -67,20 +68,22 @@ only close the current window if multiple windows or tabs are open.
 
 ### Changing text and/or interacting with the default register
 
-| Command   | Description                                             |
-|:---------:|:------------------------------------------------------- |
-| `dd`      | delete line and put in default register (cut)           |
-| `3dd`     | delete 3 lines and put in default register              |
-| `D`       | delete to end of line and put in default register       |
-| `Y`       | yank to end of line and put in default register         |
-| `yy`      | yank line to default register (copy)                    |
-| `x`       | delete character under cursor, put in default register  |
-| `X`       | delete character before cursor, put in default register |
-| `~`       | change case of current char and advance one char        |
-| `r<char>` | change current char to `<char>`                         |
-| `p`       | paste default register contents "after"                 |
-| `P`       | paste default register contents "before"                |
-| `J`       | join curent & next line, insert spaces as needed        |
+| Command      | Description                                             |
+|:------------:|:------------------------------------------------------- |
+| `dd`         | delete line and put in default register (cut)           |
+| `3dd`        | delete 3 lines and put in default register              |
+| `D`          | delete to end of line and put in default register       |
+| `Y`          | yank to end of line and put in default register         |
+| `yy`         | yank line to default register (copy)                    |
+| `x`          | delete character under cursor, put in default register  |
+| `X`          | delete character before cursor, put in default register |
+| `~`          | change case of current char and advance one char        |
+| `g~<motion>` | change case via "vim motion" or "vim text object"       |
+| `r<char>`    | change current char to `<char>`                         |
+| `p`          | paste default register contents "after"                 |
+| `P`          | paste default register contents "before"                |
+| `J`          | join curent & next line, insert spaces as needed        |
+| `gJ`         | join curent & next line without inserting spaces        |
 
 What "before" or "after" mean depends on what is in the
 default register.  Both `y` and `d` can be used with all
