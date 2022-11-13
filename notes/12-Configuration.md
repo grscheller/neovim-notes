@@ -65,7 +65,7 @@ Just exit nvim between each of these commands.
 
 ---
 
-| prev: [Vimscript][1] | [Home][2] |
+| prev: [Vimscript][11] | [Home][0] |
 
-[1]: 11-Vimscript.md
-[2]: ../README.md
+[11]: 11-Vimscript.md
+[0]: ../README.md

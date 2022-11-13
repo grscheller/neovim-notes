@@ -94,8 +94,8 @@ mapping is mapped to.
 
 ---
 
-| prev: [Mult Neovim Windows][1] | [Home][2] | next: [Regular Expressions][3] |
+| prev: [Mult Neovim Windows][6] | [Home][0] | next: [Regular Expressions][8] |
 
-[1]: 06-MultipleWindows.md
-[2]: ../README.md
-[3]: 08-RegularExpressions.md
+[6]: 06-MultipleWindows.md
+[0]: ../README.md
+[8]: 08-RegularExpressions.md

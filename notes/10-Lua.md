@@ -17,8 +17,8 @@ Lua table are the main data type.  Other types include `nil`, `boolean`,
 
 ---
 
-| prev: [Plugins][1] | [Home][2] | next: [Vimscript][3] |
+| prev: [Plugins][9] | [Home][0] | next: [Vimscript][11] |
 
-[1]: 09-Plugins.md
-[2]: ../README.md
-[3]: 11-Vimscript.md
+[9]: 09-Plugins.md
+[0]: ../README.md
+[11]: 11-Vimscript.md

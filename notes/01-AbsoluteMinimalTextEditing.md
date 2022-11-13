@@ -162,7 +162,7 @@ It does not repeat *command mode* commands.
 
 ---
 
-| [Home][1] | next: [Basic Text Editing][2] |
+| [Home][0] | next: [Basic Text Editing][2] |
 
-[1]: ../README.md
+[0]: ../README.md
 [2]: 02-BasicTextEditing.md

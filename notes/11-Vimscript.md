@@ -48,8 +48,8 @@ are shared between different chunks.
 
 ---
 
-| prev: [Lua][1] | [Home][2] | next: [Neovim Configuring & Maintenance][3] |
+| prev: [Lua][10] | [Home][0] | next: [Neovim Configuring & Maintenance][12] |
 
-[1]: 10-Lua.md
-[2]: ../README.md
-[3]: 12-Configuration.md
+[10]: 10-Lua.md
+[0]: ../README.md
+[12]: 12-Configuration.md

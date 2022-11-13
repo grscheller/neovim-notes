@@ -141,8 +141,8 @@ present.
 
 ---
 
-| prev: [Basic Text Editing][1] | [Home][2] | next: [Adv Trad Vi Commands][3] |
+| prev: [Basic Text Editing][2] | [Home][0] | next: [Adv Trad Vi Commands][4] |
 
-[1]: 02-BasicTextEditing.md
-[2]: ../README.md
-[3]: 04-AdvTradViCommands.md
+[2]: 02-BasicTextEditing.md
+[0]: ../README.md
+[4]: 04-AdvTradViCommands.md

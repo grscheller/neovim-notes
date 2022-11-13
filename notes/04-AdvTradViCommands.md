@@ -1,10 +1,10 @@
 # Advanced Traditional Vi Commands
 
 The problem a lot of people have with Vim is
-[that they don't grok vi][4].
+[that they don't grok vi][40].
 
 Much of the information here I obtained from
-[Lagmonster][5].
+[Lagmonster][50].
 This site no longer seems to be active.  These commands
 existed in the original ex version of vi.  When the behavior
 differs from the original vi, I will indicate the nvim behavior.
@@ -234,10 +234,10 @@ command.
 
 ---
 
-| prev: [Vim Factoids][1] | [Home][2] | next: [Vim Specific Features][3] |
+| prev: [Vim Factoids][3] | [Home][0] | next: [Vim Specific Features][5] |
 
-[1]: 03-VimFactoids.md
-[2]: ../README.md
-[3]: 05-VimSpecificFeatures.md
-[4]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
-[5]: http://www.lagmonster.org/docs/vi2.html
+[3]: 03-VimFactoids.md
+[0]: ../README.md
+[5]: 05-VimSpecificFeatures.md
+[40]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
+[50]: http://www.lagmonster.org/docs/vi2.html

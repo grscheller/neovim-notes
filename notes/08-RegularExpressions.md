@@ -245,8 +245,8 @@ POSIX.2 standard for backward compatibility, but are considered a wart.
 
 ---
 
-| prev: [Encodings and Unicode][1] | [Home][2] | next: [Plugins][3] |
+| prev: [Encodings and Unicode][7] | [Home][0] | next: [Plugins][9] |
 
-[1]: 07-EncodingsUnicode.md
-[2]: ../README.md
-[3]: 09-Plugins.md
+[7]: 07-EncodingsUnicode.md
+[0]: ../README.md
+[9]: 09-Plugins.md

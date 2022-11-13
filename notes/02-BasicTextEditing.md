@@ -498,8 +498,8 @@ To get the most out of it,
 
 ---
 
-| [Absolute Minimal Text Editing][1] | [Home][2] | next: [Vim Factoids][3] |
+| [Absolute Minimal Text Editing][1] | [Home][0] | next: [Vim Factoids][3] |
 
 [1]: 01-AbsoluteMinimalTextEditing.md
-[2]: ../README.md
+[0]: ../README.md
 [3]: 03-VimFactoids.md
