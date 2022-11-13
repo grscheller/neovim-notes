@@ -74,23 +74,46 @@ can be entered while in *insert mode* via
 
 Where `<C-S-u>` means holding down CTRL+SHIFT+u.
 
-(TL;DR): Be aware that in both the cases of gvim and a
-terminal emulator, you are not interacting with the
-"terminal" being emulated, but the underlying GUI
-application.  As far as a real terminal is concerned,
-`CTRL+u` and `CTRL+U` are the same control character,
-octal 025.  That is what is coming down the RS-232 cable.
-The Graphical User Interface (GUI) is seeing all your
-keystrokes and can distinguish whether you pressed `<C-u>`
-or `<C-S-u>`.
-
 Note: Using `<S-C-u>` will not work.
 
 Note: `<C-S-u>` does not work while on the linux console.
 
-Note: Defining a key mapping involving `<C-S-u>` does not
-work, either as the key mapping or to whatever the key
-mapping is mapped to.
+Note: Defining a key mapping involving `<C-S-u>` will not
+work, both as a key mapping and to whatever a key mapping
+is mapped to.
+
+(TL;DR): Be aware that for both gvim and a vim running in
+a terminal emulator, you are not interacting with the
+"terminal" being emulated, but the underlying GUI
+application.  As far as a real terminal is concerned,
+`CTRL+d` and `CTRL+D` are the same control character,
+octal 04.  That is what is coming down the RS-232 cable.
+The Graphical User Interface (GUI) is seeing all your
+keystrokes and can distinguish whether you pressed `<C-d>`
+or `<C-S-d>`.
+
+(TL;DR): Terminals in the vt102/vt220 family were keyboard/monitor
+interfaces to RS-232 cables.  Holding the CTRL key down electrically
+zeroed out the 6th and 7th bits of the 7-bit or 8-bit character typed.
+Likewise, holding the SHIFT key down zeroed just the 6th bit.  The
+ASCII values were choosen to make this work.
+
+| ASCII | Decimal    | Octal | Binary     | Symbol   | Description           |
+| -----:|:---------- |:-----:|:----------:|:--------:|:--------------------- |
+|  `97` | `64+32+1`  | `141` | `01100001` | `a`      | `Lowercase A`         |
+|  `65` | `64+1`     | `101` | `01000001` | `A`      | `Uppercse A`          |
+|   `1` | `1`        | `001` | `00000001` | `LF`     | `Line Feed`           |
+| `100` | `64+32+4`  | `144` | `01100100` | `d`      | `Lowercase D`         |
+|  `68` | `64+4`     | `104` | `01000100` | `D`      | `Uppercase D`         |
+|   `4` | `4`        | `004` | `00000100` | `EOT`    | `End of Transmission` |
+| `122` | `64+32+26` | `144` | `01111010` | `z`      | `Lowercase D`         |
+|  `90` | `64+26`    | `132` | `01011010` | `Z`      | `Uppercase D`         |
+|  `26` | `26`       | `032` | `00011010` | `SUB`    | `Substitute`          |
+| `123` | `64+32+27` | `173` | `01111011` | `{`      | `Curly Left Bracket`  |
+|  `91` | `64+27`    | `133` | `01011011` | `[`      | `Square Left Bracket` |
+|  `27` | `27`       | `033` | `00011011` | `ESC`    | `Escape`              |
+
+Pro trick: `<C-[>' is the same as `<Esc>`
 
 ---
 
