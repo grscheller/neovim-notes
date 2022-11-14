@@ -82,12 +82,12 @@ Note: Defining a key mapping involving `<C-S-u>` will not
 work, both as a key mapping and to whatever a key mapping
 is mapped to.
 
-(TL;DR): Be aware that for both gvim and a vim running in
-a terminal emulator, you are not interacting with the
-"terminal" being emulated, but the underlying GUI
+(TL;DR): Be aware that for both gvim and vim/nvim running
+in a terminal emulator, you are not interacting with
+the "terminal" being emulated, but the underlying GUI
 application.  As far as a real terminal is concerned,
 `CTRL+d` and `CTRL+D` are the same control character,
-octal 04.  That is what is coming down the RS-232 cable.
+ASCII 4.  That is what is coming down the RS-232 cable.
 The Graphical User Interface (GUI) is seeing all your
 keystrokes and can distinguish whether you pressed `<C-d>`
 or `<C-S-d>`.
