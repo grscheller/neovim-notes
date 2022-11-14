@@ -92,11 +92,11 @@ The Graphical User Interface (GUI) is seeing all your
 keystrokes and can distinguish whether you pressed `<C-d>`
 or `<C-S-d>`.
 
-(TL;DR): Terminals in the vt102/vt220 family were keyboard/monitor
+(TL;DR): Terminals in the vt102/vt220 family are keyboard/monitor
 interfaces to RS-232 cables.  Holding the CTRL key down electrically
-zeroed out the 6th and 7th bits of the 7-bit or 8-bit character typed.
-Likewise, holding the SHIFT key down zeroed just the 6th bit.  The
-ASCII values were choosen to make this work.
+zeroed out bits 6 and 7 of the 7-bit character key typed.  Likewise,
+holding the down the SHIFT key zeroed out bit 6.  The ASCII values
+were choosen to make this work.
 
 | ASCII | Decimal    | Octal | Binary     | Symbol   | Description           |
 | -----:|:---------- |:-----:|:----------:|:--------:|:--------------------- |
@@ -106,14 +106,14 @@ ASCII values were choosen to make this work.
 | `100` | `64+32+4`  | `144` | `01100100` | `d`      | `Lowercase D`         |
 |  `68` | `64+4`     | `104` | `01000100` | `D`      | `Uppercase D`         |
 |   `4` | `4`        | `004` | `00000100` | `EOT`    | `End of Transmission` |
-| `122` | `64+32+26` | `144` | `01111010` | `z`      | `Lowercase D`         |
-|  `90` | `64+26`    | `132` | `01011010` | `Z`      | `Uppercase D`         |
+| `122` | `64+32+26` | `144` | `01111010` | `z`      | `Lowercase Z`         |
+|  `90` | `64+26`    | `132` | `01011010` | `Z`      | `Uppercase Z`         |
 |  `26` | `26`       | `032` | `00011010` | `SUB`    | `Substitute`          |
 | `123` | `64+32+27` | `173` | `01111011` | `{`      | `Curly Left Bracket`  |
 |  `91` | `64+27`    | `133` | `01011011` | `[`      | `Square Left Bracket` |
 |  `27` | `27`       | `033` | `00011011` | `ESC`    | `Escape`              |
 
-Pro trick: `<C-[>' is the same as `<Esc>`
+Pro-trick: `<C-[>' is the same as `<Esc>`
 
 ---
 
