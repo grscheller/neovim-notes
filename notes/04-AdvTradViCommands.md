@@ -32,7 +32,7 @@ For `<C-z>`, the shell command `fg %1` will usually work to
 un-suspend vim.  If you have other things suspended, hunt for it
 via the `jobs` shell command.
 
-### Commands to move cursor in Normal Mode
+### Commands to move cursor/view in Normal Mode
 
 | Command  | Description                                        |
 |:--------:|:-------------------------------------------------- |
@@ -67,7 +67,7 @@ what is a matching symbol for different file types.
 
 If scrolloff is set in init.vim, some of these commands get modified,
 
-```
+```vim
     set scrolloff=3
 ```
 
@@ -109,22 +109,33 @@ files various constructs were understood as defining "sections."
 
 ## Insert Mode Commands
 
-| Command       | Description                                         |
-|:-------------:|:--------------------------------------------------- |
-| `<C-h>`       | delete previous character                           |
-| `<BS>`        | delete previous character                           |
-| `<C-v>{char}` | insert character `{char}` literally                 |
-| `<C-v><Tab>`  | insert literal `<Tab>` (handy for makefiles)        |
-| `<C-w>`       | delete previous word                                |
-| `<C-u>`       | delete everything to left of cursor                 |
-| `<C-c>`       | break out of *insert mode*, punt on any auto cmds   |
-| `<C-x>`       | enter *insert mode* completion submode (vim not vi) |
-
+| Command       | Description                                            |
+|:-------------:|:------------------------------------------------------ |
+| `<C-h>`       | delete previous character                              |
+| `<BS>`        | delete previous character                              |
+| `<C-v>{char}` | insert character `{char}` literally                    |
+| `<C-v><Tab>`  | insert literal `<Tab>` (handy for makefiles)           |
+| `<C-w>`       | delete previous word                                   |
+| `<C-u>`       | delete everything to left of cursor                    |
+| `<C-c>`       | break out of *insert mode*, punt on any auto cmds      |
+| `<C-a>`       | previous insert                                        |
+| `<C-@>`       | repeat previous insert and return to *normal mode*     |
+| `<C-t>`       | ident line in to next tabstop                          |
+| `<C-d>`       | ident line out to previous tabstop                     |
+| `<C-e>`       | copy character which is below cursor                   |
+| `<C-y>`       | copy character which is above cursor                   |
+| `<C-\>`       | potentially a good *insert mode* "leader key"          |
+| `<C-g>`       | potentially a good *insert mode* "leader key"          |
+| `<C-g>j`      | move down a line, Down-Arrow not in vi                 |
+| `<C-g>k`      | move up a line, Up-Arrow not in vi                     |
+| `<C-n>`       | word completion, next word                             |
+| `<C-p>`       | word completion, previous word                         |
+| `<C-o>`       | do one *normal mode* command & return to *insert mode* |
+| `<C-r>a`      | paste from register `"a` while in *insert mode*        |
+| `<C-x>`       | enter *insert mode* completion submode (vim not vi)    |
 For more information on `<C-x>` see
-[ins-completion section](BasicTextEditing02.md#ins-completion-sub-mode-commands)
-in BasicTextEditing, or
 
-```
+```vim
     :help ins-completion
 ```
 

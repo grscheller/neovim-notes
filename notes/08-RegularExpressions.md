@@ -95,7 +95,7 @@ expression engine.
   * can give a meta-meaning to next char
   * in either case `\` itself is ignored (not part of the match)
 * `[ ]` matches any char enclosed between brackets
-  * use `^` as first char to match anything char not included
+  * use `^` as first char to match any char not included in rest
   * match `^` as itself in any position but first
   * use `-` to indicate a range of characters to match
   * match `-` as itself if first or last enclosed character
@@ -109,13 +109,13 @@ Let `S` and `T` represent regular expressions
 * `ST` concats `S` and `T`
 * `(ST)` concat `S`and `T` but treat as single subexpression
 * `S|T` matches either `S` or `T`
+* `S?` matches `0` or `1` of `S`
 * `S*` matches `0` or more instances of `S`
 * `S+` matches `1` or more instances of `S`
 * `S{n,m}` matches at least `n`but not more than `m` of `S`
 * `S{n,}` matches at least `n` of `S`
 * `S{,m}` matches not more than `m` of `S`
 * `S{m}` matches exactly `m` of `S`
-* `S?` matches `0` or `1` of `S`
 
 Note, `*`, `+`, `?`, and `{m,n}` all bind more closely than concatenation.
 
@@ -138,20 +138,20 @@ compatibility with vi.
 
 It is usually easiest to learn regular expressions using simple examples.
 
-| RegExp               | Description                                            |
-|:-------------------- |:------------------------------------------------------ |
-| `foo.*`              | match `foo` followed by zero or more characters        |
-| `fooba+r`            | match `foobar`, `foobaar`, `foobaaar`, ...             |
-| `foo(bar\|baz)`      | match either `foobar` or `foobaz`                      |
-| `fo{2,4}bar`         | match `foobar`, `fooobar`, or `foooobar`               |
-| `(fo){2,}bar`        | match `fofobar`, `fofofobar`, `fofofobar`, ...         |
-| `(fo){2}bar`         | match `fofobar`                                        |
-| `(fo){,3}bar`        | match `bar`, `fobar`, `fofobar`, or `fofofobar`        |
-| `^foobar`            | match `foobar` at beginning of a line                  |
-| `foobar$`            | match `foobar` at end of a line                        |
-| `^foo(bar\|baz)$`    | match line containing only`foobar` or `foobaz`         |
-| `fooba[rz]`          | match `foobar` or `foobaz`                             |
-| `foob[^ui]r`         | matches `fobar` or `fobqz` but not `fobur` nor `fobir` |
+| RegExp            | Description                                            |
+|:----------------- |:------------------------------------------------------ |
+| `foo.*`           | match `foo` followed by zero or more characters        |
+| `fooba+r`         | match `foobar`, `foobaar`, `foobaaar`, ...             |
+| `foo(bar\|baz)`   | match either `foobar` or `foobaz`                      |
+| `fo{2,4}bar`      | match `foobar`, `fooobar`, or `foooobar`               |
+| `(fo){2,}bar`     | match `fofobar`, `fofofobar`, `fofofobar`, ...         |
+| `(fo){2}bar`      | match `fofobar`                                        |
+| `(fo){,3}bar`     | match `bar`, `fobar`, `fofobar`, or `fofofobar`        |
+| `^foobar`         | match `foobar` at beginning of a line                  |
+| `foobar$`         | match `foobar` at end of a line                        |
+| `^foo(bar\|baz)$` | match line containing only`foobar` or `foobaz`         |
+| `fooba[rz]`       | match `foobar` or `foobaz`                             |
+| `foob[^ui]r`      | matches `fobar` or `fobqz` but not `fobur` nor `fobir` |
 
 ## Using Regular Expressions in Vim
 
