@@ -78,9 +78,8 @@ Note: Using `<S-C-u>` will not work.
 
 Note: `<C-S-u>` does not work while on the linux console.
 
-Note: Defining a key mapping involving `<C-S-u>` will not
-work, both as a key mapping and to whatever a key mapping
-is mapped to.
+Note: Defining vim key mapping with "key chords" like `<C-S-u>`
+will not work, neither will making it the target of the mapping.
 
 (TL;DR): Be aware that for both gvim and vim/nvim running
 in a terminal emulator, you are not interacting with
@@ -106,14 +105,11 @@ were choosen to make this work.
 | `100` | `64+32+4`  | `144` | `01100100` | `d`      | `Lowercase D`         |
 |  `68` | `64+4`     | `104` | `01000100` | `D`      | `Uppercase D`         |
 |   `4` | `4`        | `004` | `00000100` | `EOT`    | `End of Transmission` |
-| `122` | `64+32+26` | `144` | `01111010` | `z`      | `Lowercase Z`         |
-|  `90` | `64+26`    | `132` | `01011010` | `Z`      | `Uppercase Z`         |
-|  `26` | `26`       | `032` | `00011010` | `SUB`    | `Substitute`          |
 | `123` | `64+32+27` | `173` | `01111011` | `{`      | `Curly Left Bracket`  |
 |  `91` | `64+27`    | `133` | `01011011` | `[`      | `Square Left Bracket` |
 |  `27` | `27`       | `033` | `00011011` | `ESC`    | `Escape`              |
 
-Pro-trick: `<C-[>' is the same as `<Esc>`
+Pro-trick: `<C-[>` is the same as `<Esc>`
 
 ---
 
