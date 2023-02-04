@@ -23,7 +23,7 @@ UTF-8, and legacy encodings.
 
 On POSIX systems I used to put
 
-```
+```vim
     set encoding=utf-8
     set fileencoding=utf-8
 ```
@@ -99,9 +99,9 @@ were choosen to make this work.
 
 | ASCII | Decimal    | Octal | Binary     | Symbol   | Description           |
 | -----:|:---------- |:-----:|:----------:|:--------:|:--------------------- |
-|  `97` | `64+32+1`  | `141` | `01100001` | `a`      | `Lowercase A`         |
-|  `65` | `64+1`     | `101` | `01000001` | `A`      | `Uppercse A`          |
-|   `1` | `1`        | `001` | `00000001` | `LF`     | `Line Feed`           |
+|  `97` | `64+32+11` | `152` | `01101011` | `k`      | `Lowercase A`         |
+|  `75` | `64+11`    | `111` | `01001011` | `K`      | `Uppercse A`          |
+|  `11` | `11`       | `013` | `00001011` | `VT`     | `Vertical Tab`        |
 | `100` | `64+32+4`  | `144` | `01100100` | `d`      | `Lowercase D`         |
 |  `68` | `64+4`     | `104` | `01000100` | `D`      | `Uppercase D`         |
 |   `4` | `4`        | `004` | `00000100` | `EOT`    | `End of Transmission` |
