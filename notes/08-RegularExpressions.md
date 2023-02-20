@@ -42,14 +42,14 @@ By **word** I mean a juxtaposition of symbols from an alphabet.
 
 Let `A` and `B` be collections of words,
 
-```math
+```
     A ∪ B = { w ∥ w ∈ A or w ∈ b }
     A⋅B = { ab ∥ a ∈ A and b ∈ B }
 ```
 
 Given a set `V` of words, let `ε` be the **empty word** , then
 
-```math
+```
     V₀   = {ε}
     V₁   =  V
 
