@@ -42,14 +42,14 @@ By **word** I mean a juxtaposition of symbols from an alphabet.
 
 Let `A` and `B` be collections of words,
 
-```
+```math
     A ∪ B = { w ∥ w ∈ A or w ∈ b }
     A⋅B = { ab ∥ a ∈ A and b ∈ B }
 ```
 
 Given a set `V` of words, let `ε` be the **empty word** , then
 
-```
+```math
     V₀   = {ε}
     V₁   =  V
 
@@ -170,25 +170,25 @@ See `:help magic`
 
 Find next `buf` or `bug`
 
-```
+```vim
     /bu[fg]
 ```
 
 Find next `buf` or `bug`
 
-```
+```vim
     /bu\(f\|g\)
 ```
 
 Find next `buf`, `bug`, `bufg`, `bugf`, `buff`, and `bugg`
 
-```
+```vim
     /bu[fg]\{2,1}
 ```
 
 Replace "Unix" & "UNIX" with "Linux" on lines 5 thru end of file
 
-```
+```vim
     :5,$s/U\(nix\|NIX\)/Linux/g
 ```
 
@@ -228,8 +228,9 @@ See `:help pattern-searches` for more details.
 
 For a description of POSIX.2 regular expressions see
 
-```
+```fish
     $ man -s7 regex
+    $
 ```
 
 According to this Linux man page,

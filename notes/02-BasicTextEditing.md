@@ -100,6 +100,12 @@ the *normal mode* cursor positioning commands.
 | `2y3w`  | ends up yanking 6 words                                     |
 | `5x`    | delete next 5 characters on current line                    |
 | `5X`    | delete previous 5 characters on current line                |
+| `dip`   | delete current paragraph                                    |
+| `dap`   | delete rest of paragraph below current line                 |
+| `diw`   | delete word cursor is on, leave whitespace                  |
+| `daw`   | delete word cursor is on, eat trailing whitespace           |
+| `d{`    | delete to beginning of paragraph                            |
+| `d}`    | delete to end of paragraph                                  |
 
 ### You can use named registers to store text
 
@@ -141,9 +147,13 @@ To return to *normal mode*, type either `<Esc>` or `<C-[>`.
 | `c^`    | change text before cursor, excluding initial white space        |
 | `c0`    | change text before cursor to beginning of line                  |
 | `ciw`   | change inner word (change word cursor is on)                    |
+| `caw`   | change around word (change word cursor is on & whitespace rhs)  |
 | `cis`   | change inner sentence (works best for prose)                    |
-| `"a3S`  | delete 3 lines into `"a`, enter *normal mode* on new line       |
-| `"b3C`  | delete rest of line & next 2 two into `"b`, enter *normal mode* |
+| `cip`   | change inner paragraph                                          |
+| `c{`    | change to beginning of paragraph                                |
+| `c}`    | change to end of paragraph                                      |
+| `"a3S`  | delete 3 lines into `"a`                                        |
+| `"b3C`  | delete rest of line & next 2 two into `"b`                      |
 
 ### Repeating commands in Normal Mode
 
@@ -257,7 +267,7 @@ I rarely use these features since I have better alternatives through plugins.
 What "various sources" for the last two above
 is configured via the complete flag:
 
-```
+```vim
     :set complete
     complete=.,w,b,u,t
 ```
@@ -274,7 +284,7 @@ Options for the complete flag:
 
 Example, remove tag completion and add kspell,
 
-```
+```vim
     :set complete+=kspell
     :set complete-=t
     :set complete
@@ -427,7 +437,7 @@ will result in multiple undo/redo events.
 
 ### Some Vim/Neovim command line option examples
 
-```
+```fish
     $ nvim file1 file2 file3  # Open/create 3 files for editing
     $ nvim +<n> file     # Open file for editing on line n,
                          # defaults to last line of file
@@ -463,7 +473,7 @@ Helps when getting rid of tabs and trailing whitespace.
 Put the following commands in your
 `~/.config/nvim/init.vim` or `~/.vim/vimrc` file
 
-```
+```vim
    set tabstop=4
    set shiftwidth=4
    set softtabstop=4

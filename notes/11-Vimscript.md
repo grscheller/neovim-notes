@@ -25,7 +25,7 @@ begin executing before you are finished typing them.
 
 Use a VimL here document to run Lua code from Vimscript.
 
-```
+```vim
    lua << EOF
    local rust_opts = {
        tools = {

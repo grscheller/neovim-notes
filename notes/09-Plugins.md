@@ -53,11 +53,11 @@ instances with `;` or `,`.  Positions moved through by
 To use the `f`,`t`,`F`,`T` key mappings, you will need to manually
 configure them
 
-```viml
-    map f <Plug>Sneak_f
-    map F <Plug>Sneak_F
-    map t <Plug>Sneak_t
-    map T <Plug>Sneak_T
+```vim
+   map f <Plug>Sneak_f
+   map F <Plug>Sneak_F
+   map t <Plug>Sneak_t
+   map T <Plug>Sneak_T
 ```
 
 There is alsoa "label mode" which makes Vim Sneak more

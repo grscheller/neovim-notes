@@ -42,7 +42,7 @@ The directional sense of all these commands can be adjusted via
 Since these behaviors seem more natural to me, I configure them
 in my `~/.config/nvim/init.vim` file.
 
-```
+```vim
     set splitbelow
     set splitright
 ```
@@ -121,10 +121,13 @@ can switch between windows via clicking the "tab".
 
 ## Starting Vim with multiple windows/tabs
 
-```
+```fish
     $ vim -p[n]    # Open n tab pages (default: one for each file)
+    $
     $ vim -o[n]    # Open n windows (default: one for each file)
+    $
     $ vim -O[n]    # Like -o but split vertically
+    $
 ```
 
 ## Terminal Windows

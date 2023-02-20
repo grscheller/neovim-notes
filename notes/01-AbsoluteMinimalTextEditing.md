@@ -10,8 +10,9 @@ know in order to sub-marginally accomplish your task.
 
 You invoked vi via
 
-```
+```fish
     $ vi /etc/hosts
+    $
 ```
 
 You can move around with the arrow keys but when you try typing
@@ -20,7 +21,7 @@ Damn it, CTRL-C does not even work!
 
 To get out,
 
-```
+```vim
     <Esc>:q!<CR>
 ```
 

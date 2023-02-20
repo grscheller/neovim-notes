@@ -182,7 +182,7 @@ other registers.  Reading from it returns nothing.
 The last search pattern register `"/` is readable from *normal mode*.
 You can assign values to it in *command mode* via
 
-```
+```vim
     :let @/ = "Some String"
 ```
 
@@ -209,7 +209,7 @@ As an example, say you want to change instances of "Unix programming"
 or "Unix System programming" in similar ways.  You want "Unix" replaced
 by "UNIX" and the "p" capitalized:
 
-```
+```vim
     qa/Unix<CR>l~~~fp~q
     @a@a@a@a
 ```
@@ -217,7 +217,7 @@ by "UNIX" and the "p" capitalized:
 You may want to be able to choose whether to perform the macro or not.
 For instance, you don't want to change "Unix is perfect".
 
-```
+```vim
     /Unix<ret>
     qbl~~~fp~q
     nn@bn@bnnn2@b

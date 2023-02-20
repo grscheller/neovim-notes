@@ -105,7 +105,7 @@ Vim can natively do this.
 To make tab completion in command mode more efficient, put the
 following lines in your ~/.config/nvim/init.vim file.
 
-```
+```vim
     set wildmenu
     set wildmode=longest:full,full
 ```
