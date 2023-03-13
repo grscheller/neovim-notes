@@ -86,8 +86,12 @@ only close the current window if multiple windows or tabs are open.
 | `gJ`         | join curent & next line without inserting spaces        |
 
 What "before" or "after" mean depends on what is in the
-default register.  Both `y` and `d` can be used with all
-the *normal mode* cursor positioning commands.
+default register.
+
+### Normal mode motions and text objects
+
+Both `y` and `d` can be used with all
+the *normal mode* motions and *text objects*.
 
 | Command | Description                                                 |
 |:-------:|:----------------------------------------------------------  |
@@ -104,8 +108,27 @@ the *normal mode* cursor positioning commands.
 | `dap`   | delete rest of paragraph below current line                 |
 | `diw`   | delete word cursor is on, leave whitespace                  |
 | `daw`   | delete word cursor is on, eat trailing whitespace           |
-| `d{`    | delete to beginning of paragraph                            |
+| `d{`    | delete to beginning of paragraph whitespace                 |
 | `d}`    | delete to end of paragraph                                  |
+
+Text Objects (TO) are similar to motions and also take a count
+
+| TO   | Description                                                      |
+|:----:|:---------------------------------------------------------------- |
+| `iw` | inner word - select [count] words and spaces between them        |
+| `aw` | around word - select [count] words, spaces between & trailing ws |
+| `iW` | inner Word - select [count] Words and spaces between them        |
+| `aW` | around word - select [count] Words, spaces between & trailing ws |
+| `is` | inner sentance - select [count] sentances                        |
+| `as` | around sentance - select [count] sentances                       |
+| `i(` | select what is between parentheses                               |
+| `a(` | select what is between parentheses and the parentheses too       |
+| `i{` | select what is between brackets                                  |
+| `a{` | select what is between brackets and the brackets too             |
+| `i<` | select what is between <>                                        |
+| `a<` | same as above and the `<` `>` too                                |
+| `it` | select what is between tags `<aaa>` and `</aaa>`                 |
+| `at` | same as above but include the tags too                           |
 
 ### You can use named registers to store text
 
@@ -179,8 +202,7 @@ by pressing the `<Esc>` key.
 
 ### Pasting from registers into insert mode
 
-To paste text from a Vim register while in *insert mode*,
-use `<C-r>`.
+To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 
 | Command       | Description                                   |
 |:-------------:|:--------------------------------------------- |
@@ -220,26 +242,26 @@ It is also possible to perform a single *normal mode* action within
 
 ### Other insert mode commands
 
-| Command       | Description                                                 |
-|:-------------:|:----------------------------------------------------------- |
-| `<C-w>`       | delete word to left of cursor                               |
-| `<C-u>`       | delete everything to left of cursor                         |
-| `<C-h>`       | delete character to left of cursor                          |
-| `<BS>`        | delete character to left of cursor                          |
-| `<C-v><char>` | insert literal character                                    |
-| `<C-t>`       | indent current line one tab stop                            |
-| `<C-d>`       | un-indent current line one tab stop                         |
-| `<C-a>`       | repeat last text insertion                                  |
-| `<C-e>`       | enter character below cursor (from line below current line) |
-| `<C-y>`       | enter character above cursor (from line above current line) |
-| `<Esc>`       | Quit *insert mode* go back to *normal mode*                 |
-| `<C-c>`       | Quit *insert mode*, InsertLeave autocmd event not triggered |
+| Command           | Description                                            |
+|:-----------------:|:-----------------------i------------------------------ |
+| `<C-v><char>`     | insert literal character                               |
+| `<C-h>` or `<BS>` | delete character to left of cursor                     |
+| `<C-w>`           | delete word to left of cursor                          |
+| `<C-u>`           | delete all entered characters on a line ...            |
+| `<C-u><C-u>`      |   and all characters up to initial whitespace ...      |
+| `<C-u><C-u><C-u>` |     and all characters up to beginning of line         |
+| `<C-t>`           | increase line indentation one tabwidth                 |
+| `<C-d>`           | decrease line indentation one tabwidth                 |
+| `<C-a>`           | insert text from last insert mode                      |
+| `<C-y>`           | insert the character on line above cursor              |
+| `<C-e>`           | insert the character on line below cursor              |
+| `<Esc>`           | Quit *insert mode* go back to *normal mode*            |
+| `<C-c>`           | Quit *insert mode*, InsertLeave autocmds not triggered |
 
-The first five commands come from the original vi.  A subtle difference is
-that in vi these commands edited not the buffer, but the current edit of the
-buffer.  This explains a `<C-u>` idiosyncratic bahavior.  Vim/Neovim will
-first delete up to what was just typed, just like vi would have done, before
-deleting to the beginning of the line.
+The first four commands come from the original vi.  A subtle difference
+is that in vi these commands edited not the buffer, but the current edit
+of the buffer.  This may explain the above idiosyncratic bahavior of
+multiple `<C-u>`.
 
 ### Ins-completion sub-mode commands
 
