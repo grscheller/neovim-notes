@@ -21,7 +21,7 @@ I test this information against nvim, and sometimes with
 the vi which comes with Arch Linux (Joy, Horton, Ritter),
 not vim in vi mode.
 
-## License Summary
+## Public Domain Declaration
 
 <p xmlns:dct="http://purl.org/dc/terms/"
    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
