@@ -241,7 +241,7 @@ It is also possible to perform a single *normal mode* action within
 ### Other insert mode commands
 
 | Command           | Description                                            |
-|:-----------------:|:-----------------------i------------------------------ |
+|:-----------------:|:------------------------------------------------------ |
 | `<C-v><char>`     | insert literal character                               |
 | `<C-h>` or `<BS>` | delete character to left of cursor                     |
 | `<C-w>`           | delete word to left of cursor                          |
