@@ -1,10 +1,10 @@
 # Basic Text Editing
 
-This should be enough to enable you to be productive with nvim/vim
-as a text editor.
+This should be enough to enable you to be productive with nvim/vim as
+a text editor.
 
-I think with a few months of practice, the material covered here
-can be internalized and eventually become part of your "muscle memory."
+I think with a few months of practice, the material covered here can be
+internalized and eventually become part of your "muscle memory."
 
 ## Vim has 4 main modes
 
@@ -21,10 +21,9 @@ can be internalized and eventually become part of your "muscle memory."
 
 ## Normal Mode
 
-I use *normal mode* as the default mode to enter when I pause
-to think.  I known people to use *insert mode* for this, but
-I first learned on the the original vi where *insert mode* was
-not as rich.
+I use *normal mode* as the default mode to enter when I pause to think.
+I known people to use *insert mode* for this, but I first learned on the
+the original vi where *insert mode* was not as rich.
 
 ### Close Editor Window from Normal Mode
 
@@ -33,9 +32,9 @@ not as rich.
 | `ZZ`     | exit editor, save changes, vi/vim/nvim    |
 | `ZQ`     | exit editor, don't save changes, vim/nvim |
 
-If you have unsaved changes, or have files you have not edited yet,
-you will have to hit `ZZ` or `ZQ` again.  In nvim, `ZZ` and `ZQ` will
-only close the current window if multiple windows or tabs are open.
+If you have unsaved changes, or have files you have not edited yet, you
+will have to hit `ZZ` or `ZQ` again.  In nvim, `ZZ` and `ZQ` will only
+close the current window if multiple windows or tabs are open.
 
 ### Cursor movement in Normal Mode
 
@@ -85,13 +84,13 @@ only close the current window if multiple windows or tabs are open.
 | `J`          | join curent & next line, insert spaces as needed        |
 | `gJ`         | join curent & next line without inserting spaces        |
 
-What "before" or "after" mean depends on what is in the
-default register.
+Where what "before" and "after" means depends on what the default
+register contains.
 
 ### Normal mode motions and text objects
 
-Both `y` and `d` can be used with all
-the *normal mode* motions and *text objects*.
+Both `y` and `d` can be used with all the *normal mode* motions and
+*text objects*.
 
 | Command | Description                                                 |
 |:-------:|:----------------------------------------------------------  |
@@ -147,8 +146,8 @@ from multiple files and pasting them into other files.
 
 ### Commands to insert or manipulate text
 
-These *normal mode* commands take vim to *insert mode*.
-To return to *normal mode*, type either `<Esc>` or `<C-[>`.
+These *normal mode* commands take vim to *insert mode*.  To return to
+*normal mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description                                                     |
 |:-------:|:--------------------------------------------------------------- |
@@ -184,21 +183,21 @@ To return to *normal mode*, type either `<Esc>` or `<C-[>`.
 |:-------:|:------------------------------------------ |
 | `.`     | repeat the last command which changed text |
 
-This repeats the last *normal mode* command used which changed text.
-It does not repeat *command mode* commands.
+This repeats the last *normal mode* command used which changed text.  It
+does not repeat *command mode* commands.
 
-This is frequently used with the `n` or `;` *normal mode* commands.
-For example, `n.n.nn.n` keeps moving to the beginning of the next match
-for the last search pattern where you can either decide to repeat, or
-not, the change at each location.
+This is frequently used with the `n` or `;` *normal mode* commands.  For
+example, `n.n.nn.n` keeps moving to the beginning of the next match for
+the last search pattern where you can either decide to repeat, or not,
+the change at each location.
 
 ---
 
 ## Insert Mode
 
-The whole vi paradigm is that you do all navigation in *normal mode*
-and type text in *insert mode*.  You return to *normal mode*
-by pressing the `<Esc>` key.
+The whole vi paradigm is that you do all navigation in *normal mode* and
+type text in *insert mode*.  You return to *normal mode* by pressing the
+`<Esc>` key.
 
 ### Pasting from registers into insert mode
 
@@ -217,14 +216,13 @@ To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 
 ### Navigating in *insert mode*
 
-Sometimes it is convenient to be able to navigate while
-in *insert mode*.  I tend to do this only to navigate near
-where the cursor is.
+Sometimes it is convenient to navigate while in *insert mode*.  I tend
+to do this only to navigate near where the cursor is.
 
-Most "out of the box" vim configurations allow you to navigate
-with the arrow keys while in *insert mode*.  Usually text can
-also be deleted with the backspace key.  In *normal mode*, the
-backspace and space keys are just extra navigation keys.
+Most "out of the box" vim configurations allow you to navigate with the
+arrow keys while in *insert mode*.  Usually text can also be deleted
+with the backspace key.  In *normal mode*, the backspace and space keys
+are just extra navigation keys.
 
 It is also possible to perform a single *normal mode* action within
 *insert mode* by using`<C-o>` key sequences.
@@ -265,10 +263,10 @@ multiple `<C-u>`.
 
 ### Ins-completion sub-mode commands
 
-This "sub-mode" is used for text completions.  While in *ins-completion mode*,
-`<C-y>` will accept the completion and `<C-e>` will return what was originally
-typed.  `<C-n>` will move to the next completion in the drop down, and `<C-p>`
-will move to the previous one.
+A "sub-mode" used for text completions.  While in *ins-completion mode*,
+`<C-y>` will accept the completion and `<C-e>` will return what was
+originally typed.  `<C-n>` will move to the next completion in the drop
+down, and `<C-p>` will move to the previous one.
 
 I rarely use these features since I have better alternatives through plugins.
 
@@ -286,8 +284,8 @@ I rarely use these features since I have better alternatives through plugins.
 | `<C-p>`      | complete keyword backwards from "various sources"         |
 | `<C-n>`      | complete keyword forward from "various sources"           |
 
-What "various sources" for the last two above
-is configured via the complete flag:
+What "various sources" for the last two above is configured via the
+complete flag:
 
 ```vim
     :set complete
@@ -317,19 +315,17 @@ Example, remove tag completion and add kspell,
 
 ## *Command Mode*
 
-Vim is an open source version of the Unix editor vi,
-which is the visual interface of the Berkeley Unix
-line editor ex, which itself is a re-implementation of
-the AT&T Unix line editor ed.  On really old terminals,
-essentially line printers with keyboards, the descendants
-of teletypes, you edited files one line at a time.
+Vim is an open source version of the Unix editor vi, which is the visual
+interface of the Berkeley Unix line editor ex, which itself is
+a re-implementation of the AT&T Unix line editor ed.  On really old
+terminals, essentially line printers with keyboards, the descendants of
+teletypes, you edited files one line at a time.
 
-*command mode* commands developed from the original ex
-line editing commands.
+*command mode* commands developed from the original ex line editing
+commands.
 
-Use the `:` in *normal_mode* to enter *command mode*.  The
-cursor jumps down to the bottom of the terminal window
-and prompts you with `:`.
+Use the `:` in *normal_mode* to enter *command mode*.  The cursor jumps
+down to the bottom of the terminal window and prompts you with `:`.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
@@ -367,25 +363,24 @@ and prompts you with `:`.
 | `:50,p`             | print line 50 thru current line cursor is on         |
 | `:p`                | print current line cursor is on                      |
 
-Execute these *command mode* command via `<CR>`, which returns you
-to *normal mode*.
+Execute these *command mode* command via `<CR>`, which returns you to
+*normal mode*.
 
-The above `:m-4` is another example of vim/nvim exactly duplicating
-a vi idiosyncracy.  Avoid using *command mode* commands with negative
-numbers in them.
+The above `:m-4` is another example of vim/nvim exactly duplicating a vi
+idiosyncracy.  Avoid using *command mode* commands with negative numbers
+in them.
 
 Unlike Vim, Neovim does not have an *EX mode*.
 
 ### Navigating the command mode line
 
 While in *command mode*, up & down arrow keys cycle through previous
-*command mode* commands.  The left & right arrow keys help you
-re-edit the line.  Press `<Esc>`or`<C-[>` to return to *normal mode* without
+*command mode* commands.  The left & right arrow keys help you re-edit
+the line.  Press `<Esc>`or`<C-[>` to return to *normal mode* without
 issuing a command.
 
-Using the up & down arrow keys with something typed will
-cycle through only those commands which begin with the
-typed text.
+Using the up & down arrow keys with something typed will cycle through
+only those commands which begin with the typed text.
 
 ### Editing the command mode line
 
@@ -418,28 +413,27 @@ To enter *visual mode* from *normal mode*
 | `<C-v>` | for block visual mode                  |
 | `gv`    | to reselect last visual mode selection |
 
-Highlight text with *normal mode* cursor navigation commands
-like `h`, `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.
-Once selected, you can issue either *normal mode* or
-*command mode* commands.
+Highlight text with *normal mode* cursor navigation commands like `h`,
+`j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.  Once
+selected, you can issue either *normal mode* or *command mode* commands.
 
 *Normal mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
-act on the highlighted region.  The behavior of some
-commands, like I or A, vary depending on which *visual mode*
-(character, line or block) you are in.  Others, like indenting
-commands `>>` or `<<`, just act on the entire line.
+act on the highlighted region.  The behavior of some commands, like I or
+A, vary depending on which *visual mode* (character, line or block) you
+are in.  Others, like indenting commands `>>` or `<<`, just act on the
+entire line.
 
-*Command mode* commands act on lines in their entirety
-that contain the selected region.
+*Command mode* commands act on lines in their entirety that contain the
+selected region.
 
-To punt out of *visual mode* without doing anything,
-press the `<Esc>` key.
+To punt out of *visual mode* without doing anything, press the `<Esc>`
+key.
 
-If you have enabled mouse support, mouse actions can cause you
-to enter *visual mode*.  When I first the transition from vi to vim,
-I found it useful to enable mouse support for *normal mode* only.
-After becoming more comfortble with *visual mode*, I found it
-completely natural enabling mouse support for all modes.
+If you have enabled mouse support, mouse actions can cause you to enter
+*visual mode*.  When I first the transition from vi to vim, I found it
+useful to enable mouse support for *normal mode* only.  After becoming
+more comfortble with *visual mode*, I found it completely natural
+enabling mouse support for all modes.
 
 ---
 
@@ -452,10 +446,9 @@ completely natural enabling mouse support for all modes.
 | `u`     | undo previous edit |
 | `<C-r>` | redo edit undone   |
 
-These can be used to linearly undo and redo edits,
-like the arrow buttons in a web browser.
-Navigating with the arrow keys while in *insert mode*
-will result in multiple undo/redo events.
+These can be used to linearly undo and redo edits, like the arrow
+buttons in a web browser.  Navigating with the arrow keys while in
+*insert mode* will result in multiple undo/redo events.
 
 ### Some Vim/Neovim command line option examples
 
@@ -492,8 +485,8 @@ Helps when getting rid of tabs and trailing whitespace.
 
 ### Replace tabs with 4 spaces (as you type)
 
-Put the following commands in your
-`~/.config/nvim/init.vim` or `~/.vim/vimrc` file
+Put the following commands in your `~/.config/nvim/init.vim` or
+`~/.vim/vimrc` file
 
 ```vim
    set tabstop=4
@@ -502,8 +495,8 @@ Put the following commands in your
    set expandtab
 ```
 
-Assuming the above 4 settings, to remove all existing
-tabs in the buffer and replace with 4 spaces,
+Assuming the above 4 settings, to remove all existing tabs in the buffer
+and replace with 4 spaces,
 
 | Command  | Description                    |
 |:-------- |:------------------------------ |
@@ -518,8 +511,8 @@ To get started, from within vim, type
 * `:help`
 * `:help help`
 
-Vim/Neovim built in help is very powerful, but not beginner friendly.
-To get the most out of it,
+Neovim built in help is very powerful, but not beginner friendly.  To
+get the most out of it,
 
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
 * Use `<C-o>` to jump back to previous location
