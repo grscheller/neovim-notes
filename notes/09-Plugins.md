@@ -19,11 +19,10 @@ Comment out sections of code quickly.
 
 ### Vim Sneak (justinmk/vim-sneak)
 
-Two character, multiline version of `f` & `t` allowing
-you to navigate quickly through a Neovim window.  Highlights
-other matches in window.  Navigate to next or previous
-instances with `;` or `,`.  Positions moved through by
-`;` and `,` are not recorded on the vim jumplist.
+Two character, multiline version of `f` & `t` allowing you to navigate
+quickly through a Neovim window.  Highlights other matches in window.
+Navigate to next or previous instances with `;` or `,`.  Positions moved
+through by `;` and `,` are not recorded on the vim jumplist.
 
 | mode    | Command           | Description                                   |
 |:------  |:-----------------:|:--------------------------------------------- |
@@ -35,7 +34,7 @@ instances with `;` or `,`.  Positions moved through by
 | normal  | `t<char>`         | One char version of `s` (`t` replacement)     |
 | normal  | `F<char>`         | One char version of `S` (`F` replacement)     |
 | normal  | `T<char>`         | One char version of `S` (`T` replacement)     |
-| visual  | `z<char1><char2>` | Extend selection forward to `<char1><char2> ` |
+| visual  | `z<char1><char2>` | Extend selection forward to `<char1><char2>`  |
 | visual  | `Z<char1><char2>` | Extend selection back to `<char1><char2>`     |
 | visual  | `f<char>`         | `f` replacement                               |
 | visual  | `t<char>`         | `t` replacement                               |
@@ -60,8 +59,8 @@ configure them
    map T <Plug>Sneak_T
 ```
 
-There is alsoa "label mode" which makes Vim Sneak more
-like easymotion/vim-easymotion.  Not availble for `f`,`t`,`F`,`T`.
+There is also a "label mode" which makes Vim Sneak more like
+easymotion/vim-easymotion.  Not availble for `f`,`t`,`F`,`T`.
 
 ### Vim Surround (tpope/vim-surround)
 

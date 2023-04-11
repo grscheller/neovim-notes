@@ -19,10 +19,10 @@ Neovim/Vim commands and features not in your grandfather's vi.
 
 ### Jump Lists
 
-Associated with each vim window (not buffer!) is a list of
-past locations "jumped" to.  Jumps are remembered in a
-jumplist.  Just navigating via the `hjkl` keys will not
-create jump points.  Nor will editing text.
+Associated with each vim window (not buffer!) is a list of past
+locations "jumped" to.  Jumps are remembered in a jumplist.  Just
+navigating via the `hjkl` keys will not create jump points.  Nor will
+editing text.
 
 | Command          | Description                          |
 |:---------------- |:------------------------------------ |
@@ -50,8 +50,8 @@ Your current location in the jump list is always 0.
 
 ### Change Lists
 
-Associated with each buffer (not window!) is a list of
-past text "changes."  Changes are remembered in a changelist.
+Associated with each buffer (not window!) is a list of past text
+"changes."  Changes are remembered in a changelist.
 
 | Command            | Description                           |
 |:------------------ |:------------------------------------- |
@@ -138,17 +138,16 @@ when jumping between 2 buffers via `<C-^>`.
 ### Expression register
 
 The expression register `"=` is used for evaluating vim script
-expressions.  The result is coerced into a string and pasted as
-if from a regular register.
+expressions.  The result is coerced into a string and pasted as if from
+a regular register.
 
-**Example:** While in *insert mode*, type `<C-r>=` and you are
-dropped to the *command mode* command line, but with an `=`
-prompt.  Type in any VimL expression, say `3 + 2 * 5<CR>`,
-then `13` is entered to the buffer and you are returned
-to *insert mode*.
+**Example:** While in *insert mode*, type `<C-r>=` and you are dropped
+to the *command mode* command line, but with an `=` prompt.  Type in any
+VimL expression, say `3 + 2 * 5<CR>`, then `13` is entered to the buffer
+and you are returned to *insert mode*.
 
-When at the command line `=` prompt, you can use `<C-r>` again to
-paste the contents of other registers into the "expression register".
+When at the command line `=` prompt, you can use `<C-r>` again to paste
+the contents of other registers into the "expression register".
 
 `<C-r>=` is also useful in *command mode* at the `:` and  `\` prompts.
 
@@ -168,9 +167,9 @@ For X11 on Arch, install the xsel package.
 
 For Wayland on Arch, install the wl-clipboard package.
 
-I have never gotten `"~` to work for me at all in either terminal
-based Vim or Neovim.  Even in Windows MS Office, I have found
-drag-and-drop operations buggy and hard to control.
+I have never gotten `"~` to work for me at all in either terminal based
+Vim or Neovim.  Even in Windows MS Office, I have found drag-and-drop
+operations buggy and hard to control.
 
 ### Black hole register
 
@@ -188,9 +187,9 @@ You can assign values to it in *command mode* via
 
 ## Vim Macros
 
-A useful *normal mode* feature of vim is the `.` command which
-repeats the last *normal mode* command which changed text.  Combining
-with the `n` command is an extremely useful and powerful paradigm.
+A useful *normal mode* feature of vim is the `.` command which repeats
+the last *normal mode* command which changed text.  Combining with the
+`n` command is an extremely useful and powerful paradigm.
 
 But, what if you want to do a series of commands between searches?  The
 vim macro feature comes to the rescue.
@@ -198,16 +197,16 @@ vim macro feature comes to the rescue.
 This feature allows you to repeat a sequence of *normal mode* and
 *command mode* commands.  Macros are stored in vim registers.
 
-To create a macro, issue the *normal mode* `q` command followed by a
-vim register name, say `a`.  At the bottom of the screen you see the
-text `recording @a`.  Issue both *normal mode* and *command mode*
-commands and edit as usual.  To finish, issue another
-*normal mode* `q` command.  At a later time, to execute this macro
-and repeat the sequence of commands, type `@a`.
+To create a macro, issue the *normal mode* `q` command followed by a vim
+register name, say `a`.  At the bottom of the screen you see the text
+`recording @a`.  Issue both *normal mode* and *command mode* commands
+and edit as usual.  To finish, issue another *normal mode* `q` command.
+At a later time, to execute this macro and repeat the sequence of
+commands, type `@a`.
 
-As an example, say you want to change instances of "Unix programming"
-or "Unix System programming" in similar ways.  You want "Unix" replaced
-by "UNIX" and the "p" capitalized:
+As an example, say you want to change instances of "Unix programming" or
+"Unix System programming" in similar ways.  You want "Unix" replaced by
+"UNIX" and the "p" capitalized:
 
 ```vim
     qa/Unix<CR>l~~~fp~q
@@ -225,14 +224,14 @@ For instance, you don't want to change "Unix is perfect".
 
 ## Marks
 
-Marks allow you to set locations to either be able to jump to
-or use with *normal mode* editing commands.  A mark is a
-"zero-width" entity between the cursor and the preceding character.
+Marks allow you to set locations to either be able to jump to or use
+with *normal mode* editing commands.  A mark is a "zero-width" entity
+between the cursor and the preceding character.
 
 ### Letter marks
 
-Marks within a given buffer are denoted via letters `a-z`.  For marks between
-different buffers, use letters `A-Z`.
+Marks within a given buffer are denoted via letters `a-z`.  For marks
+between different buffers, use letters `A-Z`.
 
 | Command   | Description                                                  |
 |:---------:|:------------------------------------------------------------ |
@@ -271,9 +270,9 @@ with that mark.
 
 ### Numbered marks
 
-Numbered marks `` `0 - `9 `` and `'0 - '9` will jump to the locations
-in the last files from which nvim was exited.  Numbered marks cannot
-be set directly but can be deleted.
+Numbered marks `` `0 - `9 `` and `'0 - '9` will jump to the locations in
+the last files from which nvim was exited.  Numbered marks cannot be set
+directly but can be deleted.
 
 ### Mark command mode
 

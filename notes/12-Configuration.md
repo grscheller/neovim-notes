@@ -2,8 +2,8 @@
 
 ## My Current Neovim Configuration
 
-Your Neovim configuration is stored here,
-`${XDG_DATA_HOME}/nvim/` which defaults to `~/.config/nvim/`.
+Your Neovim configuration is stored here, `${XDG_DATA_HOME}/nvim/` which
+defaults to `~/.config/nvim/`.
 
 The entry point can be written in Lua `init.lua` or VimL `init.vim`.
 
@@ -26,8 +26,8 @@ be bootstrapped into the standard Neovim package directory.
 
 By minimalistic, I mean simple, no auto-loading.
 
-Later on I switched to Packer as my package manager.  Packer also
-has to be bootstrapped.
+Later on I switched to Packer as my package manager.  Packer also has to
+be bootstrapped.
 
 ```fish
    $ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
@@ -45,10 +45,10 @@ directly as my plugin manager and lazy loader.  See also
 
 ## Periodic Mantenance
 
-Typically I do this about twice a week.  If Neovim is working
-for me, and I am in the middle of something important, I might
-let it go a while longer before doing maintenance.  This also
-needs to be done after the above bootstrapping.
+Typically I do this about twice a week.  If Neovim is working for me,
+and I am in the middle of something important, I might let it go a while
+longer before doing maintenance.  This also needs to be done after the
+above bootstrapping.
 
 ```fish
     $ nvim
@@ -64,10 +64,10 @@ needs to be done after the above bootstrapping.
     :q
 ```
 
-I would advice not to try to reload your init.lua configuration
-after a `:PackerSync` from within a running nvim session.  Yes,
-it is possible, but I have run into multiple complications.
-Just exit nvim between each of these commands.
+I would advice not to try to reload your init.lua configuration after
+a `:PackerSync` from within a running nvim session.  Yes, it is
+possible, but I have run into multiple complications.  Just exit nvim
+between each of these commands.
 
 ## Other configuration files
 
@@ -79,7 +79,7 @@ Indent scripts are sourced after all filetype plugins, including those
 in after/, and syntax scripts are sourced after all indent scripts,
 including those in after/.
 
-In other words, the sourcing order is not "per-location", it
+In other words, the sourcing order is not "per-location", it is
 "per-function":
 
 ### first wave: filetype plugins

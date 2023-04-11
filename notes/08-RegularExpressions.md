@@ -1,37 +1,36 @@
 # Regular Expressions
 
-Regular expressions, also called RegExps, are used in
-Unix/Posix like environments to match textual patterns.
-They are not to be confused with shell globbing pattern matching.
+Regular expressions, also called RegExps, are used in Unix/Posix like
+environments to match textual patterns.  They are not to be confused
+with shell globbing pattern matching.
 
 ## History
 
-The concept of regular expressions arose in the 1950s from
-the work of mathematitian/logician Stephen Kleen in his study of
+The concept of regular expressions arose in the 1950s from the work of
+mathematitian/logician Stephen Kleen in his study of
 [regular languages](https://en.wikipedia.org/wiki/Regular_language).
-A regular language, also called a Type-3 grammar, is at the
-bottom of what is called the
+A regular language, also called a Type-3 grammar, is at the bottom of
+what is called the
 [Chomsky Hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy).
-Regular languages have the property that they can be recognized
-by a
+Regular languages have the property that they can be recognized by a
 [Finite State Machine](https://en.wikipedia.org/wiki/Finite-state_machine).
-This property has nice computational space and time implications when using
-RegExps to search for text patterns.
+This property has nice computational space and time implications when
+using RegExps to search for text patterns.
 
 Before he invented Unix, computer engineer Ken Thompson built Kleen's
-notation for regular expressions into the editor QED.  The editor used a RegExp
-to construct a finite state machine, in machine code, to search for the
-text patterns represented by the RegExp.  This was an early example
-of just-in-time complication!  He later added this capability to the
-Unix text editor ed.
+notation for regular expressions into the editor QED.  The editor used
+a RegExp to construct a finite state machine, in machine code, to search
+for the text patterns represented by the RegExp.  This was an early
+example of just-in-time complication!  He later added this capability to
+the Unix text editor ed.
 
-From ed, vi inherited them.  They are used in many UNIX based
-utilities; lex, sed, AWK, Emacs, Perl, Vim, and Ruby have built in
-regular expression support.  Many computer languages, like Python and
-C/C++, have standard library support for them.  Note that many of these
+From ed, vi inherited them.  They are used in many UNIX based utilities;
+lex, sed, AWK, Emacs, Perl, Vim, and Ruby have built in regular
+expression support.  Many computer languages, like Python and C/C++,
+have standard library support for them.  Note that many of these
 "regular expression" implementations contain features that cannot be
-described in the sense of the formal language theory concept of a regular
-grammar.
+described in the sense of the formal language theory concept of
+a regular grammar.
 
 ### Regular Languages (TL;DR)
 
@@ -42,14 +41,14 @@ By **word** I mean a juxtaposition of symbols from an alphabet.
 
 Let `A` and `B` be collections of words,
 
-```
+```math
     A ∪ B = { w ∥ w ∈ A or w ∈ b }
     A⋅B = { ab ∥ a ∈ A and b ∈ B }
 ```
 
 Given a set `V` of words, let `ε` be the **empty word** , then
 
-```
+```math
     V₀   = {ε}
     V₁   =  V
 
@@ -70,19 +69,20 @@ defined by
   * `A*` is a regular language
 * no other languages over `Σ` are regular
 
-From *formal language theory* it can be shown that a *regular language* is
-a formal language which can be expressed using a *regular expression*.  Vim uses
-a regular expression pattern to search the text document for strings that match
-the pattern (are contained in the formal language defined by the RE).  It does
-this via "compiling" the RE down to a finite state machine which scans the
-documents for strings contained in the RE's formal language.
+From *formal language theory* it can be shown that a *regular language*
+is a formal language which can be expressed using a *regular
+expression*.  Vim uses a regular expression pattern to search the text
+document for strings that match the pattern (are contained in the formal
+language defined by the RE).  It does this via "compiling" the RE down
+to a finite state machine which scans the documents for strings
+contained in the RE's formal language.
 
 ## Extended Regular Expressions(ERE)
 
 Regular expressions (REs) are patterns used to match strings.  These
 days, "strings" means a data structure representing an ordered sequence
-of Unicode code points.  We'll assume we are using a "string-based" regular
-expression engine.
+of Unicode code points.  We'll assume we are using a "string-based"
+regular expression engine.
 
 * metacharacters:`{}[]()^$.|*+?\`
 * any other char (unless modified by a meta-char) matches itself
@@ -121,17 +121,17 @@ Note, `*`, `+`, `?`, and `{m,n}` all bind more closely than concatenation.
 
 ## Basic Regular Expressions(BRE)
 
-These are what Vim uses.  The big difference is that the meta
-characters `(){}|+?` are treated litterally and you must
-escape them with `\` for them to take on their meta-meaning.
+These are what Vim uses.  The big difference is that the meta characters
+`(){}|+?` are treated litterally and you must escape them with `\` for
+them to take on their meta-meaning.
 
 * BRE backward compatible to Simple Regular Expressions(SRE)
 * SRE are deprecated
 * ERE extend SRE
 * grep uses BRE; egrep uses ERE
 
-Due to the common use of `(){}|+` in programming languages, makes
-sense that vim uses BREs.  Probably more likely done for backward
+Due to the common use of `(){}|+` in programming languages, makes sense
+that vim uses BREs.  Probably more likely done for backward
 compatibility with vi.
 
 ## Extended Regexp Examples
@@ -156,11 +156,11 @@ It is usually easiest to learn regular expressions using simple examples.
 ## Using Regular Expressions in Vim
 
 I like to think of all my regular expressions as extended regular
-expressions.  When working with basic regular expressions in Vim, I
-still think in terms of extended regular expressions but with the
-need to escape the `(){|+?` characters with a backslash to turn on
-their meta-meaning.  The characters `[].` are meta without escaping.
-The character sequences `}` or `\}` will match a matching meta `\{`,
+expressions.  When working with basic regular expressions in Vim,
+I still think in terms of extended regular expressions but with the need
+to escape the `(){|+?` characters with a backslash to turn on their
+meta-meaning.  The characters `[].` are meta without escaping.  The
+character sequences `}` or `\}` will match a matching meta `\{`,
 otherwise they are taken as a literal `}`.
 
 Neovim recommends keeping the default `magic` setting.
@@ -233,16 +233,15 @@ For a description of POSIX.2 regular expressions see
     $
 ```
 
-According to this Linux man page,
-POSIX.2 refers to "*extended regular expresions*" as both
-"*modern regular expresions*" and "*egrep regular expressions*."
-It also refers to "*simple regular expressions*" as
-"*obsolete regular expressions*" and "*basic regular expressions*"
-as "*ed regular expressions*."
+According to this Linux man page, POSIX.2 refers to "*extended regular
+expresions*" as both "*modern regular expresions*" and "*egrep regular
+expressions*." It also refers to "*simple regular expressions*" as
+"*obsolete regular expressions*" and "*basic regular expressions*" as
+"*ed regular expressions*."
 
-For "*simple regular expressions*" the characters `|+?` have no
-special meta-meaning.  This type of regular expressions are in the
-POSIX.2 standard for backward compatibility, but are considered a wart.
+For "*simple regular expressions*" the characters `|+?` have no special
+meta-meaning.  This type of regular expressions are in the POSIX.2
+standard for backward compatibility, but are considered a wart.
 
 ---
 

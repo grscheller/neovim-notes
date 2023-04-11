@@ -5,17 +5,16 @@ The problem a lot of people have with Vim is
 
 Much of the information here I obtained from
 [Lagmonster][50].
-This site no longer seems to be active.  These commands
-existed in the original ex version of vi.  When the behavior
-differs from the original vi, I will indicate the nvim behavior.
+This site no longer seems to be active.  These commands existed in the
+original ex version of vi.  When the behavior differs from the original
+vi, I will indicate the nvim behavior.
 
-The name vi comes from the "visual interface" for the ex
-line editor.  That is the reason vi's configuration file
-is called `~/.exrc`.
+The name vi comes from the "visual interface" for the ex line editor.
+That is the reason vi's configuration file is called `~/.exrc`.
 
-Vi was often called "bimodal" where *normal mode* and
-*command mode* were conflated together and called
-"command mode" and "insert mode" was the second mode.
+Vi was often called "bimodal" where *normal mode* and *command mode*
+were conflated together and called "command mode" and "insert mode" was
+the second mode.
 
 ## Normal Mode Commands
 
@@ -28,9 +27,9 @@ Vi was often called "bimodal" where *normal mode* and
 | `ZZ`    | save changes and exit vim                  |
 | `<C-z>` | suspend vim to shell background            |
 
-For `<C-z>`, the shell command `fg %1` will usually work to
-un-suspend vim.  If you have other things suspended, hunt for it
-via the `jobs` shell command.
+For `<C-z>`, the shell command `fg %1` will usually work to un-suspend
+vim.  If you have other things suspended, hunt for it via the `jobs`
+shell command.
 
 ### Commands to move cursor/view in Normal Mode
 
@@ -60,15 +59,15 @@ Where `<Bar>` = `|`
 
 Both `<C-e>` & `<C-y>` will move cursor to keep it in the view.
 
-With `%`, if you are not currently on a grouping symbol, move
-to the first one on the current line and jump to its matching
-partner.  Plugsins like Syntastic can change the meaning of
-what is a matching symbol for different file types.
+With `%`, if you are not currently on a grouping symbol, move to the
+first one on the current line and jump to its matching partner.
+Plugsins like Syntastic can change the meaning of what is a matching
+symbol for different file types.
 
 If scrolloff is set in init.vim, some of these commands get modified,
 
 ```vim
-    set scrolloff=3
+   set scrolloff=3
 ```
 
 will keep the cursor 3 lines from the edge of the screen.
@@ -84,11 +83,11 @@ will keep the cursor 3 lines from the edge of the screen.
 | `[[`    | move cursor to beginning previous section |
 | `]]`    | move cursor to beginning next section     |
 
-What "section" means is most easily understood in the context of
-file types.  For example, in pre-ANSI K&R C files, `[[` and `]]`
-will jump between `{` which are in the first column.  Programmers
-used these to jump between C functions in source code.  For troff
-files various constructs were understood as defining "sections."
+What "section" means is most easily understood in the context of file
+types.  For example, in pre-ANSI K&R C files, `[[` and `]]` will jump
+between `{` which are in the first column.  Programmers used these to
+jump between C functions in source code.  For troff files various
+constructs were understood as defining "sections."
 
 ### Commands to change text
 
@@ -175,13 +174,13 @@ will find your vim editing session frozen.  Type `<C-q>` to unlock.
 | `:=`           | show number of lines in buffer                       |
 | `:n,md`        | delete lines `n` thru `m`                            |
 
-About the only useful things you can put into vi's configuration
-file, `~/.exrc`, are the `set`, `map`, and `ab` commands.
+About the only useful things you can put into vi's configuration file,
+`~/.exrc`, are the `set`, `map`, and `ab` commands.
 
-### The set: Command
+### The :set Command
 
-The `:set` command changes vi's default options.  Unlike most UNIX commands
-there is no '-o' option to set these from the vi commandline.
+The `:set` command changes vi's default options.  Unlike most UNIX
+commands there is no '-o' option to set these from the vi commandline.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
@@ -216,16 +215,17 @@ Think of `:ab` command as a poor man's snippets.  They work in both
 |:---------------- |:--------------------------------- |
 | `:ab fb foo bar` | typing 'fb ' gives you 'foo bar ' |
 
-As with `:set` and `:map`, `:ab` is part a of a much larger family
-of commands in both Vim and Neovim.
+As with `:set` and `:map`, `:ab` is part a of a much larger family of
+commands in both Vim and Neovim.
 
 ## Marks
 
-Marks allow you to set locations to either be able to jump to
-or use with *normal mode* editing commands.
+Marks allow you to set locations to either be able to jump to or use
+with *normal mode* editing commands.
 
 Marks within the file being edited are denoted via letters `a-z`.
-A mark is a "zero-width" entity between the cursor and the preceding character.
+A mark is a "zero-width" entity between the cursor and the preceding
+character.
 
 | Command   | Description                                        |
 |:---------:|:-------------------------------------------------- |
