@@ -6,7 +6,9 @@ a text editor.
 I think with a few months of practice, the material covered here can be
 internalized and eventually become part of your "muscle memory."
 
-## Vim has 4 main modes
+## Overview
+
+### Vim has 4 main modes
 
 * [Normal Mode](#normal-mode)
 * [Insert Mode](#insert-mode)
@@ -15,7 +17,18 @@ internalized and eventually become part of your "muscle memory."
 
 ---
 
-* [Other Useful Vim Information](#other-useful-vim-information)
+### Auto & manually formatting text
+
+* [Control formatting with `formatoptions`](#formatting-text)
+
+### Other useful Vim Information
+
+* [Undo/Redo normal mode commands](#undo-and-redo-normal-mode-commands)
+* [Command line option examples](#command-line-option-examples)
+* [Dealing with whitespace characters](#dealing-with-whitespace-characters)
+* [Spell checking](#spell-checking)
+* [Replace tabs with spaces as you type](#replace-tabs-with-spaces-as-you-type)
+* [Getting help](#getting-help)
 
 ---
 
@@ -437,9 +450,37 @@ enabling mouse support for all modes.
 
 ---
 
+## Formatting text
+
+A fairly old Vim feature is to auto-format via the `gw` command.  The
+behavior of this auto formatting is controlled via the `formatoptions`
+options.  The following table shows the values I usually set for this.
+
+| Format        | Cmd to set            | Use case              |
+|:------------- |:--------------------- |:---------------------:|
+| Just comments | `:set fo=cqjp1`       | Programming (default) |
+| Just text     | `:setlocal fo=tqjp1`  | Writing               |
+| Just text     | `:setlocal fo=tqjp1l` | Markdown              |
+| Both          | `:setlocal fo=ctqjp1` | Config files          |
+
+See `:h fo-table` for what letters in `formatoptions` mean.
+
+The formatting behavior depends heavily on what `textwidth` is set to.
+For markdown, the `l` options makes dealing with long lines, like links,
+a bit easier.
+
+Formatting can be manually triggered via:
+
+* `gw{motion}`
+* `gw{text-object}` - inner paragraph (ip) text-object works well
+* `gww` - format current line (does not take a count)
+* `gw` - from visual mode
+
+---
+
 ## Other Useful Vim Information
 
-### Undo/redo normal mode commands
+### Undo and redo normal mode commands
 
 | Command | Description        |
 |:-------:|:------------------ |
@@ -450,7 +491,7 @@ These can be used to linearly undo and redo edits, like the arrow
 buttons in a web browser.  Navigating with the arrow keys while in
 *insert mode* will result in multiple undo/redo events.
 
-### Some Vim/Neovim command line option examples
+### Command line option examples
 
 ```fish
     $ nvim file1 file2 file3  # Open/create 3 files for editing
@@ -483,7 +524,7 @@ Helps when getting rid of tabs and trailing whitespace.
 | `:set nospell`  | Turn spell checking off |
 | `:set invspell` | Toggle spell setting    |
 
-### Replace tabs with 4 spaces (as you type)
+### Replace tabs with spaces as you type
 
 Put the following commands in your `~/.config/nvim/init.vim` or
 `~/.vim/vimrc` file
@@ -504,7 +545,7 @@ and replace with 4 spaces,
 
 To insert an actual tab, enter *insert mode* and type `<C-v><Tab>`.
 
-### Detailed help
+### Getting help
 
 To get started, from within vim, type
 
