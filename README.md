@@ -34,7 +34,7 @@ not vim in vi mode.
   To the extent possible under law,
   [Geoffrey R. Scheller](https://github.com/grscheller)
   has waived all copyright and related or neighboring rights
-  to [neovim-notes](https://github.com/grscheller/neovim-notes).
+  to [grscheller/neovim-notes](https://github.com/grscheller/neovim-notes).
   This work is published from the United States of America.
 </p>
 
