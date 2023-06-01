@@ -491,6 +491,14 @@ These can be used to linearly undo and redo edits, like the arrow
 buttons in a web browser.  Navigating with the arrow keys while in
 *insert mode* will result in multiple undo/redo events.
 
+### Jumping back to previously edited buffer
+
+Here is a nice way to junp between 2 buffers in *normal mode*.
+
+| Command | Description                                    |
+|:-------:|:---------------------------------------------- |
+| `<C-6>` | jump back to the last previously edited buffer |
+
 ### Command line option examples
 
 ```fish
