@@ -179,8 +179,8 @@ you need to put alacritty into vi-mode via CTRL+SHIFT+SPACE.
 
 ---
 
-| prev: [Vim Specific Features][5] | [Home][0] | next: [Encodings & Unicode][7] |
+| prev: [Adv Text Editing][6] | [Home][0] | next: [Encodings & Unicode][8] |
 
-[5]: 05-VimSpecificFeatures.md
+[6]: 06-AdvTextEditing.md
 [0]: ../README.md
-[7]: 07-EncodingsUnicode.md
+[8]: 08-EncodingsUnicode.md

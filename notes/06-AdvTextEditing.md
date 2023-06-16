@@ -1,9 +1,12 @@
-# Basic Text Editing
+# Advanced Text Editing
 
-This should be enough to enable you to be productive with nvim/vim as
-a text editor. I think with a few months of practice, the material
-covered here can be internalized and eventually become part of your
-"muscle memory."
+After a few months of practice with the basic text editing section, this
+section will help you, as ThePrimeagen would say, "to become blazingly
+fast."
+
+TODO: separate out more adv techniques with speed emphasis
+
+Right now this is just the original basic editing section.
 
 ## Overview
 
@@ -15,6 +18,10 @@ covered here can be internalized and eventually become part of your
 * [Visual Mode](#visual-mode)
 
 ---
+
+### Auto & manually formatting text
+
+* [Control formatting with `formatoptions`](#formatting-text)
 
 ### Other useful Vim Information
 
@@ -58,6 +65,12 @@ close the current window if multiple windows or tabs are open.
 | `0`           | move to beginning of line                         |
 | `G`           | move to last line in file                         |
 | `gg`          | move to first line in file                        |
+| `f<char>`     | move forward to next `<char>` on current line     |
+| `F<char>`     | move backward to next `<char>` on current line    |
+| `t<char>`     | move forward before next `<char>` on current line |
+| `T<char>`     | move backward after next `<char>` on current line |
+| `;`           | next target for last `f`, `F` ,`t` ,`T` command   |
+| `,`           | prev target for last `f`, `F`, `t`, `T` command   |
 | `3w`          | move forward 3 words on current line              |
 | `5l`          | move forward 5 characters on current line         |
 | `/RegExp<CR>` | forward search for regular expression pattern     |
@@ -79,14 +92,57 @@ close the current window if multiple windows or tabs are open.
 | `x`          | delete character under cursor, put in default register  |
 | `X`          | delete character before cursor, put in default register |
 | `~`          | change case of current char and advance one char        |
+| `g~<motion>` | change case via "vim motion" or "vim text object"       |
 | `r<char>`    | change current char to `<char>`                         |
-| `J`          | join curent & next line, insert spaces as needed        |
-| `gJ`         | join curent & next line without inserting spaces        |
 | `p`          | paste default register contents "after"                 |
 | `P`          | paste default register contents "before"                |
+| `J`          | join curent & next line, insert spaces as needed        |
+| `gJ`         | join curent & next line without inserting spaces        |
 
-Where what "before" and "after" mean above depends on what the default
+Where what "before" and "after" means depends on what the default
 register contains.
+
+### Normal mode motions and text objects
+
+Both `y` and `d` can be used with all the *normal mode* motions and
+*text objects*.
+
+| Command | Description                                                 |
+|:-------:|:----------------------------------------------------------  |
+| `d$`    | delete to end of line and put in default register           |
+| `d0`    | delete everything before cursor and put in default register |
+| `3yw`   | yank three words to default register, starting at cursor    |
+| `y^`    | yank everything before cursor to first non-whitespace char  |
+| `d2fz`  | delete from cursor to 2nd z on current line                 |
+| `2db`   | delete 2 previous words starting from cursor                |
+| `2y3w`  | ends up yanking 6 words                                     |
+| `5x`    | delete next 5 characters on current line                    |
+| `5X`    | delete previous 5 characters on current line                |
+| `dip`   | delete current paragraph                                    |
+| `dap`   | delete rest of paragraph below current line                 |
+| `diw`   | delete word cursor is on, leave whitespace                  |
+| `daw`   | delete word cursor is on, eat trailing whitespace           |
+| `d{`    | delete to beginning of paragraph whitespace                 |
+| `d}`    | delete to end of paragraph                                  |
+
+Text Objects (TO) are similar to motions and also take a count
+
+| TO   | Description                                                      |
+|:----:|:---------------------------------------------------------------- |
+| `iw` | inner word - select [count] words and spaces between them        |
+| `aw` | around word - select [count] words, spaces between & trailing ws |
+| `iW` | inner Word - select [count] Words and spaces between them        |
+| `aW` | around word - select [count] Words, spaces between & trailing ws |
+| `is` | inner sentance - select [count] sentances                        |
+| `as` | around sentance - select [count] sentances                       |
+| `i(` | select what is between parentheses                               |
+| `a(` | select what is between parentheses and the parentheses too       |
+| `i{` | select what is between brackets                                  |
+| `a{` | select what is between brackets and the brackets too             |
+| `i<` | select what is between <>                                        |
+| `a<` | same as above and the `<` `>` too                                |
+| `it` | select what is between tags `<aaa>` and `</aaa>`                 |
+| `at` | same as above but include the tags too                           |
 
 ### You can use named registers to store text
 
@@ -112,6 +168,7 @@ These *normal mode* commands take vim to *insert mode*.  To return to
 |:-------:|:--------------------------------------------------------------- |
 | `i`     | insert text before character cursor is on                       |
 | `I`     | insert text at beginning of line after initial white space      |
+| `0i`    | insert text beginning of line                                   |
 | `a`     | insert text after character cursor is on                        |
 | `A`     | insert text at end of line                                      |
 | `o`     | open new line after current line in insert text                 |
@@ -126,6 +183,12 @@ These *normal mode* commands take vim to *insert mode*.  To return to
 | `c$`    | change to end of line                                           |
 | `c^`    | change text before cursor, excluding initial white space        |
 | `c0`    | change text before cursor to beginning of line                  |
+| `ciw`   | change inner word (change word cursor is on)                    |
+| `caw`   | change around word (change word cursor is on & whitespace rhs)  |
+| `cis`   | change inner sentence (works best for prose)                    |
+| `cip`   | change inner paragraph                                          |
+| `c{`    | change to beginning of paragraph                                |
+| `c}`    | change to end of paragraph                                      |
 | `"a3S`  | delete 3 lines into `"a`                                        |
 | `"b3C`  | delete rest of line & next 2 two into `"b`                      |
 
@@ -166,6 +229,30 @@ To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 | `<C-r>/`      | paste last search pattern                     |
 | `<C-r>:`      | paste last *command mode* command             |
 
+### Navigating in *insert mode*
+
+Sometimes it is convenient to navigate while in *insert mode*.  I tend
+to do this only to navigate near where the cursor is.
+
+Most "out of the box" vim configurations allow you to navigate with the
+arrow keys while in *insert mode*.  Usually text can also be deleted
+with the backspace key.  In *normal mode*, the backspace and space keys
+are just extra navigation keys.
+
+It is also possible to perform a single *normal mode* action within
+*insert mode* by using`<C-o>` key sequences.
+
+| Command   | Description                              |
+|:---------:|:---------------------------------------- |
+| `<C-o>h`  | move cursor left one character           |
+| `<C-o>l`  | move cursor right one character          |
+| `<C-o>k`  | move cursor up one line                  |
+| `<C-o>j`  | move cursor down one line                |
+| `<C-o>3w` | move cursor three words left             |
+| `<C-o>2j` | move down two lines                      |
+| `<C-o>J`  | join current line with the next line     |
+| `<C-o>D`  | delete everything to the right of cursor |
+
 ### Other insert mode commands
 
 | Command           | Description                                            |
@@ -179,6 +266,8 @@ To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 | `<C-t>`           | increase line indentation one tabwidth                 |
 | `<C-d>`           | decrease line indentation one tabwidth                 |
 | `<C-a>`           | insert text from last insert mode                      |
+| `<C-y>`           | insert the character on line above cursor              |
+| `<C-e>`           | insert the character on line below cursor              |
 | `<Esc>`           | Quit *insert mode* go back to *normal mode*            |
 | `<C-c>`           | Quit *insert mode*, InsertLeave autocmds not triggered |
 
@@ -186,6 +275,56 @@ The first four commands come from the original vi.  A subtle difference
 is that in vi these commands edited not the buffer, but the current edit
 of the buffer.  This may explain the above idiosyncratic bahavior of
 multiple `<C-u>`.
+
+### Ins-completion sub-mode commands
+
+A "sub-mode" used for text completions.  While in *ins-completion mode*,
+`<C-y>` will accept the completion and `<C-e>` will return what was
+originally typed.  `<C-n>` will move to the next completion in the drop
+down, and `<C-p>` will move to the previous one.
+
+I rarely use these features since I have better alternatives through plugins.
+
+| Command      | Description                                               |
+|:------------:|:--------------------------------------------------------- |
+| `<C-x><C-l>` | search for line forwards in buffer                        |
+| `<C-x><C-i>` | search for keyword forwards in file and included files    |
+| `<C-x><C-d>` | search for definition forwards in file and included files |
+| `<C-x><C-]>` | search for tag and insert before cursor                   |
+| `<C-x><C-k>` | search words in dictionary                                |
+| `<C-x><C-t>` | search words in thesaurus                                 |
+| `<C-x>s`     | search for spelling suggestions                           |
+| `<C-y>`      | accept the completion                                     |
+| `<C-e>`      | punt on completion and take what was typed                |
+| `<C-p>`      | complete keyword backwards from "various sources"         |
+| `<C-n>`      | complete keyword forward from "various sources"           |
+
+What "various sources" for the last two above is configured via the
+complete flag:
+
+```vim
+    :set complete
+    complete=.,w,b,u,t
+```
+
+Options for the complete flag:
+
+* .      - use current buffer
+* w      - use buffers from other windows
+* b      - use buffers from the buffer list
+* u      - use unloaded buffers
+* t      - tag completion
+* i      - scan current buffer and use included files
+* kspell - match dictionary words
+
+Example, remove tag completion and add kspell,
+
+```vim
+    :set complete+=kspell
+    :set complete-=t
+    :set complete
+    complete=.,w,b,u,kspell
+```
 
 ---
 
@@ -252,7 +391,7 @@ Unlike Vim, Neovim does not have an *EX mode*.
 
 While in *command mode*, up & down arrow keys cycle through previous
 *command mode* commands.  The left & right arrow keys help you re-edit
-the line.  Press `<Esc>` to return to *normal mode* without
+the line.  Press `<Esc>`or`<C-[>` to return to *normal mode* without
 issuing a command.
 
 Using the up & down arrow keys with something typed will cycle through
@@ -310,6 +449,34 @@ If you have enabled mouse support, mouse actions can cause you to enter
 useful to enable mouse support for *normal mode* only.  After becoming
 more comfortble with *visual mode*, I found it completely natural
 enabling mouse support for all modes.
+
+---
+
+## Formatting text
+
+A fairly old Vim feature is to auto-format via the `gw` command.  The
+behavior of this auto formatting is controlled via the `formatoptions`
+options.  The following table shows the values I usually set for this.
+
+| Format        | Cmd to set            | Use case              |
+|:------------- |:--------------------- |:---------------------:|
+| Just comments | `:set fo=cqjp1`       | Programming (default) |
+| Just text     | `:setlocal fo=tqjp1`  | Writing               |
+| Just text     | `:setlocal fo=tqjp1l` | Markdown              |
+| Both          | `:setlocal fo=ctqjp1` | Config files          |
+
+See `:h fo-table` for what letters in `formatoptions` mean.
+
+The formatting behavior depends heavily on what `textwidth` is set to.
+For markdown, the `l` options makes dealing with long lines, like links,
+a bit easier.
+
+Formatting can be manually triggered via:
+
+* `gw{motion}`
+* `gw{text-object}` - inner paragraph (ip) text-object works well
+* `gww` - format current line (does not take a count)
+* `gw` - from visual mode
 
 ---
 
@@ -407,9 +574,8 @@ get the most out of it,
 
 ---
 
-| [Absolute Minimal Text Editing][1] | [Home][0] | next: [Vim Factoids][3] |
+| prev: [Vim Specific Features][5] | [Home][0] | next: [Mult Neovim Windows][7] |
 
-[1]: 01-AbsoluteMinimalTextEditing.md
+[5]: 05-VimSpecificFeatures.md
 [0]: ../README.md
-[3]: 03-VimFactoids.md
 [7]: 07-MultipleWindows.md

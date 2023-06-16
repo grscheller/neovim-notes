@@ -285,8 +285,8 @@ directly but can be deleted.
 
 ---
 
-| prev: [Adv Trad Vi Commands][4] | [Home][0] | next: [Mult Neovim Windows][6] |
+| prev: [Adv Trad Vi Commands][4] | [Home][0] | next: [Adv Text Editing][6] |
 
 [4]: 04-AdvTradViCommands.md
 [0]: ../README.md
-[6]: 06-MultipleWindows.md
+[6]: 06-AdvTextEditing.md

@@ -5,7 +5,7 @@ The problem a lot of people have with Vim is
 
 Much of the information here I obtained from
 [Lagmonster][50].
-This site no longer seems to be active.  These commands existed in the
+This site no longer exists.  These commands existed in the
 original ex version of vi.  When the behavior differs from the original
 vi, I will indicate the nvim behavior.
 

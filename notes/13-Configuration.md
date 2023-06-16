@@ -115,7 +115,7 @@ and scroll upwards.
 
 ---
 
-| prev: [Vimscript][11] | [Home][0] |
+| prev: [Vimscript][12] | [Home][0] |
 
-[11]: 11-Vimscript.md
+[12]: 12-Vimscript.md
 [0]: ../README.md

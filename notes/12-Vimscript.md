@@ -1,7 +1,7 @@
 # Vimscript
 
 Vimscript, also sometimes referred to in the Neovim documentation as
-VimL, is Vim's built in scripting language.  Basically a super set of Ex
+VimL, is Vim's built in scripting language.  Basically a super set of ex
 commands with some scripting language constructs thrown in.
 
 I have no desire to become an expert in Vimscript, but a certain amount
@@ -46,8 +46,8 @@ shared between different chunks.
 
 ---
 
-| prev: [Lua][10] | [Home][0] | next: [Neovim Configuring & Maintenance][12] |
+| prev: [Lua][11] | [Home][0] | next: [Neovim Configuring & Maintenance][13] |
 
-[10]: 10-Lua.md
+[11]: 11-Lua.md
 [0]: ../README.md
-[12]: 12-Configuration.md
+[13]: 13-Configuration.md

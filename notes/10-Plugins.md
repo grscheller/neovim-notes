@@ -102,8 +102,8 @@ location of the cursor with `$` instead of the more logical choice `|`.
 
 ---
 
-| prev: [Regular Expressions][8] | [Home][0] | next: [Lua][10] |
+| prev: [Regular Expressions][9] | [Home][0] | next: [Lua][11] |
 
-[8]: 08-RegularExpressions.md
+[9]: 09-RegularExpressions.md
 [0]: ../README.md
-[10]: 10-Lua.md
+[11]: 11-Lua.md
