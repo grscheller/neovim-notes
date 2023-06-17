@@ -6,6 +6,8 @@
 
 ### Packages
 
+---
+
 ## Popular Plugins
 
 ### Vim Commentary (tpope/vim-commentary)
@@ -20,8 +22,8 @@ Comment out sections of code quickly.
 ### Vim Sneak (justinmk/vim-sneak)
 
 Two character, multiline version of `f` & `t` allowing you to navigate
-quickly through a Neovim window.  Highlights other matches in window.
-Navigate to next or previous instances with `;` or `,`.  Positions moved
+quickly through a Neovim window. Highlights other matches in window.
+Navigate to next or previous instances with `;` or `,`. Positions moved
 through by `;` and `,` are not recorded on the vim jumplist.
 
 | mode    | Command           | Description                                   |
@@ -60,11 +62,11 @@ configure them
 ```
 
 There is also a "label mode" which makes Vim Sneak more like
-easymotion/vim-easymotion.  Not availble for `f`,`t`,`F`,`T`.
+easymotion/vim-easymotion. Not availble for `f`,`t`,`F`,`T`.
 
 ### Vim Surround (tpope/vim-surround)
 
-Manipulate matching surrounding symbols.  Due to the limitations of
+Manipulate matching surrounding symbols. Due to the limitations of
 Markdown, I will sometimes need to use a period `.` to indicate a space.
 
 | mode   | Command  | Description/Example                                         |

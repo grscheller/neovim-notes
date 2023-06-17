@@ -13,10 +13,12 @@ section of my
 [dotfiles](https://github.com/grscheller/dotfiles)
 repo for my current Neovim configuration.
 
+---
+
 ## Bootstraping Paq and Packer
 
 I initially used a minimalistic Neovim package manager called Paq.
-Paq is written in Lua.  Paq manages itself, but initially needs to
+Paq is written in Lua. Paq manages itself, but initially needs to
 be bootstrapped into the standard Neovim package directory.
 
 ```fish
@@ -26,7 +28,7 @@ be bootstrapped into the standard Neovim package directory.
 
 By minimalistic, I mean simple, no auto-loading.
 
-Later on I switched to Packer as my package manager.  Packer also has to
+Later on I switched to Packer as my package manager. Packer also has to
 be bootstrapped.
 
 ```fish
@@ -35,19 +37,21 @@ be bootstrapped.
 ```
 
 Both Paq and Packer need to be configured in your Neovim configuration
-files.  I found Packer to be substantially faster than Paq, even through
+files. I found Packer to be substantially faster than Paq, even through
 it does much more.
 
 Currently, I am using
 [lazy.nvim](https://github.com/folke/lazy.nvim)
-directly as my plugin manager and lazy loader.  See also
+directly as my plugin manager and lazy loader. See also
 [LazyVim](https://github.com/lazyvim).
+
+---
 
 ## Periodic Mantenance
 
-Typically I do this about twice a week.  If Neovim is working for me,
+Typically I do this about twice a week. If Neovim is working for me,
 and I am in the middle of something important, I might let it go a while
-longer before doing maintenance.  This also needs to be done after the
+longer before doing maintenance. This also needs to be done after the
 above bootstrapping.
 
 ```fish
@@ -65,9 +69,11 @@ above bootstrapping.
 ```
 
 I would advice not to try to reload your init.lua configuration after
-a `:PackerSync` from within a running nvim session.  Yes, it is
-possible, but I have run into multiple complications.  Just exit nvim
+a `:PackerSync` from within a running nvim session. Yes, it is
+possible, but I have run into multiple complications. Just exit nvim
 between each of these commands.
+
+---
 
 ## Other configuration files
 
@@ -101,7 +107,7 @@ In other words, the sourcing order is not "per-location", it is
 * ~/.config/nvim/after/syntax/foo.lua
 
 A filetype plugin is like a global plugin, except that it sets options
-and defines mappings for the current buffer only.  The /after directory
+and defines mappings for the current buffer only. The /after directory
 is useful when you want to override or add to the distributed defaults
 or system-wide settings.
 

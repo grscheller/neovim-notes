@@ -1,8 +1,8 @@
 # Absolute Minimum One Needs to Know
 
 Let's say you've logged into some server which only has vi or vim
-installed.  No emacs, no nano.  You only have one quick edit to do, so
-it is not worth installing your favorite editor.  Here is some critical
+installed. No emacs, no nano. You only have one quick edit to do, so
+it is not worth installing your favorite editor. Here is some critical
 info you need to know in order to sub-marginally accomplish your task.
 
 ## How to exit vi/vim/nvim
@@ -15,7 +15,7 @@ You invoked vi via
 ```
 
 You can move around with the arrow keys but when you try typing stuff
-weird things happen.  You try to exit, but nothing works.  Damn it,
+weird things happen. You try to exit, but nothing works. Damn it,
 CTRL-C does not even work!
 
 To get out,
@@ -24,19 +24,21 @@ To get out,
     <Esc>:q!<CR>
 ```
 
-The ESC key brought you back (or left you in) "command mode".  In
-vim/nvim this mode is known as *normal mode*.  The `:` key put you into
-"command line mode", known as *command mode* in vim/nvim.  You are now
+The ESC key brought you back (or left you in) "command mode". In
+vim/nvim this mode is known as *normal mode*. The `:` key put you into
+"command line mode", known as *command mode* in vim/nvim. You are now
 entering text on the last line of the terminal which begins with a `:`
-prompt.  The `q!` "command line mode" vi command quits the current
-editing session without saving any changes.  The `<CR>` key, also known
+prompt. The `q!` "command line mode" vi command quits the current
+editing session without saving any changes. The `<CR>` key, also known
 as the `<Return>`, `<Enter>` or `<EOL>` key, submits the command ending
 your session.
 
-From now on, we'll refer to these modes by their vim/nvim names.  Also,
+From now on, we'll refer to these modes by their vim/nvim names. Also,
 we will make a distinction between the file stored on disk and the "text
-buffer" image of the file read into memory.  Text buffers are uaually,
+buffer" image of the file read into memory. Text buffers are uaually,
 but not always, associated with a file.
+
+---
 
 ## The 3 main modes
 
@@ -47,6 +49,8 @@ but not always, associated with a file.
 If in either *insert mode* or *command mode*, `<Esc>` will take you to
 *normal mode*.
 
+---
+
 ## Minimal command set common to vi, vim, and nvim
 
 Here are a minimal common subset of commands for vi, vim, and nvim.
@@ -54,7 +58,7 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 ### Cursor movement in *Normal Mode*
 
 *Normal mode* is the default mode you are put in when the editor is
-started.  Hitting `<Esc>` while in *insert mode* or *command mode* will
+started. Hitting `<Esc>` while in *insert mode* or *command mode* will
 put you back into *normal mode*.
 
 | Command  | Description                                 |
@@ -74,7 +78,7 @@ work to navigate the text buffer in *normal mode*.
 
 ### Commands to insert or manipulate text
 
-These *normal mode* commands take vim to *insert mode*.  To return to
+These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type `<Esc>`.
 
 | Command | Description                                      |
@@ -110,17 +114,17 @@ What "before" or "after" mean depends on what is in the default register.
 ### *Insert Mode*
 
 The original vi paradigm was that you do all navigation in *normal mode*
-and type text into the text buffer in *insert mode*.  From *insert mode*
+and type text into the text buffer in *insert mode*. From *insert mode*
 you return to *normal mode* by pressing the `<Esc>` key.
 
 For vim and nvim you can navigate through the text buffer while in
-*insert mode* with the arrow keys.  You cannot navigate this way in vi.
+*insert mode* with the arrow keys. You cannot navigate this way in vi.
 
 ### *Command Mode*
 
-From *normal mode* use  `:`, `/`, or `?` to enter *command mode*.  The
+From *normal mode* use  `:`, `/`, or `?` to enter *command mode*. The
 cursor jumps down to the bottom of the terminal window and to prompts
-you with either `:`, `\`, or `?` depending on which one you typed.  The
+you with either `:`, `\`, or `?` depending on which one you typed. The
 later two are used to search forward and backward respectfully in the
 text buffer.
 
@@ -146,7 +150,7 @@ text buffer.
 | `?`                 | jump back using last search pattern                     |
 
 Entering `<CR>` will cause the above commands to be executed and return
-you to *normal mode*.  Hitting `<Esc>` instead will punt on running the
+you to *normal mode*. Hitting `<Esc>` instead will punt on running the
 command and return you to *normal mode*.
 
 ### Repeating commands in *Normal Mode*
@@ -155,7 +159,7 @@ command and return you to *normal mode*.
 |:-------:|:------------------------------------------ |
 | `.`     | repeat the last command which changed text |
 
-This repeats the last *normal mode* command used which changed text.  It
+This repeats the last *normal mode* command used which changed text. It
 does not repeat *command mode* commands.
 
 ---

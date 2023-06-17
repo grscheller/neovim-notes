@@ -5,8 +5,8 @@ The problem a lot of people have with Vim is
 
 Much of the information here I obtained from
 [Lagmonster][50].
-This site no longer exists.  These commands existed in the
-original ex version of vi.  When the behavior differs from the original
+This site no longer exists. These commands existed in the
+original ex version of vi. When the behavior differs from the original
 vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex line editor.
@@ -28,7 +28,7 @@ the second mode.
 | `<C-z>` | suspend vim to shell background            |
 
 For `<C-z>`, the shell command `fg %1` will usually work to un-suspend
-vim.  If you have other things suspended, hunt for it via the `jobs`
+vim. If you have other things suspended, hunt for it via the `jobs`
 shell command.
 
 ### Commands to move cursor/view in Normal Mode
@@ -84,9 +84,9 @@ will keep the cursor 3 lines from the edge of the screen.
 | `]]`    | move cursor to beginning next section     |
 
 What "section" means is most easily understood in the context of file
-types.  For example, in pre-ANSI K&R C files, `[[` and `]]` will jump
-between `{` which are in the first column.  Programmers used these to
-jump between C functions in source code.  For troff files various
+types. For example, in pre-ANSI K&R C files, `[[` and `]]` will jump
+between `{` which are in the first column. Programmers used these to
+jump between C functions in source code. For troff files various
 constructs were understood as defining "sections."
 
 ### Commands to change text
@@ -139,10 +139,10 @@ For more information on `<C-x>` see
 ```
 
 If you accidentally typed `<C-x>` while in insert mode, typing any
-non-control character, except `s` will get you back.  If you have
+non-control character, except `s` will get you back. If you have
 terminal flow control turned on, and you hit the unfortunate key
 combination `<C-x><C-s>`, something EMACS users are likely to do, you
-will find your vim editing session frozen.  Type `<C-q>` to unlock.
+will find your vim editing session frozen. Type `<C-q>` to unlock.
 
 ### Insert Mode vs Replace Mode
 
@@ -179,7 +179,7 @@ About the only useful things you can put into vi's configuration file,
 
 ### The :set Command
 
-The `:set` command changes vi's default options.  Unlike most UNIX
+The `:set` command changes vi's default options. Unlike most UNIX
 commands there is no '-o' option to set these from the vi commandline.
 
 | Command             | Description                                          |
@@ -204,11 +204,11 @@ in the original vi.
 | `:map k 3l` | now in vi `k` or `a` both moves cursor 3 chars rt |
 | `:map k 3l` | but in nvim `a` moves cursor 23 characters rt     |
 
-Moral: Neovim think lexiconically, not functionally.  Vi, just buggie.
+Moral: Neovim think lexiconically, not functionally. Vi, just buggie.
 
 ### The ab: Command
 
-Think of `:ab` command as a poor man's snippets.  They work in both
+Think of `:ab` command as a poor man's snippets. They work in both
 *insert mode* and *command mode*.  `ab` is short for for `abbreviate`.
 
 | Command          | Description                       |
@@ -238,9 +238,9 @@ character.
 | `delm a`  | delete mark `a` (Vim & Neovim only)                |
 
 Like a mark, the cursor is also a "zero-width" entity between the
-highlighted character and the preceding character.  If the mark is
+highlighted character and the preceding character. If the mark is
 before the cursor in the file, the selection does not contain the
-highlighted character.  Just like the behavior of the `yb` *normal mode*
+highlighted character. Just like the behavior of the `yb` *normal mode*
 command.
 
 ---

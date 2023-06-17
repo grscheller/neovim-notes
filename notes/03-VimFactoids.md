@@ -4,7 +4,7 @@ These "factoids" are generally true of both Vim and Neovim.
 
 ## Buffers and registers in Vim
 
-These are areas that can store text.  The three most important ones,
+These are areas that can store text. The three most important ones,
 for now, are:
 
 * default register
@@ -27,14 +27,14 @@ write to and `p` and `P` read from by default.
 
 Illustrated in
 [Basic text editing](02-BasicTextEditing.md#you-can-use-named-registers-to-store-text),
-Named registers are areas where you can store snippets of text.  They
+Named registers are areas where you can store snippets of text. They
 are named `"a` thru `"z` and are essentially 26 independent "clip
 boards" that are shared between all the file buffers.
 
 ### File buffers
 
-These are the in memory text associated with a file.  To list them, use
-the `:buffers` command.  Among other things, vim gives a unique buffer
+These are the in memory text associated with a file. To list them, use
+the `:buffers` command. Among other things, vim gives a unique buffer
 number and associates a filename (if any) with that buffer.
 
 | Command       | Description                                              |
@@ -65,7 +65,7 @@ number and associates a filename (if any) with that buffer.
 ## Using the mouse
 
 When configured to use the mouse, vim will steal the mouse events from
-the terminal emulator.  To enable vim mouse support in all modes,
+the terminal emulator. To enable vim mouse support in all modes,
 `:set mouse=a` and to disable the mouse and let the terminal emulator
 handle all mouse events, `:set mouse=`
 
@@ -85,14 +85,14 @@ You can send mouse events directly to some terminal emulator programs
 instead of the editor by holding down the SHIFT key.
 
 When I first started using the mouse in Vim, I found it helpful to just
-set `mouse=n`.  As I got more comfortable with *visual mode*, setting
+set `mouse=n`. As I got more comfortable with *visual mode*, setting
 `mouse=a` worked well for me, especially when dealing with
 [terminal windows](06-MultipleWindows.md#terminal-windows)
 in Neovim.
 
 Neovim requires an external program, such as xsel for Unix, so that the
 `"*` and `"+` registers interact with the primary and secondary
-clipboard buffers.  Depending on how it was compiled, Vim can natively
+clipboard buffers. Depending on how it was compiled, Vim can natively
 do this.
 
 ## Configuring wildmenu
@@ -109,8 +109,8 @@ lines in your ~/.config/nvim/init.vim file.
 
 On modern Unix systems, the vi "executable" is either a symbolic link to
 the traditional BSD based ex, or a symbolic (sometimes hard) link to
-vim.  If the vim executable starts with the name vi, it launches in so
-called vi compatibility mode.  Vim in vi compatibility mode is neither
+vim. If the vim executable starts with the name vi, it launches in so
+called vi compatibility mode. Vim in vi compatibility mode is neither
 POSIX compliant nor an ex clone.
 
 * Vi only has one level of undo/redo, `u` undoes the
@@ -127,8 +127,8 @@ POSIX compliant nor an ex clone.
   all unbound.
 
 In *insert mode* vi commands only interact with the text you have just
-typed in, not what is in the file buffer.  If `backspace` is not set,
-Vim duplicates this old vi behavior.  Setting `backspace` to
+typed in, not what is in the file buffer. If `backspace` is not set,
+Vim duplicates this old vi behavior. Setting `backspace` to
 `"indent,eol,start"` is Neovim's default setting as well as Vim's
 default setting when a user's `.vimrc` is not present.
 

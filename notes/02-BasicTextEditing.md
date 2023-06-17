@@ -41,7 +41,7 @@ the original vi where *insert mode* was not as rich.
 | `ZQ`     | exit editor, don't save changes, vim/nvim |
 
 If you have unsaved changes, or have files you have not edited yet, you
-will have to hit `ZZ` or `ZQ` again.  In nvim, `ZZ` and `ZQ` will only
+will have to hit `ZZ` or `ZQ` again. In nvim, `ZZ` and `ZQ` will only
 close the current window if multiple windows or tabs are open.
 
 ### Cursor movement in Normal Mode
@@ -105,7 +105,7 @@ from multiple files and pasting them into other files.
 
 ### Commands to insert or manipulate text
 
-These *normal mode* commands take vim to *insert mode*.  To return to
+These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description                                                     |
@@ -135,10 +135,10 @@ These *normal mode* commands take vim to *insert mode*.  To return to
 |:-------:|:------------------------------------------ |
 | `.`     | repeat the last command which changed text |
 
-This repeats the last *normal mode* command used which changed text.  It
+This repeats the last *normal mode* command used which changed text. It
 does not repeat *command mode* commands.
 
-This is frequently used with the `n` or `;` *normal mode* commands.  For
+This is frequently used with the `n` or `;` *normal mode* commands. For
 example, `n.n.nn.n` keeps moving to the beginning of the next match for
 the last search pattern where you can either decide to repeat, or not,
 the change at each location.
@@ -148,7 +148,7 @@ the change at each location.
 ## Insert Mode
 
 The whole vi paradigm is that you do all navigation in *normal mode* and
-type text in *insert mode*.  You return to *normal mode* by pressing the
+type text in *insert mode*. You return to *normal mode* by pressing the
 `<Esc>` key.
 
 ### Pasting from registers into insert mode
@@ -182,9 +182,9 @@ To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 | `<Esc>`           | Quit *insert mode* go back to *normal mode*            |
 | `<C-c>`           | Quit *insert mode*, InsertLeave autocmds not triggered |
 
-The first four commands come from the original vi.  A subtle difference
+The first four commands come from the original vi. A subtle difference
 is that in vi these commands edited not the buffer, but the current edit
-of the buffer.  This may explain the above idiosyncratic bahavior of
+of the buffer. This may explain the above idiosyncratic bahavior of
 multiple `<C-u>`.
 
 ---
@@ -193,14 +193,14 @@ multiple `<C-u>`.
 
 Vim is an open source version of the Unix editor vi, which is the visual
 interface of the Berkeley Unix line editor ex, which itself is
-a re-implementation of the AT&T Unix line editor ed.  On really old
+a re-implementation of the AT&T Unix line editor ed. On really old
 terminals, essentially line printers with keyboards, the descendants of
 teletypes, you edited files one line at a time.
 
 *command mode* commands developed from the original ex line editing
 commands.
 
-Use the `:` in *normal_mode* to enter *command mode*.  The cursor jumps
+Use the `:` in *normal_mode* to enter *command mode*. The cursor jumps
 down to the bottom of the terminal window and prompts you with `:`.
 
 | Command             | Description                                          |
@@ -243,7 +243,7 @@ Execute these *command mode* command via `<CR>`, which returns you to
 *normal mode*.
 
 The above `:m-4` is another example of vim/nvim exactly duplicating a vi
-idiosyncracy.  Avoid using *command mode* commands with negative numbers
+idiosyncracy. Avoid using *command mode* commands with negative numbers
 in them.
 
 Unlike Vim, Neovim does not have an *EX mode*.
@@ -251,8 +251,8 @@ Unlike Vim, Neovim does not have an *EX mode*.
 ### Navigating the command mode line
 
 While in *command mode*, up & down arrow keys cycle through previous
-*command mode* commands.  The left & right arrow keys help you re-edit
-the line.  Press `<Esc>` to return to *normal mode* without
+*command mode* commands. The left & right arrow keys help you re-edit
+the line. Press `<Esc>` to return to *normal mode* without
 issuing a command.
 
 Using the up & down arrow keys with something typed will cycle through
@@ -290,13 +290,13 @@ To enter *visual mode* from *normal mode*
 | `gv`    | to reselect last visual mode selection |
 
 Highlight text with *normal mode* cursor navigation commands like `h`,
-`j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys.  Once
-selected, you can issue either *normal mode* or *command mode* commands.
+`j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys. Once selected,
+you can issue either *normal mode* or *command mode* commands.
 
 *Normal mode* commands such as `d`, `y`, `c`, `I`, `A`, `>>`, `<<`, `/`
-act on the highlighted region.  The behavior of some commands, like I or
+act on the highlighted region. The behavior of some commands, like I or
 A, vary depending on which *visual mode* (character, line or block) you
-are in.  Others, like indenting commands `>>` or `<<`, just act on the
+are in. Others, like indenting commands `>>` or `<<`, just act on the
 entire line.
 
 *Command mode* commands act on lines in their entirety that contain the
@@ -306,8 +306,8 @@ To punt out of *visual mode* without doing anything, press the `<Esc>`
 key.
 
 If you have enabled mouse support, mouse actions can cause you to enter
-*visual mode*.  When I first the transition from vi to vim, I found it
-useful to enable mouse support for *normal mode* only.  After becoming
+*visual mode*. When I first the transition from vi to vim, I found it
+useful to enable mouse support for *normal mode* only. After becoming
 more comfortble with *visual mode*, I found it completely natural
 enabling mouse support for all modes.
 
@@ -323,7 +323,7 @@ enabling mouse support for all modes.
 | `<C-r>` | redo edit undone   |
 
 These can be used to linearly undo and redo edits, like the arrow
-buttons in a web browser.  Navigating with the arrow keys while in
+buttons in a web browser. Navigating with the arrow keys while in
 *insert mode* will result in multiple undo/redo events.
 
 ### Jumping back to previously edited buffer
@@ -395,7 +395,7 @@ To get started, from within vim, type
 * `:help`
 * `:help help`
 
-Neovim built in help is very powerful, but not beginner friendly.  To
+Neovim built in help is very powerful, but not beginner friendly. To
 get the most out of it,
 
 * Use `<C-]>` or `double-click` mouse to follow vim "hyperlinks"
