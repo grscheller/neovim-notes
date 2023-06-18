@@ -295,12 +295,14 @@ directly but can be deleted.
 
 ## Ins-completion sub-mode commands
 
-A "sub-mode" used for text completions. While in *ins-completion mode*,
-`<C-y>` will accept the completion and `<C-e>` will return what was
-originally typed.  `<C-n>` will move to the next completion in the drop
-down, and `<C-p>` will move to the previous one.
+An *insert mode* "sub-mode" used for text completions. While in
+*ins-completion mode*, `<C-y>` will accept the completion and `<C-e>`
+will return what was originally typed.  `<C-n>` will move to the next
+completion in the drop down, and `<C-p>` will move to the previous one.
 
-I rarely use these features since I have better alternatives through plugins.
+I rarely use these features since the completion plugins I use provide
+better alternatives and usually jump in before I can type `<C-x>`
+anyway.
 
 | Command      | Description                                               |
 |:------------:|:--------------------------------------------------------- |

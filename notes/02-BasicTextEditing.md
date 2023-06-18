@@ -7,7 +7,7 @@ covered here can be internalized and eventually become part of your
 
 ## Overview
 
-### Vim has 4 main modes
+### Nvim has 4 main modes
 
 * [Normal Mode](#normal-mode)
 * [Insert Mode](#insert-mode)
@@ -19,8 +19,6 @@ covered here can be internalized and eventually become part of your
 ### Other useful Vim Information
 
 * [Undo/Redo normal mode commands](#undo-and-redo-normal-mode-commands)
-* [Command line option examples](#command-line-option-examples)
-* [Dealing with whitespace characters](#dealing-with-whitespace-characters)
 * [Spell checking](#spell-checking)
 * [Replace tabs with spaces as you type](#replace-tabs-with-spaces-as-you-type)
 * [Getting help](#getting-help)
@@ -37,8 +35,8 @@ the original vi where *insert mode* was not as rich.
 
 | Command  | Description                               |
 |:--------:|:----------------------------------------- |
-| `ZZ`     | exit editor, save changes, vi/vim/nvim    |
-| `ZQ`     | exit editor, don't save changes, vim/nvim |
+| `ZZ`     | exit window, save changes    |
+| `ZQ`     | exit window, don't save changes, vim/nvim |
 
 If you have unsaved changes, or have files you have not edited yet, you
 will have to hit `ZZ` or `ZQ` again. In nvim, `ZZ` and `ZQ` will only
@@ -52,7 +50,6 @@ close the current window if multiple windows or tabs are open.
 | `w, W`        | move forward to beginning next word               |
 | `b, B`        | move backward to beginning word or WORD           |
 | `e, E`        | move forward to end of word or WORD               |
-| `ge, gE`      | move backward to end of previous word or WORD     |
 | `$`           | move to end of line                               |
 | `^`           | move to first non-whitespace character on line    |
 | `0`           | move to beginning of line                         |
@@ -69,21 +66,21 @@ close the current window if multiple windows or tabs are open.
 
 ### Changing text and/or interacting with the default register
 
-| Command      | Description                                             |
-|:------------:|:------------------------------------------------------- |
-| `dd`         | delete line and put in default register (cut)           |
-| `3dd`        | delete 3 lines and put in default register              |
-| `D`          | delete to end of line and put in default register       |
-| `Y`          | yank to end of line and put in default register         |
-| `yy`         | yank line to default register (copy)                    |
-| `x`          | delete character under cursor, put in default register  |
-| `X`          | delete character before cursor, put in default register |
-| `~`          | change case of current char and advance one char        |
-| `r<char>`    | change current char to `<char>`                         |
-| `J`          | join curent & next line, insert spaces as needed        |
-| `gJ`         | join curent & next line without inserting spaces        |
-| `p`          | paste default register contents "after"                 |
-| `P`          | paste default register contents "before"                |
+| Command   | Description                                            |
+|:---------:|:------------------------------------------------------ |
+| `dd`      | delete line and put in default register (cut)          |
+| `3dd`     | delete 3 lines and put in default register             |
+| `d$`      | delete to end of line, put in default register         |
+| `D`       | delete to end of line and put in default register      |
+| `Y`       | yank to end of line and put in default register        |
+| `yy`      | yank line to default register (copy)                   |
+| `2y3w`    | ends up yanking 6 words                                |
+| `x`       | delete character under cursor, put in default register |
+| `~`       | change case of current char and advance one char       |
+| `r<char>` | change current char to `<char>`                        |
+| `J`       | join curent & next line, insert spaces as needed       |
+| `p`       | paste default register contents "after"                |
+| `P`       | paste default register contents "before"               |
 
 Where what "before" and "after" mean above depends on what the default
 register contains.
@@ -108,26 +105,26 @@ from multiple files and pasting them into other files.
 These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type either `<Esc>` or `<C-[>`.
 
-| Command | Description                                                     |
-|:-------:|:--------------------------------------------------------------- |
-| `i`     | insert text before character cursor is on                       |
-| `I`     | insert text at beginning of line after initial white space      |
-| `a`     | insert text after character cursor is on                        |
-| `A`     | insert text at end of line                                      |
-| `o`     | open new line after current line in insert text                 |
-| `O`     | open new line before current line in insert text                |
-| `s`     | delete current character and enter *insert mode*                |
-| `S`     | delete line contents and enter *insert mode*                    |
-| `C`     | change to end of line                                           |
-| `3cw`   | change next three words starting at cursor                      |
-| `c3w`   | change next three words starting at cursor                      |
-| `5cc`   | change next 5 lines                                             |
-| `3cb`   | change previous 3 words                                         |
-| `c$`    | change to end of line                                           |
-| `c^`    | change text before cursor, excluding initial white space        |
-| `c0`    | change text before cursor to beginning of line                  |
-| `"a3S`  | delete 3 lines into `"a`                                        |
-| `"b3C`  | delete rest of line & next 2 two into `"b`                      |
+| Command | Description                                                |
+|:-------:|:---------------------------------------------------------- |
+| `i`     | insert text before character cursor is on                  |
+| `I`     | insert text at beginning of line after initial white space |
+| `a`     | insert text after character cursor is on                   |
+| `A`     | insert text at end of line                                 |
+| `o`     | open new line after current line in insert text            |
+| `O`     | open new line before current line in insert text           |
+| `s`     | delete current character and enter *insert mode*           |
+| `S`     | delete line contents and enter *insert mode*               |
+| `C`     | change to end of line                                      |
+| `3cw`   | change next three words starting at cursor                 |
+| `c3w`   | change next three words starting at cursor                 |
+| `5cc`   | change next 5 lines                                        |
+| `3cb`   | change previous 3 words                                    |
+| `c$`    | change to end of line                                      |
+| `c^`    | change text before cursor, excluding initial white space   |
+| `c0`    | change text before cursor to beginning of line             |
+| `"a3S`  | delete 3 lines into `"a`                                   |
+| `"b3C`  | delete rest of line & next 2 two into `"b`                 |
 
 ### Repeating commands in Normal Mode
 
@@ -151,41 +148,19 @@ The whole vi paradigm is that you do all navigation in *normal mode* and
 type text in *insert mode*. You return to *normal mode* by pressing the
 `<Esc>` key.
 
-### Pasting from registers into insert mode
-
-To paste text from a Vim register while in *insert mode*, use `<C-r>`.
-
-| Command       | Description                                   |
-|:-------------:|:--------------------------------------------- |
-| `<C-r>"`      | paste last deleted, yanked, or pasted content |
-| `<C-r>a`      | paste from register "a                        |
-| `<C-r>*`      | paste from X11 clipboard                      |
-| `<C-r>+`      | paste from desktop clipboard                  |
-| `<C-r>%`      | paste current filename                        |
-| `<C-r>#`      | paste alternate filename                      |
-| `<C-r>/`      | paste last search pattern                     |
-| `<C-r>:`      | paste last *command mode* command             |
-
-### Other insert mode commands
+### Useful insert mode commands
 
 | Command           | Description                                            |
 |:-----------------:|:------------------------------------------------------ |
 | `<C-v><char>`     | insert literal character                               |
 | `<C-h>` or `<BS>` | delete character to left of cursor                     |
 | `<C-w>`           | delete word to left of cursor                          |
-| `<C-u>`           | delete all entered characters on a line ...            |
-| `<C-u><C-u>`      |   and all characters up to initial whitespace ...      |
-| `<C-u><C-u><C-u>` |     and all characters up to beginning of line         |
+| `<C-u>`           | delete all characters entered so far                   |
 | `<C-t>`           | increase line indentation one tabwidth                 |
 | `<C-d>`           | decrease line indentation one tabwidth                 |
 | `<C-a>`           | insert text from last insert mode                      |
-| `<Esc>`           | Quit *insert mode* go back to *normal mode*            |
-| `<C-c>`           | Quit *insert mode*, InsertLeave autocmds not triggered |
 
-The first four commands come from the original vi. A subtle difference
-is that in vi these commands edited not the buffer, but the current edit
-of the buffer. This may explain the above idiosyncratic bahavior of
-multiple `<C-u>`.
+The first four commands come from the original vi.
 
 ---
 
@@ -227,28 +202,13 @@ down to the bottom of the terminal window and prompts you with `:`.
 | `:%s/foo/bar/gc`    | same as above but ask for confirmation each time     |
 | `:17,42s/foo/bar/g` | substitute all foo with bar, lines 17 to 42          |
 | `:g/baz/s/foo/bar/` | substitute first foo with bar on all lines with baz  |
-| `:5,+5d`            | delete from line 5 thru 5 lines beyond current line  |
-| `:5;+5d`            | go to line 5, delete lines 5 thru 10                 |
-| `:10;+3y`           | go to line 10, yank it and next 3 lines              |
-| `:,/^typed/y`       | yank from current line to line starting with "typed" |
-| `:m+3`              | move current line down 3 lines                       |
-| `:m-4`              | move current line up 3 = 4 - 1 lines                 |
-| `:5,42p`            | print lines 5 thru 42 at botton in command mode area |
-| `:42,$p`            | print lines 42 thru last line in buffer              |
-| `:,100p`            | print current line thru line 100                     |
-| `:50,p`             | print line 50 thru current line cursor is on         |
 | `:p`                | print current line cursor is on                      |
 
 Execute these *command mode* command via `<CR>`, which returns you to
-*normal mode*.
+*normal mode*. To punt *command mode* and return to normal mode use
+`<Esc>`.
 
-The above `:m-4` is another example of vim/nvim exactly duplicating a vi
-idiosyncracy. Avoid using *command mode* commands with negative numbers
-in them.
-
-Unlike Vim, Neovim does not have an *EX mode*.
-
-### Navigating the command mode line
+### Navigating the *command mode line
 
 While in *command mode*, up & down arrow keys cycle through previous
 *command mode* commands. The left & right arrow keys help you re-edit
@@ -258,24 +218,9 @@ issuing a command.
 Using the up & down arrow keys with something typed will cycle through
 only those commands which begin with the typed text.
 
-### Editing the command mode line
-
-| Command       | Description                                     |
-|:-------------:|:----------------------------------------------- |
-| `<C-w>`       | delete word to left of cursor                   |
-| `<C-u>`       | delete everything to left of cursor             |
-| `<C-h>`       | delete character to left of cursor              |
-| `<BS>`        | delete character to left of cursor              |
-| `<C-r>"`      | paste from default register to command line     |
-| `<C-r>a`      | paste from register "a to command line          |
-| `<C-r>*`      | paste from X11 clipboard                        |
-| `<C-r>+`      | paste from desktop clipboard                    |
-| `<Esc>`       | Quit *command mode* go back to *normal mode*    |
-| `<C-c>`       | Quit *command mode*, don't perform any autocmds |
-
 ---
 
-## Visual Mode
+# Visual Mode
 
 This mode allows you to select region of text by visually highlighting,
 and then modify as a unit.
@@ -326,39 +271,6 @@ These can be used to linearly undo and redo edits, like the arrow
 buttons in a web browser. Navigating with the arrow keys while in
 *insert mode* will result in multiple undo/redo events.
 
-### Jumping back to previously edited buffer
-
-Here is a nice way to junp between 2 buffers in *normal mode*.
-
-| Command | Description                                    |
-|:-------:|:---------------------------------------------- |
-| `<C-6>` | jump back to the last previously edited buffer |
-
-### Command line option examples
-
-```fish
-    $ nvim file1 file2 file3  # Open/create 3 files for editing
-    $ nvim +<n> file     # Open file for editing on line n,
-                         # defaults to last line of file
-    $ nvim +/pattern file  # Open file for editing at first reg-exp pattern match
-    $ nvim -R file         # Open file read only, can still write via :w!
-    $ vim -g file  # Run as gvim GUI
-    $ nvim -r       # List swap files, then exit
-    $ nvim -r file  # Recover crashed vim session, uses swap file
-    $ nvim -h       # List help message for command-line options and exit
-    $ nvim -c :checkhealth   # Check health of Neovim installation
-```
-
-### Dealing with whitespace characters
-
-| Command       | Description                            |
-|:------------- |:-------------------------------------- |
-| `:set list`   | Indicate line endings & tabs           |
-| `:set nolist` | Display line endings & tabs normally   |
-| `:%s/ \+$//`  | Strip off trailing spaces on all lines |
-
-Helps when getting rid of tabs and trailing whitespace.
-
 ### Spell checking
 
 | Command         | Description             |
@@ -369,7 +281,7 @@ Helps when getting rid of tabs and trailing whitespace.
 
 ### Replace tabs with spaces as you type
 
-Put the following commands in your `~/.config/nvim/init.vim` or
+Put the following options in your `~/.config/nvim/init.vim` or
 `~/.vim/vimrc` file
 
 ```vim
@@ -378,13 +290,6 @@ Put the following commands in your `~/.config/nvim/init.vim` or
    set softtabstop=4
    set expandtab
 ```
-
-Assuming the above 4 settings, to remove all existing tabs in the buffer
-and replace with 4 spaces,
-
-| Command  | Description                    |
-|:-------- |:------------------------------ |
-| `:retab` | Redo all the tabbing in buffer |
 
 To insert an actual tab, enter *insert mode* and type `<C-v><Tab>`.
 

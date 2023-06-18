@@ -131,12 +131,6 @@ constructs were understood as defining "sections."
 | `<C-p>`       | word completion, previous word                         |
 | `<C-o>`       | do one *normal mode* command & return to *insert mode* |
 | `<C-r>a`      | paste from register `"a` while in *insert mode*        |
-| `<C-x>`       | enter *insert mode* completion submode (vim not vi)    |
-For more information on `<C-x>` see
-
-```vim
-    :help ins-completion
-```
 
 If you accidentally typed `<C-x>` while in insert mode, typing any
 non-control character, except `s` will get you back. If you have

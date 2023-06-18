@@ -155,9 +155,9 @@ command and return you to *normal mode*.
 
 ### Repeating commands in *Normal Mode*
 
-| Command | Description                                |
-|:-------:|:------------------------------------------ |
-| `.`     | repeat the last command which changed text |
+| Command | Description                                              |
+|:-------:|:-------------------------------------------------------- |
+| `.`     | repeat the last *normal mode* command which changed text |
 
 This repeats the last *normal mode* command used which changed text. It
 does not repeat *command mode* commands.
