@@ -1,13 +1,9 @@
 # Advanced Traditional Vi Commands
 
-The problem a lot of people have with Vim is
-[that they don't grok vi][40].
-
 Much of the information here I obtained from
-[Lagmonster][50].
-This site no longer exists. These commands existed in the
-original ex version of vi. When the behavior differs from the original
-vi, I will indicate the nvim behavior.
+[Lagmonster][50].  This site no longer exists. These commands existed
+in the original ex version of vi. When the behavior differs from the
+original vi, I will indicate the nvim behavior.
 
 The name vi comes from the "visual interface" for the ex line editor.
 That is the reason vi's configuration file is called `~/.exrc`.
@@ -87,7 +83,9 @@ What "section" means is most easily understood in the context of file
 types. For example, in pre-ANSI K&R C files, `[[` and `]]` will jump
 between `{` which are in the first column. Programmers used these to
 jump between C functions in source code. For troff files various
-constructs were understood as defining "sections."
+constructs were understood as defining "sections." Now-a-days, the
+Marksman Markdown LSP server will cause `[[` and `]]` to jump between
+headings.
 
 ### Commands to change text
 
@@ -199,6 +197,7 @@ in the original vi.
 | `:map k 3l` | but in nvim `a` moves cursor 23 characters rt     |
 
 Moral: Neovim think lexiconically, not functionally. Vi, just buggie.
+Almost always, `:noremap` is the better choice.
 
 ### The ab: Command
 
@@ -244,5 +243,4 @@ command.
 [3]: 03-VimFactoids.md
 [0]: ../README.md
 [5]: 05-VimSpecificFeatures.md
-[40]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 [50]: http://www.lagmonster.org/docs/vi2.html

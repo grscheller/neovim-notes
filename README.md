@@ -13,10 +13,7 @@ behavior for basic text editing.
 * [Multiple Neovim Windows](notes/07-MultipleWindows.md)
 * [Encodings and Unicode](notes/08-EncodingsUnicode.md)
 * [Regular Expressions](notes/09-RegularExpressions.md)
-* [Plugins](notes/10-Plugins.md)
-* [Lua](notes/11-Lua.md)
-* [Vimscript](notes/12-Vimscript.md)
-* [Neovim Configuration & Maintenance](notes/13-Configuration.md)
+* [Configuration](notes/10-Configuration.md)
 
 I test this information against nvim, and sometimes with the vi which
 comes with Arch Linux (Joy, Horton, Ritter).
