@@ -52,28 +52,30 @@ These additional commands will make horizontal motion faster.
 
 ### Normal mode commands using motions and text objects
 
-Both `y` and `d` can be used with all the *normal mode* motions and
-*text objects*.
+ `y`, `d`, `c` can be used with all the *normal mode* motions
 
-| Command | Description                                                        |
-|:-------:|:------------------------------------------------------------------ |
-| `d$`    | delete to end of line and put in default register                  |
-| `d0`    | delete everything before cursor and put in default register        |
-| `y^`    | yank everything before cursor to first non-whitespace char         |
-| `d2fz`  | delete from cursor to 2nd z on current line                        |
-| `2db`   | delete 2 previous words starting from cursor                       |
-| `5x`    | delete next 5 characters on current line                           |
-| `5X`    | delete previous 5 characters on current line                       |
-| `dip`   | delete current paragraph                                           |
-| `dap`   | delete rest of paragraph below current line                        |
-| `diw`   | delete word cursor is on, leave whitespace                         |
-| `daw`   | delete word cursor is on, eat trailing whitespace                  |
-| `d{`    | delete to beginning of paragraph whitespace                        |
-| `d}`    | delete to end of paragraph                                         |
-| `ciw`   | change word cursor is in (change inner word)                       |
-| `caw`   | same as `ciw` but include trailing whitespace (change around word) |
+| Command | Description                                                 |
+|:-------:|:----------------------------------------------------------- |
+| `d$`    | delete to end of line and put in default register           |
+| `d0`    | delete everything before cursor and put in default register |
+| `y^`    | yank everything before cursor to first non-whitespace char  |
+| `d2fz`  | delete from cursor to 2nd z on current line                 |
+| `2db`   | delete 2 previous words starting from cursor                |
+| `5x`    | delete next 5 characters on current line                    |
+| `5X`    | delete PREVIOUS 5 characters on current line                |
+| `d{`    | delete to beginning of paragraph whitespace                 |
+| `d}`    | delete to end of paragraph                                  |
+| `c3h`   | delete previous 3 characters and enter *insert mode*        |
+| `c2k`   | delete current & prev line and enter *insert mode*          |
+| `S`     | delete line contents and enter *insert mode*                |
+| `c$`    | change to end of line                                       |
+| `c^`    | change text before cursor, excluding initial white space    |
+| `c0`    | change text before cursor to beginning of line              |
 
-Text Objects (TO) are similar to motions and they can also take a count.
+They can also be used with *text objects*.
+
+Text Objects (TO) are similar to motions and they too also take
+a count. Think "inner" for `i` and "around" for `a`.
 
 | TO   | Description                                                |
 |:----:|:---------------------------------------------------------- |
@@ -92,31 +94,34 @@ Text Objects (TO) are similar to motions and they can also take a count.
 | `it` | select what is between tags `<aaa>` and `</aaa>`           |
 | `at` | same as above but include the tags too                     |
 
-Other *normal mode* commands take vim to *insert mode*.
+| Command | Description                                       |
+|:-------:|:------------------------------------------------- |
+| `yi\``  | yank what is between the tick marks               |
+| `ci\``  | change what is between the tick marks             |
+| `ca\``  | same as above but include tick marks too          |
+| `dip`   | delete current paragraph                          |
+| `dap`   | delete rest of paragraph below current line       |
+| `diw`   | delete word cursor is on, leave whitespace        |
+| `daw`   | delete word cursor is on, eat trailing whitespace |
+| `ciw`   | change word cursor is in                          |
+| `caw`   | same as `ciw` but include trailing whitespace     |
+| `cis`   | change inner sentence (works best for prose)      |
+| `cip`   | change paragraph cursor is in                     |
+| `cap`   | change paragraph including trailing whitespace    |
 
-| Command | Description                                                    |
-|:-------:|:-------------------------------------------------------------- |
-| `cl`    | delete next character and enter *insert mode*                  |
-| `c3h`   | delete previous 3 characters and enter *insert mode*           |
-| `c2k`   | delete content current & prev line and enter *insert mode*     |
-| `S`     | delete line contents and enter *insert mode*                   |
-| `c$`    | change to end of line                                          |
-| `c^`    | change text before cursor, excluding initial white space       |
-| `c0`    | change text before cursor to beginning of line                 |
-| `ciw`   | change inner word (change word cursor is on)                   |
-| `caw`   | change around word (change word cursor is on & whitespace rhs) |
-| `cis`   | change inner sentence (works best for prose)                   |
-| `cip`   | change inner paragraph                                         |
-| `c{`    | change to beginning of paragraph                               |
-| `c}`    | change to end of paragraph                                     |
-| `"a3S`  | delete 3 lines into `"a`                                       |
-| `"b3C`  | delete rest of line & next 2 two into `"b`                     |
+Useful *normal mode* commands taking nvim into *insert mode*.
+
+| Command | Description                                               |
+|:-------:|:--------------------------------------------------------- |
+| `i`     | enter insert mode at cursor position                      |
+| `gi`    | jump to end of previous insertion and enter *insert mode* |
+| `cl`    | delete character and enter *insert mode*                  |
 
 To paste lines at the current line's indentation
 
-| Command       | Description                        |
-|:-------------:|:---------------------------------- |
-| `<]-p>"`      | paste at current lines indentation |
+| Command       | Description                         |
+|:-------------:|:----------------------------------- |
+| `<]-p>"`      | paste at current line's indentation |
 
 ---
 
@@ -142,7 +147,7 @@ To paste text from a Vim register while in *insert mode*, use `<C-r>`.
 ### Navigating in *insert mode*
 
 Sometimes it is convenient to navigate while in *insert mode*. I tend
-to do this only to navigate near where the cursor is. 
+to do this only to navigate near where the cursor is.
 
 Most "out of the box" vim configurations allow you to navigate with the
 arrow keys while in *insert mode*. Usually text can also be deleted
@@ -193,7 +198,7 @@ multiple `<C-u>`.
 
 ## *Command Mode*
 
-Some more advanced (confusing?) things that can be done while 
+Some more advanced (confusing?) things that can be done while
 in *insert mode*.
 
 
