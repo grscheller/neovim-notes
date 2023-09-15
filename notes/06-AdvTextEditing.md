@@ -55,23 +55,23 @@ These additional commands will make horizontal motion faster.
 Both `y` and `d` can be used with all the *normal mode* motions and
 *text objects*.
 
-| Command | Description                                                 |
-|:-------:|:----------------------------------------------------------  |
-| `d$`    | delete to end of line and put in default register           |
-| `d0`    | delete everything before cursor and put in default register |
-| `y^`    | yank everything before cursor to first non-whitespace char  |
-| `d2fz`  | delete from cursor to 2nd z on current line                 |
-| `2db`   | delete 2 previous words starting from cursor                |
-| `5x`    | delete next 5 characters on current line                    |
-| `5X`    | delete previous 5 characters on current line                |
-| `dip`   | delete current paragraph                                    |
-| `dap`   | delete rest of paragraph below current line                 |
-| `diw`   | delete word cursor is on, leave whitespace                  |
-| `daw`   | delete word cursor is on, eat trailing whitespace           |
-| `d{`    | delete to beginning of paragraph whitespace                 |
-| `d}`    | delete to end of paragraph                                  |
-| `ciw`   | change in word                                              |
-| `caw`   | change in word including trailing whitespace                |
+| Command | Description                                                        |
+|:-------:|:------------------------------------------------------------------ |
+| `d$`    | delete to end of line and put in default register                  |
+| `d0`    | delete everything before cursor and put in default register        |
+| `y^`    | yank everything before cursor to first non-whitespace char         |
+| `d2fz`  | delete from cursor to 2nd z on current line                        |
+| `2db`   | delete 2 previous words starting from cursor                       |
+| `5x`    | delete next 5 characters on current line                           |
+| `5X`    | delete previous 5 characters on current line                       |
+| `dip`   | delete current paragraph                                           |
+| `dap`   | delete rest of paragraph below current line                        |
+| `diw`   | delete word cursor is on, leave whitespace                         |
+| `daw`   | delete word cursor is on, eat trailing whitespace                  |
+| `d{`    | delete to beginning of paragraph whitespace                        |
+| `d}`    | delete to end of paragraph                                         |
+| `ciw`   | change word cursor is in (change inner word)                       |
+| `caw`   | same as `ciw` but include trailing whitespace (change around word) |
 
 Text Objects (TO) are similar to motions and they can also take a count.
 
@@ -111,6 +111,12 @@ Other *normal mode* commands take vim to *insert mode*.
 | `c}`    | change to end of paragraph                                     |
 | `"a3S`  | delete 3 lines into `"a`                                       |
 | `"b3C`  | delete rest of line & next 2 two into `"b`                     |
+
+To paste lines at the current line's indentation
+
+| Command       | Description                        |
+|:-------------:|:---------------------------------- |
+| `<]-p>"`      | paste at current lines indentation |
 
 ---
 
