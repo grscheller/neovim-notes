@@ -94,20 +94,20 @@ a count. Think "inner" for `i` and "around" for `a`.
 | `it` | select what is between tags `<aaa>` and `</aaa>`           |
 | `at` | same as above but include the tags too                     |
 
-| Command | Description                                       |
-|:-------:|:------------------------------------------------- |
-| `yi\``  | yank what is between the tick marks               |
-| `ci\``  | change what is between the tick marks             |
-| `ca\``  | same as above but include tick marks too          |
-| `dip`   | delete current paragraph                          |
-| `dap`   | delete rest of paragraph below current line       |
-| `diw`   | delete word cursor is on, leave whitespace        |
-| `daw`   | delete word cursor is on, eat trailing whitespace |
-| `ciw`   | change word cursor is in                          |
-| `caw`   | same as `ciw` but include trailing whitespace     |
-| `cis`   | change inner sentence (works best for prose)      |
-| `cip`   | change paragraph cursor is in                     |
-| `cap`   | change paragraph including trailing whitespace    |
+| Command   | Description                                       |
+|:---------:|:------------------------------------------------- |
+| `` yi` `` | yank what is between the tick marks               |
+| `` ci` `` | change what is between the tick marks             |
+| `` ca` `` | same as above but include tick marks too          |
+| `dip`     | delete current paragraph                          |
+| `dap`     | delete rest of paragraph below current line       |
+| `diw`     | delete word cursor is on, leave whitespace        |
+| `daw`     | delete word cursor is on, eat trailing whitespace |
+| `ciw`     | change word cursor is in                          |
+| `caw`     | same as `ciw` but include trailing whitespace     |
+| `cis`     | change inner sentence (works best for prose)      |
+| `cip`     | change paragraph cursor is in                     |
+| `cap`     | change paragraph including trailing whitespace    |
 
 Useful *normal mode* commands taking nvim into *insert mode*.
 
