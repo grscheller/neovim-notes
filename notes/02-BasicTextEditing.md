@@ -150,15 +150,15 @@ type text in *insert mode*. You return to *normal mode* by pressing the
 
 ### Useful insert mode commands
 
-| Command           | Description                                            |
-|:-----------------:|:------------------------------------------------------ |
-| `<C-v><char>`     | insert literal character                               |
-| `<C-h>` or `<BS>` | delete character to left of cursor                     |
-| `<C-w>`           | delete word to left of cursor                          |
-| `<C-u>`           | delete all characters entered so far                   |
-| `<C-t>`           | increase line indentation one tabwidth                 |
-| `<C-d>`           | decrease line indentation one tabwidth                 |
-| `<C-a>`           | insert text from last insert mode                      |
+| Command           | Description                            |
+|:-----------------:|:-------------------------------------- |
+| `<C-v><char>`     | insert literal character               |
+| `<C-h>` or `<BS>` | delete character to left of cursor     |
+| `<C-w>`           | delete word to left of cursor          |
+| `<C-u>`           | delete all characters entered so far   |
+| `<C-t>`           | increase line indentation one tabwidth |
+| `<C-d>`           | decrease line indentation one tabwidth |
+| `<C-a>`           | insert text from last insert mode      |
 
 The first four commands come from the original vi.
 

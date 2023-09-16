@@ -251,7 +251,7 @@ expressions*." It also refers to "*simple regular expressions*" as
 
 For "*simple regular expressions*" the characters `|+?` have no special
 meta-meaning. This type of regular expressions are in the POSIX.2
-standard for backward compatibility, but are considered a wart.
+standard for backward compatibility and are considered a wart.
 
 ---
 

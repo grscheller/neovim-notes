@@ -7,26 +7,31 @@ Your next step is to configure Neovim and make it your own.
 Neovim configuration files are stored here, `${XDG_DATA_HOME}/nvim/` which
 defaults to `~/.config/nvim/`.
 
-The "entry point" can be written in Lua as `init.lua` or in Vim Script
-as `init.vim`. The actually nvim initialization process is quite
-complicatted, see
+The "entry point" can be as either `init.lua` or `init.vim`. It is
+located at the root of this configuration directory. The actually nvim
+initialization process is quite complicatted, see
 
 ```vim
    :h initialization
 ```
 
-### Other configuration files
+### Other configuration files (local "plugins")
 
+* filetype plugins deal with filetype-specific configuration
+  * located: `${XDG_DATA_HOME}/nvim/ftplugin` 
 * indent scripts deal with filetype-specific indenting matters
+  * located: `${XDG_DATA_HOME}/nvim/indent` 
 * syntax scripts deal with filetype-specific syntax highlighting matters
-* filetype plugins deal with everything else filetype-specific
+  * located: `${XDG_DATA_HOME}/nvim/syntax` 
 
-Indent scripts are sourced after all filetype plugins, including those
-in after/, and syntax scripts are sourced after all indent scripts,
-including those in after/.
+A filetype plugin is like a global plugin, but only runs when entering
+a buffer nvim has identified by filetype. Filetype plugins can set
+options, define keymappings, define abbreviations, define functions and
+manipulate the buffer.
 
-In other words, the sourcing order is not "per-location", it is
-"per-function":
+The second two are obsoleted by LSP. The only use case I see for them is
+getting around a broken nvim system configuration. The sourcing order is
+not "per-location", it is "per-function":
 
 #### first wave: filetype plugins
 
@@ -46,10 +51,16 @@ In other words, the sourcing order is not "per-location", it is
 * $VIMRUNTIME/syntax/foo.lua
 * ~/.config/nvim/after/syntax/foo.lua
 
-A filetype plugin is like a global plugin, except that it sets options
-and defines mappings for the current buffer only. The /after directory
-is useful when you want to override or add to the distributed defaults
-or system-wide settings.
+Where "foo" is a filetype known to nvim. New filetypes can be added via
+the function vim.filetype.add() from the Lua filetype module. For an
+example, see:
+
+```vim
+   :help lua-filetype
+```
+
+The /after directory is useful when you want to override or add
+to the distributed defaults or system-wide settings.
 
 To see the default search locations and search order, do a
 
@@ -64,26 +75,23 @@ and scroll upwards.
 ## Neovim distributions
 
 There are so called "neovim distributions" which will give you
-a complete "out-of-the-box" debugging LSP IDE configuration you can
-use as a starting point for your own configuration.
+a complete "out-of-the-box" debugging LSP based IDE configuration which
+can be used as a starting point for your own configuration.
 
-See
+See these well known examples.
 
 * [LazyVim/LazyVim][41]
 * [LunarVim/LunarVim][42]
 * [NvChad/NvChad][43]
 
-as well known examples.
-
 ### My personal nvim configuration
 
-My current nvim configuration,
-[grscheller/nvim][51],
-is on GitHub. I directly use
-[folke/lazy.nvim][52]
-as my package manager. My `init.lua` bootstraps this plugin. It contains
-lots of good examples that can followed, and it is all in the public
-domain!  It is also highly personalized and opininated.
+My current nvim configuration, [grscheller/nvim][51], is on
+GitHub. I directly use [folke/lazy.nvim][52] as my package manager. My
+`init.lua` bootstraps this plugin which then manages my other
+plugins. It contains lots of good examples that can be followed, and it
+is all in the public domain! It is also highly personalized and
+opininated.
 
 ### Final advise
 
@@ -97,17 +105,17 @@ In answer to a Stack Overflow question titled
 [What is your most productive shortcut with Vim?][61]
 the top-rated answer (1124 up votes) was "Your problem with Vim is that
 you don't grok vi." Likewise, you will be limited if all you do is
-install one of these Neovim distributions and use it like you would
+install one of the above Neovim distributions and use it like you would
 Intellij or VSCode.
 
-Another problem arises when reverse engineering one of these
-distributions to figure out how something is done. These configurations
-need to allow user changes to override the distribution's default
-configuration. This additional infrastructure can be confusing to
-a beginner. Many times there are much simpler ways to accomplish what
-the distribution is doing. I find looking at plugin documentation,
-GitHub README's & Wikis, as well as other users' dotfiles to be the best
-way to grok nvim configuration.
+Another problem arises when reverse engineering a Neovim distribution to
+figure out how something is done. These configurations need to allow
+user changes to override the distribution's default configuration. This
+additional infrastructure can be confusing to a beginner. Many times
+there are much simpler ways to accomplish what the distribution is
+doing. I find looking at plugin documentation, GitHub README's & Wikis,
+as well as other users' dotfiles to be the best way to grok nvim
+configuration.
 
 Finally, for a simple, nontrival example of a single file Neovim
 configuration that can be used as a starting point, I highly recommend

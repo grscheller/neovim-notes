@@ -131,13 +131,10 @@ Remember, a tab in vim is a collection of one or more windows.
 
 ## Starting Vim with multiple windows/tabs
 
-```fish
+```bash
     $ vim -p[n]    # Open n tab pages (default: one for each file)
-    $
     $ vim -o[n]    # Open n windows (default: one for each file)
-    $
     $ vim -O[n]    # Like -o but split vertically
-    $
 ```
 
 ---

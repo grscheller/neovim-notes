@@ -1,12 +1,12 @@
 # Advanced Traditional Vi Commands
 
-Much of the information here I obtained from
-[Lagmonster][50].  This site no longer exists. These commands existed
-in the original ex version of vi. When the behavior differs from the
-original vi, I will indicate the nvim behavior.
+Much of the information here I obtained from [Lagmonster][50].  This
+site no longer exists. These commands existed in the original ex version
+of vi. When the behavior differs from the original vi, I will indicate
+the nvim behavior.
 
-The name vi comes from the "visual interface" for the ex line editor.
-That is the reason vi's configuration file is called `~/.exrc`.
+The name vi comes from the "visual interface" for the ex line
+editor. That is the reason vi's configuration file is called `~/.exrc`.
 
 Vi was often called "bimodal" where *normal mode* and *command mode*
 were conflated together and called "command mode" and "insert mode" was

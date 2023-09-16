@@ -23,8 +23,8 @@ Neovim/Vim commands and features not in your grandfather's vi.
 
 Associated with each vim window (not buffer!) is a list of past
 locations "jumped" to. Jumps are remembered in a jumplist. Just
-navigating via the `hjkl` keys will not create jump points. Nor will
-editing text.
+navigating via the `hjkl` keys will not create jump points. Nor
+will editing text.
 
 | Command          | Description                          |
 |:---------------- |:------------------------------------ |
@@ -265,14 +265,6 @@ with that mark.
 | `` `" ``   | jump to last position last time buffer exited           |
 | ``` `` ``` | jump back to position before latest jump                |
 | `''`       | same as above but to beginning of line                  |
-| `` `[ ``   | to first character of previously changed or yanked text |
-| `` `] ``   | to last character of previously changed or yanked text  |
-| `` `< ``   | to first character of last visually selected text       |
-| `` `> ``   | to last character of last visually selected text        |
-| `` `( ``   | jump to beginning of sentance                           |
-| `` `) ``   | jump to end of sentance                                 |
-| `` `{ ``   | jump to beginning of paragraph                          |
-| `` `} ``   | jump to end of paragraph                                |
 | `` ]` ``   | jump to next lowercase mark                             |
 | `` [` ``   | jump to previous lowercase mark                         |
 

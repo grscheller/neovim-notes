@@ -52,7 +52,7 @@ These additional commands will make horizontal motion faster.
 
 ### Normal mode commands using motions and text objects
 
- `y`, `d`, `c` can be used with all the *normal mode* motions
+`y`, `d`, `c` can be used with all the *normal mode* motions
 
 | Command | Description                                                 |
 |:-------:|:----------------------------------------------------------- |
@@ -109,7 +109,20 @@ a count. Think "inner" for `i` and "around" for `a`.
 | `cip`     | change paragraph cursor is in                     |
 | `cap`     | change paragraph including trailing whitespace    |
 
-Useful *normal mode* commands taking nvim into *insert mode*.
+Useful *normal mode* commands to jump to various locations
+
+| Command   | Description                                       |
+|:---------:|:------------------------------------------------- |
+| `` `[ ``   | to first character of previously changed or yanked text |
+| `` `] ``   | to last character of previously changed or yanked text  |
+| `` `< ``   | to first character of last visually selected text       |
+| `` `> ``   | to last character of last visually selected text        |
+| `` `( ``   | jump to beginning of sentance                           |
+| `` `) ``   | jump to end of sentance                                 |
+| `` `{ ``   | jump to beginning of paragraph                          |
+| `` `} ``   | jump to end of paragraph                                |
+
+Convenient *normal mode* commands taking nvim into *insert mode*.
 
 | Command | Description                                               |
 |:-------:|:--------------------------------------------------------- |
@@ -196,7 +209,7 @@ multiple `<C-u>`.
 
 ---
 
-## *Command Mode*
+## Command Mode
 
 Some more advanced (confusing?) things that can be done while
 in *insert mode*.
@@ -224,7 +237,10 @@ in them.
 
 Unlike Vim, Neovim does not have an *EX mode*.
 
-### Editing the command mode line
+### Editing the `command mode* command line
+
+One cannot exit the command line using *normal mode* commands! typing
+`<Esc>` just takes you back to *normal mode* in the editing buffer.
 
 | Command       | Description                                     |
 |:-------------:|:----------------------------------------------- |
@@ -247,25 +263,32 @@ A fairly old Vim feature is to auto-format via the `gw` command. The
 behavior of this auto formatting is controlled via the `formatoptions`
 options. The following table shows the values I usually set for this.
 
-| Format        | Cmd to set            | Use case              |
-|:------------- |:--------------------- |:---------------------:|
-| Just comments | `:set fo=cqjp1`       | Programming (default) |
-| Just text     | `:setlocal fo=tqjp1`  | Writing               |
-| Just text     | `:setlocal fo=tqjp1l` | Markdown              |
-| Both          | `:setlocal fo=ctqjp1` | Config files          |
+| Format          | Cmd to set             | Use case                 |
+|:--------------- |:---------------------- |:------------------------ |
+| text & comments | `:set fo=tcqjo1`       | Programming/config files |
+| Just text       | `:setlocal fo=tqjp1n`  | Writing                  |
+| Just text       | `:setlocal fo=tqjp1nl` | Markdown                 |
 
 See `:h fo-table` for what letters in `formatoptions` mean.
 
-The formatting behavior depends heavily on what `textwidth` is set to.
-For markdown, the `l` options makes dealing with long lines, like links,
-a bit easier.
+The formatting behavior depends heavily on whatever `textwidth` is
+set. For markdown, the `l` options makes dealing with long lines, like
+links, a bit easier. The `n` option indents when wrapping numbered
+lines.
 
-Formatting can be manually triggered via:
+Formatting can be manually triggered via `gq` or `gw`:
 
-* `gw{motion}`
+* `gq{motion}` - format, move cursor to end of formatted text
+* `gw{motion}` - format, keep cursor at current position
 * `gw{text-object}` - inner paragraph (ip) text-object works well
 * `gww` - format current line (does not take a count)
-* `gw` - from visual mode
+* `gq` & `gw` - both work from visual mode
+
+One difference between `gq` & `gw` is that the latter does not use
+either the `formatprg` or `formatexpr` options.
+
+* `formatprg` names an external program to do the formatting
+* `formatexpr` is an expression to evaluate over the formatting range
 
 ---
 
