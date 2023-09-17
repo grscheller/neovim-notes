@@ -211,8 +211,9 @@ multiple `<C-u>`.
 
 ## Command Mode
 
-Some more advanced (confusing?) things that can be done while
-in *insert mode*.
+Some more advanced things that can be done while in *insert mode*. I
+find using these in keymaps and plugins much more usefule than using
+them directly.
 
 
 | Command             | Description                                          |
@@ -239,8 +240,8 @@ Unlike Vim, Neovim does not have an *EX mode*.
 
 ### Editing the `command mode* command line
 
-One cannot exit the command line using *normal mode* commands! typing
-`<Esc>` just takes you back to *normal mode* in the editing buffer.
+One cannot edit the command line using *normal mode* commands! Typing
+`<Esc>` just sends you back to *normal mode* in the editing buffer.
 
 | Command       | Description                                     |
 |:-------------:|:----------------------------------------------- |
@@ -318,13 +319,17 @@ Here is a nice way to jump between 2 buffers in *normal mode*.
 
 ### Dealing with whitespace characters
 
+It is helpful if you can "see" what the whitespace is.
+
 | Command       | Description                            |
 |:------------- |:-------------------------------------- |
 | `:set list`   | Indicate line endings & tabs           |
 | `:set nolist` | Display line endings & tabs normally   |
 | `:%s/ \+$//`  | Strip off trailing spaces on all lines |
 
-Helps when getting rid of tabs and trailing whitespace.
+When list is set, by default tabs are shown as ">", trailing spaces
+as "-", and non-breakable space characters as "+" by default.  Further
+changed by the 'listchars' option.
 
 ### Replace tabs with spaces as you type
 
