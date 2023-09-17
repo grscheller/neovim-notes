@@ -296,7 +296,7 @@ either the `formatprg` or `formatexpr` options.
 
 ### Jumping back to previously edited buffer
 
-Here is a nice way to junp between 2 buffers in *normal mode*.
+Here is a nice way to jump between 2 buffers in *normal mode*.
 
 | Command | Description                                    |
 |:-------:|:---------------------------------------------- |

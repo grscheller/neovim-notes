@@ -27,12 +27,12 @@ On POSIX systems I used to put
     set fileencoding=utf-8
 ```
 
-in my `~/.vim/vimrc`. Now I do a similar configuration via `init.lua`.
+In my `~/.vim/vimrc`. Now I do a similar configuration via `init.lua`.
 
 When I go native on Windows, vim automatically figures out whether the
 edited file is in UTF-8 or UTF-16LE with `\r\n` line endings.
 
-(TL;DR): GIT, for text files, does the conversion to the correct format
+Aside: GIT, for text files, does the conversion to the correct format
 depending on the OS. In the olde days, we used to FTP files in text
 mode to convert format between different OS's.
 
@@ -65,7 +65,7 @@ In modern Unix terminal emulators and Libre Office, input and display of
 Unicode code points just works. Terminals are fixed width font beasts,
 but Libre Office handles the variable width code points just fine.
 
-When using gvim, or vim/nvim with a unicode aware terminal emulator like
+When using gvim, or vim/nvim with a Unicode aware terminal emulator like
 rxvt-unicode or gnome-terminal, code points can be entered while in
 *insert mode* via
 
@@ -78,12 +78,12 @@ Where `<C-S-u>` means holding down CTRL+SHIFT+u.
 
 Note: Using `<S-C-u>` will not work.
 
-Note: `<C-S-u>` does not work while on the linux console.
+Note: `<C-S-u>` does not work while on the Linux console.
 
 Note: Defining vim key mapping with "key chords" like `<C-S-u>` will not
 work, neither will making it the target of the mapping.
 
-(TL;DR): Be aware that for both gvim and vim/nvim running in a terminal
+Aside: Be aware that for both gvim and vim/nvim running in a terminal
 emulator, you are not interacting with the "terminal" being emulated,
 but the underlying GUI application. As far as a real terminal is
 concerned, `CTRL+d` and `CTRL+D` are the same control character, ASCII
@@ -91,11 +91,11 @@ concerned, `CTRL+d` and `CTRL+D` are the same control character, ASCII
 Interface (GUI) is seeing all your keystrokes and can distinguish
 whether you pressed `<C-d>` or `<C-S-d>`.
 
-(TL;DR): Terminals in the vt102/vt220 family are keyboard/monitor
+Aside: Terminals in the vt102/vt220 family are keyboard/monitor
 interfaces to RS-232 cables. Holding the CTRL key down electrically
 zeroed out bits 6 and 7 of the 7-bit character key typed. Likewise,
 holding the down the SHIFT key zeroed out bit 6. The ASCII values were
-choosen to make this work.
+chosen to make this work.
 
 | ASCII | Decimal    | Octal | Binary     | Symbol   | Description           |
 | -----:|:---------- |:-----:|:----------:|:--------:|:--------------------- |

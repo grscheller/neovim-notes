@@ -1,13 +1,13 @@
 # Multiple Neovim Windows
 
-It was the Berkley Unix nvi (for new vi) which first introduced multiple
-windows. Within a single vim editing session, using multiple CLI
-windows can be very useful.
+It was the Berkeley Unix nvi (for new vi) which first introduced
+multiple windows. Multiple windows can view mutiple buffers, or give
+multiple views of the same buffer.
 
 ## Basic concepts
 
 * A *file buffer* is the in memory text associated with a file
-* A *window* is a viewport on a buffer
+* A *window* is a view port on a buffer
 * A *tab page* is a collection of windows
 * A *terminal window* displays a terminal based program like bash
 
@@ -74,8 +74,8 @@ Since these behaviors seem more natural to me, I configure them in my
 | `<C-w>r` | rotate adjacent windows (vertically or horizontally)         |
 
 I find the last 2 work best when window layout is kept simple. They
-won't work if one of the windows involved is further split, thus only
-work with an innermost split.
+won't work if one of the windows involved is further split, thus these
+only work with an innermost splits.
 
 ---
 

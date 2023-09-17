@@ -8,9 +8,9 @@ the nvim behavior.
 The name vi comes from the "visual interface" for the ex line
 editor. That is the reason vi's configuration file is called `~/.exrc`.
 
-Vi was often called "bimodal" where *normal mode* and *command mode*
-were conflated together and called "command mode" and "insert mode" was
-the second mode.
+Vi was often called "bi-modal" where *normal mode* and *command mode*
+were conflated together and called "*command mode*" and *insert mode*
+was the second mode.
 
 ## Normal Mode Commands
 
@@ -57,7 +57,7 @@ Both `<C-e>` & `<C-y>` will move cursor to keep it in the view.
 
 With `%`, if you are not currently on a grouping symbol, move to the
 first one on the current line and jump to its matching partner.
-Plugsins like Syntastic can change the meaning of what is a matching
+Plugins like Syntastic can change the meaning of what is a matching
 symbol for different file types.
 
 If scrolloff is set in init.vim, some of these commands get modified,
@@ -166,13 +166,13 @@ will find your vim editing session frozen. Type `<C-q>` to unlock.
 | `:=`           | show number of lines in buffer                       |
 | `:n,md`        | delete lines `n` thru `m`                            |
 
-About the only useful things you can put into vi's configuration file,
-`~/.exrc`, are the `set`, `map`, and `ab` commands.
+The `:set`, `:map`, and `:ab` commands are about the only useful things you
+can put into vi's configuration file, `~/.exrc`.
 
 ### The :set Command
 
-The `:set` command changes vi's default options. Unlike most UNIX
-commands there is no '-o' option to set these from the vi commandline.
+The `:set` command changes vi's default options. Unlike the vim and nvim
+commands, there is no '-o' option to set these from the vi command line.
 
 | Command             | Description                                          |
 |:------------------- |:---------------------------------------------------- |
@@ -188,28 +188,48 @@ commands there is no '-o' option to set these from the vi commandline.
 ### The map: Command
 
 The `:map` command is the only member of the map family of commands
-in the original vi.
+in the original vi. It seems to behavior differently for nvim than vi.
 
-| Command     | Description                                       |
-|:----------- |:------------------------------------------------- |
-| `:map a 2k` | now `a` moves cursor up two lines, followed by    |
-| `:map k 3l` | now in vi `k` or `a` both moves cursor 3 chars rt |
-| `:map k 3l` | but in nvim `a` moves cursor 23 characters rt     |
+```
+   :map a 2l`
+   :map l 5k`
+```
 
-Moral: Neovim think lexiconically, not functionally. Vi, just buggie.
-Almost always, `:noremap` is the better choice.
+* In nvim: `a` in *normal mode* moves the cursor up 25 lines (not 10).
+* In vi: `a` and `l` both move the cursor up 5 lines.
 
-### The ab: Command
+Take away: Neovim uses lexical substitution, not recursive application.
+Vi is just buggy.
 
-Think of `:ab` command as a poor man's snippets. They work in both
-*insert mode* and *command mode*.  `ab` is short for for `abbreviate`.
+Almost always, `:noremap` is the better choice for vim and nvim.
 
-| Command          | Description                       |
-|:---------------- |:--------------------------------- |
-| `:ab fb foo bar` | typing 'fb ' gives you 'foo bar ' |
+### The :ab Command
 
-As with `:set` and `:map`, `:ab` is part a of a much larger family of
-commands in both Vim and Neovim.
+The vi `:ab` command stands for `:abbreviate`. It works in both
+*insert mode* and *command mode*.
+
+```
+   :ab fb foo bab
+```
+
+* When 'fb ' is typed, vi replaces it with 'foo bar '
+* When 'fb<CR>' is typed, vi replaces it with 'foo bar<CR>'
+
+As with `:set` and `:map`, the `:ab` command is part a of a much larger
+family of commands in Vim and Neovim.
+
+```
+   :iab teh the
+   :cab d2f .,$/^foo/d`
+```
+
+When 'teh ' is typed in *insert mode*, it is replaced by 'the '.
+
+When 'd2f ' is typed in *command mode*, all lines from current line thru
+the next line starting with foo are deleted.
+
+Note: If you use `<space>` as your leader key, the :abbreviate
+command will only work when triggered with `<CR>`.
 
 ## Marks
 

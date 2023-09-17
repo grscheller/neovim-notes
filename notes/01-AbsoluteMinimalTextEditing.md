@@ -35,7 +35,7 @@ your session.
 
 From now on, we'll refer to these modes by their vim/nvim names. Also,
 we will make a distinction between the file stored on disk and the "text
-buffer" image of the file read into memory. Text buffers are uaually,
+buffer" image of the file read into memory. Text buffers are usually,
 but not always, associated with a file.
 
 ---

@@ -9,7 +9,7 @@ defaults to `~/.config/nvim/`.
 
 The "entry point" can be as either `init.lua` or `init.vim`. It is
 located at the root of this configuration directory. The actually nvim
-initialization process is quite complicatted, see
+initialization process is quite complicated, see
 
 ```vim
    :h initialization
@@ -24,36 +24,38 @@ initialization process is quite complicatted, see
 * syntax scripts deal with filetype-specific syntax highlighting matters
   * located: `${XDG_DATA_HOME}/nvim/syntax` 
 
-A filetype plugin is like a global plugin, but only runs when entering
-a buffer nvim has identified by filetype. Filetype plugins can set
-options, define keymappings, define abbreviations, define functions and
-manipulate the buffer.
+A filetype plugin scripts is like a global plugin, but only runs when
+entering a buffer nvim has identified by filetype. Filetype plugins can
+set options, define keymappings, define abbreviations, define functions
+and manipulate the buffer.
 
-The second two are obsoleted by LSP. The only use case I see for them is
-getting around a broken nvim system configuration. The sourcing order is
-not "per-location", it is "per-function":
+The second two types of scripts are pretty much obsoleted by LSP. The
+only use case I see for them is getting around a broken nvim system
+configurations.
+
+The sourcing order is not "per-location", it is "per-function":
 
 #### first wave: filetype plugins
 
-* ~/.config/nvim/ftplugin/foo.lua
-* $VIMRUNTIME/ftplugin/foo.lua
-* ~/.config/nvim/after/ftplugin/foo.lua
+* ~/.config/nvim/ftplugin/foobar.lua
+* $VIMRUNTIME/ftplugin/foobar.lua
+* ~/.config/nvim/after/ftplugin/foobar.lua
 
 #### second wave: indent scripts
 
-* ~/.config/nvim/indent/foo.lua
-* $VIMRUNTIME/indent/foo.lua
-* ~/.config/nvim/after/indent/foo.lua
+* ~/.config/nvim/indent/foobar.lua
+* $VIMRUNTIME/indent/foobar.lua
+* ~/.config/nvim/after/indent/foobar.lua
 
 #### third wave: syntax scripts
 
-* ~/.config/nvim/syntax/foo.lua
-* $VIMRUNTIME/syntax/foo.lua
-* ~/.config/nvim/after/syntax/foo.lua
+* ~/.config/nvim/syntax/foobar.lua
+* $VIMRUNTIME/syntax/foobar.lua
+* ~/.config/nvim/after/syntax/foobar.lua
 
-Where "foo" is a filetype known to nvim. New filetypes can be added via
-the function vim.filetype.add() from the Lua filetype module. For an
-example, see:
+Where "foobar" is a filetype known to nvim. New filetypes can be added
+via the Lua function vim.filetype.add() from the nvim filetype module.
+For an example see:
 
 ```vim
    :help lua-filetype
@@ -62,7 +64,7 @@ example, see:
 The /after directory is useful when you want to override or add
 to the distributed defaults or system-wide settings.
 
-To see the default search locations and search order, do a
+To see the default search locations and search order,
 
 ```vim
    :help after/directory 
@@ -105,7 +107,7 @@ In answer to a Stack Overflow question titled
 [What is your most productive shortcut with Vim?][61]
 the top-rated answer (1124 up votes) was "Your problem with Vim is that
 you don't grok vi." Likewise, you will be limited if all you do is
-install one of the above Neovim distributions and use it like you would
+install one of these Neovim distributions and use it like you would
 Intellij or VSCode.
 
 Another problem arises when reverse engineering a Neovim distribution to
@@ -113,9 +115,9 @@ figure out how something is done. These configurations need to allow
 user changes to override the distribution's default configuration. This
 additional infrastructure can be confusing to a beginner. Many times
 there are much simpler ways to accomplish what the distribution is
-doing. I find looking at plugin documentation, GitHub README's & Wikis,
-as well as other users' dotfiles to be the best way to grok nvim
-configuration.
+doing since there is no need to "override anything. I find looking at
+plugin documentation, GitHub README's & Wikis, as well as other users'
+dotfiles to be the best way to learn how to configure nvim.
 
 Finally, for a simple, nontrival example of a single file Neovim
 configuration that can be used as a starting point, I highly recommend

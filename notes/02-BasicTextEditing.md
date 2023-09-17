@@ -29,7 +29,7 @@ covered here can be internalized and eventually become part of your
 
 I use *normal mode* as the default mode to enter when I pause to think.
 I known people to use *insert mode* for this, but I first learned on the
-the original vi where *insert mode* was not as rich.
+original vi where *insert mode* was not as rich.
 
 ### Close Editor Window from Normal Mode
 
