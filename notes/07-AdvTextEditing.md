@@ -353,8 +353,8 @@ To insert an actual tab, enter *insert mode* and type `<C-v><Tab>`.
 
 ---
 
-| prev: [Vim Specific Features][5] | [Home][0] | next: [Mult Neovim Windows][7] |
+| prev: [Vim Specific Features][6] | [Home][0] | next: [Mult Neovim Windows][8] |
 
-[5]: 05-VimSpecificFeatures.md
+[6]: 05-VimSpecificFeatures.md
 [0]: ../README.md
-[7]: 07-MultipleWindows.md
+[8]: 08-MultipleWindows.md

@@ -5,9 +5,6 @@ site no longer exists. These commands existed in the original ex version
 of vi. When the behavior differs from the original vi, I will indicate
 the nvim behavior.
 
-The name vi comes from the "visual interface" for the ex line
-editor. That is the reason vi's configuration file is called `~/.exrc`.
-
 Vi was often called "bi-modal" where *normal mode* and *command mode*
 were conflated together and called "*command mode*" and *insert mode*
 was the second mode.
@@ -258,9 +255,9 @@ command.
 
 ---
 
-| prev: [Vim Factoids][3] | [Home][0] | next: [Vim Specific Features][5] |
+| prev: [Vim Factoids][3] | [Home][0] | next: [Ex Mode][5] |
 
 [3]: 03-VimFactoids.md
 [0]: ../README.md
-[5]: 05-VimSpecificFeatures.md
+[5]: 05-ExMode.md
 [50]: http://www.lagmonster.org/docs/vi2.html

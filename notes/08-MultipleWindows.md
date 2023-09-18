@@ -188,8 +188,8 @@ you need to put alacritty into vi-mode via CTRL+SHIFT+SPACE.
 
 ---
 
-| prev: [Adv Text Editing][6] | [Home][0] | next: [Encodings & Unicode][8] |
+| prev: [Adv Text Editing][7] | [Home][0] | next: [Encodings & Unicode][9] |
 
-[6]: 06-AdvTextEditing.md
+[7]: 07-AdvTextEditing.md
 [0]: ../README.md
-[8]: 08-EncodingsUnicode.md
+[9]: 09-EncodingsUnicode.md

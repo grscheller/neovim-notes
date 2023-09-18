@@ -125,9 +125,9 @@ configuration that can be used as a starting point, I highly recommend
 
 ---
 
-| prev: [Regular Expressions][9] | [Home][0] |
+| prev: [Regular Expressions][10] | [Home][0] |
 
-[9]: 09-RegularExpressions.md
+[10]: 10-RegularExpressions.md
 [0]: ../README.md
 [41]: https://github.com/LazyVim/LazyVim
 [42]: https://github.com/LunarVim/LunarVim

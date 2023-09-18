@@ -113,8 +113,8 @@ Pro-trick: `<C-[>` is the same as `<Esc>`
 
 ---
 
-| prev: [Mult Neovim Windows][7] | [Home][0] | next: [Regular Expressions][9] |
+| prev: [Mult Neovim Windows][8] | [Home][0] | next: [Regular Expressions][10] |
 
-[7]: 07-MultipleWindows.md
+[8]: 08-MultipleWindows.md
 [0]: ../README.md
-[9]: 09-RegularExpressions.md
+[10]: 10-RegularExpressions.md

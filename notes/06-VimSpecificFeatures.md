@@ -339,8 +339,8 @@ Example, remove tag completion and add kspell,
 
 ---
 
-| prev: [Adv Trad Vi Commands][4] | [Home][0] | next: [Adv Text Editing][6] |
+| prev: [Adv Trad Vi Commands][5] | [Home][0] | next: [Adv Text Editing][7] |
 
-[4]: 04-AdvTradViCommands.md
+[5]: 05-ExMode.md
 [0]: ../README.md
-[6]: 06-AdvTextEditing.md
+[7]: 07-AdvTextEditing.md

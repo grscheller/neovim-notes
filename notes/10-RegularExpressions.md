@@ -255,8 +255,8 @@ standard for backward compatibility and are considered a wart.
 
 ---
 
-| prev: [Encodings and Unicode][8] | [Home][0] | next: [Configuration][10] |
+| prev: [Encodings and Unicode][9] | [Home][0] | next: [Configuration][11] |
 
-[8]: 08-EncodingsUnicode.md
+[9]: 09-EncodingsUnicode.md
 [0]: ../README.md
-[10]: 10-Configuration.md
+[11]: 11-Configuration.md
