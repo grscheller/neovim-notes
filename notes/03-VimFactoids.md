@@ -127,9 +127,9 @@ an ex clone.
   all unbound.
 
 In *insert mode* vi commands interact with the text just typed, not with
-the text in the file buffer. If `backspace` is not set, Vim duplicates
-the old vi behavior. Setting `backspace` to `"indent,eol,start"` is the
-Neovim default setting.
+the text in the file buffer. If the `backspace` option is not set, Vim
+duplicates the old vi behavior. Setting `backspace` to
+`"indent,eol,start"` is the Neovim default setting.
 
 ---
 
