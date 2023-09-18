@@ -8,12 +8,13 @@ behavior for basic text editing.
 * [Basic Text Editing](notes/02-BasicTextEditing.md)
 * [Vim Factoids](notes/03-VimFactoids.md)
 * [Advanced Traditional Vi Commands](notes/04-AdvTradViCommands.md)
-* [Vim Specific Features](notes/05-VimSpecificFeatures.md)
-* [Advanced Text Editing](notes/06-AdvTextEditing.md)
-* [Multiple Neovim Windows](notes/07-MultipleWindows.md)
-* [Encodings and Unicode](notes/08-EncodingsUnicode.md)
-* [Regular Expressions](notes/09-RegularExpressions.md)
-* [Configuration](notes/10-Configuration.md)
+* [Ex Mode and Scripting Neovim](notes/05-ExMode.md)
+* [Vim Specific Features](notes/06-VimSpecificFeatures.md)
+* [Advanced Text Editing](notes/07-AdvTextEditing.md)
+* [Multiple Neovim Windows](notes/08-MultipleWindows.md)
+* [Encodings and Unicode](notes/09-EncodingsUnicode.md)
+* [Regular Expressions](notes/10-RegularExpressions.md)
+* [Configuration](notes/11-Configuration.md)
 
 I test this information against nvim, and sometimes with the vi which
 comes with Arch Linux (Joy, Horton, Ritter).

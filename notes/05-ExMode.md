@@ -1,8 +1,8 @@
-# Ex mode commands
+# Ex line editing mode
 
 The name vi comes from the "visual interface" for the ex line editor.
 That is the reason vi's configuration file is called `~/.exrc`. When vi
-is launched via an ex sym-linked or hard linked name, it runs in Ex mode.
+is launched via an ex sym-linked or hard linked name, it runs in ex mode.
 
 The ex editor is the Berkeley Unix replacement for the AT&T System V ed
 editor. It is a line editor geared to teletype and DECwriter paper
