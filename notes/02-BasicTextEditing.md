@@ -247,14 +247,23 @@ entire line.
 *Command mode* commands act on lines in their entirety that contain the
 selected region.
 
+In *block visual mode* the `I` and `A` commands append text to the
+beginning and end respectfully of each line in the selected region.
+Short lines, lines that end before the selected region, are ignored.
+
+A *block visual mode* the selected region can be extended to the end of
+all lines, even if uneven, via the `$` command. In this case, the `I`
+command works as before but the `A` command will append to short lines
+too.
+
 To punt out of *visual mode* without doing anything, press the `<Esc>`
 key.
 
 If you have enabled mouse support, mouse actions can cause you to enter
 *visual mode*. When I first the transition from vi to vim, I found it
-useful to enable mouse support for *normal mode* only. After becoming
-more comfortble with *visual mode*, I found it completely natural
-enabling mouse support for all modes.
+less confusing to enable mouse support for *normal mode* only. After
+becoming more comfortble with *visual mode*, I found it completely
+natural enabling mouse support for all modes.
 
 ---
 
