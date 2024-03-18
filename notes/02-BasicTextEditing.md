@@ -35,7 +35,7 @@ original vi where *insert mode* was not as rich.
 
 | Command  | Description                               |
 |:--------:|:----------------------------------------- |
-| `ZZ`     | exit window, save changes    |
+| `ZZ`     | exit window, save changes                 |
 | `ZQ`     | exit window, don't save changes, vim/nvim |
 
 If you have unsaved changes, or have files you have not edited yet, you
