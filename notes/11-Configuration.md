@@ -88,12 +88,12 @@ See these well known examples.
 
 ### My personal nvim configuration
 
-My current nvim configuration, [grscheller/nvim][51], is on
-GitHub. I directly use [folke/lazy.nvim][52] as my package manager. My
-`init.lua` bootstraps this plugin which then manages my other
-plugins. It contains lots of good examples that can be followed, and it
-is all in the public domain! It is also highly personalized and
-opininated.
+My current nvim configuration can be found in my dotfiles repo here
+[grscheller/dotfiles][51] on GitHub. I directly use
+[folke/lazy.nvim][52] as my package manager. My `init.lua` bootstraps
+this plugin which then manages my other plugins. It contains lots of
+good examples that can be followed, and it is all in the public domain!
+It is also highly personalized and opinionated.
 
 ### Final advise
 
@@ -132,7 +132,7 @@ configuration that can be used as a starting point, I highly recommend
 [41]: https://github.com/LazyVim/LazyVim
 [42]: https://github.com/LunarVim/LunarVim
 [43]: https://github.com/NvChad/NvChad
-[51]: https://github.com/grscheller/nvim
+[51]: https://github.com/grscheller/dotfiles
 [52]: https://github.com/folke/lazy.nvim
 [61]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
 [62]: https://github.com/nvim-lua/kickstart.nvim

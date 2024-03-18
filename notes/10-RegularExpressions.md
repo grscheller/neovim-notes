@@ -7,7 +7,7 @@ with shell globbing pattern matching.
 ## History
 
 The concept of regular expressions arose in the 1950s from the work of
-mathematitian/logician Stephen Kleen in his study of
+mathematician/logician Stephen Kleen in his study of
 [regular languages](https://en.wikipedia.org/wiki/Regular_language).
 A regular language, also called a Type-3 grammar, is at the bottom of
 what is called the
@@ -81,7 +81,7 @@ contained in the RE's formal language.
 
 ## Extended Regular Expressions(ERE)
 
-Regular expressions (REs) are patterns used to match strings. These
+Regular expressions (RE's) are patterns used to match strings. These
 days, "strings" means a data structure representing an ordered sequence
 of Unicode code points. We'll assume we are using a "string-based"
 regular expression engine.
@@ -126,7 +126,7 @@ Note, `*`, `+`, `?`, and `{m,n}` all bind more closely than concatenation.
 ## Basic Regular Expressions(BRE)
 
 These are what Vim uses. The big difference is that the meta characters
-`(){}|+?` are treated litterally and you must escape them with `\` for
+`(){}|+?` are treated literally and you must escape them with `\` for
 them to take on their meta-meaning.
 
 * BRE backward compatible to Simple Regular Expressions(SRE)
@@ -135,7 +135,7 @@ them to take on their meta-meaning.
 * grep uses BRE; egrep uses ERE
 
 Due to the common use of `(){}|+` in programming languages, makes sense
-that vim uses BREs. Probably more likely done for backward
+that vim uses BRE's. Probably more likely done for backward
 compatibility with vi.
 
 ---
@@ -244,7 +244,7 @@ For a description of POSIX.2 regular expressions see
 ```
 
 According to this Linux man page, POSIX.2 refers to "*extended regular
-expresions*" as both "*modern regular expresions*" and "*egrep regular
+expressions*" as both "*modern regular expressions*" and "*egrep regular
 expressions*." It also refers to "*simple regular expressions*" as
 "*obsolete regular expressions*" and "*basic regular expressions*" as
 "*ed regular expressions*."
