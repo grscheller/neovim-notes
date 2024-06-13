@@ -29,15 +29,18 @@ here are some more commands to wrap your head around.
 
 These additional commands will make horizontal motion faster.
 
-| Command       | Description                                       |
-|:-------------:|:------------------------------------------------- |
-| `ge, gE`      | move backward to end of previous word or WORD     |
-| `f<char>`     | move forward to next `<char>` on current line     |
-| `F<char>`     | move backward to next `<char>` on current line    |
-| `t<char>`     | move forward before next `<char>` on current line |
-| `T<char>`     | move backward after next `<char>` on current line |
-| `;`           | next target for last `f`, `F` ,`t` ,`T` command   |
-| `,`           | prev target for last `f`, `F`, `t`, `T` command   |
+| Command       | Description                                                                        |
+|:-------------:|:---------------------------------------------------------------------------------- |
+| `ge, gE`      | move backward to end of previous word or WORD                                      |
+| `f<char>`     | move forward to next `<char>` on current line                                      |
+| `F<char>`     | move backward to next `<char>` on current line                                     |
+| `t<char>`     | move forward before next `<char>` on current line                                  |
+| `T<char>`     | move backward after next `<char>` on current line                                  |
+| `;`           | next target for last `f`, `F` ,`t` ,`T` command                                    |
+| `,`           | prev target for last `f`, `F`, `t`, `T` command                                    |
+| `*`           | jump to next instance of word cursor on or before, can take count                  |
+| `#`           | jump to prev instance of word cursor on or before, can take count                  |
+| `_`           | like `^` but can take count, jumps to first non-blank char [count - 1 ] lines down |
 
 ### Changing text and/or interacting with the default register
 
@@ -45,10 +48,12 @@ These additional commands will make horizontal motion faster.
 |:------------:|:------------------------------------------------------- |
 | `x`          | delete character under cursor, put in default register  |
 | `X`          | delete character before cursor, put in default register |
+| `s`          | delete current character and enter *insert mode*        |
+| `S`          | delete line contents and enter *insert mode*            |
 | `~`          | change case of current char and advance one char        |
 | `g~<motion>` | change case via "vim motion" or "vim text object"       |
-| `J`          | join curent & next line, insert spaces as needed        |
-| `gJ`         | join curent & next line without inserting spaces        |
+| `J`          | join current & next line, insert spaces as needed       |
+| `gJ`         | join current & next line without inserting spaces       |
 
 ### Normal mode commands using motions and text objects
 
@@ -83,8 +88,8 @@ a count. Think "inner" for `i` and "around" for `a`.
 | `aw` | around word - select words, spaces between & trailing ws   |
 | `iW` | inner Word - select Words and the spaces between them      |
 | `aW` | around word - select Words, spaces between & trailing ws   |
-| `is` | inner sentance - select sentances                          |
-| `as` | around sentance - select sentances                         |
+| `is` | inner sentence - select sentences                          |
+| `as` | around sentence - select sentences                         |
 | `i(` | select what is between parentheses                         |
 | `a(` | select what is between parentheses and the parentheses too |
 | `i{` | select what is between brackets                            |
@@ -111,14 +116,14 @@ a count. Think "inner" for `i` and "around" for `a`.
 
 Useful *normal mode* commands to jump to various locations
 
-| Command   | Description                                       |
-|:---------:|:------------------------------------------------- |
+| Command    | Description                                             |
+|:----------:|:------------------------------------------------------- |
 | `` `[ ``   | to first character of previously changed or yanked text |
 | `` `] ``   | to last character of previously changed or yanked text  |
 | `` `< ``   | to first character of last visually selected text       |
 | `` `> ``   | to last character of last visually selected text        |
-| `` `( ``   | jump to beginning of sentance                           |
-| `` `) ``   | jump to end of sentance                                 |
+| `` `( ``   | jump to beginning of sentence                           |
+| `` `) ``   | jump to end of sentence                                 |
 | `` `{ ``   | jump to beginning of paragraph                          |
 | `` `} ``   | jump to end of paragraph                                |
 

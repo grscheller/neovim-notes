@@ -113,17 +113,16 @@ These *normal mode* commands take vim to *insert mode*. To return to
 | `A`     | insert text at end of line                                 |
 | `o`     | open new line after current line in insert text            |
 | `O`     | open new line before current line in insert text           |
-| `s`     | delete current character and enter *insert mode*           |
-| `S`     | delete line contents and enter *insert mode*               |
 | `C`     | change to end of line                                      |
 | `3cw`   | change next three words starting at cursor                 |
 | `c3w`   | change next three words starting at cursor                 |
+| `c3l`   | change next three characters starting at cursor            |
 | `5cc`   | change next 5 lines                                        |
 | `3cb`   | change previous 3 words                                    |
 | `c$`    | change to end of line                                      |
 | `c^`    | change text before cursor, excluding initial white space   |
 | `c0`    | change text before cursor to beginning of line             |
-| `"a3S`  | delete 3 lines into `"a`                                   |
+| `"a3w`  | delete 3 words into `"a`                                   |
 | `"b3C`  | delete rest of line & next 2 two into `"b`                 |
 
 ### Repeating commands in Normal Mode
@@ -227,12 +226,12 @@ and then modify as a unit.
 
 To enter *visual mode* from *normal mode*
 
-| Command | Description                            |
-|:-------:|:-------------------------------------- |
-| `v`     | for character based                    |
-| `V`     | for line based                         |
-| `<C-v>` | for block visual mode                  |
-| `gv`    | to reselect last visual mode selection |
+| Command | Description                             |
+|:-------:|:--------------------------------------- |
+| `v`     | for character based                     |
+| `V`     | for line based                          |
+| `<C-v>` | for block visual mode                   |
+| `gv`    | to re-select last visual mode selection |
 
 Highlight text with *normal mode* cursor navigation commands like `h`,
 `j`, `k`, `l`, `w`, `e`, `W`, `B`, `f` or the arrow keys. Once selected,

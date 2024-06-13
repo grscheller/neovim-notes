@@ -39,11 +39,11 @@ number and associates a filename (if any) with that buffer.
 
 | Command       | Description                                              |
 |:------------- |:-------------------------------------------------------- |
-| `:buffers`    | list buffers in the bufferlist                           |
+| `:buffers`    | list buffers in the buffer list                          |
 | `:ls`         | same as above, not the same as `!ls`                     |
-| `:n`          | edit next buffer in bufferlist in current window         |
+| `:n`          | edit next buffer in buffer list in current window        |
 | `:next`       | same as above                                            |
-| `:prev`       | edit previous buffer in bufferlist in current window     |
+| `:prev`       | edit previous buffer in buffer list in current window    |
 | `:b 2`        | edit buffer 2 in current window                          |
 | `:sb 3`       | split window, use buffer 3 for new window                |
 | `:sball`      | split all buffers into separate windows                  |

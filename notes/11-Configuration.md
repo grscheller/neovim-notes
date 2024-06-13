@@ -108,7 +108,7 @@ In answer to a Stack Overflow question titled
 the top-rated answer (1124 up votes) was "Your problem with Vim is that
 you don't grok vi." Likewise, you will be limited if all you do is
 install one of these Neovim distributions and use it like you would
-Intellij or VSCode.
+Intellij or VS Code.
 
 Another problem arises when reverse engineering a Neovim distribution to
 figure out how something is done. These configurations need to allow
@@ -119,7 +119,7 @@ doing since there is no need to "override anything. I find looking at
 plugin documentation, GitHub README's & Wikis, as well as other users'
 dotfiles to be the best way to learn how to configure nvim.
 
-Finally, for a simple, nontrival example of a single file Neovim
+Finally, for a simple, nontrivial example of a single file Neovim
 configuration that can be used as a starting point, I highly recommend
 [nvim-lua/kickstart.nvim][62]
 

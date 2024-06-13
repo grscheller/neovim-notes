@@ -98,7 +98,7 @@ The default register has a name `""`, that is double-quote double-quote.
 
 ### Numbered registers
 
-These contain only multiline (one or more whole lines) data.
+These contain only multi-line (one or more whole lines) data.
 
 | Register       | Purpose                                        |
 |:--------------:|:---------------------------------------------- |

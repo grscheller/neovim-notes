@@ -107,7 +107,7 @@ register in vim/nvim.
 | `r<char>` | change current character cursor highlights to `<char>` |
 | `p`       | paste default register contents "after"                |
 | `P`       | paste default register contents "before"               |
-| `J`       | join curent & next line, insert spaces as needed       |
+| `J`       | join current & next line, insert spaces as needed      |
 
 What "before" or "after" mean depends on what is in the default register.
 
@@ -167,4 +167,4 @@ does not repeat *command mode* commands.
 | [Home][0] | next: [Basic Text Editing][2] |
 
 [0]: ../README.md
-[2]: 02-BasicTextEditing.md
+[2]: 02-BasicTextEditing.me
