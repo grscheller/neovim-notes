@@ -104,11 +104,11 @@ regular expression engine.
 * `( )` define subexpression
   * groups concatenated RegExps together as single unit
   * reference subexpression later in RE via `\n` where `n` in range `1`-`9`
-  * multiple groupings hierarchical, ordered by left paren
+  * multiple groupings hierarchical, ordered by left parenthesis
 
 Let `S` and `T` represent regular expressions
 
-* `ST` concats `S` and `T`
+* `ST` concat `S` and `T`
 * `(ST)` concat `S`and `T` but treat as single subexpression
 * `S|T` matches either `S` or `T`
 * `S?` matches `0` or `1` of `S`
@@ -209,28 +209,28 @@ In what follows, a regular expression pattern is denoted `{regex}`.
 
 See `:help pattern-searches` for more details.
 
-| Searches           | Description                                            |
-|:------------------ |:------------------------------------------------------ |
-| `/{regex}<CR>`     | Search forwards for `{regex}`                          |
-| `/{regex}/3<CR>`   | Search forwards 3 lines past `{regex}`                 |
-| `/{regex}/-5<CR>`  | Search forwards stop 5 lines before `{regex}`          |
-| `?{regex}<CR>`     | Search backwards for `{regex}`                         |
-| `/<CR>`            | Repeat last search forwards                            |
-| `/10<CR>`          | Search forwards 10 lines after next match              |
-| `?<CR>`            | Repeat last search backwards                           |
-| `n`                | Repeat last search in same direction as last search    |
-| `N`                | Repeat last search in oposite direction as last search |
-| `*`                | Search forward for keyword/word under/near cursor      |
-| `#`                | Search backwards for keyword/word under/near cursor    |
-| `g*`               | Same as `*` but not restricted to whole word matches   |
-| `g#`               | Same as `#` but not restricted to whole word matches   |
-| `gd`               | Go to (best guess) of local declaration                |
-| `gD`               | Same as `gd` except always start on search at line 1   |
-| `/dogbert/e`       | Search for dogbert, leave cursor at end                |
-| `/dogbert/e5`      | Search for dogbert, leave cursor 5 chars after end     |
-| `/dogbert/e-2`     | Search for dogbert, leave cursor 2 chars before end    |
-| `/dogbert/b2`      | Search for dogbert, leave cursor on the `g`            |
-| `/dogbert/b-3`     | Search for dogbert, leave cursor 3 chars before `d`    |
+| Searches           | Description                                             |
+|:------------------ |:------------------------------------------------------- |
+| `/{regex}<CR>`     | Search forwards for `{regex}`                           |
+| `/{regex}/3<CR>`   | Search forwards 3 lines past `{regex}`                  |
+| `/{regex}/-5<CR>`  | Search forwards stop 5 lines before `{regex}`           |
+| `?{regex}<CR>`     | Search backwards for `{regex}`                          |
+| `/<CR>`            | Repeat last search forwards                             |
+| `/10<CR>`          | Search forwards 10 lines after next match               |
+| `?<CR>`            | Repeat last search backwards                            |
+| `n`                | Repeat last search in same direction as last search     |
+| `N`                | Repeat last search in opposite direction as last search |
+| `*`                | Search forward for keyword/word under/near cursor       |
+| `#`                | Search backwards for keyword/word under/near cursor     |
+| `g*`               | Same as `*` but not restricted to whole word matches    |
+| `g#`               | Same as `#` but not restricted to whole word matches    |
+| `gd`               | Go to (best guess) of local declaration                 |
+| `gD`               | Same as `gd` except always start on search at line 1    |
+| `/Dogbert/e`       | Search for Dogbert, leave cursor at end                 |
+| `/Dogbert/e5`      | Search for Dogbert, leave cursor 5 chars after end      |
+| `/Dogbert/e-2`     | Search for Dogbert, leave cursor 2 chars before end     |
+| `/Dogbert/b2`      | Search for Dogbert, leave cursor on the `g`             |
+| `/Dogbert/b-3`     | Search for Dogbert, leave cursor 3 chars before `d`     |
 
 ---
 

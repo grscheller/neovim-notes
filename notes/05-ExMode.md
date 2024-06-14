@@ -12,7 +12,7 @@ Vi/Vim *command mode* was based on *ex mode* commands.
 
 ## Why use ex mode?
 
-* Your console, terminal, ssh, or TMUX session is all messed up,
+* Your console, terminal, ssh, or tmux session is all messed up,
   * and you are trying to fix this,
   * or you want to do a quick edit on some server & be done with it.
 * You want to script multiple bulk edits on multiple files and either

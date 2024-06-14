@@ -1,7 +1,7 @@
 # Multiple Neovim Windows
 
 It was the Berkeley Unix nvi (for new vi) which first introduced
-multiple windows. Multiple windows can view mutiple buffers, or give
+multiple windows. Multiple windows can view multiple buffers, or give
 multiple views of the same buffer.
 
 ## Basic concepts
@@ -154,8 +154,8 @@ Traditionally in vi one could interact with the Unix shell via
 Both Neovim & Vim allow you to open a shell in a separate editing
 Window. The behaviors between Neovim and Vim are different, so I'll
 document the Neovim behavior. Interacting with the terminal window as
-a terminal emulator is called *terminal mode*. Neovim is emmulating
-a VT220/xterm terminal.
+a terminal emulator is called *terminal mode*. Neovim is emulating
+a vt220/xterm terminal.
 
 | Command               | Description                                    |
 |:--------------------- |:---------------------------------------------- |

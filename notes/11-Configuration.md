@@ -108,7 +108,7 @@ In answer to a Stack Overflow question titled
 the top-rated answer (1124 up votes) was "Your problem with Vim is that
 you don't grok vi." Likewise, you will be limited if all you do is
 install one of these Neovim distributions and use it like you would
-Intellij or VS Code.
+IntelliJ or VS Code.
 
 Another problem arises when reverse engineering a Neovim distribution to
 figure out how something is done. These configurations need to allow

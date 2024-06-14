@@ -78,7 +78,7 @@ close the current window if multiple windows or tabs are open.
 | `x`       | delete character under cursor, put in default register |
 | `~`       | change case of current char and advance one char       |
 | `r<char>` | change current char to `<char>`                        |
-| `J`       | join curent & next line, insert spaces as needed       |
+| `J`       | join current & next line, insert spaces as needed      |
 | `p`       | paste default register contents "after"                |
 | `P`       | paste default register contents "before"               |
 
@@ -149,15 +149,15 @@ type text in *insert mode*. You return to *normal mode* by pressing the
 
 ### Useful insert mode commands
 
-| Command           | Description                            |
-|:-----------------:|:-------------------------------------- |
-| `<C-v><char>`     | insert literal character               |
-| `<C-h>` or `<BS>` | delete character to left of cursor     |
-| `<C-w>`           | delete word to left of cursor          |
-| `<C-u>`           | delete all characters entered so far   |
-| `<C-t>`           | increase line indentation one tabwidth |
-| `<C-d>`           | decrease line indentation one tabwidth |
-| `<C-a>`           | insert text from last insert mode      |
+| Command           | Description                             |
+|:-----------------:|:--------------------------------------- |
+| `<C-v><char>`     | insert literal character                |
+| `<C-h>` or `<BS>` | delete character to left of cursor      |
+| `<C-w>`           | delete word to left of cursor           |
+| `<C-u>`           | delete all characters entered so far    |
+| `<C-t>`           | increase line indentation one tab width |
+| `<C-d>`           | decrease line indentation one tab width |
+| `<C-a>`           | insert text from last insert mode       |
 
 The first four commands come from the original vi.
 
@@ -261,7 +261,7 @@ key.
 If you have enabled mouse support, mouse actions can cause you to enter
 *visual mode*. When I first the transition from vi to vim, I found it
 less confusing to enable mouse support for *normal mode* only. After
-becoming more comfortble with *visual mode*, I found it completely
+becoming more comfortable with *visual mode*, I found it completely
 natural enabling mouse support for all modes.
 
 ---

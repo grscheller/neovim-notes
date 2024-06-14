@@ -23,7 +23,7 @@ was the second mode.
 | `ZZ`    | save changes and exit vim                  |
 | `<C-z>` | suspend vim to shell background            |
 
-For `<C-z>`, the shell command `fg %1` will usually work to un-suspend
+For `<C-z>`, the shell command `fg %1` will usually work to unsuspend
 vim. If you have other things suspended, hunt for it via the `jobs`
 shell command.
 
@@ -57,7 +57,7 @@ Both `<C-e>` & `<C-y>` will move cursor to keep it in the view.
 
 With `%`, if you are not currently on a grouping symbol, move to the
 first one on the current line and jump to its matching partner.
-Plugins like Syntastic can change the meaning of what is a matching
+Neovim's treesitter can change the meaning of what is a matching
 symbol for different file types.
 
 If scrolloff is set in init.vim, some of these commands get modified,
@@ -117,8 +117,8 @@ headings.
 | `<C-c>`       | break out of *insert mode*, punt on any auto cmds      |
 | `<C-a>`       | previous insert                                        |
 | `<C-@>`       | repeat previous insert and return to *normal mode*     |
-| `<C-t>`       | ident line in to next tabstop                          |
-| `<C-d>`       | ident line out to previous tabstop                     |
+| `<C-t>`       | ident line in to next tab stop                         |
+| `<C-d>`       | ident line out to previous tab stop                    |
 | `<C-e>`       | copy character which is below cursor                   |
 | `<C-y>`       | copy character which is above cursor                   |
 | `<C-\>`       | potentially a good *insert mode* "leader key"          |
@@ -212,8 +212,8 @@ The vi `:ab` command stands for `:abbreviate`. It works in both
    :ab fb foo bab
 ```
 
-* When 'fb ' is typed, vi replaces it with 'foo bar '
-* When 'fb<CR>' is typed, vi replaces it with 'foo bar<CR>'
+* When `fb ` is typed, vi replaces it with `foo bar `
+* When `fb<CR>` is typed, vi replaces it with `foo bar<CR>`
 
 As with `:set` and `:map`, the `:ab` command is part a of a much larger
 family of commands in Vim and Neovim.
@@ -223,9 +223,9 @@ family of commands in Vim and Neovim.
    :cab d2f .,$/^foo/d`
 ```
 
-When 'teh ' is typed in *insert mode*, it is replaced by 'the '.
+When `teh ` is typed in *insert mode*, it is replaced by `the `.
 
-When 'd2f ' is typed in *command mode*, all lines from current line thru
+When `d2f ` is typed in *command mode*, all lines from current line thru
 the next line starting with foo are deleted.
 
 Note: If you use `<space>` as your leader key, the :abbreviate

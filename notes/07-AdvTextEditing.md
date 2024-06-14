@@ -199,8 +199,8 @@ These tend to be more useful when used in keybindings.
 | `<C-u>`           | delete all entered characters on a line ...            |
 | `<C-u><C-u>`      |   and all characters up to initial whitespace ...      |
 | `<C-u><C-u><C-u>` |     and all characters up to beginning of line         |
-| `<C-t>`           | increase line indentation one tabwidth                 |
-| `<C-d>`           | decrease line indentation one tabwidth                 |
+| `<C-t>`           | increase line indentation one tab width                |
+| `<C-d>`           | decrease line indentation one tab width                |
 | `<C-a>`           | insert text from last insert mode                      |
 | `<C-y>`           | insert the character on line above cursor              |
 | `<C-e>`           | insert the character on line below cursor              |
@@ -209,7 +209,7 @@ These tend to be more useful when used in keybindings.
 
 The first four commands come from the original vi. A subtle difference
 is that in vi these commands edited not the buffer, but the current edit
-of the buffer. This may explain the above idiosyncratic bahavior of
+of the buffer. This may explain the above idiosyncratic behavior of
 multiple `<C-u>`.
 
 ---
@@ -217,7 +217,7 @@ multiple `<C-u>`.
 ## Command Mode
 
 Some more advanced things that can be done while in *insert mode*. I
-find using these in keymaps and plugins much more usefule than using
+find using these in keymaps and plugins much more useful than using
 them directly.
 
 
@@ -229,7 +229,7 @@ them directly.
 | `:,/^typed/y`       | yank from current line to line starting with "typed" |
 | `:m+3`              | move current line down 3 lines                       |
 | `:m-4`              | move current line up 3 = 4 - 1 lines                 |
-| `:5,42p`            | print lines 5 thru 42 at botton in command mode area |
+| `:5,42p`            | print lines 5 thru 42 at bottom in command mode area |
 | `:42,$p`            | print lines 42 thru last line in buffer              |
 | `:,100p`            | print current line thru line 100                     |
 | `:50,p`             | print line 50 thru current line cursor is on         |
@@ -238,7 +238,7 @@ Execute these *command mode* command via `<CR>`, which returns you to
 *normal mode*.
 
 The above `:m-4` is another example of vim/nvim exactly duplicating a vi
-idiosyncracy. Avoid using *command mode* commands with negative numbers
+idiosyncrasy. Avoid using *command mode* commands with negative numbers
 in them.
 
 Unlike Vim, Neovim does not have an *EX mode*.
