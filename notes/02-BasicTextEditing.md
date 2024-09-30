@@ -174,7 +174,7 @@ teletypes, you edited files one line at a time.
 *command mode* commands developed from the original ex line editing
 commands.
 
-Use the `:` in *normal_mode* to enter *command mode*. The cursor jumps
+Use the `:` in *normal mode* to enter *command mode*. The cursor jumps
 down to the bottom of the terminal window and prompts you with `:`.
 
 | Command             | Description                                          |
