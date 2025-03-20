@@ -4,18 +4,18 @@ Neovim/Vim commands and features not in your grandfather's vi.
 
 ## Commands to move screen view
 
-| Command | Description                           |
-|:-------:|:------------------------------------- |
-| `zt`    | make current line top line of view    |
-| `zz`    | make current line middle line of view |
-| `zb`    | make current line bottom line of view |
-| `[n]zt` | make line `n` top line of view        |
-| `[n]zz` | make line `n` middle line of view     |
-| `[n]zb` | make line `n` bottom line of view     |
-| `<C-e>` | move view down one line (Also in Vi)  |
-| `<C-y>` | move view up one line (Also in Vi)    |
+| Command | Description |
+|:----:|:---------------------------------- |
+| `zt` | make current line top line of view |
+| `zz` | make current line middle line of view |
+| `zb` | make current line bottom line of view |
+| `[n]zt` | make line `n` top line of view |
+| `[n]zz` | make line `n` middle line of view |
+| `[n]zb` | make line `n` bottom line of view |
+| `<C-e>` | move view down one line (Also in Vi) |
+| `<C-y>` | move view up one line (Also in Vi) |
 
----
+______________________________________________________________________
 
 ## Vim Lists
 
@@ -26,58 +26,58 @@ locations "jumped" to. Jumps are remembered in a jumplist. Just
 navigating via the `hjkl` keys will not create jump points. Nor
 will editing text.
 
-| Command          | Description                          |
-|:---------------- |:------------------------------------ |
-| `:jumps`         | List jump points for active window   |
+| Command | Description |
+|:-------- |:---------------------------------- |
+| `:jumps` | List jump points for active window |
 | `:help jumplist` | For more detailed info on jump lists |
 
 The `:jumps` command will list a table consisting like this:
 
-| jump | line | col | file/text                 |
-|:----:| ----:| ---:|:------------------------- |
-|  3   | 23   | 5   | previousFile.txt          |
-|  2   | 2    | 11  | previousFile.txt          |
-|  1   | 10   | 5   | some text in current file |
-|  0   | 12   | 2   | other text current file   |
-|  1   | 5    | 10  | text on line 5            |
-|  2   | 3    | 5   | moreRecentFile.txt        |
+| jump | line | col | file/text |
+|:----:| ----:| ---:|:--------- |
+| 3 | 23 | 5 | previousFile.txt |
+| 2 | 2 | 11 | previousFile.txt |
+| 1 | 10 | 5 | some text in current file |
+| 0 | 12 | 2 | other text current file |
+| 1 | 5 | 10 | text on line 5 |
+| 2 | 3 | 5 | moreRecentFile.txt |
 
 Your current location in the jump list is always 0.
 
-| Command  | Description                                 |
-|:--------:|:------------------------------------------- |
-| `<C-o>`  | go back to previous location in jump list   |
-| `<C-i>`  | go forward to next location in jump list    |
-| `3<C-o>` | go back 3 jumps in jump list                |
+| Command | Description |
+|:-------:|:----------- |
+| `<C-o>` | go back to previous location in jump list |
+| `<C-i>` | go forward to next location in jump list |
+| `3<C-o>` | go back 3 jumps in jump list |
 
 ### Change Lists
 
 Associated with each buffer (not window!) is a list of past text
-"changes."  Changes are remembered in a changelist.
+"changes." Changes are remembered in a changelist.
 
-| Command            | Description                           |
-|:------------------ |:------------------------------------- |
-| `:changes`         | List change points for buffer         |
+| Command | Description |
+|:------- |:----------- |
+| `:changes` | List change points for buffer |
 | `:help changelist` | For more detailed info on changelists |
 
 The `:changes` command will list a table consisting like this:
 
-| change | line | col | text                      |
-| ------:| ----:| ---:|:------------------------- |
-|    4   | 144  | 20  | `inoremap <C-h> <Left>`   |
-|    3   | 148  | 20  |                           |
-|    2   | 144  | 20  | `inoremap <C-h> <Left>`   |
-|    1   | 148  | 20  |                           |
-|  > 0   | 144  | 20  | `inoremap <C-h> <Left>`   |
-|    1   | 148  | 20  |                           |
-|    2   | 145  | 20  | `inoremap <C-j> <Down>`   |
+| change | line | col | text |
+| ------:| ----:| ---:|:---- |
+| 4 | 144 | 20 | `inoremap <C-h> <Left>` |
+| 3 | 148 | 20 | |
+| 2 | 144 | 20 | `inoremap <C-h> <Left>` |
+| 1 | 148 | 20 | |
+| > 0 | 144 | 20 | `inoremap <C-h> <Left>` |
+| 1 | 148 | 20 | |
+| 2 | 145 | 20 | `inoremap <C-j> <Down>` |
 
 Your current location in the change list is always 0.
 
-| Command | Description                                |
-|:-------:|:------------------------------------------ |
-| `g;`    | go back to previous location in changelist |
-| `g,`    | go forward to next location in changelist  |
+| Command | Description |
+|:-------:|:----------- |
+| `g;` | go back to previous location in changelist |
+| `g,` | go forward to next location in changelist |
 
 ### Tag stack
 
@@ -88,7 +88,7 @@ for how to use and configure ctags.
 The `:tags` command and `<C-t>` retain some limited functionality, but
 nothing that you can't accomplish with jumplists and changelists.
 
----
+______________________________________________________________________
 
 ## Types of registers
 
@@ -100,11 +100,11 @@ The default register has a name `""`, that is double-quote double-quote.
 
 These contain only multi-line (one or more whole lines) data.
 
-| Register       | Purpose                                        |
-|:--------------:|:---------------------------------------------- |
-| `"0`           | contains contents of most recent yank command  |
-| `"1`           | contains most recent delete/substitution       |
-| `"2` thru `"9` | contents shift downward when `"1` is updated   |
+| Register | Purpose |
+|:--------:|:------- |
+| `"0` | contains contents of most recent yank command |
+| `"1` | contains most recent delete/substitution |
+| `"2` thru `"9` | contents shift downward when `"1` is updated |
 
 These can be written to in *command mode* via `:let @5 = "foobar"`
 
@@ -113,24 +113,24 @@ many of the same use cases for these using named registers.
 
 ### Small delete register
 
-| Register       | Purpose                                      |
-|:--------------:|:-------------------------------------------- |
-| `"-`           | contains deletes/changes less than one line  |
+| Register | Purpose |
+|:--------:|:------- |
+| `"-` | contains deletes/changes less than one line |
 
 ### Named registers
 
-| Register       | Purpose                                               |
-|:--------------:|:----------------------------------------------------- |
-| `"a` thru `"z` | storage registers across all file buffers             |
-| `"A` thru `"Z` | same registers, used to appending instead of replace  |
+| Register | Purpose |
+|:--------:|:------- |
+| `"a` thru `"z` | storage registers across all file buffers |
+| `"A` thru `"Z` | same registers, used to appending instead of replace |
 
 ### Read only registers
 
-| Register  | Purpose                                      |
-|:---------:|:-------------------------------------------- |
-| `".`      | contains last inserted text                  |
-| `"%`      | contains the name of the current file        |
-| `":`      | contains most recent *command mode* command  |
+| Register | Purpose |
+|:--------:|:------- |
+| `".` | contains last inserted text |
+| `"%` | contains the name of the current file |
+| `":` | contains most recent *command mode* command |
 
 Use `:@:` to repeat last *command mode* command.
 
@@ -153,15 +153,15 @@ and you are returned to *insert mode*.
 When at the command line `=` prompt, you can use `<C-r>` again to paste
 the contents of other registers into the "expression register".
 
-`<C-r>=` is also useful in *command mode* at the `:` and  `\` prompts.
+`<C-r>=` is also useful in *command mode* at the `:` and `\` prompts.
 
 ### Selection and drop registers (Interacts with Desktop GUI)
 
-| Register  | Purpose                                  |
-|:---------:|:---------------------------------------- |
-| `"*`      | copy/paste from/to the X11 clipboard     |
-| `"+`      | copy/paste from/to desktop clipboard     |
-| `"~`      | paste from last drag-and-drop operation  |
+| Register | Purpose |
+|:--------:|:------- |
+| `"*` | copy/paste from/to the X11 clipboard |
+| `"+` | copy/paste from/to desktop clipboard |
+| `"~` | paste from last drag-and-drop operation |
 
 On Arch, the first two only seem to work in terminal vim when the gvim
 package is installed. With out-of-the-box Neovim, both `"*` and `"+`
@@ -189,7 +189,7 @@ You can assign values to it in *command mode* via
     :let @/ = "Some String"
 ```
 
----
+______________________________________________________________________
 
 ## Vim Macros
 
@@ -228,7 +228,7 @@ For instance, you don't want to change "Unix is perfect".
     nn@bn@bnnn2@b
 ```
 
----
+______________________________________________________________________
 
 ## Marks
 
@@ -241,18 +241,18 @@ between the cursor and the preceding character.
 Marks within a given buffer are denoted via letters `a-z`. For marks
 between different buffers, use letters `A-Z`.
 
-| Command   | Description                                                  |
-|:---------:|:------------------------------------------------------------ |
-| `ma`      | set mark `a` for the current editing buffer                  |
-| `mB`      | set mark `B` for all buffers                                 |
-| `` `a ``  | jump to mark `a` current buffer                              |
-| `` g`a `` | jump to mark `a` current buffer, don't update junplist       |
-| `` `B ``  | jump to mark `B` current or another editing buffer           |
-| `'a`      | jump to first non-space char in line with mark `a`           |
-| `` d`a `` | delete from cursor to mark `a`                               |
-| `` y`a `` | yank from cursor to mark `a`                                 |
+| Command | Description |
+|:-------:|:----------- |
+| `ma` | set mark `a` for the current editing buffer |
+| `mB` | set mark `B` for all buffers |
+| `` `a `` | jump to mark `a` current buffer |
+| `` g`a `` | jump to mark `a` current buffer, don't update junplist |
+| `` `B `` | jump to mark `B` current or another editing buffer |
+| `'a` | jump to first non-space char in line with mark `a` |
+| `` d`a `` | delete from cursor to mark `a` |
+| `` y`a `` | yank from cursor to mark `a` |
 | `` y`B `` | yank from cursor to mark `B`, fails if not in current buffer |
-| `d'w`     | delete current line thru line with mark `w`                  |
+| `d'w` | delete current line thru line with mark `w` |
 
 ### Special marks
 
@@ -260,13 +260,13 @@ Like letter marks, these come in two flavors. If you use a `'` instead
 of a `` ` ``, you are taken to the first non-space character of the line
 with that mark.
 
-| Command    | Description                                             |
-|:----------:|:------------------------------------------------------- |
-| `` `" ``   | jump to last position last time buffer exited           |
-| ``` `` ``` | jump back to position before latest jump                |
-| `''`       | same as above but to beginning of line                  |
-| `` ]` ``   | jump to next lowercase mark                             |
-| `` [` ``   | jump to previous lowercase mark                         |
+| Command | Description |
+|:-------:|:----------- |
+| `` `" `` | jump to last position last time buffer exited |
+| ``` `` ``` | jump back to position before latest jump |
+| `''` | same as above but to beginning of line |
+| `` ]` `` | jump to next lowercase mark |
+| `` [` `` | jump to previous lowercase mark |
 
 ### Numbered marks
 
@@ -276,39 +276,39 @@ directly but can be deleted.
 
 ### Mark command mode
 
-| Command         | Description                               |
-|:--------------- |:----------------------------------------- |
-| `:marks`        | list info for all current marks           |
-| `:marks aB0`    | list info for marks a, B and 0            |
-| `:delmarks aB2` | delete marks a, B and 2                   |
-| `:delmarks!`    | delete all letter marks in current buffer |
+| Command | Description |
+|:------- |:----------- |
+| `:marks` | list info for all current marks |
+| `:marks aB0` | list info for marks a, B and 0 |
+| `:delmarks aB2` | delete marks a, B and 2 |
+| `:delmarks!` | delete all letter marks in current buffer |
 
----
+______________________________________________________________________
 
 ## Ins-completion sub-mode commands
 
 An *insert mode* "sub-mode" used for text completions. While in
 *ins-completion mode*, `<C-y>` will accept the completion and `<C-e>`
-will return what was originally typed.  `<C-n>` will move to the next
+will return what was originally typed. `<C-n>` will move to the next
 completion in the drop down, and `<C-p>` will move to the previous one.
 
 I rarely use these features since the completion plugins I use provide
 better alternatives and usually jump in before I can type `<C-x>`
 anyway.
 
-| Command      | Description                                               |
-|:------------:|:--------------------------------------------------------- |
-| `<C-x><C-l>` | search for line forwards in buffer                        |
-| `<C-x><C-i>` | search for keyword forwards in file and included files    |
+| Command | Description |
+|:-------:|:----------- |
+| `<C-x><C-l>` | search for line forwards in buffer |
+| `<C-x><C-i>` | search for keyword forwards in file and included files |
 | `<C-x><C-d>` | search for definition forwards in file and included files |
-| `<C-x><C-]>` | search for tag and insert before cursor                   |
-| `<C-x><C-k>` | search words in dictionary                                |
-| `<C-x><C-t>` | search words in thesaurus                                 |
-| `<C-x>s`     | search for spelling suggestions                           |
-| `<C-y>`      | accept the completion                                     |
-| `<C-e>`      | punt on completion and take what was typed                |
-| `<C-p>`      | complete keyword backwards from "various sources"         |
-| `<C-n>`      | complete keyword forward from "various sources"           |
+| `<C-x><C-]>` | search for tag and insert before cursor |
+| `<C-x><C-k>` | search words in dictionary |
+| `<C-x><C-t>` | search words in thesaurus |
+| `<C-x>s` | search for spelling suggestions |
+| `<C-y>` | accept the completion |
+| `<C-e>` | punt on completion and take what was typed |
+| `<C-p>` | complete keyword backwards from "various sources" |
+| `<C-n>` | complete keyword forward from "various sources" |
 
 What "various sources" for the last two above is configured via the
 complete flag:
@@ -320,13 +320,13 @@ complete flag:
 
 Options for the complete flag:
 
-* .      - use current buffer
-* w      - use buffers from other windows
-* b      - use buffers from the buffer list
-* u      - use unloaded buffers
-* t      - tag completion
-* i      - scan current buffer and use included files
-* kspell - match dictionary words
+- . - use current buffer
+- w - use buffers from other windows
+- b - use buffers from the buffer list
+- u - use unloaded buffers
+- t - tag completion
+- i - scan current buffer and use included files
+- kspell - match dictionary words
 
 Example, remove tag completion and add kspell,
 
@@ -337,10 +337,10 @@ Example, remove tag completion and add kspell,
     complete=.,w,b,u,kspell
 ```
 
----
+______________________________________________________________________
 
 | prev: [Ex Line Editing Mode][5] | [Home][0] | next: [Adv Text Editing][7] |
 
-[5]: 05-ExMode.md
 [0]: ../README.md
+[5]: 05-ExMode.md
 [7]: 07-AdvTextEditing.md

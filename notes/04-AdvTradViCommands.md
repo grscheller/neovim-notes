@@ -146,9 +146,9 @@ will find your vim editing session frozen. Type `<C-q>` to unlock.
   via the `R` command.
 - Like in *insert mode* you can navigate around the text
   via the arrow keys creating multiple undo events.
-- In *replace mode*, the `<BS>` and `<C-h>` keys undo
-  only current set of replacements, otherwise they
-  act like the `<LefT>` arrow key.
+- In *replace mode*, `<BS>` and `<C-h>` undo
+  only current set of replacements.
+  - Otherwise they act like the `<LefT>` arrow key.
 
 ## Command Mode Commands
 
