@@ -150,7 +150,7 @@ type text in *insert mode*. You return to *normal mode* by pressing the
 ### Useful insert mode commands
 
 | Command | Description |
-|:-----------------:|:-------- |
+|:-------------------------:|:-------- |
 | `<C-v><char>` | insert literal character |
 | `<C-h>`| delete character to left of cursor |
 | `<BS>` | delete character to left of cursor |
