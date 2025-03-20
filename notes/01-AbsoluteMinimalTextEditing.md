@@ -1,9 +1,10 @@
 # Absolute Minimum One Needs to Know
 
 Let's say you've logged into some server which only has vi or vim
-installed. No emacs, no nano. You only have one quick edit to do, so
-it is not worth installing your favorite editor. Here is some critical
-info you need to know in order to sub-marginally accomplish your task.
+installed. No emacs, no nano, no vscode. You only have one quick edit
+to do, so it is not worth installing your favorite editor. Here is some
+critical info you need to know in order to sub-marginally accomplish
+your task.
 
 ## How to exit vi/vim/nvim
 

@@ -164,7 +164,7 @@ The first four commands come from the original vi.
 
 ______________________________________________________________________
 
-## *Command Mode*
+## Command Mode
 
 Vim is an open source version of the Unix editor vi, which is the visual
 interface of the Berkeley Unix line editor ex, which itself is
@@ -179,7 +179,7 @@ Use the `:` in *normal mode* to enter *command mode*. The cursor jumps
 down to the bottom of the terminal window and prompts you with `:`.
 
 | Command | Description |
-|:-__- |:--------------------------------------- |
+|:---- |:--------------------------------------- |
 | `:w` | write buffer to associated file on disk |
 | `:w file` | write to file, still editing original file |
 | `:q` | quit editing, will warn if unsaved changes |
