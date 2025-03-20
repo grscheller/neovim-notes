@@ -179,7 +179,7 @@ Use the `:` in *normal mode* to enter *command mode*. The cursor jumps
 down to the bottom of the terminal window and prompts you with `:`.
 
 | Command | Description |
-|:------------------- |:---------------------------------------------------- |
+|:-- |:-- |
 | `:w` | write buffer to associated file on disk |
 | `:w file` | write to file, still editing original file |
 | `:q` | quit editing, will warn if unsaved changes |
@@ -228,7 +228,7 @@ and then modify as a unit.
 To enter *visual mode* from *normal mode*
 
 | Command | Description |
-|:-------:|:--------------------------------------- |
+|:---:|:------------------- |
 | `v` | for character based |
 | `V` | for line based |
 | `<C-v>` | for block visual mode |
@@ -283,7 +283,7 @@ buttons in a web browser. Navigating with the arrow keys while in
 ### Spell checking
 
 | Command | Description |
-|:--------------- |:----------------------- |
+|:------------------------------------------------------ |:----------------------- |
 | `:set spell` | Turn spell checking on |
 | `:set nospell` | Turn spell checking off |
 | `:set invspell` | Toggle spell setting |
