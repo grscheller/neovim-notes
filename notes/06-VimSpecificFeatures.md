@@ -5,7 +5,7 @@ Neovim/Vim commands and features not in your grandfather's vi.
 ## Commands to move screen view
 
 | Command | Description |
-|:----:|:---------------------------------- |
+|:-------:|:----------- |
 | `zt` | make current line top line of view |
 | `zz` | make current line middle line of view |
 | `zb` | make current line bottom line of view |
@@ -27,7 +27,7 @@ navigating via the `hjkl` keys will not create jump points. Nor
 will editing text.
 
 | Command | Description |
-|:-------- |:---------------------------------- |
+|:-------- |:---------- |
 | `:jumps` | List jump points for active window |
 | `:help jumplist` | For more detailed info on jump lists |
 
