@@ -12,7 +12,7 @@ located at the root of this configuration directory. The actually nvim
 initialization process is quite complicated, see
 
 ```vim
-   :h initialization
+    :h initialization
 ```
 
 ### Other configuration files (local "plugins")
@@ -58,7 +58,7 @@ via the Lua function vim.filetype.add() from the nvim filetype module.
 For an example see:
 
 ```vim
-   :help lua-filetype
+    :help lua-filetype
 ```
 
 The /after directory is useful when you want to override or add
@@ -67,7 +67,7 @@ to the distributed defaults or system-wide settings.
 To see the default search locations and search order,
 
 ```vim
-   :help after/directory 
+    :help after/directory 
 ```
 
 and scroll upwards.
@@ -108,7 +108,7 @@ In answer to a Stack Overflow question titled
 the top-rated answer (1124 up votes) was "Your problem with Vim is that
 you don't grok vi." Likewise, you will be limited if all you do is
 install one of these Neovim distributions and use it like you would
-IntelliJ or VS Code.
+IntelliJ or vscode.
 
 Another problem arises when reverse engineering a Neovim distribution to
 figure out how something is done. These configurations need to allow

@@ -61,13 +61,13 @@ Given a set `V` of words, let `ε` be the **empty word** , then
 The collection of **regular languages** over an alphabet `Σ` is recursively
 defined by
 
-* languages `{ }` and `{ε}` are regular languages
-* `∀a ∈ Σ`, `{a}` is a regular language
-* if `A` and `B` are regular languages, then
-  * `A∪B`is a regular language
-  * `A⋅B`is a regular language
-  * `A*` is a regular language
-* no other languages over `Σ` are regular
+- languages `{ }` and `{ε}` are regular languages
+- `∀a ∈ Σ`, `{a}` is a regular language
+- if `A` and `B` are regular languages, then
+  - `A∪B`is a regular language
+  - `A⋅B`is a regular language
+  - `A*` is a regular language
+- no other languages over `Σ` are regular
 
 From *formal language theory* it can be shown that a *regular language*
 is a formal language which can be expressed using a *regular
@@ -77,7 +77,7 @@ language defined by the RE). It does this via "compiling" the RE down
 to a finite state machine which scans the documents for strings
 contained in the RE's formal language.
 
----
+______________________________________________________________________
 
 ## Extended Regular Expressions(ERE)
 
@@ -86,42 +86,42 @@ days, "strings" means a data structure representing an ordered sequence
 of Unicode code points. We'll assume we are using a "string-based"
 regular expression engine.
 
-* metacharacters:`{}[]()^$.|*+?\`
-* any other char (unless modified by a meta-char) matches itself
-* a meta-char's meaning can change in the context of another meta-char
-* `^` matches from beginning of string, if at start of RE, else match itself
-* `$` matches from end of string, if at end of RE, else match itself
-* `.` matches any single character one time
-* `\` escapes next character
-  * turns off meta-meaning if next char is a meta-char
-  * can give a meta-meaning to next char
-  * in either case `\` itself is ignored (not part of the match)
-* `[ ]` matches any char enclosed between brackets
-  * use `^` as first char to match any char not included in rest
-  * match `^` as itself in any position but first
-  * use `-` to indicate a range of characters to match
-  * match `-` as itself if first or last enclosed character
-* `( )` define subexpression
-  * groups concatenated RegExps together as single unit
-  * reference subexpression later in RE via `\n` where `n` in range `1`-`9`
-  * multiple groupings hierarchical, ordered by left parenthesis
+- metacharacters:`{}[]()^$.|*+?\`
+- any other char (unless modified by a meta-char) matches itself
+- a meta-char's meaning can change in the context of another meta-char
+- `^` matches from beginning of string, if at start of RE, else match itself
+- `$` matches from end of string, if at end of RE, else match itself
+- `.` matches any single character one time
+- `\` escapes next character
+  - turns off meta-meaning if next char is a meta-char
+  - can give a meta-meaning to next char
+  - in either case `\` itself is ignored (not part of the match)
+- `[ ]` matches any char enclosed between brackets
+  - use `^` as first char to match any char not included in rest
+  - match `^` as itself in any position but first
+  - use `-` to indicate a range of characters to match
+  - match `-` as itself if first or last enclosed character
+- `( )` define subexpression
+  - groups concatenated RegExps together as single unit
+  - reference subexpression later in RE via `\n` where `n` in range `1`-`9`
+  - multiple groupings hierarchical, ordered by left parenthesis
 
 Let `S` and `T` represent regular expressions
 
-* `ST` concat `S` and `T`
-* `(ST)` concat `S`and `T` but treat as single subexpression
-* `S|T` matches either `S` or `T`
-* `S?` matches `0` or `1` of `S`
-* `S*` matches `0` or more instances of `S`
-* `S+` matches `1` or more instances of `S`
-* `S{n,m}` matches at least `n`but not more than `m` of `S`
-* `S{n,}` matches at least `n` of `S`
-* `S{,m}` matches not more than `m` of `S`
-* `S{m}` matches exactly `m` of `S`
+- `ST` concat `S` and `T`
+- `(ST)` concat `S`and `T` but treat as single subexpression
+- `S|T` matches either `S` or `T`
+- `S?` matches `0` or `1` of `S`
+- `S*` matches `0` or more instances of `S`
+- `S+` matches `1` or more instances of `S`
+- `S{n,m}` matches at least `n`but not more than `m` of `S`
+- `S{n,}` matches at least `n` of `S`
+- `S{,m}` matches not more than `m` of `S`
+- `S{m}` matches exactly `m` of `S`
 
 Note, `*`, `+`, `?`, and `{m,n}` all bind more closely than concatenation.
 
----
+______________________________________________________________________
 
 ## Basic Regular Expressions(BRE)
 
@@ -129,37 +129,37 @@ These are what Vim uses. The big difference is that the meta characters
 `(){}|+?` are treated literally and you must escape them with `\` for
 them to take on their meta-meaning.
 
-* BRE backward compatible to Simple Regular Expressions(SRE)
-* SRE are deprecated
-* ERE extend SRE
-* grep uses BRE; egrep uses ERE
+- BRE backward compatible to Simple Regular Expressions(SRE)
+- SRE are deprecated
+- ERE extend SRE
+- grep uses BRE; egrep uses ERE
 
 Due to the common use of `(){}|+` in programming languages, makes sense
 that vim uses BRE's. Probably more likely done for backward
 compatibility with vi.
 
----
+______________________________________________________________________
 
 ## Extended Regexp Examples
 
 It is usually easiest to learn regular expressions using simple examples.
 
-| RegExp            | Description                                            |
-|:----------------- |:------------------------------------------------------ |
-| `foo.*`           | match `foo` followed by zero or more characters        |
-| `fooba+r`         | match `foobar`, `foobaar`, `foobaaar`, ...             |
-| `foo(bar\|baz)`   | match either `foobar` or `foobaz`                      |
-| `fo{2,4}bar`      | match `foobar`, `fooobar`, or `foooobar`               |
-| `(fo){2,}bar`     | match `fofobar`, `fofofobar`, `fofofobar`, ...         |
-| `(fo){2}bar`      | match `fofobar`                                        |
-| `(fo){,3}bar`     | match `bar`, `fobar`, `fofobar`, or `fofofobar`        |
-| `^foobar`         | match `foobar` at beginning of a line                  |
-| `foobar$`         | match `foobar` at end of a line                        |
-| `^foo(bar\|baz)$` | match line containing only`foobar` or `foobaz`         |
-| `fooba[rz]`       | match `foobar` or `foobaz`                             |
-| `foob[^ui]r`      | matches `fobar` or `fobqz` but not `fobur` nor `fobir` |
+| RegExp | Description |
+|:------ |:----------- |
+| `foo.*` | match `foo` followed by zero or more characters |
+| `fooba+r` | match `foobar`, `foobaar`, `foobaaar`, ... |
+| `foo(bar\|baz)` | match either `foobar` or `foobaz` |
+| `fo{2,4}bar` | match `foobar`, `fooobar`, or `foooobar` |
+| `(fo){2,}bar` | match `fofobar`, `fofofobar`, `fofofobar`, ... |
+| `(fo){2}bar` | match `fofobar` |
+| `(fo){,3}bar` | match `bar`, `fobar`, `fofobar`, or `fofofobar` |
+| `^foobar` | match `foobar` at beginning of a line |
+| `foobar$` | match `foobar` at end of a line |
+| `^foo(bar\|baz)$` | match line containing only`foobar` or `foobaz` |
+| `fooba[rz]` | match `foobar` or `foobaz` |
+| `foob[^ui]r` | matches `fobar` or `fobqz` but not `fobur` nor `fobir` |
 
----
+______________________________________________________________________
 
 ## Using Regular Expressions in Vim
 
@@ -209,30 +209,30 @@ In what follows, a regular expression pattern is denoted `{regex}`.
 
 See `:help pattern-searches` for more details.
 
-| Searches           | Description                                             |
-|:------------------ |:------------------------------------------------------- |
-| `/{regex}<CR>`     | Search forwards for `{regex}`                           |
-| `/{regex}/3<CR>`   | Search forwards 3 lines past `{regex}`                  |
-| `/{regex}/-5<CR>`  | Search forwards stop 5 lines before `{regex}`           |
-| `?{regex}<CR>`     | Search backwards for `{regex}`                          |
-| `/<CR>`            | Repeat last search forwards                             |
-| `/10<CR>`          | Search forwards 10 lines after next match               |
-| `?<CR>`            | Repeat last search backwards                            |
-| `n`                | Repeat last search in same direction as last search     |
-| `N`                | Repeat last search in opposite direction as last search |
-| `*`                | Search forward for keyword/word under/near cursor       |
-| `#`                | Search backwards for keyword/word under/near cursor     |
-| `g*`               | Same as `*` but not restricted to whole word matches    |
-| `g#`               | Same as `#` but not restricted to whole word matches    |
-| `gd`               | Go to (best guess) of local declaration                 |
-| `gD`               | Same as `gd` except always start on search at line 1    |
-| `/Dogbert/e`       | Search for Dogbert, leave cursor at end                 |
-| `/Dogbert/e5`      | Search for Dogbert, leave cursor 5 chars after end      |
-| `/Dogbert/e-2`     | Search for Dogbert, leave cursor 2 chars before end     |
-| `/Dogbert/b2`      | Search for Dogbert, leave cursor on the `g`             |
-| `/Dogbert/b-3`     | Search for Dogbert, leave cursor 3 chars before `d`     |
+| Searches | Description |
+|:-------- |:----------- |
+| `/{regex}<CR>` | Search forwards for `{regex}` |
+| `/{regex}/3<CR>` | Search forwards 3 lines past `{regex}` |
+| `/{regex}/-5<CR>` | Search forwards stop 5 lines before `{regex}` |
+| `?{regex}<CR>` | Search backwards for `{regex}` |
+| `/<CR>` | Repeat last search forwards |
+| `/10<CR>` | Search forwards 10 lines after next match |
+| `?<CR>` | Repeat last search backwards |
+| `n` | Repeat last search in same direction as last search |
+| `N` | Repeat last search in opposite direction as last search |
+| `*` | Search forward for keyword/word under/near cursor |
+| `#` | Search backwards for keyword/word under/near cursor |
+| `g*` | Same as `*` but not restricted to whole word matches |
+| `g#` | Same as `#` but not restricted to whole word matches |
+| `gd` | Go to (best guess) of local declaration |
+| `gD` | Same as `gd` except always start on search at line 1 |
+| `/Dogbert/e` | Search for Dogbert, leave cursor at end |
+| `/Dogbert/e5` | Search for Dogbert, leave cursor 5 chars after end |
+| `/Dogbert/e-2` | Search for Dogbert, leave cursor 2 chars before end |
+| `/Dogbert/b2` | Search for Dogbert, leave cursor on the `g` |
+| `/Dogbert/b-3` | Search for Dogbert, leave cursor 3 chars before `d` |
 
----
+______________________________________________________________________
 
 ## POSIX.2 Regular Expressions
 
@@ -253,10 +253,10 @@ For "*simple regular expressions*" the characters `|+?` have no special
 meta-meaning. This type of regular expressions are in the POSIX.2
 standard for backward compatibility and are considered a wart.
 
----
+______________________________________________________________________
 
 | prev: [Encodings and Unicode][9] | [Home][0] | next: [Configuration][11] |
 
-[9]: 09-EncodingsUnicode.md
 [0]: ../README.md
+[9]: 09-EncodingsUnicode.md
 [11]: 11-Configuration.md
