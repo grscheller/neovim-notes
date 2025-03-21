@@ -281,6 +281,10 @@ before the cursor in the file, the selection does not contain the
 highlighted character. Just like the behavior of the `yb` *normal mode*
 command.
 
+For more information on marks, see the
+[marks](06-VimSpecificFeatures.md#marks) section in Vim Specific
+Features.
+
 ______________________________________________________________________
 
 | prev: [Vim Factoids][3] | [Home][0] | next: [Ex Mode][5] |

@@ -232,8 +232,9 @@ ______________________________________________________________________
 
 ## Marks
 
-Marks allow you to set locations within files. They were a vi feature,
-see [marks](04-AdvTradViCommands.md#marks), but have vim extensions.
+Marks allow you to set locations within files. They were a vi feature
+but have vim extensions. See the [marks](04-AdvTradViCommands.md#marks)
+section in Advanced Traditional Vi Commands.
 
 ### Capital letter `A-Z` marks.
 
