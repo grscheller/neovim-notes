@@ -27,7 +27,7 @@ navigating via the `hjkl` keys will not create jump points. Nor
 will editing text.
 
 | Command | Description |
-|:-------- |:---------- |
+|:------- |:----------- |
 | `:jumps` | List jump points for active window |
 | `:help jumplist` | For more detailed info on jump lists |
 

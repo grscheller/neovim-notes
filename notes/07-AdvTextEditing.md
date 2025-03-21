@@ -29,18 +29,18 @@ here are some more commands to wrap your head around.
 
 These additional commands will make horizontal motion faster.
 
-| Command       | Description                                                                        |
-|:-------------:|:---------------------------------------------------------------------------------- |
-| `ge, gE`      | move backward to end of previous word or WORD                                      |
-| `f<char>`     | move forward to next `<char>` on current line                                      |
-| `F<char>`     | move backward to next `<char>` on current line                                     |
-| `t<char>`     | move forward before next `<char>` on current line                                  |
-| `T<char>`     | move backward after next `<char>` on current line                                  |
-| `;`           | next target for last `f`, `F` ,`t` ,`T` command                                    |
-| `,`           | prev target for last `f`, `F`, `t`, `T` command                                    |
-| `*`           | jump to next instance of word cursor on or before, can take count                  |
-| `#`           | jump to prev instance of word cursor on or before, can take count                  |
-| `_`           | like `^` but can take count, jumps to first non-blank char [count - 1 ] lines down |
+| Command   | Description                                          |
+|:---------:|:---------------------------------------------------- |
+| `ge, gE`  | move backward to end of previous word or WORD        |
+| `f<char>` | move forward to next `<char>` on current line        |
+| `F<char>` | move backward to next `<char>` on current line       |
+| `t<char>` | move forward before next `<char>` on current line    |
+| `T<char>` | move backward after next `<char>` on current line    |
+| `;`       | next target for last `f`, `F` ,`t` ,`T` command      |
+| `,`       | prev target for last `f`, `F`, `t`, `T` command      |
+| `*`       | jump to next instance of word cursor on or before, takes count |
+| `#`       | jump to prev instance of word cursor on or before, takes count |
+| `_`       | like `^` but can take count, |
 
 ### Changing text and/or interacting with the default register
 

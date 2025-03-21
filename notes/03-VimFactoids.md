@@ -38,7 +38,7 @@ the `:buffers` command. Among other things, vim gives a unique buffer
 number and associates a filename (if any) with that buffer.
 
 | Command | Description |
-|:---------- |:------------------------------- |
+|:------- |:----------- |
 | `:buffers` | list buffers in the buffer list |
 | `:ls` | same as above, not the same as `!ls` |
 | `:n` | edit next buffer in buffer list in current window |
@@ -72,7 +72,7 @@ handle all mouse events, `:set mouse=`
 Available mouse options are:
 
 | Option | Mode |
-|:---:|:----------------- |
+|:------:|:---- |
 | `n` | for *normal mode* |
 | `v` | for *visual mode* |
 | `i` | for *insert mode* |
