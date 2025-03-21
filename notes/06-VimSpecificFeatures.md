@@ -27,7 +27,7 @@ navigating via the `hjkl` keys will not create jump points. Nor
 will editing text.
 
 | Command | Description |
-|:-------- |:---------- |
+|:------- |:----------- |
 | `:jumps` | List jump points for active window |
 | `:help jumplist` | For more detailed info on jump lists |
 
@@ -232,27 +232,11 @@ ______________________________________________________________________
 
 ## Marks
 
-Marks allow you to set locations to either be able to jump to or use
-with *normal mode* editing commands. A mark is a "zero-width" entity
-between the cursor and the preceding character.
+Marks allow you to set locations within files. They are a traditopnal vi
+feature but have vim extensions.
 
-### Letter marks
-
-Marks within a given buffer are denoted via letters `a-z`. For marks
-between different buffers, use letters `A-Z`.
-
-| Command | Description |
-|:-------:|:----------- |
-| `ma` | set mark `a` for the current editing buffer |
-| `mB` | set mark `B` for all buffers |
-| `` `a `` | jump to mark `a` current buffer |
-| `` g`a `` | jump to mark `a` current buffer, don't update junplist |
-| `` `B `` | jump to mark `B` current or another editing buffer |
-| `'a` | jump to first non-space char in line with mark `a` |
-| `` d`a `` | delete from cursor to mark `a` |
-| `` y`a `` | yank from cursor to mark `a` |
-| `` y`B `` | yank from cursor to mark `B`, fails if not in current buffer |
-| `d'w` | delete current line thru line with mark `w` |
+See the [marks](04-AdvTextEditing.md#marks) section in the advanced
+traditional vi commands section.
 
 ### Special marks
 
@@ -273,15 +257,6 @@ with that mark.
 Numbered marks `` `0 - `9 `` and `'0 - '9` will jump to the locations in
 the last files from which nvim was exited. Numbered marks cannot be set
 directly but can be deleted.
-
-### Mark command mode
-
-| Command | Description |
-|:------- |:----------- |
-| `:marks` | list info for all current marks |
-| `:marks aB0` | list info for marks a, B and 0 |
-| `:delmarks aB2` | delete marks a, B and 2 |
-| `:delmarks!` | delete all letter marks in current buffer |
 
 ______________________________________________________________________
 

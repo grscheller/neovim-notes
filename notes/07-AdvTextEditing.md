@@ -38,9 +38,9 @@ These additional commands will make horizontal motion faster.
 | `T<char>` | move backward after next `<char>` on current line |
 | `;` | next target for last `f`, `F` ,`t` ,`T` command |
 | `,` | prev target for last `f`, `F`, `t`, `T` command |
-| `*` | jump to next instance of word cursor on or before, can take count |
-| `#` | jump to prev instance of word cursor on or before, can take count |
-| `_` | like `^` but can take count, jumps to first non-blank char [count - 1 ] lines down |
+| `*`       | jump to next instance of word cursor on or before, takes count |
+| `#`       | jump to prev instance of word cursor on or before, takes count |
+| `_`       | like `^` but can take count, |
 
 ### Changing text and/or interacting with the default register
 

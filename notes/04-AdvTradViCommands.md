@@ -17,7 +17,7 @@ was the second mode.
 ### Misc commands
 
 | Command | Description |
-|:-------:|:------------------------------------------ |
+|:-------:|:----------- |
 | `<C-g>` | show filename and other useful status info |
 | `<C-l>` | redraw view |
 | `ZZ` | save changes and exit vim |
@@ -30,7 +30,7 @@ shell command.
 ### Commands to move cursor/view in Normal Mode
 
 | Command | Description |
-|:---:|:------------------------------------------- |
+|:-------:|:----------- |
 | `+` | move to first non-space character next line |
 | `-` | move to first non-space character prev line |
 | `nG` | move to nth line in file |
@@ -71,7 +71,7 @@ will keep the cursor 3 lines from the edge of the screen.
 ### Cursor commands useful for written text
 
 | Command | Description |
-|:---:|:------------------------------------ |
+|:-------:|:----------- |
 | `(` | move cursor to beginning of sentence |
 | `)` | move cursor to beginning of next sentence |
 | `{` | move cursor up a paragraph |
@@ -90,7 +90,7 @@ headings.
 ### Commands to change text
 
 | Command | Description |
-|:---:|:------------------------------------------------------- |
+|:-------:|:----------- |
 | `C` | change from cursor to end of line (enter *insert mode*) |
 | `R` | from cursor, overwriting text (enter *replace mode*) |
 | `S` | change entire line (enter *insert mode*) |
@@ -107,7 +107,7 @@ headings.
 ## Insert Mode Commands
 
 | Command | Description |
-|:-------:|:------------------------- |
+|:-------:|:----------- |
 | `<C-h>` | delete previous character |
 | `<BS>` | delete previous character |
 | `<C-v>{char}` | insert character `{char}` literally |
@@ -153,7 +153,7 @@ will find your vim editing session frozen. Type `<C-q>` to unlock.
 ## Command Mode Commands
 
 | Command | Description |
-|:--------- |:------------------------------------------ |
+|:------- |:----------- |
 | `:r file` | read file and insert it after current line |
 | `:nr file` | read file and insert it after line `n` |
 | `:w!` | write file overriding normal checks |
@@ -175,7 +175,7 @@ The `:set` command changes vi's default options. Unlike the vim and nvim
 commands, there is no '-o' option to set these from the vi command line.
 
 | Command | Description |
-|:----------- |:---------------------------------------- |
+|:------- |:----------- |
 | `:set list` | display `<Tab>` as `^I` and `EOL` as `$` |
 | `:set nolist` | display `<Tab>` & `EOL` normally (the default) |
 | `:set tabstop=6` | set the tab stop to 6 characters |
@@ -234,21 +234,46 @@ command will only work when triggered with `<CR>`.
 ## Marks
 
 Marks allow you to set locations to either be able to jump to or use
-with *normal mode* editing commands.
+with *normal mode* editing commands. A mark is a "zero-width" entity
+between the cursor and the preceding character. It is associated with
+a line of a file, not a buffer. Information regarding marks is retained
+via the Shared Date (shada) file.
 
-Marks within the file being edited are denoted via letters `a-z`.
-A mark is a "zero-width" entity between the cursor and the preceding
-character.
+- lower case marks `a-z` are valid for one file
+  - file must be in the buffer list
+  - the mark is associated with a line of the file
+  - are jumpable only within a buffer
+  - erased if line containing them is deleted
+    - restored with an undo
+- upper case marks `A-Z` are valid between files
+  - jumpable across files
+  - motion commands only within a buffer
+  - retained if line is deleted
+
+### Normal mode mark commands
 
 | Command | Description |
-|:-------:|:---------------------------------------- |
+|:-------:|:----------- |
 | `ma` | set mark `a` for the current editing buffer |
-| `` `a `` | jump to mark `a` current buffer |
+| `` `a`` | jump to mark `a` current buffer |
+| ``g`a`` | same as `` `a`` except don't change jumplist |
 | `'a` | jump to first non-space char in line with mark `a` |
-| `` d`a `` | delete from cursor to mark `a` |
+| `g'a` | same as `'a` except don't change jumplist |
 | `` y`a `` | yank from cursor to mark `a` |
+| `` c`a `` | change from cursor to mark `a` |
+| `` d`a `` | delete from cursor to mark `a` |
 | `d'w` | deletes current line thru line with mark `w` |
-| `delm a` | delete mark `a` (Vim & Neovim only) |
+| ``d`w`` | deletes current line thru line with mark `w` |
+
+
+### Command mode mark commands
+
+| Command | Description |
+|:------- |:----------- |
+| `:marks` | list all current marks |
+| `:marks bD` | list just marks `b` and `D` |
+| `:delm a` | delete mark `a` |
+| `:delm!` | delete all lower case marks |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character. If the mark is
