@@ -63,7 +63,7 @@ started. Hitting `<Esc>` while in *insert mode* or *command mode* will
 put you back into *normal mode*.
 
 | Command | Description |
-|:---:|:--------------------------------- |
+|:-------:|:----------- |
 | `h` | move cursor one character to left |
 | `l` | move cursor one character to right |
 | `j` | move cursor one line directly down |
@@ -83,7 +83,7 @@ These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type `<Esc>`.
 
 | Command | Description |
-|:---:|:----------------------------------------- |
+|:-------:|:----------- |
 | `i` | insert text before character cursor is on |
 | `a` | insert text after character cursor is on |
 | `A` | insert text at end of line |
@@ -98,7 +98,7 @@ The "buffer" is older vi jargon for what is now called the default
 register in vim/nvim.
 
 | Command | Description |
-|:----:|:--------------------------------------------- |
+|:-------:|:----------- |
 | `dd` | delete line and put in default register (cut) |
 | `5dd` | delete 5 lines and put in default register |
 | `d$` | delete to end of line, put in default register |
@@ -130,7 +130,7 @@ later two are used to search forward and backward respectfully in the
 text buffer.
 
 | Command | Description |
-|:---- |:------------------------------- |
+|:--  --- |:----------- |
 | `:w` | write to disk file being edited |
 | `:w file` | write to file, buffer still associated with orig file |
 | `:q` | quit editing, will warn about unsaved changes |
@@ -157,7 +157,7 @@ command and return you to *normal mode*.
 ### Repeating commands in *Normal Mode*
 
 | Command | Description |
-|:---:|:-------------------------------------------------------- |
+|:-------:|:----------- |
 | `.` | repeat the last *normal mode* command which changed text |
 
 This repeats the last *normal mode* command used which changed text. It

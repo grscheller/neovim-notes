@@ -34,7 +34,7 @@ original vi where *insert mode* was not as rich.
 ### Close Editor Window from Normal Mode
 
 | Command | Description |
-|:----:|:------------------------- |
+|:-------:|:----------- |
 | `ZZ` | exit window, save changes |
 | `ZQ` | exit window, don't save changes, vim/nvim |
 
@@ -45,7 +45,7 @@ close the current window if multiple windows or tabs are open.
 ### Cursor movement in Normal Mode
 
 | Command | Description |
-|:---------:|:------------------------------------------- |
+|:-------:|:----------- |
 | `h,j,k,l` | move cursor one character (also arrow keys) |
 | `w, W` | move forward to beginning next word |
 | `b, B` | move backward to beginning word or WORD |
@@ -67,7 +67,7 @@ close the current window if multiple windows or tabs are open.
 ### Changing text and/or interacting with the default register
 
 | Command | Description |
-|:----:|:--------------------------------------------- |
+|:-------:|:----------- |
 | `dd` | delete line and put in default register (cut) |
 | `3dd` | delete 3 lines and put in default register |
 | `d$` | delete to end of line, put in default register |
@@ -90,7 +90,7 @@ register contains.
 In vi these were referred to as named buffers.
 
 | Command | Description |
-|:------:|:------------------------------------ |
+|:-------:|:----------- |
 | `"adw` | delete word and put in register `"a` |
 | `"B2yy` | yank 2 lines and append to register `"b` |
 | `"sd$` | delete to end of line and put in register `"s` |
@@ -106,7 +106,7 @@ These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type either `<Esc>` or `<C-[>`.
 
 | Command | Description |
-|:---:|:----------------------------------------- |
+|:-------:|:----------- |
 | `i` | insert text before character cursor is on |
 | `I` | insert text at beginning of line after initial white space |
 | `a` | insert text after character cursor is on |
@@ -128,7 +128,7 @@ These *normal mode* commands take vim to *insert mode*. To return to
 ### Repeating commands in Normal Mode
 
 | Command | Description |
-|:---:|:------------------------------------------ |
+|:-------:|:----------- |
 | `.` | repeat the last command which changed text |
 
 This repeats the last *normal mode* command used which changed text. It
@@ -150,7 +150,7 @@ type text in *insert mode*. You return to *normal mode* by pressing the
 ### Useful insert mode commands
 
 | Command | Description |
-|:------:|:---------------------------------- |
+|:-------:|:----------- |
 | `<BS>` | delete character to left of cursor |
 | `<C-h>`| delete character to left of cursor |
 | `<C-w>` | delete word to left of cursor |
@@ -179,7 +179,7 @@ Use the `:` in *normal mode* to enter *command mode*. The cursor jumps
 down to the bottom of the terminal window and prompts you with `:`.
 
 | Command | Description |
-|:---- |:--------------------------------------- |
+|:------- |:----------- |
 | `:w` | write buffer to associated file on disk |
 | `:w file` | write to file, still editing original file |
 | `:q` | quit editing, will warn if unsaved changes |
@@ -228,7 +228,7 @@ and then modify as a unit.
 To enter *visual mode* from *normal mode*
 
 | Command | Description |
-|:---:|:------------------- |
+|:-------:|:----------- |
 | `v` | for character based |
 | `V` | for line based |
 | `<C-v>` | for block visual mode |
@@ -272,7 +272,7 @@ ______________________________________________________________________
 ### Undo and redo normal mode commands
 
 | Command | Description |
-|:---:|:------------------ |
+|:-------:|:----------- |
 | `u` | undo previous edit |
 | `<C-r>` | redo edit undone |
 
@@ -283,7 +283,7 @@ buttons in a web browser. Navigating with the arrow keys while in
 ### Spell checking
 
 | Command | Description |
-|:------------ |:---------------------- |
+|:------- |:----------- |
 | `:set spell` | Turn spell checking on |
 | `:set nospell` | Turn spell checking off |
 | `:set invspell` | Toggle spell setting |
@@ -294,10 +294,10 @@ Put the following options in your `~/.config/nvim/init.vim` or
 `~/.vim/vimrc` file
 
 ```vim
-   set tabstop=4
-   set shiftwidth=4
-   set softtabstop=4
-   set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
 ```
 
 To insert an actual tab, enter *insert mode* and type `<C-v><Tab>`.
