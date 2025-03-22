@@ -260,7 +260,7 @@ via the Shared Date (shada) file.
 | `` c`a `` | change from cursor to mark `a` |
 | `` d`a `` | delete from cursor to mark `a` |
 | `d'b` | deletes current line thru line with mark `b` |
-| `` d`b `` | deletes current line thru line with mark `b` |
+| `` d`b `` | deletes current line to mark `b` |
 | `` g`a `` | same as ``  `a `` except don't change jumplist |
 | `g'a` | same as `'a` except don't change jumplist |
 

@@ -241,7 +241,7 @@ command will only work when triggered with `<CR>`.
 | `` y`a `` | yank from cursor to mark `a` |
 | `` c`a `` | change from cursor to mark `a` |
 | `` d`a `` | delete from cursor to mark `a` |
-| `d'b` | deletes current line thru line with mark `b` |
+| `d'b` | deletes current line to mark `b` |
 | `` d`b `` | deletes current line thru line with mark `b` |
 
 Like a mark, the cursor is also a "zero-width" entity between the
