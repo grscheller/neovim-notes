@@ -233,47 +233,16 @@ command will only work when triggered with `<CR>`.
 
 ## Marks
 
-Marks allow you to set locations to either be able to jump to or use
-with *normal mode* editing commands. A mark is a "zero-width" entity
-between the cursor and the preceding character. It is associated with
-a line of a file, not a buffer. Information regarding marks is retained
-via the Shared Date (shada) file.
-
-- lower case marks `a-z` are valid for one file
-  - file must be in the buffer list
-  - the mark is associated with a line of the file
-  - are jumpable only within a buffer
-  - erased if line containing them is deleted
-    - restored with an undo
-- upper case marks `A-Z` are valid between files
-  - jumpable across files
-  - motion commands only within a buffer
-  - retained if line is deleted
-
-### Normal mode mark commands
-
 | Command | Description |
 |:-------:|:----------- |
 | `ma` | set mark `a` for the current editing buffer |
-| `` `a`` | jump to mark `a` current buffer |
-| ``g`a`` | same as `` `a`` except don't change jumplist |
+| ``  `a `` | jump to mark `a` current buffer |
 | `'a` | jump to first non-space char in line with mark `a` |
-| `g'a` | same as `'a` except don't change jumplist |
 | `` y`a `` | yank from cursor to mark `a` |
 | `` c`a `` | change from cursor to mark `a` |
 | `` d`a `` | delete from cursor to mark `a` |
-| `d'w` | deletes current line thru line with mark `w` |
-| ``d`w`` | deletes current line thru line with mark `w` |
-
-
-### Command mode mark commands
-
-| Command | Description |
-|:------- |:----------- |
-| `:marks` | list all current marks |
-| `:marks bD` | list just marks `b` and `D` |
-| `:delm a` | delete mark `a` |
-| `:delm!` | delete all lower case marks |
+| `d'b` | deletes current line thru line with mark `b` |
+| `` d`b `` | deletes current line thru line with mark `b` |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character. If the mark is
