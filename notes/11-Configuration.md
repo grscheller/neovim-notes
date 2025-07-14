@@ -116,8 +116,8 @@ user changes to override the distribution's default configuration. This
 additional infrastructure can be confusing to a beginner. Many times
 there are much simpler ways to accomplish what the distribution is
 doing since there is no need to "override" anything. I find looking at
-plugin documentation, GitHub README's & Wikis, as well as other users'
-dotfiles to be the best way to learn how to configure nvim.
+plugin documentation, GitHub README's & Wikis, and other users' dotfiles
+to be the best way to learn how to configure nvim.
 
 Finally, for a simple, nontrivial example of a single file Neovim
 configuration that can be used as a starting point, I highly recommend
