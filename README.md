@@ -16,6 +16,7 @@ behavior for basic text editing and some lazy.nvim plugin manager factoids.
 - [Regular Expressions](notes/10-RegularExpressions.md)
 - [Configuration](notes/11-Configuration.md)
 - [Plugin Managers](notes/12-PluginManagers.md)
+- [Final Notes](notes/13-FinalNotes.md)
 
 I test this information against at least the latest stable Neovim
 release. Sometimes with something between stable and the HEAD of main.

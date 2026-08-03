@@ -1,6 +1,6 @@
 # Advanced Traditional Vi Commands
 
-Much of the information here I obtained from [Lagmonster][50]. This
+Much of the information here I obtained from [Lagmonster][20]. This
 site no longer exists. These commands existed in the original ex version
 of vi. When the behavior differs from the original vi, I will indicate
 the nvim behavior.
@@ -261,4 +261,4 @@ ______________________________________________________________________
 [0]: ../README.md
 [3]: 03-VimFactoids.md
 [5]: 05-ExMode.md
-[50]: http://www.lagmonster.org/docs/vi2.html
+[20]: http://www.lagmonster.org/docs/vi2.html

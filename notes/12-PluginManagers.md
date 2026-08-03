@@ -97,10 +97,10 @@ be stable enough for daily use.
 
 ---
 
-| prev: [Configuration][11] | [Home][0] | [FinalNotes][13]
+| prev: [Configuration][11] | [Home][0] | [FinalNotes][13] |
 
+[0]: ../README.md
 [11]: 11-Configuration.md
 [13]: 13-FinalNotes.md
-[0]: ../README.md
 [20]: https://github.com/folke/lazy.nvim
 [21]: https://github.com/LazyVim/LazyVim

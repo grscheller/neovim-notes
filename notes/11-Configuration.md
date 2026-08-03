@@ -73,11 +73,9 @@ To see the default search locations and search order,
 and scroll upwards.
 
 ---
-
+:
 | prev: [Regular Expressions][10] | [Home][0] | next: [PluginManagers][12] |
-[10]: 10-RegularExpressions.md
+
 [0]: ../README.md
+[10]: 10-RegularExpressions.md
 [12]: 12-PluginManagers.md
-[51]: https://github.com/grscheller/dotfiles
-[52]: https://github.com/folke/lazy.nvim
-[61]: https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
