@@ -2,8 +2,8 @@
 
 The only two plugin managers I wish to touch on are:
 
-- Lazy Nvim package manager: plugin `folke/lazy.nvim`
-- Neovim's native built-in plugin manager: module `vim.pack`
+- Lazy Nvim package manager (*plugin:* `folke/lazy.nvim`)
+- Neovim's native built-in plugin manager (*module:* `vim.pack`)
 
 With lazy.nvim, load order is something the plugin manager computes
 for you from declarative spec fields.
