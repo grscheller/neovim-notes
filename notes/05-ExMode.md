@@ -88,7 +88,7 @@ then run the script non-interactively.
     $ cat myscript | nvim -es .bashrc
 ```
 
-______________________________________________________________________
+---
 
 | prev: [Adv Trad Vi Commands][4] | [Home][0] | next: [Vim Specific Features][6] |
 

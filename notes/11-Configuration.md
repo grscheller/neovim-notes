@@ -18,11 +18,11 @@ initialization process is quite complicated, see
 ### Other configuration files (local "plugins")
 
 * filetype plugins deal with filetype-specific configuration
-  * located: `${XDG_DATA_HOME}/nvim/ftplugin` 
+  * located: `${XDG_DATA_HOME}/nvim/ftplugin`
 * indent scripts deal with filetype-specific indenting matters
-  * located: `${XDG_DATA_HOME}/nvim/indent` 
+  * located: `${XDG_DATA_HOME}/nvim/indent`
 * syntax scripts deal with filetype-specific syntax highlighting matters
-  * located: `${XDG_DATA_HOME}/nvim/syntax` 
+  * located: `${XDG_DATA_HOME}/nvim/syntax`
 
 A filetype plugin scripts is like a global plugin, but only runs when
 entering a buffer nvim has identified by filetype. Filetype plugins can
@@ -67,7 +67,7 @@ to the distributed defaults or system-wide settings.
 To see the default search locations and search order,
 
 ```vim
-    :help after/directory 
+    :help after/directory
 ```
 
 and scroll upwards.

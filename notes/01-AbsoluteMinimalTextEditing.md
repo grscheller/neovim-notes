@@ -39,7 +39,7 @@ we will make a distinction between the file stored on disk and the "text
 buffer" image of the file read into memory. Text buffers are usually,
 but not always, associated with a file.
 
-______________________________________________________________________
+---
 
 ## The 3 main modes
 
@@ -50,7 +50,7 @@ ______________________________________________________________________
 If in either *insert mode* or *command mode*, `<Esc>` will take you to
 *normal mode*.
 
-______________________________________________________________________
+---
 
 ## Minimal command set common to vi, vim, and nvim
 
@@ -62,17 +62,17 @@ Here are a minimal common subset of commands for vi, vim, and nvim.
 started. Hitting `<Esc>` while in *insert mode* or *command mode* will
 put you back into *normal mode*.
 
-| Command | Description |
-|:-------:|:----------- |
-| `h` | move cursor one character to left |
-| `l` | move cursor one character to right |
-| `j` | move cursor one line directly down |
-| `k` | move cursor one line directly up |
-| `w` | move forward to beginning next word |
-| `b` | move back to beginning of word cursor is on |
-| `e` | move forward to end of of word cursor is on |
-| `$` | move cursor to end of line |
-| `0` | move cursor to start of line |
+| Command | Description                                 |
+|:-------:|:------------------------------------------- |
+| `h`     | move cursor one character to left           |
+| `l`     | move cursor one character to right          |
+| `j`     | move cursor one line directly down          |
+| `k`     | move cursor one line directly up            |
+| `w`     | move forward to beginning next word         |
+| `b`     | move back to beginning of word cursor is on |
+| `e`     | move forward to end of of word cursor is on |
+| `$`     | move cursor to end of line                  |
+| `0`     | move cursor to start of line                |
 
 In vi/vim/nvim, depending on terminal type, arrow keys will sometimes
 work to navigate the text buffer in *normal mode*.
@@ -82,33 +82,33 @@ work to navigate the text buffer in *normal mode*.
 These *normal mode* commands take vim to *insert mode*. To return to
 *normal mode*, type `<Esc>`.
 
-| Command | Description |
-|:-------:|:----------- |
-| `i` | insert text before character cursor is on |
-| `a` | insert text after character cursor is on |
-| `A` | insert text at end of line |
-| `o` | open new line after current line in insert text |
-| `O` | open new line before current line in insert text |
-| `3cw` | delete next 3 words and insert text |
-| `c2w` | delete next 2 words and insert text |
+| Command | Description                                      |
+|:-------:|:------------------------------------------------ |
+| `i`     | insert text before character cursor is on        |
+| `a`     | insert text after character cursor is on         |
+| `A`     | insert text at end of line                       |
+| `o`     | open new line after current line in insert text  |
+| `O`     | open new line before current line in insert text |
+| `3cw`   | delete next 3 words and insert text              |
+| `c2w`   | delete next 2 words and insert text              |
 
 ### Changing text and/or interacting with the "buffer" in *Normal Mode*
 
 The "buffer" is older vi jargon for what is now called the default
 register in vim/nvim.
 
-| Command | Description |
-|:-------:|:----------- |
-| `dd` | delete line and put in default register (cut) |
-| `5dd` | delete 5 lines and put in default register |
-| `d$` | delete to end of line, put in default register |
-| `d0` | delete to beginning of line, put in default register |
-| `yy` | yank line to default register (copy) |
-| `x` | delete character under cursor, put in default register |
+| Command   | Description                                            |
+|:---------:|:------------------------------------------------------ |
+| `dd`      | delete line and put in default register (cut)          |
+| `5dd`     | delete 5 lines and put in default register             |
+| `d$`      | delete to end of line, put in default register         |
+| `d0`      | delete to beginning of line, put in default register   |
+| `yy`      | yank line to default register (copy)                   |
+| `x`       | delete character under cursor, put in default register |
 | `r<char>` | change current character cursor highlights to `<char>` |
-| `p` | paste default register contents "after" |
-| `P` | paste default register contents "before" |
-| `J` | join current & next line, insert spaces as needed |
+| `p`       | paste default register contents "after"                |
+| `P`       | paste default register contents "before"               |
+| `J`       | join current & next line, insert spaces as needed      |
 
 What "before" or "after" mean depends on what is in the default register.
 
@@ -129,26 +129,26 @@ you with either `:`, `\`, or `?` depending on which one you typed. The
 later two are used to search forward and backward respectfully in the
 text buffer.
 
-| Command | Description |
-|:--  --- |:----------- |
-| `:w` | write to disk file being edited |
-| `:w file` | write to file, buffer still associated with orig file |
-| `:q` | quit editing, will warn about unsaved changes |
-| `:wq` | write to disk, then quit |
-| `:q!` | quit without saving unsaved changes |
-| `:n` | edit next buffer typically next file on command line |
-| `:prev` | edit previous buffer |
-| `:42` | move cursor to beginning of line 42 |
-| `:#` | give line number of current line cursor is on |
-| `:s/foo/bar/` | substitute 1st instance of foo with bar on current line |
-| `:s/foo/bar/g` | substitute all `foo` with `bar` on current line |
-| `:17,42s/foo/bar/g` | substitute all `foo` with `bar`, lines 17 to 42 |
-| `:/dog/` | jump to next line with `dog` in it |
-| `:/dog/s/7/42/` | jump to line with `dog` and replace first 7 with 42 |
-| `/dog` | jump forward to next instance of `dog` in text buffer |
-| `?cat` | jump back to previous instance of `cat` in text buffer |
-| `/` | jump forward using last search pattern |
-| `?` | jump back using last search pattern |
+| Command             | Description                                            |
+|:------------------- |:------------------------------------------------------ |
+| `:w`                | write to disk file being edited                        |
+| `:w file`           | write to file, buffer still associated with orig file  |
+| `:q`                | quit editing, will warn about unsaved changes          |
+| `:wq`               | write to disk, then quit                               |
+| `:q!`               | quit without saving unsaved changes                    |
+| `:n`                | edit next buffer typically next file on command line   |
+| `:prev`             | edit previous buffer                                   |
+| `:42`               | move cursor to beginning of line 42                    |
+| `:#`                | give line number of current line cursor is on          |
+| `:s/foo/bar/`       | substitute 1st foo with bar on current line            |
+| `:s/foo/bar/g`      | substitute all `foo` with `bar` on current line        |
+| `:17,42s/foo/bar/g` | substitute all `foo` with `bar`, lines 17 to 42        |
+| `:/dog/`            | jump to next line with `dog` in it                     |
+| `:/dog/s/7/42/`     | jump to line with `dog` and replace first 7 with 42    |
+| `/dog`              | jump forward to next instance of `dog` in text buffer  |
+| `?cat`              | jump back to previous instance of `cat` in text buffer |
+| `/`                 | jump forward using last search pattern                 |
+| `?`                 | jump back using last search pattern                    |
 
 Entering `<CR>` will cause the above commands to be executed and return
 you to *normal mode*. Hitting `<Esc>` instead will punt on running the
@@ -156,14 +156,14 @@ command and return you to *normal mode*.
 
 ### Repeating commands in *Normal Mode*
 
-| Command | Description |
-|:-------:|:----------- |
-| `.` | repeat the last *normal mode* command which changed text |
+| Command | Description                                              |
+|:-------:|:-------------------------------------------------------- |
+| `.`     | repeat the last *normal mode* command which changed text |
 
 This repeats the last *normal mode* command used which changed text. It
 does not repeat *command mode* commands.
 
-______________________________________________________________________
+---
 
 | [Home][0] | next: [Basic Text Editing][2] |
 

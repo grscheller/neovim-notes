@@ -16,12 +16,12 @@ was the second mode.
 
 ### Misc commands
 
-| Command | Description |
-|:-------:|:----------- |
+| Command | Description                                |
+|:-------:|:------------------------------------------ |
 | `<C-g>` | show filename and other useful status info |
-| `<C-l>` | redraw view |
-| `ZZ` | save changes and exit vim |
-| `<C-z>` | suspend vim to shell background |
+| `<C-l>` | redraw view                                |
+| `ZZ`    | save changes and exit vim                  |
+| `<C-z>` | suspend vim to shell background            |
 
 For `<C-z>`, the shell command `fg %1` will usually work to unsuspend
 vim. If you have other things suspended, hunt for it via the `jobs`
@@ -29,27 +29,27 @@ shell command.
 
 ### Commands to move cursor/view in Normal Mode
 
-| Command | Description |
-|:-------:|:----------- |
-| `+` | move to first non-space character next line |
-| `-` | move to first non-space character prev line |
-| `nG` | move to nth line in file |
-| `G` | move to last line in file |
-| `0` | move to beginning of line |
-| `H` | move to top of screen |
-| `M` | move to middle of screen |
-| `L` | move to bottom of screen |
-| `nH` | move to nth line from top of screen |
-| `nL` | move to nth line from bottom of screen |
-| `<C-u>` | move cursor/view up half a screen |
-| `<C-d>` | move cursor/view down half a screen |
-| `<C-b>` | move cursor/view up a full screen |
-| `<C-f>` | move cursor/view down a full screen |
-| `<C-e>` | move view down a one line, don't move cursor |
-| `<C-y>` | move view up a one line, don't move cursor |
-| `%` | move between matching `( )`, `[ ]`, `{ }` or `< >` |
-| `n<Bar>` | move to nth column in line |
-| `<Bar>` | move to beginning of line |
+| Command  | Description                                        |
+|:--------:|:-------------------------------------------------- |
+| `+`      | move to first non-space character next line        |
+| `-`      | move to first non-space character prev line        |
+| `nG`     | move to nth line in file                           |
+| `G`      | move to last line in file                          |
+| `0`      | move to beginning of line                          |
+| `H`      | move to top of screen                              |
+| `M`      | move to middle of screen                           |
+| `L`      | move to bottom of screen                           |
+| `nH`     | move to nth line from top of screen                |
+| `nL`     | move to nth line from bottom of screen             |
+| `<C-u>`  | move cursor/view up half a screen                  |
+| `<C-d>`  | move cursor/view down half a screen                |
+| `<C-b>`  | move cursor/view up a full screen                  |
+| `<C-f>`  | move cursor/view down a full screen                |
+| `<C-e>`  | move view down a one line, don't move cursor       |
+| `<C-y>`  | move view up a one line, don't move cursor         |
+| `%`      | move between matching `( )`, `[ ]`, `{ }` or `< >` |
+| `n<Bar>` | move to nth column in line                         |
+| `<Bar>`  | move to beginning of line                          |
 
 Where `<Bar>` = `|`
 
@@ -70,14 +70,14 @@ will keep the cursor 3 lines from the edge of the screen.
 
 ### Cursor commands useful for written text
 
-| Command | Description |
-|:-------:|:----------- |
-| `(` | move cursor to beginning of sentence |
-| `)` | move cursor to beginning of next sentence |
-| `{` | move cursor up a paragraph |
-| `}` | move cursor down paragraph |
-| `[[` | move cursor to beginning previous section |
-| `]]` | move cursor to beginning next section |
+| Command | Description                               |
+|:-------:|:----------------------------------------- |
+| `(`     | move cursor to beginning of sentence      |
+| `)`     | move cursor to beginning of next sentence |
+| `{`     | move cursor up a paragraph                |
+| `}`     | move cursor down paragraph                |
+| `[[`    | move cursor to beginning previous section |
+| `]]`    | move cursor to beginning next section     |
 
 What "section" means is most easily understood in the context of file
 types. For example, in pre-ANSI K&R C files, `[[` and `]]` will jump
@@ -89,46 +89,46 @@ headings.
 
 ### Commands to change text
 
-| Command | Description |
-|:-------:|:----------- |
-| `C` | change from cursor to end of line (enter *insert mode*) |
-| `R` | from cursor, overwriting text (enter *replace mode*) |
-| `S` | change entire line (enter *insert mode*) |
-| `D` | delete from cursor to end of line |
-| `I` | insert text at beginning of line after initial whitespace |
-| `i` | enter *insert mode* |
-| `a` | advance cursor one char and enter *insert mode* |
-| `A` | advance cursor to end of line and enter *insert mode* |
-| `x` | delete char at cursor, stay in *normal mode* |
-| `X` | delete char before cursor, stay in *normal mode* |
-| `>>` | move entire line 1 tab stop right, stay in *normal mode* |
-| `<<` | move entire line 1 tab stop left, stay in *normal mode* |
+| Command | Description                                               |
+|:-------:|:--------------------------------------------------------- |
+| `C`     | change from cursor to end of line (enter *insert mode*)   |
+| `R`     | from cursor, overwriting text (enter *replace mode*)      |
+| `S`     | change entire line (enter *insert mode*)                  |
+| `D`     | delete from cursor to end of line                         |
+| `I`     | insert text at beginning of line after initial whitespace |
+| `i`     | enter *insert mode*                                       |
+| `a`     | advance cursor one char and enter *insert mode*           |
+| `A`     | advance cursor to end of line and enter *insert mode*     |
+| `x`     | delete char at cursor, stay in *normal mode*              |
+| `X`     | delete char before cursor, stay in *normal mode*          |
+| `>>`    | move entire line 1 tab stop right, stay in *normal mode*  |
+| `<<`    | move entire line 1 tab stop left, stay in *normal mode*   |
 
 ## Insert Mode Commands
 
-| Command | Description |
-|:-------:|:----------- |
-| `<C-h>` | delete previous character |
-| `<BS>` | delete previous character |
-| `<C-v>{char}` | insert character `{char}` literally |
-| `<C-v><Tab>` | insert literal `<Tab>` (handy for makefiles) |
-| `<C-w>` | delete previous word |
-| `<C-u>` | delete everything to left of cursor |
-| `<C-c>` | break out of *insert mode*, punt on any auto cmds |
-| `<C-a>` | previous insert |
-| `<C-@>` | repeat previous insert and return to *normal mode* |
-| `<C-t>` | ident line in to next tab stop |
-| `<C-d>` | ident line out to previous tab stop |
-| `<C-e>` | copy character which is below cursor |
-| `<C-y>` | copy character which is above cursor |
-| `<C-\>` | potentially a good *insert mode* "leader key" |
-| `<C-g>` | potentially a good *insert mode* "leader key" |
-| `<C-g>j` | move down a line, Down-Arrow not in vi |
-| `<C-g>k` | move up a line, Up-Arrow not in vi |
-| `<C-n>` | word completion, next word |
-| `<C-p>` | word completion, previous word |
-| `<C-o>` | do one *normal mode* command & return to *insert mode* |
-| `<C-r>a` | paste from register `"a` while in *insert mode* |
+| Command       | Description                                          |
+|:-------------:|:---------------------------------------------------- |
+| `<C-h>`       | delete previous character                            |
+| `<BS>`        | delete previous character                            |
+| `<C-v>{char}` | insert character `{char}` literally                  |
+| `<C-v><Tab>`  | insert literal `<Tab>` (handy for makefiles)         |
+| `<C-w>`       | delete previous word                                 |
+| `<C-u>`       | delete everything to left of cursor                  |
+| `<C-c>`       | break out of *insert mode*, punt on any auto cmds    |
+| `<C-a>`       | previous insert                                      |
+| `<C-@>`       | repeat previous insert and return to *normal mode*   |
+| `<C-t>`       | ident line in to next tab stop                       |
+| `<C-d>`       | ident line out to previous tab stop                  |
+| `<C-e>`       | copy character which is below cursor                 |
+| `<C-y>`       | copy character which is above cursor                 |
+| `<C-\>`       | potentially a good *insert mode* "leader key"        |
+| `<C-g>`       | potentially a good *insert mode* "leader key"        |
+| `<C-g>j`      | move down a line, Down-Arrow not in vi               |
+| `<C-g>k`      | move up a line, Up-Arrow not in vi                   |
+| `<C-n>`       | word completion, next word                           |
+| `<C-p>`       | word completion, previous word                       |
+| `<C-o>`       | do 1 *normal mode* command & return to *insert mode* |
+| `<C-r>a`      | paste from register `"a` while in *insert mode*      |
 
 If you accidentally typed `<C-x>` while in insert mode, typing any
 non-control character, except `s` will get you back. If you have
@@ -152,19 +152,19 @@ will find your vim editing session frozen. Type `<C-q>` to unlock.
 
 ## Command Mode Commands
 
-| Command | Description |
-|:------- |:----------- |
-| `:r file` | read file and insert it after current line |
-| `:nr file` | read file and insert it after line `n` |
-| `:w!` | write file overriding normal checks |
-| `:n,mw file` | save lines `n` thru `m` to file |
-| `:n,mw >>file` | append lines `n` thru `m` to existing file |
-| `:'a,'bw file` | save lines from line with mark a to line with mark b |
-| `:e!` | reedit file discarding any unsaved changes |
-| `:#` | show current line number and print line |
-| `:.=` | show current line number |
-| `:=` | show number of lines in buffer |
-| `:n,md` | delete lines `n` thru `m` |
+| Command        | Description                                    |
+|:-------------- |:---------------------------------------------- |
+| `:r file`      | read file and insert it after current line     |
+| `:nr file`     | read file and insert it after line `n`         |
+| `:w!`          | write file overriding normal checks            |
+| `:n,mw file`   | save lines `n` thru `m` to file                |
+| `:n,mw >>file` | append lines `n` thru `m` to existing file     |
+| `:'a,'bw file` | save lines from line marked a to line marked b |
+| `:e!`          | reedit file discarding any unsaved changes     |
+| `:#`           | show current line number and print line        |
+| `:.=`          | show current line number                       |
+| `:=`           | show number of lines in buffer                 |
+| `:n,md`        | delete lines `n` thru `m`                      |
 
 The `:set`, `:map`, and `:ab` commands are about the only useful things you
 can put into vi's configuration file, `~/.exrc`.
@@ -174,21 +174,21 @@ can put into vi's configuration file, `~/.exrc`.
 The `:set` command changes vi's default options. Unlike the vim and nvim
 commands, there is no '-o' option to set these from the vi command line.
 
-| Command | Description |
-|:------- |:----------- |
-| `:set list` | display `<Tab>` as `^I` and `EOL` as `$` |
-| `:set nolist` | display `<Tab>` & `EOL` normally (the default) |
-| `:set tabstop=6` | set the tab stop to 6 characters |
-| `:set ts=2` | set the tab stop to 2 characters |
-| `:set shiftwidth=4` | set indentation to 4 characters (uses tabs & spaces) |
-| `:set` | show all options differing from the defaults |
-| `:set all` | show all options and their set values |
-| `:set ts?` | query the value of the tabstop option |
+| Command             | Description                                  |
+|:------------------- |:-------------------------------------------- |
+| `:set list`         | display `<Tab>` as `^I` and `EOL` as `$`     |
+| `:set nolist`       | display `<Tab>` & `EOL` normally (default)   |
+| `:set tabstop=6`    | set the tab stop to 6 characters             |
+| `:set ts=2`         | set the tab stop to 2 characters             |
+| `:set shiftwidth=4` | set indentation to 4 chars (tabs & spaces)   |
+| `:set`              | show all options differing from the defaults |
+| `:set all`          | show all options and their set values        |
+| `:set ts?`          | query the value of the tabstop option        |
 
 ### The map: Command
 
 The `:map` command is the only member of the map family of commands
-in the original vi. It seems to behavior differently for nvim than vi.
+in the original vi. It seems to behave differently for nvim than vi.
 
 ```vim
     :map a 2l`
@@ -198,8 +198,10 @@ in the original vi. It seems to behavior differently for nvim than vi.
 - In nvim: `a` in *normal mode* moves the cursor up 25 lines (not 10).
 - In vi: `a` and `l` both move the cursor up 5 lines.
 
-Take away: Neovim uses lexical substitution, not recursive application.
-Vi is just buggy.
+The take away is:
+
+- nvim uses lexical substitution, not recursive application
+- vi is just buggy
 
 Almost always, `:noremap` is the better choice for vim and nvim.
 
@@ -212,8 +214,8 @@ The vi `:ab` command stands for `:abbreviate`. It works in both
    :ab fb foo bab
 ```
 
-- When `fb ` is typed, vi replaces it with `foo bar `
-- When `fb<CR>` is typed, vi replaces it with `foo bar<CR>`
+- When `fb<Space>` is typed, the `fb` gets replaces it with `foo bar`
+- When `fb<CR>` is typed, the `fb` replaces it with `foo bar<CR>`
 
 As with `:set` and `:map`, the `:ab` command is part a of a much larger
 family of commands in Vim and Neovim.
@@ -223,26 +225,23 @@ family of commands in Vim and Neovim.
     :cab d2f .,$/^foo/d`
 ```
 
-When `teh ` is typed in *insert mode*, it is replaced by `the `.
+When `teh<Space>` is typed in *insert mode*, it is replaced by `the<Space>`.
 
-When `d2f ` is typed in *command mode*, all lines from current line thru
+When `d2f<Space>` is typed in *command mode*, all lines from current line thru
 the next line starting with foo are deleted.
-
-Note: If you use `<space>` as your leader key, the :abbreviate
-command will only work when triggered with `<CR>`.
 
 ## Marks
 
-| Command | Description |
-|:-------:|:----------- |
-| `ma` | set mark `a` for the current editing buffer |
-| ``  `a `` | jump to mark `a` current buffer |
-| `'a` | jump to first non-space char in line with mark `a` |
-| `` y`a `` | yank from cursor to mark `a` |
-| `` c`a `` | change from cursor to mark `a` |
-| `` d`a `` | delete from cursor to mark `a` |
-| `d'b` | deletes current line to mark `b` |
-| `` d`b `` | deletes current line thru line with mark `b` |
+| Command | Description                                        |
+|:-------:|:-------------------------------------------------- |
+| `ma`    | set mark `a` for the current editing buffer        |
+| ```a `` | jump to mark `a` current buffer                    |
+| `'a`    | jump to first non-space char in line with mark `a` |
+| ``y`a`` | yank from cursor to mark `a`                       |
+| ``c`a`` | change from cursor to mark `a`                     |
+| ``d`a`` | delete from cursor to mark `a`                     |
+| `d'b`   | deletes current line to mark `b`                   |
+| ``d`b`` | deletes current line thru line with mark `b`       |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character. If the mark is
@@ -254,7 +253,7 @@ For more information on marks, see the
 [marks](06-VimSpecificFeatures.md#marks) section in Vim Specific
 Features.
 
-______________________________________________________________________
+---
 
 | prev: [Vim Factoids][3] | [Home][0] | next: [Ex Mode][5] |
 

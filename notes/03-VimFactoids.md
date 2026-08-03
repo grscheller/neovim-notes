@@ -131,7 +131,7 @@ the text in the file buffer. If the `backspace` option is not set, Vim
 duplicates the old vi behavior. Setting `backspace` to
 `"indent,eol,start"` is the Neovim default setting.
 
-______________________________________________________________________
+---
 
 | prev: [Basic Text Editing][2] | [Home][0] | next: [Adv Trad Vi Commands][4] |
 

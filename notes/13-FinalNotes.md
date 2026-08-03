@@ -50,7 +50,6 @@ IntelliJ or vscode.
 
 | prev: [PluginManagers][12] | [Home][0] |
 
-[10]: 10-RegularExpressions.md
 [0]: ../README.md
 [12]: 12-PluginManagers.md
 [20]: https://github.com/grscheller/dotfiles
