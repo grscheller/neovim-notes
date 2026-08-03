@@ -15,7 +15,7 @@ the `:packadd` command.
 
 ## Lazy Nvim Plugin manager (folke/lazy.nvim)
 
-The [lazy nvim][20] package manager is the most popular
+The [lazy nvim][20] plugin manager is the most popular
 plugin manager as of August 2026. It is almost a default
 standard. This is not to be confused with the [LazyVim][21]
 Neovim distribution.

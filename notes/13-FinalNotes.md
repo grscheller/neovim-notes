@@ -4,7 +4,7 @@
 
 My current nvim configuration can be found in my dotfiles repo here
 [grscheller/dotfiles][20] on GitHub. I directly use [folke/lazy.nvim][21]
-as my package manager. My `init.lua` bootstraps this plugin which then
+as my plugin manager. My `init.lua` bootstraps this plugin which then
 manages my other plugins. It contains lots of good examples that can be
 followed, and it is all in the public domain!
 
