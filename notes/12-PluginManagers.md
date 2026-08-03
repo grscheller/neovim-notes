@@ -3,7 +3,7 @@
 The only two plugin managers I wish to touch on are:
 
 - [Lazy Nvim](#lazy-nvim-plugin) plugin manager (*plugin:* `folke/lazy.nvim`)
-- [Neovim's native built-in](#native-neovim-plugin) plugin manager (*module:* `vim.pack`)
+- [Native Neovim](#native-neovim-plugin) plugin manager (*module:* `vim.pack`)
 
 With lazy.nvim, load order is something the plugin manager computes
 for you from declarative spec fields.
@@ -46,7 +46,7 @@ Anything gated behind event = "VeryLazy" is guaranteed to load after all
 lazy = false plugins. VeryLazy is lazy.nvim's recommended catch-all for
 "load this shortly after startup, but don't block VimEnter."
 
-## Native Neovim plugin manager: vim.pack
+## Native Neovim plugin manager (vim.pack)
 
 Install, update, and delete external plugins.
 
