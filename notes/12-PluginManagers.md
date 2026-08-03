@@ -2,8 +2,8 @@
 
 The only two plugin managers I wish to touch on are:
 
-- [Lazy Nvim](#lazy-nvim-plugin) plugin manager (*plugin:* `folke/lazy.nvim`)
-- [Native Neovim](#native-neovim-plugin) plugin manager (*module:* `vim.pack`)
+- [Lazy Nvim](#lazy-nvim-plugin-manager) plugin manager (*plugin:* `folke/lazy.nvim`)
+- [Native Neovim](#native-neovim-plugin-manager) plugin manager (*module:* `vim.pack`)
 
 With lazy.nvim, load order is something the plugin manager computes
 for you from declarative spec fields.
@@ -13,14 +13,14 @@ native autocmds you wire up by hand. The plugin manager itself has
 no opinion on timing beyond "now" vs. some autocmd you write wrapping
 the `:packadd` command.
 
-## Lazy Nvim Plugin manager (folke/lazy.nvim)
+## Lazy Nvim Plugin manager
 
 The [lazy nvim][20] plugin manager is the most popular
 plugin manager as of August 2026. It is almost a default
 standard. This is not to be confused with the [LazyVim][21]
 Neovim distribution.
 
-### Startup event order
+### Startup event order for lazy.nvim
 
 Let's assume require("lazy").setup(...) is called early in init.lua,
 the standard setup, and we set `Lazy = False,`, the recommended default,
@@ -46,14 +46,14 @@ Anything gated behind event = "VeryLazy" is guaranteed to load after all
 lazy = false plugins. VeryLazy is lazy.nvim's recommended catch-all for
 "load this shortly after startup, but don't block VimEnter."
 
-## Native Neovim plugin manager (vim.pack)
+## Native Neovim plugin manager
 
 Install, update, and delete external plugins.
 
 Note: vim.pack is still considered experimental, yet should
 be stable enough for daily use.
 
-### Startup event order
+### Startup event order for vim.pack
 
 1. init.lua begins executing.
 2. Any vim.pack.add() calls that live directly in init.lua's own body run
