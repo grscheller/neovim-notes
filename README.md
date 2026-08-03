@@ -2,7 +2,7 @@
 
 These notes have evolved over many years. They originally started out as
 a single text file vi cheatsheet. I am trying to capture the base editor
-behavior for basic text editing.
+behavior for basic text editing and some lazy.nvim plugin manager factoids.
 
 - [Absolute Minimum You Need to Know](notes/01-AbsoluteMinimalTextEditing.md)
 - [Basic Text Editing](notes/02-BasicTextEditing.md)
@@ -15,9 +15,10 @@ behavior for basic text editing.
 - [Encodings and Unicode](notes/09-EncodingsUnicode.md)
 - [Regular Expressions](notes/10-RegularExpressions.md)
 - [Configuration](notes/11-Configuration.md)
+- [Plugin Managers](notes/12-PluginManagers.md)
 
-I test this information against nvim, and sometimes with the vi which
-comes with Arch Linux (Joy, Horton, Ritter).
+I test this information against at least the latest stable Neovim
+release. Sometimes with something between stable and the HEAD of main.
 
 ## Public Domain Declaration
 

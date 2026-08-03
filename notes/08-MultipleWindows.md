@@ -15,7 +15,11 @@ ______________________________________________________________________
 
 ## Using and manipulating windows
 
-Remember, windows are view ports on buffers.
+**Remember, windows are view ports on buffers.**
+
+I find most of the following keymaps awkward to type. I remap
+them to something that "rhymes" to what I use for my tiling
+desktop environment.
 
 ### Creating and closing windows
 

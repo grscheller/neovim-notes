@@ -187,7 +187,7 @@ It is also possible to perform a single *normal mode* action within
 | `<C-o>J` | join current line with the next line |
 | `<C-o>D` | delete everything to the right of cursor |
 
-These tend to be more useful when used in keybindings.
+These tend to be more useful when used with keymappings.
 
 ### Other insert mode commands
 
