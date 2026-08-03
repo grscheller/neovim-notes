@@ -1,4 +1,4 @@
-# Neovim Configuration
+# Neovim Plugin Managers
 
 The only two plugin managers I wish to touch on are:
 
