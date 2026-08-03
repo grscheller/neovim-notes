@@ -251,18 +251,18 @@ via the Shared Date (shada) file.
 
 ### Normal mode mark commands
 
-| Command | Description                                        |
-|:-------:|:-------------------------------------------------- |
-| `ma`    | set mark `a` for the current editing buffer        |
-| ```a``  | jump to mark `a` current buffer                    |
-| `'a`    | jump to first non-space char in line with mark `a` |
-| ``y`a`` | yank from cursor to mark `a`                       |
-| ``c`a`` | change from cursor to mark `a`                     |
-| ``d`a`` | delete from cursor to mark `a`                     |
-| `d'b`   | deletes current line thru line with mark `b`       |
-| ``d`b`` | deletes current line to mark `b`                   |
-| ``g`a`` | same as `` `a `` except don't change jumplist      |
-| `g'a`   | same as `'a` except don't change jumplist          |
+| Command  | Description                                        |
+|:--------:|:-------------------------------------------------- |
+| `ma`     | set mark `a` for the current editing buffer        |
+| `` `a``  | jump to mark `a` current buffer                    |
+| `'a`     | jump to first non-space char in line with mark `a` |
+| ``y`a``  | yank from cursor to mark `a`                       |
+| ``c`a``  | change from cursor to mark `a`                     |
+| ``d`a``  | delete from cursor to mark `a`                     |
+| `d'b`    | deletes current line thru line with mark `b`       |
+| ``d`b``  | deletes current line to mark `b`                   |
+| ``g`a``  | same as `` `a `` except don't change jumplist      |
+| `g'a`    | same as `'a` except don't change jumplist          |
 
 ### Command mode mark commands
 
@@ -281,7 +281,7 @@ with that mark.
 
 | Command    | Description                                   |
 |:----------:|:--------------------------------------------- |
-| `` `" ``   | jump to last position last time buffer exited |
+| `` `"``    | jump to last position last time buffer exited |
 | ``` `` ``` | jump back to position before latest jump      |
 | `''`       | same as above but to beginning of line        |
 | ``]` ``    | jump to next lowercase mark                   |
@@ -289,7 +289,7 @@ with that mark.
 
 ### Numbered marks
 
-Numbered marks `` `0 - `9 `` and `'0 - '9` will jump to the locations in
+Numbered marks `` `0 - `9`` and `'0 - '9` will jump to the locations in
 the last files from which nvim was exited. Numbered marks cannot be set
 directly but can be deleted.
 

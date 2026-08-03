@@ -232,16 +232,16 @@ the next line starting with foo are deleted.
 
 ## Marks
 
-| Command | Description                                        |
-|:-------:|:-------------------------------------------------- |
-| `ma`    | set mark `a` for the current editing buffer        |
-| ```a `` | jump to mark `a` current buffer                    |
-| `'a`    | jump to first non-space char in line with mark `a` |
-| ``y`a`` | yank from cursor to mark `a`                       |
-| ``c`a`` | change from cursor to mark `a`                     |
-| ``d`a`` | delete from cursor to mark `a`                     |
-| `d'b`   | deletes current line to mark `b`                   |
-| ``d`b`` | deletes current line thru line with mark `b`       |
+| Command  | Description                                        |
+|:--------:|:-------------------------------------------------- |
+| `ma`     | set mark `a` for the current editing buffer        |
+| `` `a `` | jump to mark `a` current buffer                    |
+| `'a`     | jump to first non-space char in line with mark `a` |
+| ``y`a``  | yank from cursor to mark `a`                       |
+| ``c`a``  | change from cursor to mark `a`                     |
+| ``d`a``  | delete from cursor to mark `a`                     |
+| `d'b`    | deletes current line to mark `b`                   |
+| ``d`b``  | deletes current line thru line with mark `b`       |
 
 Like a mark, the cursor is also a "zero-width" entity between the
 highlighted character and the preceding character. If the mark is
